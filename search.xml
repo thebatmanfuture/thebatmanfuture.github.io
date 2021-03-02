@@ -4,13 +4,29 @@
   
     
     <entry>
-      <title>test_my_test</title>
-      <link href="2021/02/28/test-my-test/"/>
-      <url>2021/02/28/test-my-test/</url>
+      <title>ip定位</title>
+      <link href="2021/03/02/ip-ding-wei/"/>
+      <url>2021/03/02/ip-ding-wei/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>前言</p><p>基本原理：利用IP设备的名字，注册信息或时延来估计地理位置</p><p>定位算法：1.向DNS服务器查询或者挖掘隐藏信息来推测，，之后根据时延与地理位置的线性关系。2.寻找时延和地理距离的分布规律。</p><p>\1.   ip定位概述</p><p>1.1基本概念</p><p>​    在ip定位系统或算法中，一般包括4个，定位服务器，测量节点，待定位节点和基础设施。满足：待定位节点-&gt;测量点-&gt;定位服务器，的关系。</p><p>待定位节点：具有ip地址设备</p><p>测量点：在定位服务器的控制下，获得定位节点的时延，路由，位置信息，并提交给服务器</p><p>基础设施：网络协议，服务接入点，GPS定位系统，蜂窝站点</p><p>按照是否需要客户端：</p><p>（1）   独立于客户端</p><p>（2）   基于客户端</p><p>按照定位原理：</p><p>（1）   基于推测算法：网络注册信息，主机名</p><p>（2）   基于时延算法：时延与地理位置的线性关系，并通过拓朴信息提高精确度</p><p>（3）   结合1，2的综合算法</p><p>1.2IP定位技术的应用</p><p>​    性能优化，网络安全，广告定向，社交网络</p><p>性能优化：选择最短的链路，减小网络开销，比如P2P中，为对等节点选择位置近的节点通信，减少数据传输中流量损失。</p><p>网络安全：通过用户位置信息对身份验证，通过比对位置信息和ip地址用来防止攻击</p><p>社交定位：</p><p>定向广告：</p><p>1.3IP定位技术与其他定位技术的关系</p><p>​       GPS卫星定位，蓝牙定位，WIFI网络定位（MAC定位），GPRS/CDMA移动通信技术定位，雷达定位技术，无线传感器定位。基本原理：探测设备向目标发射电磁波，在客户端协助或者不协助下，测量与目标的时延。</p><p>\2.   独立于客户端的定位算法</p><p>2.1基于推测定位算法</p><p>​    通过whois查询得到该ip主机名，所在街道。其中算法主要分为三类：</p><p>（1）   直接查询whois：过时；多个服务器对应同一个ip；一个大的地址块可能会被分配给一个具有广泛地理位置的组织，而服务器只会为整个IP地址块记录一个IP</p><p>（2）   测量主机名比对数据库：通过主机名推测主机的位置，然后采用traceroute工具测量主机与被测主机的网络路径，尽可能测出中间的DNS，依次提取中间节点的位置信息。此方法关键在于路由器DNS定位的精度和最后一跳路由器的距离。</p><p>（3）   网络结构和数据库信息：地址划分和路由是按照层次组织的，因此路由器的IP前缀可以作为拓扑簇划分依据，为了精准定位，需要将大的簇逐步缩小为更小的簇，当簇内的IP地址数量大于某阙值时，则成为一个簇；当簇内的IP地址数量小于某阙值，则一分为二小簇，然后继续划分。这里最重要的是IP地址到地理位置的映射。可以在hotmail，bcentral，footv等网站的注册信息找到</p><p>2.2基于时延定位算法</p><p>​    2.2.1基于空间理论定位算法：</p><p>​       Geoping算法：通过多个收集相近时延的主机位置，再以此查询</p><p>​       Shoetest算法：用到被测主机时延最小的基准节点位置作为被测主机的地理位置</p><p>​       CBG算法：求时延和地理位置的线性方程，多次计算求平均值缩小误差</p><p>​    2.2.2基于概率估计定位方法：</p><p>​       贝叶斯定位算法：测试大量CBG数据，将IP定位转换为机器学习</p><p>。。。</p><p>​    </p><p>\3.   基于客户端的定位算法</p><p>需要额外安装定位装置，将定位装置提供的位置信息作为主机或设备的位置信息报告给定位系统，一般的，这些系统把wifi，gps，蜂窝基站，Zigbee，射频识别，线性调频扩频技术。</p><p>基于蜂窝，蓝牙，WIFI，RFID，Zigbee和CSS的定位算法可以归纳于基于时间的系统和基于信号强度的系统，一般由锚节点，待定位节点，定位服务器，通过测量节点之间的信号强度，利用无线信号的空间传输衰减模型估计出距离。</p><p>4．隐私保护技术</p><p>1.kido方法，在周围生成多个虚拟位置</p><p>2.代理</p><p>3.VPN   。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 个人博客 </category>
+          
+          <category> Hexo博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -22,6 +38,19 @@
       <url>2021/02/28/hello-world/</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test_my_test</title>
+      <link href="2021/02/28/test-my-test/"/>
+      <url>2021/02/28/test-my-test/</url>
+      
+        <content type="html"><![CDATA[]]></content>
       
       
       
