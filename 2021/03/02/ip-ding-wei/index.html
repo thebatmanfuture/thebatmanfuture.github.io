@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Lightning">
+    <meta name="keywords" content="ip定位原理（上）, Lightning">
     <meta name="description" content="Lightning">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Lightning</title>
+    <title>ip定位原理（上） | Lightning</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">ip定位原理（上）</h1>
                 </div>
             </div>
         </div>
@@ -432,12 +432,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF/">
+                                <span class="chip bg-color">定位技术</span>
+                            </a>
+                        
+                            <a href="/tags/ip/">
+                                <span class="chip bg-color">ip</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF/" class="post-category">
+                                定位技术
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -453,7 +470,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-02
+                    2021-03-07
                 </div>
                 
 
@@ -477,11 +494,53 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>title: tags
-date: 2021-02-28 10:21:07
-type: "tags"
-layout: "tags"
-</code></pre>
+                <p>前言</p>
+<p>基本原理：利用IP设备的名字，注册信息或时延来估计地理位置</p>
+<p>定位算法：1.向DNS服务器查询或者挖掘隐藏信息来推测，，之后根据时延与地理位置的线性关系。2.寻找时延和地理距离的分布规律。</p>
+<h2 id="ip定位概述"><a href="#ip定位概述" class="headerlink" title="ip定位概述"></a>ip定位概述</h2><ol>
+<li></li>
+<li><p>1基本概念</p>
+</li>
+</ol>
+<p>​    在ip定位系统或算法中，一般包括4个，定位服务器，测量节点，待定位节点和基础设施。满足：待定位节点-&gt;测量点-&gt;定位服务器，的关系。</p>
+<p>待定位节点：具有ip地址设备</p>
+<p>测量点：在定位服务器的控制下，获得定位节点的时延，路由，位置信息，并提交给服务器</p>
+<p>基础设施：网络协议，服务接入点，GPS定位系统，蜂窝站点</p>
+<p>按照是否需要客户端：</p>
+<p>（1）   独立于客户端</p>
+<p>（2）   基于客户端</p>
+<p>按照定位原理：</p>
+<p>（1）   基于推测算法：网络注册信息，主机名</p>
+<p>（2）   基于时延算法：时延与地理位置的线性关系，并通过拓朴信息提高精确度</p>
+<p>（3）   结合1，2的综合算法</p>
+<p>1.2IP定位技术的应用</p>
+<p>​    性能优化，网络安全，广告定向，社交网络</p>
+<p>性能优化：选择最短的链路，减小网络开销，比如P2P中，为对等节点选择位置近的节点通信，减少数据传输中流量损失。</p>
+<p>网络安全：通过用户位置信息对身份验证，通过比对位置信息和ip地址用来防止攻击</p>
+<p>社交定位：</p>
+<p>定向广告：</p>
+<p>1.3IP定位技术与其他定位技术的关系</p>
+<p>​       GPS卫星定位，蓝牙定位，WIFI网络定位（MAC定位），GPRS/CDMA移动通信技术定位，雷达定位技术，无线传感器定位。基本原理：探测设备向目标发射电磁波，在客户端协助或者不协助下，测量与目标的时延。</p>
+<h2 id="独立于客户端的定位算法"><a href="#独立于客户端的定位算法" class="headerlink" title="独立于客户端的定位算法"></a>独立于客户端的定位算法</h2><p>2.1基于推测定位算法</p>
+<p>​    通过whois查询得到该ip主机名，所在街道。其中算法主要分为三类：</p>
+<p>（1）   直接查询whois：过时；多个服务器对应同一个ip；一个大的地址块可能会被分配给一个具有广泛地理位置的组织，而服务器只会为整个IP地址块记录一个IP</p>
+<p>（2）   测量主机名比对数据库：通过主机名推测主机的位置，然后采用traceroute工具测量主机与被测主机的网络路径，尽可能测出中间的DNS，依次提取中间节点的位置信息。此方法关键在于路由器DNS定位的精度和最后一跳路由器的距离。</p>
+<p>（3）   网络结构和数据库信息：地址划分和路由是按照层次组织的，因此路由器的IP前缀可以作为拓扑簇划分依据，为了精准定位，需要将大的簇逐步缩小为更小的簇，当簇内的IP地址数量大于某阙值时，则成为一个簇；当簇内的IP地址数量小于某阙值，则一分为二小簇，然后继续划分。这里最重要的是IP地址到地理位置的映射。可以在hotmail，bcentral，footv等网站的注册信息找到</p>
+<p>2.2基于时延定位算法</p>
+<p>​    2.2.1基于空间理论定位算法：</p>
+<p>​       Geoping算法：通过多个收集相近时延的主机位置，再以此查询</p>
+<p>​       Shoetest算法：用到被测主机时延最小的基准节点位置作为被测主机的地理位置</p>
+<p>​       CBG算法：求时延和地理位置的线性方程，多次计算求平均值缩小误差</p>
+<p>​    2.2.2基于概率估计定位方法：</p>
+<p>​       贝叶斯定位算法：测试大量CBG数据，将IP定位转换为机器学习</p>
+<p>。。。</p>
+<p>​    </p>
+<h2 id="基于客户端的定位算法"><a href="#基于客户端的定位算法" class="headerlink" title="基于客户端的定位算法"></a>基于客户端的定位算法</h2><p>需要额外安装定位装置，将定位装置提供的位置信息作为主机或设备的位置信息报告给定位系统，一般的，这些系统把wifi，gps，蜂窝基站，Zigbee，射频识别，线性调频扩频技术。</p>
+<p>基于蜂窝，蓝牙，WIFI，RFID，Zigbee和CSS的定位算法可以归纳于基于时间的系统和基于信号强度的系统，一般由锚节点，待定位节点，定位服务器，通过测量节点之间的信号强度，利用无线信号的空间传输衰减模型估计出距离。</p>
+<p>4．隐私保护技术</p>
+<p>1.kido方法，在周围生成多个虚拟位置</p>
+<p>2.代理</p>
+<p>3.VPN   。</p>
 
                 
             </div>
@@ -508,7 +567,7 @@ layout: "tags"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://batmanfuture.gitee.io/tags/index.html">https://batmanfuture.gitee.io/tags/index.html</a>
+                    <a href="https://batmanfuture.gitee.io/2021/03/02/ip-ding-wei/">https://batmanfuture.gitee.io/2021/03/02/ip-ding-wei/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,7 +604,15 @@ layout: "tags"
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF/">
+                                    <span class="chip bg-color">定位技术</span>
+                                </a>
+                            
+                                <a href="/tags/ip/">
+                                    <span class="chip bg-color">ip</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -988,13 +1055,13 @@ layout: "tags"
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2021/03/02/ip-ding-wei/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ip定位原理（上）">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">ip定位原理（上）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1009,13 +1076,29 @@ layout: "tags"
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lightning
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    定位技术
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">定位技术</span>
+                    </a>
+                    
+                    <a href="/tags/ip/">
+                        <span class="chip bg-color">ip</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1023,16 +1106,16 @@ layout: "tags"
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2021/02/28/markdown-bi-ji-zheng-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Markdown笔记整理">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Markdown笔记整理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1043,17 +1126,28 @@ layout: "tags"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-28
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lightning
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                    其他
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/markdown/">
+                        <span class="chip bg-color">markdown</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

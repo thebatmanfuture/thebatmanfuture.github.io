@@ -6,7 +6,7 @@
   <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-03-02T06:13:43.929Z</updated>
+  <updated>2021-03-07T12:51:08.541Z</updated>
   <id>https://batmanfuture.gitee.io/</id>
   
   <author>
@@ -17,23 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://batmanfuture.gitee.io/2021/02/28/hello-world/"/>
-    <id>https://batmanfuture.gitee.io/2021/02/28/hello-world/</id>
+    <title>ip定位原理（上）</title>
+    <link href="https://batmanfuture.gitee.io/2021/03/02/ip-ding-wei/"/>
+    <id>https://batmanfuture.gitee.io/2021/03/02/ip-ding-wei/</id>
+    <published>2021-03-02T05:49:36.000Z</published>
+    <updated>2021-03-07T12:51:08.541Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前言&lt;/p&gt;
+&lt;p&gt;基本原理：利用IP设备的名字，注册信息或时延来估计地理位置&lt;/p&gt;
+&lt;p&gt;定位算法：1.向DNS服务器查询或者挖掘隐藏信息来推测，，之后根据时延与地理位置的线性关系。2.寻找时延和地理距离的分布规律。&lt;/p&gt;
+&lt;h2 id=&quot;ip定位概述&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="定位技术" scheme="https://batmanfuture.gitee.io/categories/%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="定位技术" scheme="https://batmanfuture.gitee.io/tags/%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="ip" scheme="https://batmanfuture.gitee.io/tags/ip/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown笔记整理</title>
+    <link href="https://batmanfuture.gitee.io/2021/02/28/markdown-bi-ji-zheng-li/"/>
+    <id>https://batmanfuture.gitee.io/2021/02/28/markdown-bi-ji-zheng-li/</id>
     <published>2021-02-28T12:46:25.000Z</published>
-    <updated>2021-03-02T06:13:43.929Z</updated>
+    <updated>2021-03-05T09:31:08.794Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;Markdown笔记整理&quot;&gt;&lt;a href=&quot;#Markdown笔记整理&quot; class=&quot;headerlink&quot; title=&quot;Markdown笔记整理&quot;&gt;&lt;/a&gt;Markdown笔记整理&lt;/h1&gt;&lt;h2 id=&quot;通用规则&quot;&gt;&lt;a href=&quot;#通用规则&quot;</summary>
         
       
     
     
     
+    <category term="其他" scheme="https://batmanfuture.gitee.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="markdown" scheme="https://batmanfuture.gitee.io/tags/markdown/"/>
     
   </entry>
   
@@ -42,7 +76,7 @@
     <link href="https://batmanfuture.gitee.io/2021/02/28/test-my-test/"/>
     <id>https://batmanfuture.gitee.io/2021/02/28/test-my-test/</id>
     <published>2021-02-28T00:54:28.000Z</published>
-    <updated>2021-03-02T08:44:25.879Z</updated>
+    <updated>2021-03-05T08:51:26.558Z</updated>
     
     
     
