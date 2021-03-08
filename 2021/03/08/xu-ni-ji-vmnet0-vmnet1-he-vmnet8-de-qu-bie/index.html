@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Lightning">
+    <meta name="keywords" content="虚拟机vmnet0、vmnet1和vmnet8的区别, Lightning">
     <meta name="description" content="Lightning">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Lightning</title>
+    <title>虚拟机vmnet0、vmnet1和vmnet8的区别 | Lightning</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">虚拟机vmnet0、vmnet1和vmnet8的区别</h1>
                 </div>
             </div>
         </div>
@@ -432,12 +432,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vmware/">
+                                <span class="chip bg-color">vmware</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                其他
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -446,14 +459,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-02
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-02
+                    2021-03-08
                 </div>
                 
 
@@ -477,10 +490,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>title: tags
-date: 2021-02-28 10:21:07
-type: "tags"
-layout: "tags"
+                <h2 id="vmnet0，实际上就是一个虚拟的网桥"><a href="#vmnet0，实际上就是一个虚拟的网桥" class="headerlink" title="vmnet0，实际上就是一个虚拟的网桥"></a>vmnet0，实际上就是一个虚拟的网桥</h2><p>vmnet0，实际上就是一个虚拟的网桥，这个网桥有很若干个端口，一个端口用于连接你的Host，一个端口用于连接你的虚拟机，他们的位置是对等的，谁也不是谁的网关。所以在Bridged模式下，你可以让虚拟机成为一台和你的Host相同地位的机器。</p>
+<h2 id="vmnet1，这是一个Host-Only网络模式"><a href="#vmnet1，这是一个Host-Only网络模式" class="headerlink" title="vmnet1，这是一个Host-Only网络模式"></a>vmnet1，这是一个Host-Only网络模式</h2><p>vmnet1，这是一个Host-Only网络模式，这是用于建立一个与世隔绝的网络环境所用到的，其中vmnet1也是一个虚拟的交换机，交换机的一个 端口连接到你的Host上，另外一个端口连接到虚拟的DHCP服务器上（实际上是vmware的一个组件），另外剩下的端口就是连虚拟机了。虚拟网卡 “VMWare Virtual Ethernet Adapter for VMnet1”作为虚拟机的网关接口，为虚拟机提供服务。在虚拟机启动之后，如果你用ipconfig命令，你会很清楚的看到，你的默认网关就是指向 “VMWare Virtual Ethernet Adapter for VMnet1”网卡的地址的。（实际上它并不能提供路由，这是VMware设计使然，它是干了除了提供路由之外的一些事情——实际上是我也不知道它干了什 么事情），这里没有提供路由主要表现在没有提供NAT服务，使得虚拟机不可以访问Host-Only模式所指定的网段之外的地址。</p>
+<h2 id="vmnet8，这是一个NAT方式，最简单的组网方式了"><a href="#vmnet8，这是一个NAT方式，最简单的组网方式了" class="headerlink" title="vmnet8，这是一个NAT方式，最简单的组网方式了"></a>vmnet8，这是一个NAT方式，最简单的组网方式了</h2><p>vmnet8，这是一个NAT方式，最简单的组网方式了，从主机的“VMWare Virtual Ethernet Adapter for VMnet8”虚拟网卡出来，连接到vmnet8虚拟交换机，虚拟交换机的另外的口连接到虚拟的NAT服务器（这也是一个Vmware组件），还有一个口 连接到虚拟DHCP服务器，其他的口连虚拟机，虚拟机的网关即是“VMWare Virtual Ethernet Adapter for VMnet8”网卡所在的机器，废话，这肯定就是你的Host机器啦。同样，用ipconfig也可以看出来，你的虚拟机的默认网关也指向了你的 “VMWare Virtual Ethernet Adapter for VMnet8”虚拟网卡地址。相比之下，可以看出来，NAT组网方式和Host-Only方式，区别就在于是否多了一个NAT服务。</p>
+<p>host-only与wmnet1虚拟网卡进行通信<br>NAT模式与VMnet8虚拟网卡进行通信<br>桥接使用的是你机器的真实网卡进行上网</p>
+<p>用命令来配host-only模式下的网卡:ifconfig eth0 192.168.86.0<br>ifconfig eth0 ip(要和虚拟网络编辑器里面的VMnet1的ip一致)，配完这个虚拟网卡的ip后你就可以通过在cmd命令里面ping 此ip看是否能ping通，这样没有网线也能实现网络通信了<br>那么在有网线（意思是有网络的情况下）选择NAT模式，如何配这个VM的ip来实现通信呢<br>找到真实机器的ip地址后，可以在网络中心或者通过cmd里面的ipconfig来获得当前真实机器的ip地址后，用如下的命令来设置VM的ip:ifconfig eth0 192.168.1.156(假设真实机器的ip是192.168.1.155),要永久生效则需要写入配置文件</p>
+<pre><code>转载自https://www.cnblogs.com/feifei-cyj/p/7686166.html
 </code></pre>
 
                 
@@ -508,7 +523,7 @@ layout: "tags"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://batmanfuture.gitee.io/tags/index.html">https://batmanfuture.gitee.io/tags/index.html</a>
+                    <a href="https://batmanfuture.gitee.io/2021/03/08/xu-ni-ji-vmnet0-vmnet1-he-vmnet8-de-qu-bie/">https://batmanfuture.gitee.io/2021/03/08/xu-ni-ji-vmnet0-vmnet1-he-vmnet8-de-qu-bie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,7 +560,11 @@ layout: "tags"
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/vmware/">
+                                    <span class="chip bg-color">vmware</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -983,18 +1002,17 @@ layout: "tags"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="中国移动智能网关及中国电信光猫的账号密码">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">中国移动智能网关及中国电信光猫的账号密码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1004,18 +1022,33 @@ layout: "tags"
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lightning
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/" class="post-category">
+                                    无线安全
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">无线安全</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">
+                        <span class="chip bg-color">路由器</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1023,16 +1056,16 @@ layout: "tags"
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2021/03/02/ip-ding-wei/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="ip定位原理（上）">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">ip定位原理（上）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1047,13 +1080,28 @@ layout: "tags"
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lightning
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    定位技术
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AE%9A%E4%BD%8D%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">定位技术</span>
+                    </a>
+                    
+                    <a href="/tags/ip/">
+                        <span class="chip bg-color">ip</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

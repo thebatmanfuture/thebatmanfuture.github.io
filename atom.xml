@@ -6,7 +6,7 @@
   <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-03-07T12:51:08.541Z</updated>
+  <updated>2021-03-08T04:30:23.444Z</updated>
   <id>https://batmanfuture.gitee.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>中国移动智能网关及中国电信光猫的账号密码</title>
+    <link href="https://batmanfuture.gitee.io/2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/"/>
+    <id>https://batmanfuture.gitee.io/2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/</id>
+    <published>2021-03-08T04:29:28.000Z</published>
+    <updated>2021-03-08T04:30:23.444Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;登陆中国移动智能网关管理员账号。&lt;/p&gt;
+&lt;p&gt;一般来说都在背面，如果接触不到路由器可使用超级用户名登录&lt;/p&gt;
+&lt;p&gt;超级账号：CMCCAdmin 超级密码：aDm8H%MdA&lt;/p&gt;
+&lt;p&gt;超级用户名:telecomadmin</summary>
+        
+      
+    
+    
+    
+    <category term="无线安全" scheme="https://batmanfuture.gitee.io/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="无线安全" scheme="https://batmanfuture.gitee.io/tags/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="路由器" scheme="https://batmanfuture.gitee.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟机vmnet0、vmnet1和vmnet8的区别</title>
+    <link href="https://batmanfuture.gitee.io/2021/03/08/xu-ni-ji-vmnet0-vmnet1-he-vmnet8-de-qu-bie/"/>
+    <id>https://batmanfuture.gitee.io/2021/03/08/xu-ni-ji-vmnet0-vmnet1-he-vmnet8-de-qu-bie/</id>
+    <published>2021-03-08T04:26:28.000Z</published>
+    <updated>2021-03-08T04:27:47.389Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;vmnet0，实际上就是一个虚拟的网桥&quot;&gt;&lt;a href=&quot;#vmnet0，实际上就是一个虚拟的网桥&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="其他" scheme="https://batmanfuture.gitee.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="vmware" scheme="https://batmanfuture.gitee.io/tags/vmware/"/>
+    
+  </entry>
   
   <entry>
     <title>ip定位原理（上）</title>
