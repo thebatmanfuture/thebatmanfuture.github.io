@@ -6,7 +6,7 @@
   <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-03-08T04:30:23.444Z</updated>
+  <updated>2021-03-12T12:17:38.165Z</updated>
   <id>https://batmanfuture.gitee.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>随便记的笔记</title>
+    <link href="https://batmanfuture.gitee.io/2021/03/12/sui-bian-ji-de-bi-ji/"/>
+    <id>https://batmanfuture.gitee.io/2021/03/12/sui-bian-ji-de-bi-ji/</id>
+    <published>2021-03-12T12:16:25.000Z</published>
+    <updated>2021-03-12T12:17:38.165Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基础准备工具&quot;&gt;&lt;a href=&quot;#基础准备工具&quot; class=&quot;headerlink&quot; title=&quot;基础准备工具&quot;&gt;&lt;/a&gt;基础准备工具&lt;/h2&gt;&lt;h3 id=&quot;1-无线网卡的选择&quot;&gt;&lt;a href=&quot;#1-无线网卡的选择&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="无线安全" scheme="https://batmanfuture.gitee.io/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="内网渗透" scheme="https://batmanfuture.gitee.io/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/"/>
+    
+    
+    <category term="路由器" scheme="https://batmanfuture.gitee.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+    <category term="无线" scheme="https://batmanfuture.gitee.io/tags/%E6%97%A0%E7%BA%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>中国移动智能网关及中国电信光猫的账号密码</title>
@@ -40,9 +69,9 @@
     <category term="无线安全" scheme="https://batmanfuture.gitee.io/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="无线安全" scheme="https://batmanfuture.gitee.io/tags/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
-    
     <category term="路由器" scheme="https://batmanfuture.gitee.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    
+    <category term="无线安全" scheme="https://batmanfuture.gitee.io/tags/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   

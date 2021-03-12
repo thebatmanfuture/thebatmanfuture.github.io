@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>随便记的笔记</title>
+      <link href="2021/03/12/sui-bian-ji-de-bi-ji/"/>
+      <url>2021/03/12/sui-bian-ji-de-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="基础准备工具"><a href="#基础准备工具" class="headerlink" title="基础准备工具"></a>基础准备工具</h2><h3 id="1-无线网卡的选择"><a href="#1-无线网卡的选择" class="headerlink" title="1.无线网卡的选择"></a>1.无线网卡的选择</h3><p>外置：</p><p>atheros芯片，创锐讯。支持<a href="http://www.outengda.cn/news_82.htm">802.11b/g/n</a>标准。prism棱镜，ralink雷凌。</p><p>内置：</p><p>intel和IBM。IBM用的就是创锐讯的芯片。</p><p>功率以及规格：</p><p>毫瓦（mW）是千分之一瓦（Watts），一般介于30-100mV，</p><table><thead><tr><th>功率</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead><tbody><tr><td>50mv</td><td>100</td><td>30</td><td>20</td><td>50</td></tr><tr><td>100</td><td>200</td><td>50</td><td>40</td><td>100</td></tr><tr><td>200</td><td>400</td><td>70</td><td>60</td><td>200</td></tr><tr><td>1000</td><td>1000</td><td>200</td><td>150</td><td>500</td></tr></tbody></table><p>A表示开阔地，B是室内建材为砖造结构，C是水泥灌浆，D是有高楼阻拦。</p><pre class=" language-shell"><code class="language-shell">ifconfig //列出启动的网卡ifconfig -a //列出所有网卡，包括停用的网卡ifconfig [interface] up //将[interface]启动ifconfig [interface] down //将[interface]停用ifconfig [interface] hw other [MAC] //将[interface]修改为mac</code></pre><pre><code>iwconfig [interface] //查看无线网卡状态iwconfig [interface] key off //禁用WEP密钥iwconfig [interface] key s:password //设置WEP密钥为ASCII码iwconfig [interface] txpower 30mW //将输出功率设置为30mwiwpriv [interface] monitor [mode] [channel] //设置参数，mode可为2（开启监听），1（开启状态下加入prism2相关的headers）和0（关闭监听）,channel是工作频道1-14</code></pre><p>SSID：唯一标识符，通俗说就是WIFI的名字</p><p>WAP：无线应用协议。</p><p>AP：无线访问点或者无线接入点。可以是大型无线接入设备，也可以是小型的无线路由器，</p><p>WEP：已经被淘汰的加密方式。</p><p>WPA：用于个人和企业的WPA和WPA2。</p><p>EAP：用于验证网络设备身份的鉴权机制。</p><p>扫描技术:</p><p>（1）TCP扫描，过于明显。</p><p>（2）UDP扫描</p><p>（3）SYN扫描</p><p>（4）ICMP扫描，ping扫描。可以在有防火墙的情况下，检测到远程或内网位于防火墙后的计算机是否处于live状态。SMTP：25，POP3：110，PPTP VPN：1723。</p><p>远程控制工具：</p><p>（1）直接相连。冰河，灰鸽子等。</p><p>（2）反向连接型。为了突破防火墙，自己主动去连接控制端。比如广外女生，灰鸽子。</p><p>（3）端口复用型。为了防止管理员查看端口发现木马，采取和正常程序共享端口。</p><p>（4）线程插入型。即DLL注入型木马。将木马线程插入到正常的线程。</p><p>（5）内核修改型。rootkit，能够注入到系统深层，达到修改内核的嵌入式高级木马。</p><p>缓冲区溢出：通常输入的程序被存储在一个临时空间里，这个空间叫缓冲区，当黑客输入的东西多于缓冲区的容量，那么多余的部分会覆盖在合法数据的上面，导致程序出错，乃至崩溃。</p><p>tcp攻击（flood攻击）：</p><p>hping3 –flood -S –rand-source 目标IP</p><p>原理：<br>让kali做客户机，目标pc做服务端，kali发送大量的tcp报文，正常情况下pc需要给kali(客户机)发包确认，之后kali(客户机)不在进行给pc(服务机)回包，让目标pc处于一个半链接状态（不能连上网）!<br>如图：进行了 1,2步骤 没有进行第3步</p><p><a href="%E5%9B%BE%E7%89%87">https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWcyMDIwLmNuYmxvZ3MuY29tL2Jsb2cvMjAxNDk5MC8yMDIwMDQvMjAxNDk5MC0yMDIwMDQyNDE0NDQwNzA2NS0xOTU2MTU2MDkxLnBuZw?x-oss-process=image/format,png</a></p><p>MAC flood（攻击）</p><p>macof地址泛洪攻击<br>命令：macof<br>原理：直接攻击交换机，给交换机发送大量的MAC地址，让交换机处于一个瘫痪状态（不能连上网）<br><em>注：有的kali没有这个命令</em></p><p>DHCP flood 泛洪攻击<br>命令:yersinia -G（一个工具）<br>-G 是用图形化界面<br>原理：发送大量的Discovery包（包含ip，MAC地址）广播报文，让DHCP服务器处于一个瘫痪状态，DHCP服务器不在正常工作，将整个网络资源耗尽。(像广播一样发送大量的广播报文DHCP,让pc电脑接收到大量的广播报文DHCP（导致局域网的所有pc电脑不能上网)）</p><p>icmp flood攻击<br>命令：hping3 –icmp –rand-soure –flood -d 1400 目标ip<br>–icmp:攻击方式<br>–rand-soure:发起攻击的ip地址随机<br>-d:报文的大小（一般的ping报最大是1500字节，这里之所以用1400，因为ping报里面还有其他的东西）<br>如：hping3 –icmp –rand-soure –flood -d 1200 192.168.1.101<br>原理：就是发送大量的ping包，让服务器瘫痪。</p><p>CC攻击（web 压力测试）<br>命令：ab -n 100000 -c 1000 url<br>如：ab -n 100000 -c 10000 <a href="http://www.xxxx.com/">www.xxxx.com</a><br>原理：CC攻击 DDOS的一种(CC攻击：challenge collapsar 挑战黑洞 攻击。模拟多用户多线程请求较为耗CPU内存的URL)<br>（有点像每学期抢网课一样，si都进不去页面）<br>注意：这个命令只能用来学习，不能非法测试未授权的网站</p><p>ARP欺骗攻击<br>命令：arpspoof -i eth0 -t 目标iP kali网关ip<br>-i 网卡 -t 目标ip 网关<br>如：arpspoof -i eth0 -t 192.168.1.101 192.168.1.1<br>工具：ettercap（kali自带）<br>原理：用户服务物联网需要通过路由器的网关，这个时候给受害者发送arp报文，伪装上网的网关，受害者则认为kali攻击机的MAC地址是正常上网的Mac地址,则受害者给kali发送报文。kali可以在进行处理（转发/拦截）<br>ARP欺骗攻击获取照片<br>命令：<br>：arpspoof -t 目标iP kali网关ip<br>：echo 1 &gt; /proc/sys/net/ipv4/ip_forward<br>：driftnet -i eth0<br>原理：arp欺骗攻击 加查看别人浏览的照片（没有加密）给受害者发送arp报文，伪装上网的网关。受害者则认为kali攻击机的mac地址是正常上网的Mac地址,则受害者给kali发送报文。kali可以在进行处理。<br>kali将报文发送出去可以让受害者上网{echo 1 &gt; /proc/sys/net/ipv4/ip_forward}，但是受害者的报文要经过kali,kali在利用：driftnet -i eth0，捕捉受害者浏览照片</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 无线安全 </category>
+          
+          <category> 内网渗透 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 路由器 </tag>
+            
+            <tag> 无线 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>中国移动智能网关及中国电信光猫的账号密码</title>
       <link href="2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/"/>
       <url>2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/</url>
@@ -20,9 +49,9 @@
       
         <tags>
             
-            <tag> 无线安全 </tag>
-            
             <tag> 路由器 </tag>
+            
+            <tag> 无线安全 </tag>
             
         </tags>
       
