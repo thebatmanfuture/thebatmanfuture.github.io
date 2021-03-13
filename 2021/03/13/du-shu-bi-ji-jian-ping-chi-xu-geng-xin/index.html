@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Lightning">
+    <meta name="keywords" content="那些年看过的黑客书籍（简析）（持续更新）, Lightning">
     <meta name="description" content="Lightning">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Lightning</title>
+    <title>那些年看过的黑客书籍（简析）（持续更新） | Lightning</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">那些年看过的黑客书籍（简析）（持续更新）</h1>
                 </div>
             </div>
         </div>
@@ -432,12 +432,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/books/">
+                                <span class="chip bg-color">books</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Books/" class="post-category">
+                                Books
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -446,14 +459,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-02
+                    2021-03-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-02
+                    2021-03-13
                 </div>
                 
 
@@ -477,12 +490,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>title: tags
-date: 2021-02-28 10:21:07
-type: "tags"
-layout: "tags"
-</code></pre>
-
+                <h2 id="那些年看过的黑客书籍"><a href="#那些年看过的黑客书籍" class="headerlink" title="那些年看过的黑客书籍"></a>那些年看过的黑客书籍</h2><h3 id="1-《黑客控制服务攻击技术与安全搭建实战》"><a href="#1-《黑客控制服务攻击技术与安全搭建实战》" class="headerlink" title="1.《黑客控制服务攻击技术与安全搭建实战》"></a>1.《黑客控制服务攻击技术与安全搭建实战》</h3><p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/4255266/">豆瓣地址</a></p>
+<p><a target="_blank" rel="noopener" href="https://wws.lanzous.com/i9wDVlq4vcj">下载地址</a></p>
+<p>由于本书是2010的书籍，距今已经超过10年，尤其是在安全行业显得落伍，书籍第一章交代的是windows server 2003中3389的利用，以及当我们输入mstsc创建一个rdp（远程连接后）会生成相对应的rdp文件，然后通过社会工程学或者其他什么方法使用工具进行破解，得到密码。第二章是pcanywhere的使用，在过去这种抓肉鸡的工具有很多，比如灰鸽子，广外女生等，然而现在以及过时了。第三章是VNC远程控制，其实和pcanywhere的原理都是一样的，还讲述了早期VNC viewer版本的漏洞，然鹅现在肯定早没用了。第四章是当3389攻击成功后对攻击记录的抹除，留后门等。最好附录是一些相关知识概念的介绍（可以看一看）。</p>
+<h3 id="2-《IP定位技术的研究》"><a href="#2-《IP定位技术的研究》" class="headerlink" title="2.《IP定位技术的研究》"></a>2.《IP定位技术的研究》</h3><p><a target="_blank" rel="noopener" href="https://wws.lanzous.com/irlFImwaxxa">下载地址</a></p>
+<p>本书主要在理论上讲解IP定位技术的应用方式，实现方式。结合数学，底层路由等技术，是众多定位技术中的一种。然而现在仅仅靠IP定位是无法精确查找到对方的，通常是结合利用wifi定位（mac定位），比如在qq上，我做了一个钓鱼链接，该钓鱼链接用于申请获得你的位置信息，最后跳转到百度，其中在qq中访问网站时，该2权限qq浏览器会默认给予。最好跳转到百度，诱使对方多次扫描，扫描次数达到三次时，可以采用三角定位的方式，即以目标为中心，距离为半径，画出三个⚪的相交处。</p>
+<p><a target="_blank" rel="noopener" href="https://wws.lanzous.com/iEmTHmj7b6f">网站源码</a></p>
+<p>但是，有几点需要注意，首先，如果你们是局域网，那么就可以在内网搭建，但是如果你们不在同一网络，你的域名需要有网路径，所以你需要内网转发，详细信息可以看这篇文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/suswulongyuan/article/details/106737145">CSDN</a>，此外你还要能看懂简单的html，php，以及数据库的连接（毕竟你要记录对方的地址嘛）。</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3>
                 
             </div>
             <hr/>
@@ -508,7 +523,7 @@ layout: "tags"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://batmanfuture.gitee.io/tags/index.html">https://batmanfuture.gitee.io/tags/index.html</a>
+                    <a href="https://batmanfuture.gitee.io/2021/03/13/du-shu-bi-ji-jian-ping-chi-xu-geng-xin/">https://batmanfuture.gitee.io/2021/03/13/du-shu-bi-ji-jian-ping-chi-xu-geng-xin/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,7 +560,11 @@ layout: "tags"
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/books/">
+                                    <span class="chip bg-color">books</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -983,18 +1002,17 @@ layout: "tags"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2021/03/13/ji-ben-gai-nian-zhu-yu-chi-xu-geng-xin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="基本概念术语（持续更新）">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">基本概念术语（持续更新）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1004,18 +1022,33 @@ layout: "tags"
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lightning
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    网络基础
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/">
+                        <span class="chip bg-color">内网渗透</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BA%95%E5%B1%82%E8%B7%AF%E7%94%B1/">
+                        <span class="chip bg-color">底层路由</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1023,16 +1056,16 @@ layout: "tags"
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2021/03/12/sui-bian-ji-de-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="随便记的笔记">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">随便记的笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1043,17 +1076,36 @@ layout: "tags"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lightning
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/" class="post-category">
+                                    无线安全
+                                </a>
+                            
+                            <a href="/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" class="post-category">
+                                    内网渗透
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">
+                        <span class="chip bg-color">路由器</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%A0%E7%BA%BF/">
+                        <span class="chip bg-color">无线</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

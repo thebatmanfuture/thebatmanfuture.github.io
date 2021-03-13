@@ -6,7 +6,7 @@
   <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-03-12T12:17:38.165Z</updated>
+  <updated>2021-03-13T13:29:03.649Z</updated>
   <id>https://batmanfuture.gitee.io/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基本概念术语（持续更新）</title>
+    <link href="https://batmanfuture.gitee.io/2021/03/13/ji-ben-gai-nian-zhu-yu-chi-xu-geng-xin/"/>
+    <id>https://batmanfuture.gitee.io/2021/03/13/ji-ben-gai-nian-zhu-yu-chi-xu-geng-xin/</id>
+    <published>2021-03-13T13:17:28.000Z</published>
+    <updated>2021-03-13T13:29:03.649Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-B-S和C-S结构&quot;&gt;&lt;a href=&quot;#1-B-S和C-S结构&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="网络基础" scheme="https://batmanfuture.gitee.io/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="内网渗透" scheme="https://batmanfuture.gitee.io/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/"/>
+    
+    <category term="底层路由" scheme="https://batmanfuture.gitee.io/tags/%E5%BA%95%E5%B1%82%E8%B7%AF%E7%94%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>那些年看过的黑客书籍（简析）（持续更新）</title>
+    <link href="https://batmanfuture.gitee.io/2021/03/13/du-shu-bi-ji-jian-ping-chi-xu-geng-xin/"/>
+    <id>https://batmanfuture.gitee.io/2021/03/13/du-shu-bi-ji-jian-ping-chi-xu-geng-xin/</id>
+    <published>2021-03-13T12:13:28.000Z</published>
+    <updated>2021-03-13T13:16:03.395Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;那些年看过的黑客书籍&quot;&gt;&lt;a href=&quot;#那些年看过的黑客书籍&quot; class=&quot;headerlink&quot; title=&quot;那些年看过的黑客书籍&quot;&gt;&lt;/a&gt;那些年看过的黑客书籍&lt;/h2&gt;&lt;h3 id=&quot;1-《黑客控制服务攻击技术与安全搭建实战》&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Books" scheme="https://batmanfuture.gitee.io/categories/Books/"/>
+    
+    
+    <category term="books" scheme="https://batmanfuture.gitee.io/tags/books/"/>
+    
+  </entry>
+  
+  <entry>
     <title>随便记的笔记</title>
     <link href="https://batmanfuture.gitee.io/2021/03/12/sui-bian-ji-de-bi-ji/"/>
     <id>https://batmanfuture.gitee.io/2021/03/12/sui-bian-ji-de-bi-ji/</id>
     <published>2021-03-12T12:16:25.000Z</published>
-    <updated>2021-03-12T12:17:38.165Z</updated>
+    <updated>2021-03-13T13:30:58.879Z</updated>
     
     
       
@@ -135,7 +187,7 @@
     <link href="https://batmanfuture.gitee.io/2021/02/28/markdown-bi-ji-zheng-li/"/>
     <id>https://batmanfuture.gitee.io/2021/02/28/markdown-bi-ji-zheng-li/</id>
     <published>2021-02-28T12:46:25.000Z</published>
-    <updated>2021-03-05T09:31:08.794Z</updated>
+    <updated>2021-03-13T13:30:29.921Z</updated>
     
     
       
