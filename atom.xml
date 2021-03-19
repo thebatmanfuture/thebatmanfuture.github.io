@@ -6,7 +6,7 @@
   <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-03-13T13:29:03.649Z</updated>
+  <updated>2021-03-18T09:04:49.801Z</updated>
   <id>https://batmanfuture.gitee.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Nmap精讲</title>
+    <link href="https://batmanfuture.gitee.io/2021/03/18/nmap/"/>
+    <id>https://batmanfuture.gitee.io/2021/03/18/nmap/</id>
+    <published>2021-03-18T07:59:15.000Z</published>
+    <updated>2021-03-18T09:04:49.801Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;nmap&quot;&gt;&lt;a href=&quot;#nmap&quot; class=&quot;headerlink&quot; title=&quot;nmap&quot;&gt;&lt;/a&gt;nmap&lt;/h1&gt;&lt;h3 id=&quot;1-描述&quot;&gt;&lt;a href=&quot;#1-描述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="其他" scheme="https://batmanfuture.gitee.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="nmap" scheme="https://batmanfuture.gitee.io/tags/nmap/"/>
+    
+    <category term="信息收集" scheme="https://batmanfuture.gitee.io/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基本概念术语（持续更新）</title>
     <link href="https://batmanfuture.gitee.io/2021/03/13/ji-ben-gai-nian-zhu-yu-chi-xu-geng-xin/"/>
     <id>https://batmanfuture.gitee.io/2021/03/13/ji-ben-gai-nian-zhu-yu-chi-xu-geng-xin/</id>
     <published>2021-03-13T13:17:28.000Z</published>
-    <updated>2021-03-13T13:29:03.649Z</updated>
+    <updated>2021-03-14T03:21:49.900Z</updated>
     
     
       

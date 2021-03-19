@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test_my_test, Lightning">
+    <meta name="keywords" content="Nmap精讲, Lightning">
     <meta name="description" content="Lightning">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test_my_test | Lightning</title>
+    <title>Nmap精讲 | Lightning</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test_my_test</h1>
+                    <h1 class="description center-align post-title">Nmap精讲</h1>
                 </div>
             </div>
         </div>
@@ -434,8 +434,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/web-php/">
-                                <span class="chip bg-color">web,php</span>
+                            <a href="/tags/nmap/">
+                                <span class="chip bg-color">nmap</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
+                                <span class="chip bg-color">信息收集</span>
                             </a>
                         
                     </div>
@@ -446,8 +450,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Web/" class="post-category">
-                                Web
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                其他
                             </a>
                         
                     </div>
@@ -459,14 +463,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-28
+                    2021-03-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-05
+                    2021-03-18
                 </div>
                 
 
@@ -490,7 +494,62 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="nmap"><a href="#nmap" class="headerlink" title="nmap"></a>nmap</h1><h3 id="1-描述"><a href="#1-描述" class="headerlink" title="1.描述"></a>1.描述</h3><p>全名network mapper，网络映射器，用来扫描整个网段，单个主机也没问题。使用原始的IP报文来发现网络上有哪些主机，哪些主机提供什么服务（应用程序名和版本），运行在什么操作系统上，使用什么类型的报文过滤器/防火墙。open（开放的）意味着目标机器的应用程序正在该端口监听连接/报文。filtered（被过滤的）意味着防火墙，或者其他过滤器阻断了该端口监听连接/报文，nmap无法得知他是开放的还是关闭的。closed（关闭的）表示没有开放端口在上面监听，但是可能随时开放。当端口对nmap做出响应的时，但是nmap无法确定是开放还是关闭就显示unfilled（未被过滤的）。除了端口表，还有反向域名，操作系统猜测，设备类型和MAC地址。</p>
+<pre class=" language-shell"><code class="language-shell">nmap -A -T4 127.0.0.1//其中-A是操作系统及其版本探测，-T4是加快执行速度
+</code></pre>
+<h3 id="2-说明"><a href="#2-说明" class="headerlink" title="2.说明"></a>2.说明</h3><p>当我们想扫描同一网段下所有设备，那么</p>
+<pre><code>nmap 192.168.0.0/24 //会扫描0到255所有的设备
+nmap 192.168.0.0/8 10.0.0.1
+</code></pre>
+<h3 id="3-主机发现"><a href="#3-主机发现" class="headerlink" title="3.主机发现"></a>3.主机发现</h3><p>ping扫描，用ping工具发送简单的icmp回声请求报文</p>
+<pre><code>-sL //列表扫描
+-sP //ping扫描
+</code></pre>
+<h3 id="4-端口扫描基础"><a href="#4-端口扫描基础" class="headerlink" title="4.端口扫描基础"></a>4.端口扫描基础</h3><pre><code>--dns-servers 8.8.8.8 scanme.nmap.org //使用dns为8.8.8.8进行扫描
+</code></pre>
+<pre><code>nmap -Pn scanme.nmap.org //-Pn是不发送icmp包不触及防火墙
+</code></pre>
+<pre><code>nmap -p m-n //扫描n到m对应开放的端口
+</code></pre>
+<pre><code>nmap -A -v -T4 ip //-A是全面扫描，-v是持续输出返回信息
+</code></pre>
+<pre><code>nmap -sC -sV -O ip //sc表示使用nmap脚本进行探测，sv表示探测机器上的服务信息，o表示探测目标机器的操作系统信息
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>-sP</th>
+<th>ping 扫描</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p</td>
+<td>指定端口范围</td>
+</tr>
+<tr>
+<td>-sV</td>
+<td>服务版本探测</td>
+</tr>
+<tr>
+<td>-O（大写）</td>
+<td>启用操作系统探测</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>全面扫描</td>
+</tr>
+<tr>
+<td>-oN</td>
+<td>保存txt</td>
+</tr>
+</tbody></table>
+<p>Nmap  -sP  10.1.1.1/24  扫描10.1.1.0整个网段</p>
+<p>Nmap  -p  21,23-25,3389 10.1.1.1 </p>
+<p>Nmap  -p  21,23 10.1.1.1 -sV  扫描21,23的服务版本</p>
+<p>Nmap  -A  10.1.1.1  全面扫描</p>
+<p>Nmap  -O  10.1.1.1  扫描目标系统版本</p>
+<p>Namp  -p  21,23  10.1.1.1  -oN  e:\result.txt</p>
+
                 
             </div>
             <hr/>
@@ -516,7 +575,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://batmanfuture.gitee.io/2021/02/28/test-my-test/">https://batmanfuture.gitee.io/2021/02/28/test-my-test/</a>
+                    <a href="https://batmanfuture.gitee.io/2021/03/18/nmap/">https://batmanfuture.gitee.io/2021/03/18/nmap/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -554,8 +613,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/web-php/">
-                                    <span class="chip bg-color">web,php</span>
+                                <a href="/tags/nmap/">
+                                    <span class="chip bg-color">nmap</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
+                                    <span class="chip bg-color">信息收集</span>
                                 </a>
                             
                         </div>
@@ -995,17 +1058,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/02/28/markdown-bi-ji-zheng-li/">
+                <a href="/2021/03/18/nmap/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Markdown笔记整理">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Nmap精讲">
                         
-                        <span class="card-title">Markdown笔记整理</span>
+                        <span class="card-title">Nmap精讲</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1015,9 +1079,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1030,11 +1094,16 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/markdown/">
-                        <span class="chip bg-color">markdown</span>
+                    <a href="/tags/nmap/">
+                        <span class="chip bg-color">nmap</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
+                        <span class="chip bg-color">信息收集</span>
                     </a>
                     
                 </div>
@@ -1045,16 +1114,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/28/test-my-test/">
+                <a href="/2021/03/13/ji-ben-gai-nian-zhu-yu-chi-xu-geng-xin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="test_my_test">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="基本概念术语（持续更新）">
                         
-                        <span class="card-title">test_my_test</span>
+                        <span class="card-title">基本概念术语（持续更新）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1065,26 +1134,29 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web/" class="post-category">
-                                    Web
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    网络基础
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/web-php/">
-                        <span class="chip bg-color">web,php</span>
+                    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/">
+                        <span class="chip bg-color">内网渗透</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%BA%95%E5%B1%82%E8%B7%AF%E7%94%B1/">
+                        <span class="chip bg-color">底层路由</span>
                     </a>
                     
                 </div>

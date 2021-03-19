@@ -470,7 +470,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-13
+                    2021-03-14
                 </div>
                 
 
@@ -545,7 +545,14 @@
 <p>但主流的主板一般不带串口，串口已基本被USB口取代。</p>
 <h3 id="5-非军事区（DMZ）"><a href="#5-非军事区（DMZ）" class="headerlink" title="5.非军事区（DMZ）"></a>5.非军事区（DMZ）</h3><p>为了解决安装防火墙后外部网络无法访问内部网络服务器的问题，而建立的一个非安全系统与安全系统之间的缓冲区，在这个区域内可以放置一些必须公开的服务器设施，比如企业的Web服务器，Ftp服务器和论坛。通常给远程办公使用。</p>
 <h3 id="6-ARIN"><a href="#6-ARIN" class="headerlink" title="6.ARIN"></a>6.ARIN</h3><p>每个internet号码注册中心，负责相关地区的IP地址分配，还给全球的NSP分配地址。顺便提一嘴ipv6，我们都知道ipv6协议中ip地址是由128位组成（二进制），ipv4是由32位二进制组成的四组，具体有关ipv6的知识我会单独写一篇博客细谈。也就是说个数是ipv4的2的96次方倍，世界上任何一台设备都可以是第一无二的（MAC也是独一无二的），凡是独一无二的，比如md5，都可以用来区分，可以是地理位置上的区分，比如规定多少到多少是这个国家，中间多少到多少是这个国家的某省某市，多少到多少是该地区的设备随机标识数。</p>
-<h3 id="7-IPC（和IPC-）"><a href="#7-IPC（和IPC-）" class="headerlink" title="7.IPC（和IPC$）"></a>7.IPC（和IPC$）</h3>
+<h3 id="7-IPC（和IPC-）"><a href="#7-IPC（和IPC-）" class="headerlink" title="7.IPC（和IPC$）"></a>7.IPC（和IPC$）</h3><p>共享命名管道的资源，为了让进程之间通信，通过提供可信任的用户名和口令，连接双方可以建立安全的通道并以此通道进行加密数据的交换，从而实现对远程计算机的访问。：本文所讨论的各种情况均默认发生在 win NT/2000/XP/win 7 环境下， win98 将不在此次讨论之列。空连接就是不用密码和用户名的IPC连接，在Windows 下，它是用 Net 命令来实现的． 　进入空连接 net use \IP地址”密码” /user:”用户名” 　禁止空连接 开始-设置-控制面板-管理工具-服务 ，在服务中停止掉 server的服务就可以了。</p>
+<h3 id="8-HUB？SWITCH？"><a href="#8-HUB？SWITCH？" class="headerlink" title="8.HUB？SWITCH？"></a>8.HUB？SWITCH？</h3><p>hub又叫集线器，switch是交换机。集线器的工作原理是广播，无论从哪一个端口接收到什么类型的信包，都会以广播的形式将信包发送到其他端口，又连接在这些端口上的网卡BIC进行处理，符合则留下，不符合直接丢弃。交换机通过分析Ethernet包的包头信息，取得了MAC地址后，查找交换机中存储的地址对照表（MAC地址对应的端口），将信息送到对方的端口。</p>
+<h3 id="9-arp欺骗"><a href="#9-arp欺骗" class="headerlink" title="9.arp欺骗"></a>9.arp欺骗</h3><p>例如某一的IP地址是192.168.0.254，其MAC地址为00-11-22-33-44-55，网络上的计算机内ARP表会有这一笔ARP记录。攻击者发动攻击时，会大量发出已将192.168.0.254的MAC地址篡改为00-55-44-33-22-11的ARP数据包。那么网络上的计算机若将此伪造的ARP写入自身的ARP表后，计算机若要透过网上网关连到其他计算机时，数据包将被导到00-55-44-33-22-11这个MAC地址，因此攻击者可从此MAC地址截收到数据包，可篡改后再送回真正的网关，或是什么也不做，让网上无法连线。</p>
+<h3 id="10-VoIP"><a href="#10-VoIP" class="headerlink" title="10.VoIP"></a>10.VoIP</h3><p><strong>基于IP的语音传输</strong>（英语：Voice over Internet Protocol，缩写为<strong>VoIP</strong>）是一种语音通话技术，经由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE">网际协议</a>（IP）来达成语音通话与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E5%AA%92%E4%BD%93">多媒体</a>会议，也就是经由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BA%92%E8%81%94%E7%BD%91">互联网</a>来进行通信。其他非正式的名称有IP电话（IP telephony）、互联网电话（Internet telephony）、宽带电话（broadband telephony）以及宽带电话服务（broadband phone service）。</p>
+<p>VoIP的基本原理是通过语音的压缩算法对语音数据编码进行压缩处理，然后把这些语音数据按 TCP/IP 标准进行打包，经过 IP 网络把数据包送至接收地，再把这些语音数据包串起来，经过解压处理后，恢复成原来的语音信号，从而达到由互联网传送语音的目的。 IP 电话的核心与关键设备是 IP 网关，它把各地区电话区号映射为相应的地区网关 IP 地址。这些信息存放在一个数据库中，数据接续处理软件将完成呼叫处理、数字语音打包、路由管理等功能。 在用户拨打长途电话时，网关根据电话区号数据库资料，确定相应网关的 IP 地址，并将此 IP 地址加入 IP 数据包中，同时选择最佳路由，以减少传输延时， IP 数据包经 Internet 到达目的地的网关。在一些 Internet 尚未延伸到或暂时未设立网关的地区，可设置路由，由最近的网关通过长途电话网转接，实现通信业务。</p>
+<h3 id="11-WebShell"><a href="#11-WebShell" class="headerlink" title="11.WebShell"></a>11.WebShell</h3><p>webshell就是以<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/asp/128906">asp</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/php/9337">php</a>、jsp或者cgi等<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E9%A1%B5/99347">网页</a>文件形式存在的一种代码执行环境，也可以将其称做为一种网页后门。黑客在入侵了一个网站后，通常会将asp或php后门文件与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%AB%99%E6%9C%8D%E5%8A%A1%E5%99%A8/8156379">网站服务器</a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/WEB/150564">WEB</a>目录下正常的网页文件混在一起，然后就可以使用浏览器来访问asp或者<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/php%E5%90%8E%E9%97%A8/15691774">php后门</a>，得到一个命令执行环境，以达到控制网站服务器的目的。</p>
+<p>顾名思义，“web”的含义是显然需要服务器开放web服务，“shell”的含义是取得对服务器某种程度上操作权限。webshell常常被称为入侵者通过网站端口对网站服务器的某种程度上操作的权限。由于webshell其大多是以动态脚本的形式出现，也有人称之为网站的后门工具。</p>
+
                 
             </div>
             <hr/>
@@ -1054,18 +1061,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/13/ji-ben-gai-nian-zhu-yu-chi-xu-geng-xin/">
+                <a href="/2021/03/18/nmap/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="基本概念术语（持续更新）">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Nmap精讲">
                         
-                        <span class="card-title">基本概念术语（持续更新）</span>
+                        <span class="card-title">Nmap精讲</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1075,31 +1081,30 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    网络基础
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                    其他
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/">
-                        <span class="chip bg-color">内网渗透</span>
+                    <a href="/tags/nmap/">
+                        <span class="chip bg-color">nmap</span>
                     </a>
                     
-                    <a href="/tags/%E5%BA%95%E5%B1%82%E8%B7%AF%E7%94%B1/">
-                        <span class="chip bg-color">底层路由</span>
+                    <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
+                        <span class="chip bg-color">信息收集</span>
                     </a>
                     
                 </div>
@@ -1297,7 +1302,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.5k</span>&nbsp;字
+                class="white-color">9.2k</span>&nbsp;字
             
             
             
