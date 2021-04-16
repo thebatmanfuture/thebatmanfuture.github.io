@@ -466,7 +466,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-13
+                    2021-03-30
                 </div>
                 
 
@@ -492,12 +492,25 @@
             <div id="articleContent">
                 <h2 id="那些年看过的黑客书籍"><a href="#那些年看过的黑客书籍" class="headerlink" title="那些年看过的黑客书籍"></a>那些年看过的黑客书籍</h2><h3 id="1-《黑客控制服务攻击技术与安全搭建实战》"><a href="#1-《黑客控制服务攻击技术与安全搭建实战》" class="headerlink" title="1.《黑客控制服务攻击技术与安全搭建实战》"></a>1.《黑客控制服务攻击技术与安全搭建实战》</h3><p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/4255266/">豆瓣地址</a></p>
 <p><a target="_blank" rel="noopener" href="https://wws.lanzous.com/i9wDVlq4vcj">下载地址</a></p>
+<p><a target="_blank" rel="noopener" href="https://img3.doubanio.com/view/subject/s/public/s6113951.jpg">图片</a></p>
 <p>由于本书是2010的书籍，距今已经超过10年，尤其是在安全行业显得落伍，书籍第一章交代的是windows server 2003中3389的利用，以及当我们输入mstsc创建一个rdp（远程连接后）会生成相对应的rdp文件，然后通过社会工程学或者其他什么方法使用工具进行破解，得到密码。第二章是pcanywhere的使用，在过去这种抓肉鸡的工具有很多，比如灰鸽子，广外女生等，然而现在以及过时了。第三章是VNC远程控制，其实和pcanywhere的原理都是一样的，还讲述了早期VNC viewer版本的漏洞，然鹅现在肯定早没用了。第四章是当3389攻击成功后对攻击记录的抹除，留后门等。最好附录是一些相关知识概念的介绍（可以看一看）。</p>
 <h3 id="2-《IP定位技术的研究》"><a href="#2-《IP定位技术的研究》" class="headerlink" title="2.《IP定位技术的研究》"></a>2.《IP定位技术的研究》</h3><p><a target="_blank" rel="noopener" href="https://wws.lanzous.com/irlFImwaxxa">下载地址</a></p>
 <p>本书主要在理论上讲解IP定位技术的应用方式，实现方式。结合数学，底层路由等技术，是众多定位技术中的一种。然而现在仅仅靠IP定位是无法精确查找到对方的，通常是结合利用wifi定位（mac定位），比如在qq上，我做了一个钓鱼链接，该钓鱼链接用于申请获得你的位置信息，最后跳转到百度，其中在qq中访问网站时，该2权限qq浏览器会默认给予。最好跳转到百度，诱使对方多次扫描，扫描次数达到三次时，可以采用三角定位的方式，即以目标为中心，距离为半径，画出三个⚪的相交处。</p>
 <p><a target="_blank" rel="noopener" href="https://wws.lanzous.com/iEmTHmj7b6f">网站源码</a></p>
 <p>但是，有几点需要注意，首先，如果你们是局域网，那么就可以在内网搭建，但是如果你们不在同一网络，你的域名需要有网路径，所以你需要内网转发，详细信息可以看这篇文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/suswulongyuan/article/details/106737145">CSDN</a>，此外你还要能看懂简单的html，php，以及数据库的连接（毕竟你要记录对方的地址嘛）。</p>
-<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3>
+<h3 id="3-黑镜调查-DDOS威胁与黑灰产业调查报告"><a href="#3-黑镜调查-DDOS威胁与黑灰产业调查报告" class="headerlink" title="3.黑镜调查-DDOS威胁与黑灰产业调查报告"></a>3.黑镜调查-DDOS威胁与黑灰产业调查报告</h3><p><a target="_blank" rel="noopener" href="https://wws.lanzous.com/iHisqnh664b">下载地址</a></p>
+<p><a target="_blank" rel="noopener" href="https://image.3001.net/images/20180904/15360584446259.png!small">图片</a></p>
+<p>本册是freebuf，云鼎，腾讯云，大禹联合研究。针对ddos现状进行归类，分析。目前主流的DDOS包括</p>
+<p>传统的：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/marywang56/article/details/76038263">ICMP Flood</a>：十几年前带宽普遍不高的情况下，用来以大欺小。然而现在只要防火墙一开，禁止ping就无计可施了。</p>
+<p><a target="_blank" rel="noopener" href="https://forum.huawei.com/enterprise/zh/thread-293807.html">UDP Flood</a>：利用UDP不建立持久连接，可以通过伪造IP地址的方式多次请求。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB/421896?fromtitle=syn%20flood&amp;fromid=5342784&amp;fr=aladdin">SYN Flood</a>：就是利用TCP第一次握手后，当服务器端的包找不到源IP地址，从而多次重试，大概30s-1min，以此来消耗带宽。</p>
+<p><a target="_blank" rel="noopener" href="https://forum.huawei.com/enterprise/zh/thread-293931.html">HTTP Flood</a>：通过访问请求涉及数据库操作的URI（Universal Resource Identifier）或其它消耗系统资源的URI，造成服务器资源耗尽，无法响应正常请求。</p>
+<p>放大反射：</p>
+<p><a target="_blank" rel="noopener" href="http://www.jybase.net/xitonganquan/20111204695.html">NTP Flood</a>：</p>
+<p><a href="">SSDP Flood</a></p>
+<p><a href="">DNS Flood</a></p>
+
                 
             </div>
             <hr/>
@@ -1251,7 +1264,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.2k</span>&nbsp;字
+                class="white-color">10.5k</span>&nbsp;字
             
             
             

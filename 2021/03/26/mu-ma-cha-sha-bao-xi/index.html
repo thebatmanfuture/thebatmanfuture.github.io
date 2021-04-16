@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="中国移动智能网关及中国电信光猫的账号密码, Lightning">
+    <meta name="keywords" content="木马查杀刨析, Lightning">
     <meta name="description" content="Lightning">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>中国移动智能网关及中国电信光猫的账号密码 | Lightning</title>
+    <title>木马查杀刨析 | Lightning</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">中国移动智能网关及中国电信光猫的账号密码</h1>
+                    <h1 class="description center-align post-title">木马查杀刨析</h1>
                 </div>
             </div>
         </div>
@@ -434,12 +434,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">
-                                <span class="chip bg-color">路由器</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/">
-                                <span class="chip bg-color">无线安全</span>
+                            <a href="/tags/%E6%9C%A8%E9%A9%AC/">
+                                <span class="chip bg-color">木马</span>
                             </a>
                         
                     </div>
@@ -450,8 +446,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/" class="post-category">
-                                无线安全
+                            <a href="/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6/" class="post-category">
+                                二进制
                             </a>
                         
                     </div>
@@ -463,14 +459,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-08
+                    2021-03-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-08
+                    2021-03-26
                 </div>
                 
 
@@ -494,17 +490,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>登陆中国移动智能网关管理员账号。</p>
-<p>一般来说都在背面，如果接触不到路由器可使用超级用户名登录</p>
-<p>超级账号：CMCCAdmin 超级密码：aDm8H%MdA</p>
-<p>超级用户名:telecomadmin 超级密码:nE7jA%5m</p>
-<p>用户名 telecomadmin 密码 admintelecom</p>
-<p>超级用户名 : fiberhomehg2×0 超级密码 : hg2×0</p>
-<p>超级帐户名是：admin 密码：Cmcc10086#</p>
-<p>我的设备密码是第一个用户名：CMCCAdmin 密码：aDm8H%MdA</p>
-<p>如果你的不是第一个，可以试试其他账号。也可以找给你安装宽带的人员要，他们都有密码的。</p>
-<p>登陆移动网关默认是：192.168.1.1 在猫的背面有介绍登陆地址</p>
-<p>电信光猫超级账号telecomadmin<br>电信光猫超级密码nE7jA%5m<br>华为无运营商标超级账号telecomadmin<br>华为无运营商标超级密码admintelecom<br>移动光猫超级账号CMCCAdmin<br>移动光猫超级密码aDm8H%MdA</p>
+                <h2 id="木马查杀"><a href="#木马查杀" class="headerlink" title="木马查杀"></a>木马查杀</h2><p>木马通常通过植入进程，开机自启动（修改注册表），文件的方式对计算机进行控制。</p>
+<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><h4 id="系统的启动过程："><a href="#系统的启动过程：" class="headerlink" title="系统的启动过程："></a>系统的启动过程：</h4><ol>
+<li><p>BIOS芯片中的BIOS程序先执行硬件检测功能，如果有错误会停止启动。</p>
+</li>
+<li><p>如果硬件没有问题，那么会读入硬盘的主引导记录，接下来交给主引导记录代码完成，这是在安装操作系统的时候写入到硬盘中的，如果找不到就不会启动。</p>
+</li>
+<li><p>主引导记录的主要工作是读入磁盘主分区的根目录，找到读出Mtldr文件，并装入内存，把控制权交给他。</p>
+</li>
+<li><p>把系统从16为实模式转换为64位长模式。他的工作是读取根目录下的boot.ini，接下来加载ntoskrnl.exe，hal.dll文件，接下来读入注册表的system键文件，从中找到启动的各种驱动文件</p>
+</li>
+<li><p>接下来由ntoskrnl.exe来进行，他是内核程序，最后创建会话管理子系统，由system进程创建的smss.exe</p>
+</li>
+<li><p>smss.exe创建用户环境，由用户模式环境向windows提供可视的窗口界面。会运行bootexecute中定义的程序，正常情况下是autochk，一个检查磁盘的进程，但是有些杀毒软件把把进程加载到这里。smss.exe会执行sessionmanager中的文件删除，移动操作，也就是调用API：movefileex并选择重启后移除文件，加载win32k.sys，负责了窗口的显示，屏幕的输入，鼠标键盘和其他设备的输入以及消息的传达，再之后就是运行csrss.exe和winlogon.exe，csrss.exe是负责创建或者删除进程，线程，控制台与虚拟DOS机的支持。</p>
+</li>
+<li><p>而winlogon.exe先启动services.exe以及lsass.exe进程，然后读取注册表ginadll中标明的dll，由这个dll来显示一个登录对话话，也就是我们进入系统时输入的用户名和密码，为什么要启动lsass.exe呢？因为，这是本地安全认证子系统，当然了ginadll也成为一个木马可以放置的位置。</p>
+<p>explorer.exe是系统的shell程序，响应用户的请求，并执行对应的程序工作，services.exe是系统的服务控制管理器，由他启动的进程称为服务，此类进程是开机自启，svchost.exe是一个服务的宿主程序或者叫容器程序，他的里面是一组服务，参数用来标明类型。</p>
+</li>
+</ol>
+<p>”无进程木马“：</p>
+<p>DLL注入型木马。可以理解为进程是一个工厂，那么调用DLL就是将工厂的某一部分工作外包给了DLL去做</p>
+<p>线程注入型木马。可以理解为一组工人混入了一个程序的一个线程中。（进程包含多组线程），有多个explorer.exe不一定是线程注入，一个工厂可以有多个流水。</p>
+<p>纯驱动型木马。系统的权限分为两种，R0和R3，一般的程序全部为R3权限，行为受到了很多限制，而操作系统与驱动则为R0权限，拥有对整个计算机的全部权力。</p>
+<p>利用技术手段隐藏进程的木马。这种技术同样可以用来隐藏dll模块程序，隐藏驱动程序。</p>
 
                 
             </div>
@@ -531,7 +539,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://batmanfuture.gitee.io/2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/">https://batmanfuture.gitee.io/2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/</a>
+                    <a href="https://batmanfuture.gitee.io/2021/03/26/mu-ma-cha-sha-bao-xi/">https://batmanfuture.gitee.io/2021/03/26/mu-ma-cha-sha-bao-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,12 +577,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">
-                                    <span class="chip bg-color">路由器</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/">
-                                    <span class="chip bg-color">无线安全</span>
+                                <a href="/tags/%E6%9C%A8%E9%A9%AC/">
+                                    <span class="chip bg-color">木马</span>
                                 </a>
                             
                         </div>
@@ -1014,17 +1018,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/12/sui-bian-ji-de-bi-ji/">
+                <a href="/2021/03/26/mu-ma-cha-sha-bao-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="随便记的笔记">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="木马查杀刨析">
                         
-                        <span class="card-title">随便记的笔记</span>
+                        <span class="card-title">木马查杀刨析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1034,34 +1039,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/" class="post-category">
-                                    无线安全
-                                </a>
-                            
-                            <a href="/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" class="post-category">
-                                    内网渗透
+                            <a href="/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6/" class="post-category">
+                                    二进制
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/">
-                        <span class="chip bg-color">路由器</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%97%A0%E7%BA%BF/">
-                        <span class="chip bg-color">无线</span>
+                    <a href="/tags/%E6%9C%A8%E9%A9%AC/">
+                        <span class="chip bg-color">木马</span>
                     </a>
                     
                 </div>
@@ -1075,13 +1073,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/08/xu-ni-ji-vmnet0-vmnet1-he-vmnet8-de-qu-bie/">
+                <a href="/2021/03/18/nmap/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="虚拟机vmnet0、vmnet1和vmnet8的区别">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Nmap精讲">
                         
-                        <span class="card-title">虚拟机vmnet0、vmnet1和vmnet8的区别</span>
+                        <span class="card-title">Nmap精讲</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1092,7 +1090,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
                             </span>
                         <span class="publish-author">
                             
@@ -1109,8 +1107,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vmware/">
-                        <span class="chip bg-color">vmware</span>
+                    <a href="/tags/nmap/">
+                        <span class="chip bg-color">nmap</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
+                        <span class="chip bg-color">信息收集</span>
                     </a>
                     
                 </div>
