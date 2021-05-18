@@ -6,7 +6,7 @@
   <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-04-27T10:41:31.081Z</updated>
+  <updated>2021-05-18T07:08:06.037Z</updated>
   <id>https://batmanfuture.gitee.io/</id>
   
   <author>
@@ -17,9 +17,265 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hackinglab</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/30/ctf/hackinglab/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/30/ctf/hackinglab/</id>
+    <published>2021-05-30T00:54:28.000Z</published>
+    <updated>2021-05-18T07:08:06.037Z</updated>
+    
+    
+    
+    
+    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xctf</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/30/ctf/xctf/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/30/ctf/xctf/</id>
+    <published>2021-05-30T00:54:28.000Z</published>
+    <updated>2021-05-18T07:09:24.083Z</updated>
+    
+    
+    
+    
+    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>掌控安全封神台</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/30/ctf/zhang-kong-an-quan-feng-shen-tai/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/30/ctf/zhang-kong-an-quan-feng-shen-tai/</id>
+    <published>2021-05-30T00:54:28.000Z</published>
+    <updated>2021-05-18T07:17:07.719Z</updated>
+    
+    
+    
+    
+    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ctfshow</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/28/ctf/ctfshow/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/28/ctf/ctfshow/</id>
+    <published>2021-05-28T00:54:28.000Z</published>
+    <updated>2021-05-18T06:58:25.247Z</updated>
+    
+    
+    
+    
+    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hack the box</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/28/ctf/hack-the-box/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/28/ctf/hack-the-box/</id>
+    <published>2021-05-28T00:54:28.000Z</published>
+    <updated>2021-05-18T09:28:59.661Z</updated>
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>wargames</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/28/ctf/wargames/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/28/ctf/wargames/</id>
+    <published>2021-05-28T00:54:28.000Z</published>
+    <updated>2021-05-18T09:09:40.591Z</updated>
+    
+    
+    
+    
+    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vulhub靶场</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/18/web-an-quan/vulhub-ba-chang/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/18/web-an-quan/vulhub-ba-chang/</id>
+    <published>2021-05-18T07:25:33.000Z</published>
+    <updated>2021-05-18T06:28:21.102Z</updated>
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bugkuctf</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/18/ctf/bugkuctf/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/18/ctf/bugkuctf/</id>
+    <published>2021-05-18T06:54:22.000Z</published>
+    <updated>2021-05-18T06:58:10.103Z</updated>
+    
+    
+    
+    
+    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>owaspbwa靶场</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/18/web-an-quan/owaspbwa-ba-chang/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/18/web-an-quan/owaspbwa-ba-chang/</id>
+    <published>2021-05-18T06:30:23.000Z</published>
+    <updated>2021-05-18T06:30:50.696Z</updated>
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pikachu靶场</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/18/web-an-quan/pikachu-ba-chang/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/18/web-an-quan/pikachu-ba-chang/</id>
+    <published>2021-05-18T06:22:12.000Z</published>
+    <updated>2021-05-18T06:23:56.407Z</updated>
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xss-labs靶场</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/18/web-an-quan/xss-labs-ba-chang/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/18/web-an-quan/xss-labs-ba-chang/</id>
+    <published>2021-05-18T06:00:00.000Z</published>
+    <updated>2021-05-18T06:17:18.049Z</updated>
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="web安全" scheme="https://batmanfuture.gitee.io/tags/web%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="xss" scheme="https://batmanfuture.gitee.io/tags/xss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>墨者学院</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/18/ctf/mo-zhe-xue-yuan/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/18/ctf/mo-zhe-xue-yuan/</id>
+    <published>2021-05-18T00:54:28.000Z</published>
+    <updated>2021-05-18T06:53:05.381Z</updated>
+    
+    
+    
+    
+    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dvwa靶场</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/17/web-an-quan/dvwa-ba-chang/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/17/web-an-quan/dvwa-ba-chang/</id>
+    <published>2021-05-17T12:54:28.000Z</published>
+    <updated>2021-05-18T03:30:13.405Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;brute-force&quot;&gt;&lt;a href=&quot;#brute-force&quot; class=&quot;headerlink&quot; title=&quot;brute force&quot;&gt;&lt;/a&gt;brute force&lt;/h2&gt;&lt;h3 id=&quot;low&quot;&gt;&lt;a href=&quot;#low&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sqli-labs靶场</title>
+    <link href="https://batmanfuture.gitee.io/2021/05/16/web-an-quan/sqli-labs-ba-chang/"/>
+    <id>https://batmanfuture.gitee.io/2021/05/16/web-an-quan/sqli-labs-ba-chang/</id>
+    <published>2021-05-16T00:54:28.000Z</published>
+    <updated>2021-05-17T12:35:46.032Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h2&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;mysql -h</summary>
+        
+      
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="sql注入，靶场" scheme="https://batmanfuture.gitee.io/tags/sql%E6%B3%A8%E5%85%A5%EF%BC%8C%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>中国移动智能网关及中国电信光猫的账号密码</title>
-    <link href="https://batmanfuture.gitee.io/2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/"/>
-    <id>https://batmanfuture.gitee.io/2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/</id>
+    <link href="https://batmanfuture.gitee.io/2021/03/08/wu-xian-an-quan/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/"/>
+    <id>https://batmanfuture.gitee.io/2021/03/08/wu-xian-an-quan/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/</id>
     <published>2021-03-08T04:29:28.000Z</published>
     <updated>2021-04-27T10:41:31.081Z</updated>
     
@@ -49,15 +305,51 @@
     <link href="https://batmanfuture.gitee.io/2021/02/28/test-my-test/"/>
     <id>https://batmanfuture.gitee.io/2021/02/28/test-my-test/</id>
     <published>2021-02-28T00:54:28.000Z</published>
-    <updated>2021-05-07T05:25:05.771Z</updated>
+    <updated>2021-05-18T06:20:13.520Z</updated>
     
     
     
     
-    <category term="Web" scheme="https://batmanfuture.gitee.io/categories/Web/"/>
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
     
     
     <category term="web" scheme="https://batmanfuture.gitee.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>buuctf</title>
+    <link href="https://batmanfuture.gitee.io/2021/02/28/ctf/buuctf/"/>
+    <id>https://batmanfuture.gitee.io/2021/02/28/ctf/buuctf/</id>
+    <published>2021-02-28T00:54:28.000Z</published>
+    <updated>2021-05-18T07:01:42.420Z</updated>
+    
+    
+    
+    
+    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    
+    
+    <category term="web" scheme="https://batmanfuture.gitee.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>upload-labs靶场</title>
+    <link href="https://batmanfuture.gitee.io/2021/02/28/web-an-quan/upload-labs-ba-chang/"/>
+    <id>https://batmanfuture.gitee.io/2021/02/28/web-an-quan/upload-labs-ba-chang/</id>
+    <published>2021-02-28T00:54:28.000Z</published>
+    <updated>2021-05-18T06:23:26.793Z</updated>
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="web" scheme="https://batmanfuture.gitee.io/tags/web/"/>
+    
+    <category term="文件上传" scheme="https://batmanfuture.gitee.io/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"/>
     
   </entry>
   

