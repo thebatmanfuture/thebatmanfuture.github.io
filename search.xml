@@ -79,6 +79,31 @@
     
     
     <entry>
+      <title>RedTiger&#39;s Hackit</title>
+      <link href="2021/05/28/ctf/redtiger-s-hackit/"/>
+      <url>2021/05/28/ctf/redtiger-s-hackit/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ctfshow</title>
       <link href="2021/05/28/ctf/ctfshow/"/>
       <url>2021/05/28/ctf/ctfshow/</url>
@@ -129,6 +154,81 @@
     
     
     <entry>
+      <title>pentest.training</title>
+      <link href="2021/05/28/ctf/pentest.training/"/>
+      <url>2021/05/28/ctf/pentest.training/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pentestit</title>
+      <link href="2021/05/28/ctf/pentestit/"/>
+      <url>2021/05/28/ctf/pentestit/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vulnhub</title>
+      <link href="2021/05/28/ctf/vulnhub/"/>
+      <url>2021/05/28/ctf/vulnhub/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>wargames</title>
       <link href="2021/05/28/ctf/wargames/"/>
       <url>2021/05/28/ctf/wargames/</url>
@@ -139,6 +239,56 @@
       <categories>
           
           <category> CTF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>websec</title>
+      <link href="2021/05/28/ctf/websec/"/>
+      <url>2021/05/28/ctf/websec/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>wechall</title>
+      <link href="2021/05/28/ctf/wechall/"/>
+      <url>2021/05/28/ctf/wechall/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
           
       </categories>
       
@@ -285,7 +435,7 @@
       <link href="2021/05/18/books/books-xi-lie-geng-xin-zhun-ze/"/>
       <url>2021/05/18/books/books-xi-lie-geng-xin-zhun-ze/</url>
       
-        <content type="html"><![CDATA[<h3 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h3><p>Lightning是从21年寒假开始真正意义上开始学习信息安全，总感觉自己的成长速度太慢了，同时期的小伙伴进步太快了，从学习到现在阅读过很多书籍，但是当时本着“文档工程师”的态度，不实操，不练习，包括像计算机网络类方面书籍本身实践性就比较低，所以Lightning决定从今天开始以后读完一本书开始做读书笔记，读书笔记的内容包括但不限于书中内容本身，会结合其他师傅的优秀文章进行修改，争取保证原有知识前提下，收获更多其他知识，另外，Lightning自感安全行业实战大于理论，所以凡是可以实操的地方，Lightning会详细写清细节。</p><h3 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h3><p>接下来Lightning根据自己电子书的分类进行Books类书籍分类：</p><h4 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h4><h4 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h4><h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><h4 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h4><h4 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h4><h4 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h4><h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><h4 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h4><h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><h4 id="Go语言"><a href="#Go语言" class="headerlink" title="Go语言"></a>Go语言</h4><h4 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h4><h4 id="CTF类"><a href="#CTF类" class="headerlink" title="CTF类"></a>CTF类</h4><h4 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h4><h4 id="C-1"><a href="#C-1" class="headerlink" title="C"></a>C</h4><h4 id="C-2"><a href="#C-2" class="headerlink" title="C#"></a>C#</h4><h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><h4 id="ACM类，算法"><a href="#ACM类，算法" class="headerlink" title="ACM类，算法"></a>ACM类，算法</h4><h4 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h4><h4 id="信息安全（Crypto）"><a href="#信息安全（Crypto）" class="headerlink" title="信息安全（Crypto）"></a>信息安全（Crypto）</h4><h4 id="物联网安全"><a href="#物联网安全" class="headerlink" title="物联网安全"></a>物联网安全</h4><h4 id="无线安全"><a href="#无线安全" class="headerlink" title="无线安全"></a>无线安全</h4><h4 id="数学一"><a href="#数学一" class="headerlink" title="数学一"></a>数学一</h4><h4 id="渗透"><a href="#渗透" class="headerlink" title="渗透"></a>渗透</h4><h4 id="汽车，硬件安全"><a href="#汽车，硬件安全" class="headerlink" title="汽车，硬件安全"></a>汽车，硬件安全</h4><h4 id="考证"><a href="#考证" class="headerlink" title="考证"></a>考证</h4><h4 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h4><h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><p>这里的书籍指的是Lightning自己读完的书籍而并非Books系列更新书籍，先行测试</p><ul><li>《Python编程》</li><li>《黑客攻防技术宝典》</li><li>。。。。。。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h3><p>Lightning是从21年寒假开始真正意义上开始学习信息安全，总感觉自己的成长速度太慢了，同时期的小伙伴进步太快了，从学习到现在阅读过很多书籍，但是当时本着“文档工程师”的态度，不实操，不练习，包括像计算机网络类方面书籍本身实践性就比较低，所以Lightning决定从今天开始以后读完一本书开始做读书笔记，读书笔记的内容包括但不限于书中内容本身，会结合其他师傅的优秀文章进行修改，争取保证原有知识前提下，收获更多其他知识，另外，Lightning自感安全行业实战大于理论，所以凡是可以实操的地方，Lightning会详细写清细节。</p><h3 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h3><p>接下来Lightning根据自己电子书的分类进行Books类书籍分类：</p><h4 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h4><h4 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h4><h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><h4 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h4><h4 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h4><h4 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h4><h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><h4 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h4><h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><h4 id="Go语言"><a href="#Go语言" class="headerlink" title="Go语言"></a>Go语言</h4><h4 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h4><h4 id="CTF类"><a href="#CTF类" class="headerlink" title="CTF类"></a>CTF类</h4><h4 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h4><h4 id="C-1"><a href="#C-1" class="headerlink" title="C"></a>C</h4><h4 id="C-2"><a href="#C-2" class="headerlink" title="C#"></a>C#</h4><h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><h4 id="ACM类，算法"><a href="#ACM类，算法" class="headerlink" title="ACM类，算法"></a>ACM类，算法</h4><h4 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h4><h4 id="信息安全（Crypto）"><a href="#信息安全（Crypto）" class="headerlink" title="信息安全（Crypto）"></a>信息安全（Crypto）</h4><h4 id="物联网安全"><a href="#物联网安全" class="headerlink" title="物联网安全"></a>物联网安全</h4><h4 id="无线安全"><a href="#无线安全" class="headerlink" title="无线安全"></a>无线安全</h4><h4 id="数学一"><a href="#数学一" class="headerlink" title="数学一"></a>数学一</h4><h4 id="渗透"><a href="#渗透" class="headerlink" title="渗透"></a>渗透</h4><h4 id="汽车，硬件安全"><a href="#汽车，硬件安全" class="headerlink" title="汽车，硬件安全"></a>汽车，硬件安全</h4><h4 id="考证"><a href="#考证" class="headerlink" title="考证"></a>考证</h4><h4 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h4><h4 id="权谋书"><a href="#权谋书" class="headerlink" title="权谋书"></a>权谋书</h4><h4 id="技术性杂书"><a href="#技术性杂书" class="headerlink" title="技术性杂书"></a>技术性杂书</h4><h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><p>这里的书籍指的是Lightning自己读完的书籍而并非Books系列更新书籍，先行测试</p><ul><li>《Python编程》</li><li>《黑客攻防技术宝典》</li><li>。。。。。。</li></ul>]]></content>
       
       
       <categories>
@@ -448,6 +598,31 @@
         <tags>
             
             <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>game of hacks</title>
+      <link href="2021/02/28/ctf/game-of-hacks/"/>
+      <url>2021/02/28/ctf/game-of-hacks/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 靶场 </tag>
             
         </tags>
       
