@@ -532,7 +532,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-05-31
+                    2021-06-01
                 </div>
                 
 
@@ -556,7 +556,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="HCTF-2018-WarmUp-1"><a href="#HCTF-2018-WarmUp-1" class="headerlink" title="[HCTF 2018]WarmUp 1"></a>[HCTF 2018]WarmUp 1</h3><p>首先打开地址，查看网页源代码发现有source.php，之后访问，发现了源码，进行php代码审计</p>
+                <h2 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h2><h3 id="HCTF-2018-WarmUp-1"><a href="#HCTF-2018-WarmUp-1" class="headerlink" title="[HCTF 2018]WarmUp 1"></a>[HCTF 2018]WarmUp 1</h3><pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token keyword">echo</span> <span class="token function">mb_substr</span><span class="token punctuation">(</span><span class="token string">"菜鸟教程"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 输出：菜鸟</span>
+<span class="token delimiter">?></span>
+</code></pre>
+<pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+<span class="token variable">$str</span> <span class="token operator">=</span> 'http<span class="token punctuation">:</span><span class="token comment" spellcheck="true">//www.feiniaomy.com';</span>
+<span class="token keyword">echo</span> <span class="token function">mb_strpos</span><span class="token punctuation">(</span><span class="token variable">$str</span><span class="token punctuation">,</span><span class="token string">'niao'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter">?></span>
+</code></pre>
+<p>首先打开地址，查看网页源代码发现有source.php，之后访问，发现了源码，进行php代码审计</p>
 <pre class=" language-php"><code class="language-php"> <span class="token delimiter">&lt;?php</span>
     <span class="token function">highlight_file</span><span class="token punctuation">(</span><span class="token constant">__FILE__</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//代码高亮</span>
     <span class="token keyword">class</span> <span class="token class-name">emmm</span>
@@ -693,6 +703,65 @@ EXECUTE stmt;
 </code></pre>
 <pre><code>flag{841e8963-9e87-4992-ac8e-cfd417705b57}
 </code></pre>
+<h3 id="SUCTF-2019-EasySQL-1"><a href="#SUCTF-2019-EasySQL-1" class="headerlink" title="[SUCTF 2019]EasySQL 1"></a>[SUCTF 2019]EasySQL 1</h3><h3 id="ACTF2020-新生赛-Include-1"><a href="#ACTF2020-新生赛-Include-1" class="headerlink" title="[ACTF2020 新生赛]Include 1"></a>[ACTF2020 新生赛]Include 1</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/25069779">文件包含漏洞</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xuchen16/article/details/82769569">php filter协议用法</a></p>
+<p>我们看到题先查看源代码和抓包试一下，发现并没有什么特别的，之后看到file想到了文件包含漏洞配合filter协议读取网页源代码，构造如下payload</p>
+<pre><code>file=php://filter/read=convert.base64-encode/resource=flag.php
+</code></pre>
+<p>对之后的进行base64加密解密尝试</p>
+<pre><code>flag{1a05ffc0-3a35-4d6b-b417-d9afb7e4e400}
+</code></pre>
+<h3 id="极客大挑战-2019-Secret-File-1"><a href="#极客大挑战-2019-Secret-File-1" class="headerlink" title="[极客大挑战 2019]Secret File 1"></a>[极客大挑战 2019]Secret File 1</h3><p>打开后查看源代码只有一个Archive_room.php文件，点击，之后再查看源代码发现跳转到action.php，点击后发现跳转到了end.php，说明到了action.php之后又跳转了一次</p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2n30sO.png"></p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2n3WSP.png"></p>
+<p>之后抓发，发现在返回体中找到了flag.php</p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2n81pt.png"></p>
+<p>所以我们访问，发现什么也没有</p>
+<p>我们这时再倒回去，发现aciton.php返回中，访问secr3t.php，得到最起先的源码</p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2nYx3R.png"></p>
+<pre class=" language-php"><code class="language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span></span>secret<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></span>
+<span class="token delimiter">&lt;?php</span>
+    <span class="token function">highlight_file</span><span class="token punctuation">(</span><span class="token constant">__FILE__</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">error_reporting</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token variable">$file</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strstr</span><span class="token punctuation">(</span><span class="token variable">$file</span><span class="token punctuation">,</span><span class="token string">"../"</span><span class="token punctuation">)</span><span class="token operator">||</span><span class="token function">stristr</span><span class="token punctuation">(</span><span class="token variable">$file</span><span class="token punctuation">,</span> <span class="token string">"tp"</span><span class="token punctuation">)</span><span class="token operator">||</span><span class="token function">stristr</span><span class="token punctuation">(</span><span class="token variable">$file</span><span class="token punctuation">,</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token operator">||</span><span class="token function">stristr</span><span class="token punctuation">(</span><span class="token variable">$file</span><span class="token punctuation">,</span><span class="token string">"data"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string">"Oh no!"</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">include</span><span class="token punctuation">(</span><span class="token variable">$file</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">//flag放在了flag.php里</span>
+<span class="token delimiter">?></span>
+<span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></span>
+</code></pre>
+<p>该secr3t.php有文件包含漏洞，读取flag.php的源码，构造payload</p>
+<pre><code>file=php://filter/read=convert.base64-encode/resource=flag.php
+</code></pre>
+<pre><code>flag = 'flag{ba92254e-6a77-4cfe-b586-7d0d4b0c6bac}
+</code></pre>
+<h3 id="极客大挑战-2019-LoveSQL-1"><a href="#极客大挑战-2019-LoveSQL-1" class="headerlink" title="[极客大挑战 2019]LoveSQL 1"></a>[极客大挑战 2019]LoveSQL 1</h3><h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://z3.ax1x.com/2021/06/01/2nwp7V.png"></h3><p>先尝试单引号，发现报错，说明可能存在sql注入，接下来用万能密码admin’ or 1=1 %23</p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2nwn76.png"></p>
+<pre><code>用户名：admin
+密码：5001c43f2dfc09fd3a460c0cf01c3324
+</code></pre>
+<p>order by注入发现只有3列，之后判断回显处</p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2n0e2Q.png"></p>
+<p>之后union select 1,2,3判断回显，发现2和3有回显，所以可以利用进行sql注入</p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2n035T.png"></p>
+<p>之后union select 1,database(),3，爆库geek</p>
+<p>再之后爆表</p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2nD33F.png"></p>
+<p>得到两个表geekuser,l0ve1ysq1</p>
+<p>尝试第二个表</p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2nD6ud.png"></p>
+<p>发现有id，password，username三个字段，接下来爆字段</p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2nDx8U.png"></p>
+<p>得到flag</p>
+<pre><code>flag{e3d9b85c-8ab8-4033-bf8e-d4d50ff6ffd4}
+</code></pre>
+<h3 id="ACTF2020-新生赛-Exec-1"><a href="#ACTF2020-新生赛-Exec-1" class="headerlink" title="[ACTF2020 新生赛]Exec 1"></a>[ACTF2020 新生赛]Exec 1</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44348894/article/details/105347418?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase">管道符</a></p>
+<p><img src="https://z3.ax1x.com/2021/06/01/2nrYRS.png"></p>
 <pre><code>
 </code></pre>
 
@@ -1489,7 +1558,7 @@ EXECUTE stmt;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.9k</span>&nbsp;字
+                class="white-color">8.4k</span>&nbsp;字
             
             
             

@@ -443,6 +443,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
+                                入门web安全SQL注入
+                            
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
@@ -680,10 +682,14 @@ use database; //use s
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Web[HCTF 2018]WarmUp 1首先打开地址，查看网页源代码发现有source.php，之后访问，发现了源码，进行php代码审计
- &lt;?php
-    highlight_file(__FILE__);//代码高亮
-   
+                                Web[HCTF 2018]WarmUp 1&lt;?php
+echo mb_substr("菜鸟教程", 0, 2);
+// 输出：菜鸟
+?>
+
+&lt;?php
+$str = 'http://www.feiniaomy.com';
+ec
                             
                         </div>
                         <div class="publish-info">
@@ -817,7 +823,7 @@ use database; //use s
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.9k</span>&nbsp;字
+                class="white-color">8.4k</span>&nbsp;字
             
             
             
