@@ -6,7 +6,7 @@
   <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-06-02T04:06:41.924Z</updated>
+  <updated>2021-06-02T06:25:05.219Z</updated>
   <id>https://batmanfuture.gitee.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Web安全深度刨析</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/5adc2790.html"/>
+    <id>https://batmanfuture.gitee.io/posts/5adc2790.html</id>
     <published>2021-06-02T02:54:28.000Z</published>
-    <updated>2021-06-02T04:06:41.924Z</updated>
+    <updated>2021-06-02T06:25:05.219Z</updated>
     
     
       
@@ -43,10 +43,10 @@
   
   <entry>
     <title>hackinglab</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/8ce83680.html"/>
+    <id>https://batmanfuture.gitee.io/posts/8ce83680.html</id>
     <published>2021-05-30T00:54:28.000Z</published>
-    <updated>2021-05-18T07:08:06.037Z</updated>
+    <updated>2021-06-02T06:25:05.234Z</updated>
     
     
     
@@ -60,10 +60,10 @@
   
   <entry>
     <title>xctf</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/2adc5a89.html"/>
+    <id>https://batmanfuture.gitee.io/posts/2adc5a89.html</id>
     <published>2021-05-30T00:54:28.000Z</published>
-    <updated>2021-05-18T07:09:24.083Z</updated>
+    <updated>2021-06-02T06:25:05.338Z</updated>
     
     
     
@@ -77,10 +77,10 @@
   
   <entry>
     <title>掌控安全封神台</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/ab0303b6.html"/>
+    <id>https://batmanfuture.gitee.io/posts/ab0303b6.html</id>
     <published>2021-05-30T00:54:28.000Z</published>
-    <updated>2021-05-18T07:17:07.719Z</updated>
+    <updated>2021-06-02T06:25:05.345Z</updated>
     
     
     
@@ -93,11 +93,28 @@
   </entry>
   
   <entry>
-    <title>ctfshow</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <title>RedTiger&#39;s Hackit</title>
+    <link href="https://batmanfuture.gitee.io/posts/26471c14.html"/>
+    <id>https://batmanfuture.gitee.io/posts/26471c14.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-05-31T12:11:27.978Z</updated>
+    <updated>2021-06-02T06:25:05.217Z</updated>
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ctfshow</title>
+    <link href="https://batmanfuture.gitee.io/posts/b2b94221.html"/>
+    <id>https://batmanfuture.gitee.io/posts/b2b94221.html</id>
+    <published>2021-05-28T00:54:28.000Z</published>
+    <updated>2021-06-02T06:25:05.225Z</updated>
     
     
       
@@ -119,27 +136,10 @@
   
   <entry>
     <title>hack the box</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/23c9e819.html"/>
+    <id>https://batmanfuture.gitee.io/posts/23c9e819.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-05-18T09:28:59.661Z</updated>
-    
-    
-    
-    
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vulnhub</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
-    <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-05-22T15:09:12.482Z</updated>
+    <updated>2021-06-02T06:25:05.230Z</updated>
     
     
     
@@ -153,61 +153,10 @@
   
   <entry>
     <title>pentest.training</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/adffc940.html"/>
+    <id>https://batmanfuture.gitee.io/posts/adffc940.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-05-22T15:04:55.902Z</updated>
-    
-    
-    
-    
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>wargames</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
-    <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-05-18T09:09:40.591Z</updated>
-    
-    
-    
-    
-    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
-    
-    
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>websec</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
-    <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-05-22T15:10:33.342Z</updated>
-    
-    
-    
-    
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RedTiger&#39;s Hackit</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
-    <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-05-22T15:01:23.859Z</updated>
+    <updated>2021-06-02T06:25:05.314Z</updated>
     
     
     
@@ -221,10 +170,61 @@
   
   <entry>
     <title>pentestit</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/5d6c53c3.html"/>
+    <id>https://batmanfuture.gitee.io/posts/5d6c53c3.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-05-22T15:12:11.339Z</updated>
+    <updated>2021-06-02T06:25:05.316Z</updated>
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vulnhub</title>
+    <link href="https://batmanfuture.gitee.io/posts/7930ab3e.html"/>
+    <id>https://batmanfuture.gitee.io/posts/7930ab3e.html</id>
+    <published>2021-05-28T00:54:28.000Z</published>
+    <updated>2021-06-02T06:25:05.322Z</updated>
+    
+    
+    
+    
+    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>wargames</title>
+    <link href="https://batmanfuture.gitee.io/posts/919d7057.html"/>
+    <id>https://batmanfuture.gitee.io/posts/919d7057.html</id>
+    <published>2021-05-28T00:54:28.000Z</published>
+    <updated>2021-06-02T06:25:05.326Z</updated>
+    
+    
+    
+    
+    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    
+    
+    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>websec</title>
+    <link href="https://batmanfuture.gitee.io/posts/fd9e2266.html"/>
+    <id>https://batmanfuture.gitee.io/posts/fd9e2266.html</id>
+    <published>2021-05-28T00:54:28.000Z</published>
+    <updated>2021-06-02T06:25:05.329Z</updated>
     
     
     
@@ -238,10 +238,10 @@
   
   <entry>
     <title>wechall</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/8c3d58c.html"/>
+    <id>https://batmanfuture.gitee.io/posts/8c3d58c.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-05-22T15:08:09.641Z</updated>
+    <updated>2021-06-02T06:25:05.336Z</updated>
     
     
     
@@ -255,10 +255,10 @@
   
   <entry>
     <title>vulhub靶场</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/92832cd2.html"/>
+    <id>https://batmanfuture.gitee.io/posts/92832cd2.html</id>
     <published>2021-05-18T07:25:33.000Z</published>
-    <updated>2021-05-19T21:56:59.690Z</updated>
+    <updated>2021-06-02T06:25:05.324Z</updated>
     
     
     
@@ -272,10 +272,10 @@
   
   <entry>
     <title>bugkuctf</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/4b5da3d5.html"/>
+    <id>https://batmanfuture.gitee.io/posts/4b5da3d5.html</id>
     <published>2021-05-18T06:54:22.000Z</published>
-    <updated>2021-05-18T06:58:10.103Z</updated>
+    <updated>2021-06-02T06:25:05.222Z</updated>
     
     
     
@@ -289,10 +289,10 @@
   
   <entry>
     <title>owaspbwa靶场</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/6e67ea51.html"/>
+    <id>https://batmanfuture.gitee.io/posts/6e67ea51.html</id>
     <published>2021-05-18T06:30:23.000Z</published>
-    <updated>2021-05-18T06:30:50.696Z</updated>
+    <updated>2021-06-02T06:25:05.312Z</updated>
     
     
     
@@ -306,10 +306,10 @@
   
   <entry>
     <title>pikachu靶场</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/ecb6de2c.html"/>
+    <id>https://batmanfuture.gitee.io/posts/ecb6de2c.html</id>
     <published>2021-05-18T06:22:12.000Z</published>
-    <updated>2021-05-18T06:23:56.407Z</updated>
+    <updated>2021-06-02T06:25:05.318Z</updated>
     
     
     
@@ -323,10 +323,10 @@
   
   <entry>
     <title>xss-labs靶场</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/a74f7c21.html"/>
+    <id>https://batmanfuture.gitee.io/posts/a74f7c21.html</id>
     <published>2021-05-18T06:00:00.000Z</published>
-    <updated>2021-05-18T06:17:18.049Z</updated>
+    <updated>2021-06-02T06:25:05.340Z</updated>
     
     
     
@@ -342,10 +342,10 @@
   
   <entry>
     <title>Books记录闲谈</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/83d4ee02.html"/>
+    <id>https://batmanfuture.gitee.io/posts/83d4ee02.html</id>
     <published>2021-05-18T00:54:28.000Z</published>
-    <updated>2021-05-23T09:28:23.340Z</updated>
+    <updated>2021-06-02T06:25:05.212Z</updated>
     
     
       
@@ -367,10 +367,10 @@
   
   <entry>
     <title>墨者学院</title>
-    <link href="https://batmanfuture.gitee.io/posts/undefined.html"/>
-    <id>https://batmanfuture.gitee.io/posts/undefined.html</id>
+    <link href="https://batmanfuture.gitee.io/posts/28d01730.html"/>
+    <id>https://batmanfuture.gitee.io/posts/28d01730.html</id>
     <published>2021-05-18T00:54:28.000Z</published>
-    <updated>2021-06-01T04:41:53.513Z</updated>
+    <updated>2021-06-02T06:25:05.235Z</updated>
     
     
       
