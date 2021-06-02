@@ -6,7 +6,7 @@
   <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-06-02T06:25:05.219Z</updated>
+  <updated>2021-06-02T11:18:14.170Z</updated>
   <id>https://batmanfuture.gitee.io/</id>
   
   <author>
@@ -17,11 +17,94 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>部分面试问题</title>
+    <link href="https://batmanfuture.gitee.io/posts/aae8f5fa.html"/>
+    <id>https://batmanfuture.gitee.io/posts/aae8f5fa.html</id>
+    <published>2021-06-03T02:54:28.000Z</published>
+    <updated>2021-06-02T11:18:14.170Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95&quot;&gt;面试问题记录&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#360&quot;&gt;360&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="其他" scheme="https://batmanfuture.gitee.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="面试" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技术面试</title>
+    <link href="https://batmanfuture.gitee.io/posts/aae8f5fa.html"/>
+    <id>https://batmanfuture.gitee.io/posts/aae8f5fa.html</id>
+    <published>2021-06-03T01:54:28.000Z</published>
+    <updated>2021-06-02T11:13:38.002Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98&quot;&gt;技术面试问题&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#ctf&quot;&gt;CTF&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="其他" scheme="https://batmanfuture.gitee.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="面试" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HR面试</title>
+    <link href="https://batmanfuture.gitee.io/posts/aae8f5fa.html"/>
+    <id>https://batmanfuture.gitee.io/posts/aae8f5fa.html</id>
+    <published>2021-06-03T00:54:28.000Z</published>
+    <updated>2021-06-02T11:11:43.992Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E9%97%AE%E9%A2%98&quot;&gt;问题&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="其他" scheme="https://batmanfuture.gitee.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+    <category term="面试" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Web安全深度刨析</title>
     <link href="https://batmanfuture.gitee.io/posts/5adc2790.html"/>
     <id>https://batmanfuture.gitee.io/posts/5adc2790.html</id>
     <published>2021-06-02T02:54:28.000Z</published>
-    <updated>2021-06-02T06:25:05.219Z</updated>
+    <updated>2021-06-02T11:21:08.654Z</updated>
     
     
       
@@ -38,6 +121,33 @@
     
     
     <category term="Web安全" scheme="https://batmanfuture.gitee.io/tags/Web%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安全维基</title>
+    <link href="https://batmanfuture.gitee.io/posts/aae8f5fa.html"/>
+    <id>https://batmanfuture.gitee.io/posts/aae8f5fa.html</id>
+    <published>2021-06-02T00:54:28.000Z</published>
+    <updated>2021-06-02T12:03:11.160Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;项目简介&quot;&gt;&lt;a href=&quot;#项目简介&quot; class=&quot;headerlink&quot; title=&quot;项目简介&quot;&gt;&lt;/a&gt;项目简介&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;个人维护的安全维基百科&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="红蓝对抗" scheme="https://batmanfuture.gitee.io/categories/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97/"/>
+    
+    
+    <category term="红蓝对抗" scheme="https://batmanfuture.gitee.io/tags/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97/"/>
     
   </entry>
   
@@ -298,92 +408,6 @@
     
     
     <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pikachu靶场</title>
-    <link href="https://batmanfuture.gitee.io/posts/ecb6de2c.html"/>
-    <id>https://batmanfuture.gitee.io/posts/ecb6de2c.html</id>
-    <published>2021-05-18T06:22:12.000Z</published>
-    <updated>2021-06-02T06:25:05.318Z</updated>
-    
-    
-    
-    
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>xss-labs靶场</title>
-    <link href="https://batmanfuture.gitee.io/posts/a74f7c21.html"/>
-    <id>https://batmanfuture.gitee.io/posts/a74f7c21.html</id>
-    <published>2021-05-18T06:00:00.000Z</published>
-    <updated>2021-06-02T06:25:05.340Z</updated>
-    
-    
-    
-    
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="web安全" scheme="https://batmanfuture.gitee.io/tags/web%E5%AE%89%E5%85%A8/"/>
-    
-    <category term="xss" scheme="https://batmanfuture.gitee.io/tags/xss/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Books记录闲谈</title>
-    <link href="https://batmanfuture.gitee.io/posts/83d4ee02.html"/>
-    <id>https://batmanfuture.gitee.io/posts/83d4ee02.html</id>
-    <published>2021-05-18T00:54:28.000Z</published>
-    <updated>2021-06-02T06:25:05.212Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;随笔&quot;&gt;&lt;a href=&quot;#随笔&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Books" scheme="https://batmanfuture.gitee.io/categories/Books/"/>
-    
-    
-    <category term="闲谈" scheme="https://batmanfuture.gitee.io/tags/%E9%97%B2%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>墨者学院</title>
-    <link href="https://batmanfuture.gitee.io/posts/28d01730.html"/>
-    <id>https://batmanfuture.gitee.io/posts/28d01730.html</id>
-    <published>2021-05-18T00:54:28.000Z</published>
-    <updated>2021-06-02T06:25:05.235Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;入门&quot;&gt;&lt;a href=&quot;#入门&quot; class=&quot;headerlink&quot; title=&quot;入门&quot;&gt;&lt;/a&gt;入门&lt;/h1&gt;&lt;h2 id=&quot;web安全&quot;&gt;&lt;a href=&quot;#web安全&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
     
     
     <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
