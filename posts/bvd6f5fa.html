@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="wargames, batmanfuture 计算机 网络安全 渗透测试">
+    <meta name="keywords" content="部分面试问题, batmanfuture 计算机 网络安全 渗透测试">
     <meta name="description" content="软件工程 | 网络安全">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>wargames | Lightning</title>
+    <title>部分面试问题 | Lightning</title>
     <link rel="icon" type="image/png" href="https://z3.ax1x.com/2021/05/23/gX8y9S.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -379,12 +379,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://z3.ax1x.com/2021/05/18/ghSrBn.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://z3.ax1x.com/2021/06/02/2QjoLT.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">wargames</h1>
+                    <h1 class="description center-align post-title">部分面试问题</h1>
                 </div>
             </div>
         </div>
@@ -500,8 +500,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9D%B6%E5%9C%BA/">
-                                <span class="chip bg-color">靶场</span>
+                            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                <span class="chip bg-color">面试</span>
                             </a>
                         
                     </div>
@@ -512,8 +512,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CTF/" class="post-category">
-                                CTF
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                其他
                             </a>
                         
                     </div>
@@ -525,14 +525,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-28
+                    2021-06-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-02
+                    2021-06-03
                 </div>
                 
 
@@ -556,7 +556,148 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <ul>
+<li><a href="#%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95">面试问题记录</a><ul>
+<li><a href="#360">360</a><ul>
+<li><a href="#sql%E7%9A%84%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E">SQL的存储引擎</a></li>
+<li><a href="#sql%E6%B3%A8%E5%85%A5%E5%86%99shell%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%94%A8%E6%B3%95">SQL注入写shell的条件，用法</a></li>
+<li><a href="#gpc%E6%98%AF%E4%BB%80%E4%B9%88%E5%BC%80%E5%90%AF%E4%BA%86%E6%80%8E%E4%B9%88%E7%BB%95%E8%BF%87">GPC是什么？开启了怎么绕过</a></li>
+<li><a href="#mysql%E4%B8%80%E4%B8%AA%E5%92%8C%E4%B8%A4%E4%B8%AA%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB">Mysql一个@和两个@什么区别</a></li>
+<li><a href="#iis%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E6%9C%89%E4%BB%80%E4%B9%88%E6%BC%8F%E6%B4%9E%E8%BF%98%E6%9C%89%E4%BB%80%E4%B9%88%E5%AE%B9%E5%99%A8%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E">IIS解析漏洞，不同版本有什么漏洞，还有什么容器解析漏洞</a></li>
+<li><a href="#wireshark%E6%8A%93%E5%8C%85%E6%95%B0%E6%8D%AE%E6%8A%A5%E7%BB%8F%E8%BF%87%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E8%B7%AF%E7%94%B1%E7%9A%84%E5%8F%98%E5%8C%96nat%E5%8D%8F%E8%AE%AE%E6%8F%8F%E8%BF%B0%E5%9C%B0%E5%9D%80%E8%BF%9B%E5%85%A5%E5%86%85%E7%BD%91%E6%80%8E%E4%B9%88%E5%8F%98%E5%8C%96">wireshark抓包，数据报经过三层交换机、路由的变化，NAT协议描述，地址进入内网怎么变化</a></li>
+<li><a href="#linux%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E9%BB%91%E5%AE%A2%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E4%BC%9A%E6%80%8E%E4%B9%88%E5%81%9Awindows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%80%8E%E4%B9%88%E8%AE%BE%E5%AE%9A">linux计划任务，黑客隐藏自己的计划任务会怎么做。windows计划任务怎么设定</a></li>
+<li><a href="#%E6%8C%96%E8%BF%87%E6%9C%80%E9%9A%BE%E7%9A%84%E6%BC%8F%E6%B4%9E%E6%98%AF%E4%BB%80%E4%B9%88">挖过最难的漏洞是什么</a></li>
+</ul>
+</li>
+<li><a href="#ukelink">ukelink</a><ul>
+<li><a href="#%E7%97%85%E6%AF%92%E5%92%8C%E8%A0%95%E8%99%AB%E7%9A%84%E5%8C%BA%E5%88%AB">病毒和蠕虫的区别</a></li>
+<li><a href="#dns%E6%AC%BA%E9%AA%97%E6%98%AF%E4%BB%80%E4%B9%88">DNS欺骗是什么</a></li>
+<li><a href="#DDOS%E6%9C%89%E5%93%AA%E4%BA%9B,CC%E6%94%BB%E5%87%BB%E6%98%AF%E4%BB%80%E4%B9%88,%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88,%E5%9C%A8%E5%93%AA%E4%B8%80%E4%B8%AA%E5%B1%82%E9%9D%A2,%E4%BB%80%E4%B9%88%E5%8D%8F%E8%AE%AE">DDOS有哪些,CC攻击是什么,区别是什么,在哪一个层面,什么协议</a></li>
+<li><a href="#%E9%99%86%E5%9C%B0land%E6%94%BB%E5%87%BB%E6%98%AF%E4%BB%80%E4%B9%88">陆地land攻击是什么</a></li>
+<li><a href="#xss%E6%9C%89%E4%BB%80%E4%B9%88%E6%89%A7%E8%A1%8C%E5%AD%98%E5%82%A8%E5%9E%8B%E7%9A%84xss%E7%9A%84%E5%8D%B1%E5%AE%B3%E5%92%8C%E5%8E%9F%E7%90%86">xss有什么？执行存储型的xss的危害和原理</a></li>
+<li><a href="#%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B%E4%B8%8D%E5%A4%9F%E6%B8%85%E6%99%B0%E5%A4%AA%E6%B5%85%E6%98%BE">渗透测试流程？（不够清晰，太浅显</a></li>
+<li><a href="#%E6%9C%89%E6%B2%A1%E6%9C%89%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%9A%84%E8%B0%83%E8%AF%95%E7%BB%8F%E9%AA%8C-apkipa%E5%8C%85%E5%88%86%E6%9E%90">有没有移动端的调试经验 apk,ipa包分析</a></li>
+<li><a href="#%E5%AF%B9%E4%BA%8E%E4%BA%91%E5%AE%89%E5%85%A8%E7%9A%84%E7%90%86%E8%A7%A3">对于云安全的理解</a></li>
+<li><a href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%80%83%E9%80%B8%E7%9A%84%E7%90%86%E8%A7%A3">虚拟机逃逸的理解</a></li>
+<li><a href="#%E8%8B%B1%E8%AF%AD%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E8%87%AA%E5%B7%B1">英语介绍一下自己</a></li>
+<li><a href="#%E8%81%8C%E4%B8%9A%E8%B7%AF%E5%BE%84">职业路径</a></li>
+<li><a href="#%E5%A4%A7%E5%AD%A6%E5%81%9A%E8%BF%87%E4%BB%80%E4%B9%88%E7%9B%B8%E5%85%B3%E7%9A%84%E4%BA%8B%E6%83%85">大学做过什么相关的事情</a></li>
+<li><a href="#%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%BC%9A%E5%81%9A%E4%BB%80%E4%B9%88%E6%9D%A5%E4%B8%8D%E6%96%AD%E6%8F%90%E9%AB%98%E8%87%AA%E5%B7%B1%E7%9A%84%E8%83%BD%E5%8A%9B">在工作会做什么来不断提高自己的能力</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8D%93%E6%9C%9B">卓望</a><ul>
+<li><a href="#%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B">渗透测试流程</a></li>
+<li><a href="#%E6%8F%8F%E8%BF%B0%E6%B8%97%E9%80%8F%E9%A1%B9%E7%9B%AE%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88">描述渗透项目，做了什么</a></li>
+<li><a href="#xss%E6%BC%8F%E6%B4%9E%E7%B1%BB%E5%9E%8B%E8%AF%A6%E6%83%85%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%A1%88">xss漏洞类型、详情、修复方案</a></li>
+<li><a href="#sql%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86%E7%B1%BB%E5%9E%8Bwaf%E7%BB%95%E8%BF%87%E5%86%99shell%E6%8F%90%E6%9D%83%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%A1%88">SQL注入原理、类型，waf绕过，写shell，提权，修复方案</a></li>
+<li><a href="#%E7%BB%88%E7%AB%AF%E7%9A%84%E6%B8%97%E9%80%8F%E7%BB%8F%E9%AA%8C">终端的渗透经验</a></li>
+<li><a href="#%E4%BA%86%E8%A7%A3%E4%BB%80%E4%B9%88%E6%AF%94%E8%BE%83%E6%96%B0%E7%9A%84%E6%BC%8F%E6%B4%9E">了解什么比较新的漏洞</a></li>
+<li><a href="#%E4%BC%81%E4%B8%9A%E5%86%85%E9%83%A8%E5%AE%89%E5%85%A8">企业内部安全</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E5%B7%BD">安巽</a><ul>
+<li><a href="#%E7%AE%97%E6%B3%95%E4%BA%86%E8%A7%A3%E8%BF%87%E4%BB%80%E4%B9%88%E6%8E%92%E5%BA%8F">算法？了解过什么排序？</a></li>
+<li><a href="#%E7%88%AC%E8%99%AB">爬虫</a><ul>
+<li><a href="#%E9%A1%B5%E9%9D%A2%E5%AD%98%E5%9C%A8%E5%BE%88%E5%A4%9Ajs%E7%9A%84%E6%97%B6%E5%80%99%E7%94%A8%E4%BB%80%E4%B9%88">页面存在很多js的时候，用什么</a></li>
+<li><a href="#%E7%88%AC%E8%99%AB%E7%9A%84%E5%BE%85%E7%88%AC%E5%8F%96url%E9%87%8F%E7%BA%A7%E6%AF%94%E8%BE%83%E5%A4%A7%E7%9A%84%E6%97%B6%E5%80%99%E5%A6%82%E4%BD%95%E5%AF%B9%E5%85%B6%E5%8E%BB%E9%87%8D">爬虫的待爬取URL量级比较大的时候，如何对其去重</a></li>
+<li><a href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%BC%82%E6%AD%A5-%E5%8D%8F%E7%A8%8B-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8-%E7%94%A8%E5%93%AA%E4%B8%80%E4%B8%AA%E6%9C%80%E5%BF%AB-%E4%B8%BA%E4%BB%80%E4%B9%88">多线程 异步 协程 多路复用 用哪一个最快 为什么</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%B8%B8%E7%94%A8%E7%BC%96%E7%A0%81">浏览器的常用编码</a></li>
+<li><a href="#web%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%9C%89%E4%BB%80%E4%B9%88">web常用的加密算法有什么</a></li>
+<li><a href="#%E6%9C%89%E6%B2%A1%E6%9C%89%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F%E7%9A%84%E7%BB%8F%E9%AA%8C%EF%BC%9F%E6%80%8E%E4%B9%88%E6%B8%97%E9%80%8F%EF%BC%9F%E5%A6%82%E6%9E%9C%E6%8B%BF%E4%B8%8B%E4%BA%86%E8%BE%B9%E7%95%8C%E5%B1%82%E7%9A%84%E6%9F%90%E4%B8%80%E4%B8%AA%E6%9C%BA%E5%99%A8%EF%BC%8C%E5%A6%82%E4%BD%95%E5%AF%B9%E5%86%85%E7%BD%91%E5%85%B6%E4%BB%96%E8%BF%9B%E8%A1%8C%E6%8E%A2%E6%B5%8B%EF%BC%9F">有没有内网渗透的经验？怎么渗透？如果拿下了边界层的某一个机器，如何对内网其他进行探测？</a></li>
+<li><a href="#mysql%E4%B8%ADlike%E6%9F%A5%E8%AF%A2%E4%BC%9A%E4%BC%9A%E9%9D%9E%E5%B8%B8%E7%BC%93%E6%85%A2%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BC%98%E5%8C%96">mysql中like查询会会非常缓慢，如何进行优化</a></li>
+<li><a href="#%E5%81%9A%E4%BA%86cdn%E7%9A%84%E7%BD%91%E7%AB%99%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%9C%9F%E5%AE%9Eip">做了cdn的网站如何获取真实IP</a></li>
+<li><a href="#%E6%B8%97%E9%80%8F%E7%9A%84%E6%97%B6%E5%80%99%E5%A6%82%E4%BD%95%E9%9A%90%E8%97%8F%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BA%AB%E4%BB%BD">渗透的时候如何隐藏自己的身份</a></li>
+<li><a href="#%E4%B8%BB%E6%9C%BA%E7%96%91%E4%BC%BC%E9%81%AD%E5%88%B0%E5%85%A5%E4%BE%B5%E8%A6%81%E7%9C%8B%E5%93%AA%E9%87%8C%E7%9A%84%E6%97%A5%E5%BF%97">主机疑似遭到入侵，要看哪里的日志</a></li>
+<li><a href="#sql%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E6%80%8E%E4%B9%88%E4%BF%AE%E5%A4%8D">SQL注入漏洞怎么修复</a></li>
+</ul>
+</li>
+<li><a href="#%E9%95%BF%E4%BA%AD">长亭</a><ul>
+<li><a href="#%E5%AE%89%E5%85%A8%E7%A0%94%E7%A9%B6%E7%9A%84%E6%96%B9%E9%9D%A2%E5%81%9A%E8%BF%87%E5%93%AA%E4%BA%9B%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%9A%84%E5%B7%A5%E4%BD%9C">安全研究的方面？做过哪些渗透测试的工作？</a></li>
+<li><a href="#%E5%8F%AA%E7%BB%99%E4%BD%A0%E4%B8%80%E4%B8%AA%E7%BD%91%E5%9D%80%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95">只给你一个网址，如何进行渗透测试</a></li>
+<li><a href="#SQL%E6%B3%A8%E5%85%A5%EF%BC%8Cid=1%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%EF%BC%9Forderby%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%EF%BC%9Flimit%E8%AF%AD%E5%8F%A5%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8%EF%BC%9F%E7%9B%B2%E6%B3%A8%E6%9C%89%E4%BB%80%E4%B9%88%EF%BC%9F">SQL注入，id=1如何检测？order by怎么利用？limit语句怎么利用？盲注有什么？</a></li>
+<li><a href="#sleep%E8%A2%AB%E7%A6%81%E7%94%A8%E5%90%8E%E8%BF%98%E8%83%BD%E6%80%8E%E4%B9%88%E8%BF%9B%E8%A1%8Csql%E6%B3%A8%E5%85%A5">sleep被禁用后还能怎么进行sql注入</a></li>
+<li><a href="#xss%E5%8F%AF%E4%BB%A5%E6%8E%A7%E5%88%B6%E5%B1%9E%E6%80%A7%E6%80%8E%E4%B9%88%E5%88%A9%E7%94%A8">XSS可以控制属性怎么利用</a></li>
+<li><a href="#csrf%E6%80%8E%E4%B9%88%E9%98%B2%E6%8A%A4">CSRF怎么防护？</a></li>
+<li><a href="#%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%AD%E5%93%AA%E4%BA%9B%E6%98%AF%E6%9C%89%E5%8D%B1%E5%AE%B3%E7%9A%84">请求头中哪些是有危害的？</a></li>
+<li><a href="#XXE%E7%9A%84%E5%8D%B1%E5%AE%B3%EF%BC%9F%E5%93%AA%E4%BA%9B%E5%9C%B0%E6%96%B9%E5%AE%B9%E6%98%93%E5%AD%98%E5%9C%A8xxe%EF%BC%9Fxxe%E6%9E%B6%E6%9E%84%E6%96%B9%E9%9D%A2%E6%9C%89%E6%B2%A1%E6%9C%89%E4%BA%86%E8%A7%A3%E8%BF%87">XXE的危害？哪些地方容易存在xxe？xxe架构方面有没有了解过</a></li>
+<li><a href="#java%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E6%BC%8F%E6%B4%9E%E4%B8%BE%E5%87%A0%E4%B8%AA%E4%BE%8B%E5%AD%90">JAVA中间件的漏洞，举几个例子？</a></li>
+<li><a href="#iis%E5%B8%B8%E8%A7%81%E7%9A%84%E6%BC%8F%E6%B4%9E">IIS常见的漏洞</a></li>
+<li><a href="#python%E6%9C%89%E5%93%AA%E4%BA%9B%E6%A1%86%E6%9E%B6%E5%85%B6%E4%B8%AD%E5%87%BA%E7%8E%B0%E8%BF%87%E5%93%AA%E4%BA%9B%E6%BC%8F%E6%B4%9E">python有哪些框架，其中出现过哪些漏洞</a></li>
+<li><a href="#%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E6%BC%8F%E6%B4%9E%EF%BC%8C%E7%94%A8%E6%88%B7%E4%BB%BB%E6%84%8F%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE%E4%B8%BE%E5%87%BA%E6%9C%89%E4%BB%80%E4%B9%88%E4%BE%8B%E5%AD%90%EF%BC%8C%E5%9B%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9B%A0%E7%B4%A0%E5%AF%BC%E8%87%B4%E7%9A%84%EF%BC%9F">业务逻辑漏洞，用户任意密码重置举出有什么例子，因为什么因素导致的？</a></li>
+<li><a href="#PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%EF%BC%9F%E5%BC%80%E6%BA%90%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E6%9C%89%E6%B2%A1%E6%9C%89%E5%81%9A%E8%BF%87%EF%BC%9F%E5%BC%B1%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83%EF%BC%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E8%BF%99%E7%A7%8D%E8%80%83%E7%82%B9%E5%9C%A8%E5%93%AA%EF%BC%9F">PHP代码审计？开源的代码审计有没有做过？弱类型比较，反序列化漏洞这种考点在哪？</a></li>
+<li><a href="#HTTP-Only%E7%A6%81%E6%AD%A2%E7%9A%84%E6%98%AFJS%E8%AF%BB%E5%8F%96cookie%E4%BF%A1%E6%81%AF%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87%E8%BF%99%E4%B8%AA%E8%8E%B7%E5%8F%96cookie">HTTP-Only禁止的是JS读取cookie信息，如何绕过这个获取cookie</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9B%9B%E9%82%A6">盛邦</a><ul>
+<li><a href="#%E6%9C%89%E6%B2%A1%E6%9C%89%E5%81%9A%E8%BF%87%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90%E5%92%8C%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90">有没有做过协议分析和抓包分析</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BF%BC%E6%9E%9C">翼果</a><ul>
+<li><a href="#mysql%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC">mysql查看版本？</a></li>
+<li><a href="#%E8%BF%87%E5%AE%89%E5%85%A8%E7%8B%97">过安全狗</a></li>
+<li><a href="#%E7%BC%96%E7%A8%8B%E8%83%BD%E5%8A%9B%E5%B9%B3%E5%8F%B0%E9%80%86%E5%90%91%E4%BF%AE%E6%94%B9%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3rootkit%E6%9C%89%E6%B2%A1%E6%9C%89%E7%A0%94%E7%A9%B6%E8%BF%87">编程能力/平台逆向/修改程序入口/rootkit有没有研究过</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="面试问题记录"><a href="#面试问题记录" class="headerlink" title="面试问题记录"></a>面试问题记录</h1><blockquote>
+<p>CONTACT ME: github.com/leezj9671</p>
+</blockquote>
+<h2 id="360"><a href="#360" class="headerlink" title="360"></a>360</h2><h3 id="SQL的存储引擎"><a href="#SQL的存储引擎" class="headerlink" title="SQL的存储引擎"></a>SQL的存储引擎</h3><h3 id="SQL注入写shell的条件，用法"><a href="#SQL注入写shell的条件，用法" class="headerlink" title="SQL注入写shell的条件，用法"></a>SQL注入写shell的条件，用法</h3><h3 id="GPC是什么？开启了怎么绕过"><a href="#GPC是什么？开启了怎么绕过" class="headerlink" title="GPC是什么？开启了怎么绕过"></a>GPC是什么？开启了怎么绕过</h3><h3 id="Mysql一个-和两个-什么区别"><a href="#Mysql一个-和两个-什么区别" class="headerlink" title="Mysql一个@和两个@什么区别"></a>Mysql一个@和两个@什么区别</h3><h3 id="IIS解析漏洞，不同版本有什么漏洞，还有什么容器解析漏洞"><a href="#IIS解析漏洞，不同版本有什么漏洞，还有什么容器解析漏洞" class="headerlink" title="IIS解析漏洞，不同版本有什么漏洞，还有什么容器解析漏洞"></a>IIS解析漏洞，不同版本有什么漏洞，还有什么容器解析漏洞</h3><h3 id="wireshark抓包，数据报经过三层交换机、路由的变化，NAT协议描述，地址进入内网怎么变化"><a href="#wireshark抓包，数据报经过三层交换机、路由的变化，NAT协议描述，地址进入内网怎么变化" class="headerlink" title="wireshark抓包，数据报经过三层交换机、路由的变化，NAT协议描述，地址进入内网怎么变化"></a>wireshark抓包，数据报经过三层交换机、路由的变化，NAT协议描述，地址进入内网怎么变化</h3><h3 id="linux计划任务，黑客隐藏自己的计划任务会怎么做。windows计划任务怎么设定"><a href="#linux计划任务，黑客隐藏自己的计划任务会怎么做。windows计划任务怎么设定" class="headerlink" title="linux计划任务，黑客隐藏自己的计划任务会怎么做。windows计划任务怎么设定"></a>linux计划任务，黑客隐藏自己的计划任务会怎么做。windows计划任务怎么设定</h3><p>三种主要的at batch cron，一般使用cron在规定的时间执行命令</p>
+<h3 id="挖过最难的漏洞是什么"><a href="#挖过最难的漏洞是什么" class="headerlink" title="挖过最难的漏洞是什么"></a>挖过最难的漏洞是什么</h3><h2 id="ukelink"><a href="#ukelink" class="headerlink" title="ukelink"></a>ukelink</h2><h3 id="病毒和蠕虫的区别"><a href="#病毒和蠕虫的区别" class="headerlink" title="病毒和蠕虫的区别"></a>病毒和蠕虫的区别</h3><h3 id="DNS欺骗是什么"><a href="#DNS欺骗是什么" class="headerlink" title="DNS欺骗是什么"></a>DNS欺骗是什么</h3><p>定义： DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为。 原理：如果可以冒充域名服务器，然后把查询的IP地址设为攻击者的IP地址，这样的话，用户上网就只能看到攻击者的主页，而不是用户想要取得的网站的主页了，这就是DNS欺骗的基本原理。DNS欺骗其实并不是真的“黑掉”了对方的网站，而是冒名顶替、招摇撞骗罢了。</p>
+<h3 id="DDOS有哪些-CC攻击是什么-区别是什么-在哪一个层面-什么协议"><a href="#DDOS有哪些-CC攻击是什么-区别是什么-在哪一个层面-什么协议" class="headerlink" title="DDOS有哪些,CC攻击是什么,区别是什么,在哪一个层面,什么协议"></a>DDOS有哪些,CC攻击是什么,区别是什么,在哪一个层面,什么协议</h3><p>SYN攻击 防火墙、特征匹配<br>ACK FLOOD<br>UDP FLOOD<br>ICMP FLOOD<br>CC http的get请求<br>陆地攻击 源IP和目的IP都为同一个<br>UDP DNS QUERY 向被攻击的服务器发送大量的域名解析请求，通常请求解析的域名是随机生成或者是网络世界上根本不存在的域名，被攻击的DNS 服务器在接收到域名解析请求的时候首先会在服务器上查找是否有对应的缓存，如果查找不到并且该域名无法直接由服务器解析的时候，DNS 服务器会向其上层DNS服务器递归查询域名信息</p>
+<h3 id="陆地land攻击是什么"><a href="#陆地land攻击是什么" class="headerlink" title="陆地land攻击是什么"></a>陆地land攻击是什么</h3><h3 id="xss有什么？执行存储型的xss的危害和原理"><a href="#xss有什么？执行存储型的xss的危害和原理" class="headerlink" title="xss有什么？执行存储型的xss的危害和原理"></a>xss有什么？执行存储型的xss的危害和原理</h3><h3 id="渗透测试流程？（不够清晰，太浅显"><a href="#渗透测试流程？（不够清晰，太浅显" class="headerlink" title="渗透测试流程？（不够清晰，太浅显"></a>渗透测试流程？（不够清晰，太浅显</h3><h3 id="有没有移动端的调试经验-apk-ipa包分析"><a href="#有没有移动端的调试经验-apk-ipa包分析" class="headerlink" title="有没有移动端的调试经验 apk,ipa包分析"></a>有没有移动端的调试经验 apk,ipa包分析</h3><h3 id="对于云安全的理解"><a href="#对于云安全的理解" class="headerlink" title="对于云安全的理解"></a>对于云安全的理解</h3><p>权限管理，内网威胁，信息泄露，过于依赖托管厂商</p>
+<h3 id="虚拟机逃逸的理解"><a href="#虚拟机逃逸的理解" class="headerlink" title="虚拟机逃逸的理解"></a>虚拟机逃逸的理解</h3><p>虚拟机之间通信或上层主机的通信</p>
+<h3 id="英语介绍一下自己"><a href="#英语介绍一下自己" class="headerlink" title="英语介绍一下自己"></a>英语介绍一下自己</h3><h3 id="职业路径"><a href="#职业路径" class="headerlink" title="职业路径"></a>职业路径</h3><h3 id="大学做过什么相关的事情"><a href="#大学做过什么相关的事情" class="headerlink" title="大学做过什么相关的事情"></a>大学做过什么相关的事情</h3><h3 id="在工作会做什么来不断提高自己的能力"><a href="#在工作会做什么来不断提高自己的能力" class="headerlink" title="在工作会做什么来不断提高自己的能力"></a>在工作会做什么来不断提高自己的能力</h3><h2 id="卓望"><a href="#卓望" class="headerlink" title="卓望"></a>卓望</h2><h3 id="渗透测试流程"><a href="#渗透测试流程" class="headerlink" title="渗透测试流程"></a>渗透测试流程</h3><h3 id="描述渗透项目，做了什么"><a href="#描述渗透项目，做了什么" class="headerlink" title="描述渗透项目，做了什么"></a>描述渗透项目，做了什么</h3><h3 id="xss漏洞类型、详情、修复方案"><a href="#xss漏洞类型、详情、修复方案" class="headerlink" title="xss漏洞类型、详情、修复方案"></a>xss漏洞类型、详情、修复方案</h3><h3 id="SQL注入原理、类型，waf绕过，写shell，提权，修复方案"><a href="#SQL注入原理、类型，waf绕过，写shell，提权，修复方案" class="headerlink" title="SQL注入原理、类型，waf绕过，写shell，提权，修复方案"></a>SQL注入原理、类型，waf绕过，写shell，提权，修复方案</h3><h3 id="终端的渗透经验"><a href="#终端的渗透经验" class="headerlink" title="终端的渗透经验"></a>终端的渗透经验</h3><h3 id="了解什么比较新的漏洞"><a href="#了解什么比较新的漏洞" class="headerlink" title="了解什么比较新的漏洞"></a>了解什么比较新的漏洞</h3><h3 id="企业内部安全"><a href="#企业内部安全" class="headerlink" title="企业内部安全"></a>企业内部安全</h3><p>信息安全管理的本质就是输入和输出。一般防范的风险为物理威胁和网络威胁。<br>防范风险可以从制度和流程（人员入离职流程、权限申请流程）、人员配备和知识积累、风险防范（物理威胁：门禁、监控、禁止USB设备接入、封闭PC、定时巡检；网络威胁：部署行为管控设备、可靠的网络结构、IP和MAC地址绑定，将网络行为分组、限制不必要的软件和通信协议、定期审核日志）</p>
+<h2 id="安巽"><a href="#安巽" class="headerlink" title="安巽"></a>安巽</h2><h3 id="算法？了解过什么排序？"><a href="#算法？了解过什么排序？" class="headerlink" title="算法？了解过什么排序？"></a>算法？了解过什么排序？</h3><p>快速排序 冒泡排序</p>
+<h3 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h3><h4 id="页面存在很多js的时候，用什么"><a href="#页面存在很多js的时候，用什么" class="headerlink" title="页面存在很多js的时候，用什么"></a>页面存在很多js的时候，用什么</h4><p>phnatomJS selenium execjs</p>
+<h4 id="爬虫的待爬取URL量级比较大的时候，如何对其去重"><a href="#爬虫的待爬取URL量级比较大的时候，如何对其去重" class="headerlink" title="爬虫的待爬取URL量级比较大的时候，如何对其去重"></a>爬虫的待爬取URL量级比较大的时候，如何对其去重</h4><ul>
+<li>在数据库中创建字段的UNIQUE属性：对于在数据库中创建字段的UNIQUE属性， 的确是可以避免一些重复性操作。不过在多次MySQL报错之后，程序可能会直接崩溃，因此这种方式不可取</li>
+<li>在数据库中创建一个唯一的索引，在插入数据之前检查待插入的数据是否存在：如果我们要在每一次插入数据之前都去检查待插入的数据是否存在，这样势必会影响程序的效率</li>
+<li>使用Set或HashSet保存数据，确保唯一。可以使用redis，但是内存占用大</li>
+<li>使用Map或是一个定长数组记录某一个URL是否被访问过</li>
+<li>布隆过滤器(bloom filter)，bitmap</li>
+</ul>
+<h4 id="多线程-异步-协程-多路复用-用哪一个最快-为什么"><a href="#多线程-异步-协程-多路复用-用哪一个最快-为什么" class="headerlink" title="多线程 异步 协程 多路复用 用哪一个最快 为什么"></a>多线程 异步 协程 多路复用 用哪一个最快 为什么</h4><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yuanchenqi/articles/6755717.html#_label3">https://www.cnblogs.com/yuanchenqi/articles/6755717.html#_label3</a></p>
+</blockquote>
+<p>线程也叫轻量级进程，它是一个基本的CPU执行单元，也是程序执行过程中的最小单元，由线程ID、程序计数器、寄存器集合和堆栈共同组成。线程的引入减小了程序并发执行时的开销，提高了操作系统的并发性能。线程没有自己的系统资源。</p>
+<p>异步是指进程不需要一直等下去，而是继续执行下面的操作，不管其他进程的状态。当有消息返回时系统会通知进程进行处理，这样可以提高执行的效率。</p>
+<p>协程是一种用户态的轻量级线程，拥有自己的寄存器上下文和栈</p>
+<p>IO多路复用 异步阻塞IO 线程轮询IO</p>
+<h3 id="浏览器的常用编码"><a href="#浏览器的常用编码" class="headerlink" title="浏览器的常用编码"></a>浏览器的常用编码</h3><p>一开始我以为是说字符编码，有UTF8 Unicode GBK。面试官还几番提醒我也没答上来。回来一想，我觉得他应该问的是content-type。 <a target="_blank" rel="noopener" href="http://www.runoob.com/http/http-content-type.html">http://www.runoob.com/http/http-content-type.html</a> </p>
+<h3 id="web常用的加密算法有什么"><a href="#web常用的加密算法有什么" class="headerlink" title="web常用的加密算法有什么"></a>web常用的加密算法有什么</h3><p>非对称加密  RSA、ElGamal、Rabin<br>对称加密 DES、3DES、AES<br>散列算法 MD5 SHA base64</p>
+<h3 id="有没有内网渗透的经验？怎么渗透？如果拿下了边界层的某一个机器，如何对内网其他进行探测？"><a href="#有没有内网渗透的经验？怎么渗透？如果拿下了边界层的某一个机器，如何对内网其他进行探测？" class="headerlink" title="有没有内网渗透的经验？怎么渗透？如果拿下了边界层的某一个机器，如何对内网其他进行探测？"></a>有没有内网渗透的经验？怎么渗透？如果拿下了边界层的某一个机器，如何对内网其他进行探测？</h3><p>拿下机器后<br>内网渗透使用代理访问内网 windows环境：reGeorg与proxifier Linux（kali-linux）环境：reGeorg与proxychains，使用nmap等工具进行扫描，发现web服务的主机和其它信息。有时这些边界机器上会记录一些内网服务器上的一些信息（用户 ssh known_hosts  hosts 防火墙设置 记录、内网之间好多waf 规则基本都是空，大多数waf防外部威胁  这时候可以拿到探测的内部一些开放的端口判断进行渗透，通常用户这里基本是统一命名的   拿到的各种记录 会暴露出部分内网通讯的ip</p>
+<p>内网内弱口令占大多数 FTP MSSQL 远程桌面链接</p>
+<h3 id="mysql中like查询会会非常缓慢，如何进行优化"><a href="#mysql中like查询会会非常缓慢，如何进行优化" class="headerlink" title="mysql中like查询会会非常缓慢，如何进行优化"></a>mysql中like查询会会非常缓慢，如何进行优化</h3><p>分词索引</p>
+<h3 id="做了cdn的网站如何获取真实IP"><a href="#做了cdn的网站如何获取真实IP" class="headerlink" title="做了cdn的网站如何获取真实IP"></a>做了cdn的网站如何获取真实IP</h3><ol>
+<li>多地ping看是否有cdn</li>
+<li>邮件订阅或者rss订阅</li>
+<li>二级域名可能不会做cdn</li>
+<li>nslookup <a target="_blank" rel="noopener" href="http://xxx.com/">http://xxx.com</a> 国外dns</li>
+<li>查找域名历史解析记录，因为域名在上CDN之前用的IP，很有可能就是CDN的真实源IP地址 <a target="_blank" rel="noopener" href="https://toolbar.netcraft.com/site_report?url=www.xxx.com">https://toolbar.netcraft.com/site_report?url=www.xxx.com</a></li>
+<li>phpinfo上显示的信息</li>
+</ol>
+<h3 id="渗透的时候如何隐藏自己的身份"><a href="#渗透的时候如何隐藏自己的身份" class="headerlink" title="渗透的时候如何隐藏自己的身份"></a>渗透的时候如何隐藏自己的身份</h3><h3 id="主机疑似遭到入侵，要看哪里的日志"><a href="#主机疑似遭到入侵，要看哪里的日志" class="headerlink" title="主机疑似遭到入侵，要看哪里的日志"></a>主机疑似遭到入侵，要看哪里的日志</h3><h3 id="SQL注入漏洞怎么修复"><a href="#SQL注入漏洞怎么修复" class="headerlink" title="SQL注入漏洞怎么修复"></a>SQL注入漏洞怎么修复</h3><h2 id="长亭"><a href="#长亭" class="headerlink" title="长亭"></a>长亭</h2><h3 id="安全研究的方面？做过哪些渗透测试的工作？"><a href="#安全研究的方面？做过哪些渗透测试的工作？" class="headerlink" title="安全研究的方面？做过哪些渗透测试的工作？"></a>安全研究的方面？做过哪些渗透测试的工作？</h3><h3 id="只给你一个网址，如何进行渗透测试"><a href="#只给你一个网址，如何进行渗透测试" class="headerlink" title="只给你一个网址，如何进行渗透测试"></a>只给你一个网址，如何进行渗透测试</h3><h3 id="SQL注入，id-1如何检测？orderby怎么利用？limit语句怎么利用？盲注有什么？"><a href="#SQL注入，id-1如何检测？orderby怎么利用？limit语句怎么利用？盲注有什么？" class="headerlink" title="SQL注入，id=1如何检测？orderby怎么利用？limit语句怎么利用？盲注有什么？"></a>SQL注入，id=1如何检测？orderby怎么利用？limit语句怎么利用？盲注有什么？</h3><h3 id="sleep被禁用后还能怎么进行sql注入"><a href="#sleep被禁用后还能怎么进行sql注入" class="headerlink" title="sleep被禁用后还能怎么进行sql注入"></a>sleep被禁用后还能怎么进行sql注入</h3><p>BENCHMARK，Get_lock函数，当都被禁用后可以用计算量比较大的语句使数据库查询时间变长，从而达到延时注入的效果。<br>mysql：<code>AND (SELECT count(*) FROM information_schema.columns A, information_schema.columns B, information_schema.SCHEMATA C);</code></p>
+<h3 id="XSS可以控制属性怎么利用"><a href="#XSS可以控制属性怎么利用" class="headerlink" title="XSS可以控制属性怎么利用"></a>XSS可以控制属性怎么利用</h3><h3 id="CSRF怎么防护？"><a href="#CSRF怎么防护？" class="headerlink" title="CSRF怎么防护？"></a>CSRF怎么防护？</h3><p>尽量使用POST，限制GET；浏览器Cookie策略；加验证码； Referer Check；Anti CSRF Token</p>
+<h3 id="请求头中哪些是有危害的？"><a href="#请求头中哪些是有危害的？" class="headerlink" title="请求头中哪些是有危害的？"></a>请求头中哪些是有危害的？</h3><p>Cookie</p>
+<h3 id="XXE的危害？哪些地方容易存在xxe？xxe架构方面有没有了解过"><a href="#XXE的危害？哪些地方容易存在xxe？xxe架构方面有没有了解过" class="headerlink" title="XXE的危害？哪些地方容易存在xxe？xxe架构方面有没有了解过"></a>XXE的危害？哪些地方容易存在xxe？xxe架构方面有没有了解过</h3><p>xxe常见场景是如pdf在线解析、word在线解析、定制协议，留言板等，跟逻辑设计有关而与语言无关，最好是不要让XML作为参数传输或整体结构可被用户篡改。如果一定要使用，至少要禁用DTD、Entity。<br>xxe危害 读取本地文件，执行系统命令，探测内网端口，攻击内网服务<br>探测内网端口的协议有gopher file dict，不同语言支持不同的协议，是具体情况而定 file http ftp是常用的</p>
+<p>防范，python用lxml时可以对resolve_entities设为false。或者过滤用户提交的xml</p>
+<p>客户端也可以有xxe攻击，有的网站会使用office打开docx进行解析<br>Java解析XML的常用三方库，如果不禁用DTD、Entity都会导致XXE漏洞：</p>
+<p>javax.xml.stream.XMLStreamReader;</p>
+<p>javax.xml.parsers.DocumentBuilderFactory;</p>
+<h3 id="JAVA中间件的漏洞，举几个例子？"><a href="#JAVA中间件的漏洞，举几个例子？" class="headerlink" title="JAVA中间件的漏洞，举几个例子？"></a>JAVA中间件的漏洞，举几个例子？</h3><p>常见的是反序列化漏洞</p>
+<h3 id="IIS常见的漏洞"><a href="#IIS常见的漏洞" class="headerlink" title="IIS常见的漏洞"></a>IIS常见的漏洞</h3><p>常见的为解析漏洞，6.0有<br>/test.asp/test.jpg<br>  test.asp;.jpg<br>  7.5有test.jpg/.php，默认后缀IIS默认地还会解析其他后缀的文件为asp文件，比如cer asa cdx<br>  原理大抵是IIS 5.x/6.0在从文件路径中读取文件后缀时，遇到一个“.”后，便进入了一种截断状态，在该状态下遇到特殊符号——“/”和“;”，都会进行截断，只保留特殊符号前的部分，即：“.asp”，从而认为文件后缀为“.asp”。</p>
+<h3 id="python有哪些框架，其中出现过哪些漏洞"><a href="#python有哪些框架，其中出现过哪些漏洞" class="headerlink" title="python有哪些框架，其中出现过哪些漏洞"></a>python有哪些框架，其中出现过哪些漏洞</h3><p>flask的模板注入 模板注入和常见Web注入的成因一样，也是服务端接收了用户的输入，将其作为 Web 应用模板内容的一部分，在进行目标编译渲染的过程中，执行了用户插入的恶意内容，因而可能导致了敏感信息泄露、代码执行、GetShell 等问题。<br>模板字符串中字符串拼接或替换可能会导致敏感信息泄露，获取变量值<br>如果开发者在flask使用字符串格式化，来将用户输入动态地加入到模板字符串中，而不是通过render_template_string函数，该函数不会对输入进行实体转义将URL传递进入模板内容当中，会导致xss的产生。<br>还可以利用模板中html标签属性字段绕过xss过滤。</p>
+<p>Django出现过目录遍历漏洞</p>
+<h3 id="业务逻辑漏洞，用户任意密码重置举出有什么例子，因为什么因素导致的？"><a href="#业务逻辑漏洞，用户任意密码重置举出有什么例子，因为什么因素导致的？" class="headerlink" title="业务逻辑漏洞，用户任意密码重置举出有什么例子，因为什么因素导致的？"></a>业务逻辑漏洞，用户任意密码重置举出有什么例子，因为什么因素导致的？</h3><h3 id="PHP代码审计？开源的代码审计有没有做过？弱类型比较，反序列化漏洞这种考点在哪？"><a href="#PHP代码审计？开源的代码审计有没有做过？弱类型比较，反序列化漏洞这种考点在哪？" class="headerlink" title="PHP代码审计？开源的代码审计有没有做过？弱类型比较，反序列化漏洞这种考点在哪？"></a>PHP代码审计？开源的代码审计有没有做过？弱类型比较，反序列化漏洞这种考点在哪？</h3><h3 id="HTTP-Only禁止的是JS读取cookie信息，如何绕过这个获取cookie"><a href="#HTTP-Only禁止的是JS读取cookie信息，如何绕过这个获取cookie" class="headerlink" title="HTTP-Only禁止的是JS读取cookie信息，如何绕过这个获取cookie"></a>HTTP-Only禁止的是JS读取cookie信息，如何绕过这个获取cookie</h3><p>Http Trace攻击就可以将你的Header里的Cookie回显出来，利用Ajax或者flash就可以完成这种攻击；或者配置或者应用程序上可能Bypass，比如header头的泄漏</p>
+<h2 id="盛邦"><a href="#盛邦" class="headerlink" title="盛邦"></a>盛邦</h2><h3 id="有没有做过协议分析和抓包分析"><a href="#有没有做过协议分析和抓包分析" class="headerlink" title="有没有做过协议分析和抓包分析"></a>有没有做过协议分析和抓包分析</h3><h2 id="翼果"><a href="#翼果" class="headerlink" title="翼果"></a>翼果</h2><h3 id="mysql查看版本？"><a href="#mysql查看版本？" class="headerlink" title="mysql查看版本？"></a>mysql查看版本？</h3><h3 id="过安全狗"><a href="#过安全狗" class="headerlink" title="过安全狗"></a>过安全狗</h3><h3 id="编程能力-平台逆向-修改程序入口-rootkit有没有研究过"><a href="#编程能力-平台逆向-修改程序入口-rootkit有没有研究过" class="headerlink" title="编程能力/平台逆向/修改程序入口/rootkit有没有研究过"></a>编程能力/平台逆向/修改程序入口/rootkit有没有研究过</h3><h2 id="深信服-安全开发-实习"><a href="#深信服-安全开发-实习" class="headerlink" title="深信服(安全开发/实习)"></a>深信服(安全开发/实习)</h2><blockquote>
+<p>作者：华电许少 链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/142929260">https://zhuanlan.zhihu.com/p/142929260</a></p>
+</blockquote>
+<h3 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h3><h4 id="SQL注入如何读写文件，二次注入，防御方式"><a href="#SQL注入如何读写文件，二次注入，防御方式" class="headerlink" title="SQL注入如何读写文件，二次注入，防御方式"></a>SQL注入如何读写文件，二次注入，防御方式</h4><h4 id="XSS有哪几种，如何防御"><a href="#XSS有哪几种，如何防御" class="headerlink" title="XSS有哪几种，如何防御"></a>XSS有哪几种，如何防御</h4><h4 id="CSRF和XSS区别，如何防御"><a href="#CSRF和XSS区别，如何防御" class="headerlink" title="CSRF和XSS区别，如何防御"></a>CSRF和XSS区别，如何防御</h4><h4 id="文件上传的前后端的绕过，防御方式"><a href="#文件上传的前后端的绕过，防御方式" class="headerlink" title="文件上传的前后端的绕过，防御方式"></a>文件上传的前后端的绕过，防御方式</h4><h4 id="IIS6-0，Apache，Nginx的文件解析漏洞讲一下"><a href="#IIS6-0，Apache，Nginx的文件解析漏洞讲一下" class="headerlink" title="IIS6.0，Apache，Nginx的文件解析漏洞讲一下"></a>IIS6.0，Apache，Nginx的文件解析漏洞讲一下</h4><h4 id="XXE和SSRF简单讲一下"><a href="#XXE和SSRF简单讲一下" class="headerlink" title="XXE和SSRF简单讲一下"></a>XXE和SSRF简单讲一下</h4><h4 id="RCE讲一下，PHP函数eval和system，popen的区别"><a href="#RCE讲一下，PHP函数eval和system，popen的区别" class="headerlink" title="RCE讲一下，PHP函数eval和system，popen的区别"></a>RCE讲一下，PHP函数eval和system，popen的区别</h4><h4 id="Python的迭代器和装饰器讲一下"><a href="#Python的迭代器和装饰器讲一下" class="headerlink" title="Python的迭代器和装饰器讲一下"></a>Python的迭代器和装饰器讲一下</h4><h4 id="缓冲区溢出原理和防御"><a href="#缓冲区溢出原理和防御" class="headerlink" title="缓冲区溢出原理和防御"></a>缓冲区溢出原理和防御</h4><h4 id="内网渗透经验有没有"><a href="#内网渗透经验有没有" class="headerlink" title="内网渗透经验有没有"></a>内网渗透经验有没有</h4><h4 id="多线程和进程讲一下，线程通信以及进程通信方式"><a href="#多线程和进程讲一下，线程通信以及进程通信方式" class="headerlink" title="多线程和进程讲一下，线程通信以及进程通信方式"></a>多线程和进程讲一下，线程通信以及进程通信方式</h4><h4 id="渗透测试流程讲一下，信息收集都有哪些方面"><a href="#渗透测试流程讲一下，信息收集都有哪些方面" class="headerlink" title="渗透测试流程讲一下，信息收集都有哪些方面"></a>渗透测试流程讲一下，信息收集都有哪些方面</h4><h4 id="有没有实际渗透经验，讲一下"><a href="#有没有实际渗透经验，讲一下" class="headerlink" title="有没有实际渗透经验，讲一下"></a>有没有实际渗透经验，讲一下</h4><h4 id="有没有了解过系统漏洞，windows方面的，比如MS08-06715-你是如何学习渗透的，哪些方式"><a href="#有没有了解过系统漏洞，windows方面的，比如MS08-06715-你是如何学习渗透的，哪些方式" class="headerlink" title="有没有了解过系统漏洞，windows方面的，比如MS08-06715.你是如何学习渗透的，哪些方式"></a>有没有了解过系统漏洞，windows方面的，比如MS08-06715.你是如何学习渗透的，哪些方式</h4><h3 id="二面"><a href="#二面" class="headerlink" title="二面"></a>二面</h3><h4 id="虚函数的底层实现"><a href="#虚函数的底层实现" class="headerlink" title="虚函数的底层实现"></a>虚函数的底层实现</h4><h4 id="反射的底层实现"><a href="#反射的底层实现" class="headerlink" title="反射的底层实现"></a>反射的底层实现</h4><h4 id="满二叉树和完全二叉树"><a href="#满二叉树和完全二叉树" class="headerlink" title="满二叉树和完全二叉树"></a>满二叉树和完全二叉树</h4><h4 id="Python和Java的垃圾回收讲一下"><a href="#Python和Java的垃圾回收讲一下" class="headerlink" title="Python和Java的垃圾回收讲一下"></a>Python和Java的垃圾回收讲一下</h4><h4 id="SQL手工注入流程"><a href="#SQL手工注入流程" class="headerlink" title="SQL手工注入流程"></a>SQL手工注入流程</h4><h4 id="Java框架的控制反转怎么实现的"><a href="#Java框架的控制反转怎么实现的" class="headerlink" title="Java框架的控制反转怎么实现的"></a>Java框架的控制反转怎么实现的</h4><h4 id="进程通讯有哪些"><a href="#进程通讯有哪些" class="headerlink" title="进程通讯有哪些"></a>进程通讯有哪些</h4><h4 id="消息队列的原理"><a href="#消息队列的原理" class="headerlink" title="消息队列的原理"></a>消息队列的原理</h4><h4 id="经典老问题访问百度，重点说一下涉及到的所有协议"><a href="#经典老问题访问百度，重点说一下涉及到的所有协议" class="headerlink" title="经典老问题访问百度，重点说一下涉及到的所有协议"></a>经典老问题访问百度，重点说一下涉及到的所有协议</h4><h4 id="常见的web漏洞有哪些"><a href="#常见的web漏洞有哪些" class="headerlink" title="常见的web漏洞有哪些"></a>常见的web漏洞有哪些</h4><h4 id="Burpsuite的功能有哪些"><a href="#Burpsuite的功能有哪些" class="headerlink" title="Burpsuite的功能有哪些"></a>Burpsuite的功能有哪些</h4><h4 id="说一下所有的排序算法，哪些是不稳定的"><a href="#说一下所有的排序算法，哪些是不稳定的" class="headerlink" title="说一下所有的排序算法，哪些是不稳定的"></a>说一下所有的排序算法，哪些是不稳定的</h4><h4 id="图的遍历方式有哪些，基于什么数据结构"><a href="#图的遍历方式有哪些，基于什么数据结构" class="headerlink" title="图的遍历方式有哪些，基于什么数据结构"></a>图的遍历方式有哪些，基于什么数据结构</h4><h4 id="如何实现一个HTTP代理，原理是什么"><a href="#如何实现一个HTTP代理，原理是什么" class="headerlink" title="如何实现一个HTTP代理，原理是什么"></a>如何实现一个HTTP代理，原理是什么</h4><h4 id="你的兴趣爱好是什么"><a href="#你的兴趣爱好是什么" class="headerlink" title="你的兴趣爱好是什么"></a>你的兴趣爱好是什么</h4>
                 
             </div>
             <hr/>
@@ -582,7 +723,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://batmanfuture.gitee.io/posts/919d7057.html">https://batmanfuture.gitee.io/posts/919d7057.html</a>
+                    <a href="https://batmanfuture.gitee.io/posts/bvd6f5fa.html">https://batmanfuture.gitee.io/posts/bvd6f5fa.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -620,8 +761,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9D%B6%E5%9C%BA/">
-                                    <span class="chip bg-color">靶场</span>
+                                <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                                    <span class="chip bg-color">面试</span>
                                 </a>
                             
                         </div>
@@ -1061,16 +1202,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/7930ab3e.html">
+                <a href="/posts/bvd6f5fa.html">
                     <div class="card-image">
                         
-                        <img src="https://z3.ax1x.com/2021/05/22/gOSc0P.png" class="responsive-img" alt="vulnhub">
+                        <img src="https://z3.ax1x.com/2021/06/02/2QjoLT.png" class="responsive-img" alt="部分面试问题">
                         
-                        <span class="card-title">vulnhub</span>
+                        <span class="card-title">部分面试问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1080,26 +1222,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web%E5%AE%89%E5%85%A8/" class="post-category">
-                                    Web安全
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                    其他
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%B6%E5%9C%BA/">
-                        <span class="chip bg-color">靶场</span>
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
                 </div>
@@ -1113,12 +1256,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/fd9e2266.html">
+                <a href="/posts/aae8f6ea.html">
                     <div class="card-image">
                         
-                        <img src="https://z3.ax1x.com/2021/05/22/gOSWtS.png" class="responsive-img" alt="websec">
+                        <img src="https://z3.ax1x.com/2021/06/02/2QjDQP.png" class="responsive-img" alt="技术面试">
                         
-                        <span class="card-title">websec</span>
+                        <span class="card-title">技术面试</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1129,14 +1272,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web%E5%AE%89%E5%85%A8/" class="post-category">
-                                    Web安全
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                    其他
                                 </a>
                             
                             
@@ -1146,8 +1289,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9D%B6%E5%9C%BA/">
-                        <span class="chip bg-color">靶场</span>
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
                 </div>
