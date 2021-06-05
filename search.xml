@@ -4,6 +4,69 @@
   
     
     <entry>
+      <title></title>
+      <link href="posts/0.html"/>
+      <url>posts/0.html</url>
+      
+        <content type="html"><![CDATA[<p>title: 安恒信息《渗透攻击红队百科全书》<br>tags:</p><ul><li>红蓝对抗<br>categories:</li><li>红蓝对抗<br>img:</li><li>‘<a href="https://z3.ax1x.com/2021/06/05/2N3ArF.png'">https://z3.ax1x.com/2021/06/05/2N3ArF.png'</a><br>abbrlink: 4597ujn1<br>date: 2021-06-06 09:54:28</li></ul><h3 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h3><p><img src="https://z3.ax1x.com/2021/06/05/2N3ArF.png"></p><p>30万字，上中下三册，集合在一起整理</p><h2 id="第一章-信息收集"><a href="#第一章-信息收集" class="headerlink" title="第一章 信息收集"></a>第一章 信息收集</h2><h3 id="1-1主机发现"><a href="#1-1主机发现" class="headerlink" title="1.1主机发现"></a>1.1主机发现</h3><h4 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h4><h4 id="massscan"><a href="#massscan" class="headerlink" title="massscan"></a>massscan</h4><h4 id="nbtscan"><a href="#nbtscan" class="headerlink" title="nbtscan"></a>nbtscan</h4><h4 id="hping3"><a href="#hping3" class="headerlink" title="hping3"></a>hping3</h4><h3 id="1-2关联信息生成"><a href="#1-2关联信息生成" class="headerlink" title="1.2关联信息生成"></a>1.2关联信息生成</h3><h4 id="pydictor"><a href="#pydictor" class="headerlink" title="pydictor"></a>pydictor</h4><h3 id="1-3漏洞平台"><a href="#1-3漏洞平台" class="headerlink" title="1.3漏洞平台"></a>1.3漏洞平台</h3><h3 id="1-4开源情报信息收集（OSINT）"><a href="#1-4开源情报信息收集（OSINT）" class="headerlink" title="1.4开源情报信息收集（OSINT）"></a>1.4开源情报信息收集（OSINT）</h3><h4 id="搜索引擎语法"><a href="#搜索引擎语法" class="headerlink" title="搜索引擎语法"></a>搜索引擎语法</h4><p>谷歌，百度，必应</p><h3 id="1-5DNS历史解析记录"><a href="#1-5DNS历史解析记录" class="headerlink" title="1.5DNS历史解析记录"></a>1.5DNS历史解析记录</h3><h4 id="github-hacking"><a href="#github-hacking" class="headerlink" title="github hacking"></a>github hacking</h4><table><thead><tr><th>Query</th><th>Example</th></tr></thead><tbody><tr><td>cats stars:&gt;1000</td><td>匹配cats关键字，并且star大于1000的仓库</td></tr><tr><td>cats topics:&gt;5</td><td>匹配cats关键字，并且topic大于5的仓库</td></tr><tr><td>cats size:&lt;10000</td><td>匹配cats关键字，并且文件大于10kb的仓库</td></tr><tr><td>cats stars:&lt;=50</td><td>匹配cats关键字，并且star小于等于50的仓库</td></tr><tr><td>cats stars:10..*</td><td>匹配cats关键字，并且star大于等于10的仓库</td></tr><tr><td>cats stars:..10*</td><td>匹配cats关键字，并且star小于等于10的仓库</td></tr><tr><td>cats stars:10..50</td><td>匹配cats关键字，并且star大于10且小于50的仓库</td></tr></tbody></table><h4 id="搜索代码"><a href="#搜索代码" class="headerlink" title="搜索代码"></a>搜索代码</h4><pre><code>cats pushed:2012-07-05 cats pushed:2016-04-30..2016-07-04cats created:&gt;=2017-04-01and or notcats in:filecats in:pathcats in:path,fileconsole path:app/public language:javascriptuser:USERNAMEorg:''ORGNAMErepo:USERNAME/REPOSITORYsize:&gt;1000filename:config.php language:phpextension:EXTENSION</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《黑客大揭秘：近源渗透测试》</title>
+      <link href="posts/aajnbg67.html"/>
+      <url>posts/aajnbg67.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h3><p><img src="https://z3.ax1x.com/2021/06/05/2tHb6A.png" alt="黑客大揭秘 近源渗透测试"></p><p><a href="https://book.douban.com/subject/34917939/edit">更新图书信息或封面</a></p><p>作者: <a href="https://book.douban.com/search/%E6%9F%B4%E5%9D%A4%E5%93%B2">柴坤哲</a> / <a href="https://book.douban.com/search/%E6%9D%A8%E8%8A%B8%E8%8F%B2">杨芸菲</a> / <a href="https://book.douban.com/search/%E7%8E%8B%E6%B0%B8%E6%B6%9B">王永涛</a> / <a href="https://book.douban.com/search/%E6%9D%A8%E5%8D%BF">杨卿</a><br>出版社: 人民邮电出版社<br>出版年: 2020-1-1<br>定价: 99元<br>装帧: 平装<br>丛书: <a href="https://book.douban.com/series/13000">图灵原创</a><br>ISBN: 9787115524355</p><p>首先，lightning本人除了web，渗透，其实也在搞无线安全，所以对无线安全，近源渗透的书籍相当喜欢，有关无线安全的书籍有很多，但是最知名的两本就是独角兽团队的《无线点安全攻防大揭秘》和这次天马团队的《黑客大揭秘：近源渗透测试》。开头漫画取自《黑客特战队》第四话近源渗透测试。</p><h3 id="第1章-鸟览近源渗透"><a href="#第1章-鸟览近源渗透" class="headerlink" title="第1章 鸟览近源渗透"></a>第1章 鸟览近源渗透</h3><p>当我们线下近源渗透时，可以测试的对象很多，比如近场通信NFC，低功耗蓝牙BLE，射频RF，无线传输ZigBee，无线局域网WIFI，手机蜂窝网络Cellular，卫星定位GPS，HID测试，PPPoE嗅探。做渗透测试时，有针对wifi的渗透技术，门禁系统的RFID安全检测技术，HID测试，内网渗透，横向渗透（移动），权限维持等</p><p>Lightning自己总结就是：随着安全逐渐发展，像Web渗透打入内网这种会越来越困难，战场逐渐转向底层二进制，无线安全和硬件安全。在hw中，除了0day，就只有近源，社工钓鱼等可用了。</p><h4 id="系统环境与硬件"><a href="#系统环境与硬件" class="headerlink" title="系统环境与硬件"></a>系统环境与硬件</h4><p>kali linux</p><p>无线网卡：网卡一般只会接收发送给自己的数据帧，而丢弃其他数据，如果需要接收所有报文，需要开启混杂模式，默认是处于被管理模式，需要设置成【监听模式】，此外还有【ap模式】【ad hoc模式】【主模式】</p><h3 id="第2章-WI-FI安全"><a href="#第2章-WI-FI安全" class="headerlink" title="第2章 WI-FI安全"></a>第2章 WI-FI安全</h3><p>802.11体系主要包含有STA（station，站），AP（access point，无线接入点），IBSS（独立基本服务集） ，BSS（基本服务集） ，DS（分布式系统） ESS（扩展服务集）</p><p><img src="https://z3.ax1x.com/2021/06/05/2txJr4.png"></p><p><img src="https://z3.ax1x.com/2021/06/05/2txoQS.png"></p><p>SSID是标识相应的无线网络（wifi设备的名字），而BSSID是某个BSS网络的标识，也就是MAC地址</p><p>OSI参考模型</p><p><img src="https://z3.ax1x.com/2021/06/05/2NSijS.png" alt="OSI参考模型"></p><p>其中数据链路层和物理层这两层都没出内网</p><p><img src="https://z3.ax1x.com/2021/06/05/2NpC5R.png"></p><p><img src="https://z3.ax1x.com/2021/06/05/2NplGt.png"></p><p><img src="https://z3.ax1x.com/2021/06/05/2Np1RP.png"></p><p>我们会发现我们在上三层也就是应用层发出了数据“hello”，会在传输层加上TCP/UDP头，在网络层加上IP包头，在数据链路层加上MAC子层和FCS，那么我们讲一讲MAC的构成</p><p>三部分构成：MAC头部，帧体，FCS（帧校验序列）</p><p><img src="https://z3.ax1x.com/2021/06/05/2Np7LD.png"></p><p>MAC头部包含：帧控制，持续时间，地址，序列控制</p><p>帧控制包含：协议版本，帧的功能（控制帧，数据帧，管理帧），WEP，to ds/from ds</p><p>address字段：bssid，da，sa，ra</p><h4 id="实战近源渗透"><a href="#实战近源渗透" class="headerlink" title="实战近源渗透"></a>实战近源渗透</h4><h5 id="主动扫描和被动扫描"><a href="#主动扫描和被动扫描" class="headerlink" title="主动扫描和被动扫描"></a>主动扫描和被动扫描</h5><p>区别在于是否会发送probe request帧询问该信道上可用网络，帧被发送到ff:ff:f:ff:ff:ff:ff广播地址，</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 无线安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 近源渗透 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《玩转IP看监控》</title>
+      <link href="posts/aaevgx4a.html"/>
+      <url>posts/aaevgx4a.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h3><p><img src="https://z3.ax1x.com/2021/06/05/2NMxER.png" alt="网络的琴弦：玩转IP看监控"></p><p><a href="https://book.douban.com/subject/26928608/edit">更新图书信息或封面</a></p><p>作者: <a href="https://book.douban.com/search/%E5%91%A8%E8%BF%AA">周迪</a><br>出版社: 电子工业出版社<br>出版年: 2015-10-1<br>ISBN: 9787121272882</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 渗透 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>部分面试问题</title>
       <link href="posts/bvd6f5fa.html"/>
       <url>posts/bvd6f5fa.html</url>
@@ -21,6 +84,31 @@
         <tags>
             
             <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《深入浅出MySQL++数据库开发，优化与管理维护》</title>
+      <link href="posts/zze8f5fc.html"/>
+      <url>posts/zze8f5fc.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h3><p><img src="https://z3.ax1x.com/2021/06/04/2Gd4JA.png" alt="深入浅出MySQL"></p><p><a href="https://book.douban.com/subject/25817684/edit">更新图书信息或封面</a></p><p>作者: <a href="https://book.douban.com/search/%E5%94%90%E6%B1%89%E6%98%8E">唐汉明</a> / <a href="https://book.douban.com/search/%E7%BF%9F%E6%8C%AF%E5%85%B4">翟振兴</a> / <a href="https://book.douban.com/search/%E5%85%B3%E5%AE%9D%E5%86%9B">关宝军</a> / <a href="https://book.douban.com/search/%E7%8E%8B%E6%B4%AA%E6%9D%83">王洪权</a><br>出版社: 人民邮电出版社<br>副标题: 数据库开发、优化与管理维护<br>出版年: 2014-1-1<br>页数: 635<br>定价: 99.00元<br>装帧: 平装<br>ISBN: 9787115335494</p><h3 id="第1章-MySQL的安装"><a href="#第1章-MySQL的安装" class="headerlink" title="第1章 MySQL的安装"></a>第1章 MySQL的安装</h3><p>这里书中mysql是到官网下载，但是我个人推荐去下载phpstudy，lamp，wamp这些集成的软件，其中可以很方便的下载安装apache，nginx，php，mysql等。而启动/关闭mysql可以直接在phpstudy中进行启动。</p><pre class=" language-mysql"><code class="language-mysql">mysql -h localhost -u root -p password//这里-h后加上链接数据库的地址，因为在本地hosts文件里，lcoalhost和127.0.0.1是对应关系，-r后加上登录的数据库的用户名，-p后加上该用户登录的密码</code></pre><h3 id="第2章-SQL基础"><a href="#第2章-SQL基础" class="headerlink" title="第2章 SQL基础"></a>第2章 SQL基础</h3><p>这里推荐可以去菜鸟教程去了解更多。</p><p>分为三类：DDL，DML，DCL</p><p>DDL：数据定义语言，create，drop，alter等</p><p>DML：数据操作语句，用于数据的添加，删除，更新和查询，insert，delete，update，select等</p><p>DCL：数据控制语句，grant，revoke等</p><h4 id="DDL语句"><a href="#DDL语句" class="headerlink" title="DDL语句"></a>DDL语句</h4><p>在登录成功后会显示mysql版本，以及链接的id次数</p><pre class=" language-mysql"><code class="language-mysql">create database test1; //先创建一个叫做test1的数据库show databases; //显示所有的数据库其中imformation_schema是存储了一些数据库对象信息，比如用户表信息，列信息，权限信息，字符集信息，分区信息，我们以后的sql注入也是先练习从这里查询开始mysql储存了系统的用户权限信息test自动创建的测试数据库，任何用户都可以使用use test; //选择某数据库show tables; //选择上了某数据库后可以show展示列表drop database test;//删除test这个数据库create table tablename(ename varchar(10),hiredate date,sal decimal(10,2),deptno int(2));//创建一个叫tablename的表，表的信息如下desc tablename;//显示表的信息show create table tablename;//显示创建的表的过程drop table tablename;//删除表alter table tablename modify enname varchar(20);//修改tablename这个表中ename这个字段的type改成varchar（20）alter table tablename add column age int(3);//增加一个字表段alter table tablename drop column age;//删除一个表字段alter table tablename change age age1 int(4);//修改一个表字段的名字alter table tablename add birth date after ename;//add默认情况下是把新的数据加在最后面，也可以xxx after xxx，把新数据加在某某数据的后面或者前面（first）alter table tablename rename tablename1;//把tablename这个表的名字改成tablename1</code></pre><p><img src="https://z3.ax1x.com/2021/06/04/2Gyu6A.png"></p><p><img src="https://z3.ax1x.com/2021/06/04/2GcPIK.png"></p><p>我们看到，除了创建表的语句外，还可以看到ENGINE=MyISAM DEFAULT CHARSET=utf8，存储引擎和字符集\G是使得记录能按照字段竖向排列</p><h4 id="DML语句"><a href="#DML语句" class="headerlink" title="DML语句"></a>DML语句</h4><pre class=" language-mysql"><code class="language-mysql">insert into tablename(ename,hiredate,sal,deptno) values('lisa','2003-02-01','3000',2);//插入记录没写的字段自动设置为nullselect * from tablename;//显示表insert into tablename values(5,'dept5'),(6,'dept6');//一次插入两条数据update tablename set sal=4000 where ename='lisa';//更新表tablename的字段delete from tablename where ename='dony';//删除记录select username,password from tablename where id='1';//这里意思是选择这个tablename表，选择username，password这两名中id=1，也就是行等于1的数据同样的，where后面可以配合><=and or等符号，例如select * from tablename where deptno=1 and sal<3000;select * from tablename order by sal;//这里是按照sal的从小到大的顺序进行排列，也可以从大到小，对于sal中相同的数值，再加上别的进行排序也可以select * from tablename order by sal,id,deptno desc limit 1,3;//含义是从大到小排序limit显示从第二条开始后的三条记录select count(1)/max/min/sum from tablename group by deptno with rollup having count(1);//聚合合并两个表select * from emp;select * from dept;select ename,deptname from dept,emp where emp.deptno=dept.deptno;右连接和左连接select enname,deptname from emp left join dept on emp.deptno=dept.deptno;select enname,deptname from emp right join dept on emp.deptno=dept.deptno;子查询select * from emp where deptno in(select deptno from dept);如果子查询数唯一，还可以用=代替inselect * from emp where deptno deptno = (select deptno from dept limit 1);联合查询union，union all，区别是union会把重复的结果去重</code></pre><h4 id="DCL语句"><a href="#DCL语句" class="headerlink" title="DCL语句"></a>DCL语句</h4><pre class=" language-mysql"><code class="language-mysql">创建一个数据库用户z1，具有对sakila数据库中所有表的select，insert权限grant select,insert on sakila.* to 'z1'@'localhost' identified by '123';这里grant是赋予某种权限，sakila.* 代表这个数据库中的所有表 给 z1这个用户，地址是localhost本地，密码是123对insert权限收回，只保留select权限revoke insert on salika.*from 'z1'@'localhost';? contents显示可供查询的分类，对于列出来的分类，可以进一步查看，比如? data types</code></pre><p>mysql提供了一个新的数据库，information_schema，用来记录mysql中的元数据信息，元数据是指数据的数据，比如表名，列名，列类型，，索引名</p><p>有一些比较常用的视图</p><pre class=" language-mysql"><code class="language-mysql">schemata 提供了所有数据库的信息，show databases;显示所有数据库tablecolumnsstatistics 提供索引信息</code></pre><h3 id="第3章-MySQL支持的数据类型"><a href="#第3章-MySQL支持的数据类型" class="headerlink" title="第3章 MySQL支持的数据类型"></a>第3章 MySQL支持的数据类型</h3><h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><table><thead><tr><th>数据类型</th><th>字节</th><th>最小</th><th>最大</th></tr></thead><tbody><tr><td>tinyint</td><td>1</td><td>有符号-128，无符号0</td><td>有符号127，无符号255</td></tr><tr><td>smallint</td><td>2</td><td>-32768，0</td><td>255的n次方</td></tr><tr><td>mediumint</td><td>3</td><td>…</td><td></td></tr><tr><td>int，integer</td><td>4</td><td>…</td><td></td></tr><tr><td>bigint</td><td>5</td><td>…</td><td></td></tr><tr><td>float，double</td><td>4，8</td><td>…</td><td></td></tr><tr><td>dec（m，d），decmal（m，d）</td><td>m+2</td><td>…</td><td></td></tr><tr><td>bit</td><td>1-8</td><td>…</td><td></td></tr></tbody></table><pre class=" language-mysql"><code class="language-mysql">例如create table t1(id1 int,id2 int(5)); insert into t1 values(1,1);alter table t1 modify id1 int zerofill;bin()2进制 hex()16进制</code></pre><p>mysql中时间和日期的表示</p><pre class=" language-mysql"><code class="language-mysql">年月日 date年月日时分秒 datetime时分秒 time</code></pre><table><thead><tr><th>日期和时间</th><th>字节</th><th>例如</th></tr></thead><tbody><tr><td>date</td><td>4</td><td>xxxx-xx-xx</td></tr><tr><td>datetime</td><td>8</td><td>xxxx-xx-xx xx:xx:xx</td></tr><tr><td>timestamp</td><td>4</td><td>某个具体的时刻</td></tr><tr><td>time</td><td>3</td><td>xx:xx:xx</td></tr><tr><td>year</td><td>1</td><td>xxxx</td></tr></tbody></table><pre class=" language-mysql"><code class="language-mysql">应用create table t1(t time,d date,dt datetime);用now()函数插入当前日期insert into t values(now(),now(),now());</code></pre><h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><p>（1）char二号varchar</p><p>两者区别首先是在长度上，varchar可以指定长度，其次char检索数据时会自动删除空格，而varchar会保留空格</p><pre class=" language-mysql"><code class="language-mysql">例如create table vc (v varchar(4), c char(4));insert into vc values('ab   ','ab   ');select length(v),length(c) from vc;//但是最好后面拼接一个，好观看select concat(v,'+'),concat(c,'+') from vc;显示：ab   +,ab+</code></pre><p>此外还有binary，varbinary类型，包含二进制字符串，而不包含非二进制字符串，enum枚举类型，范围是所枚举的个数之间</p><p>set类型，重点（在sql注入时当select被过滤时，可以配合一起使用）</p><p>set用于设置变量名和值<br>prepare用于预备一个语句，并赋予名称，以后可以引用该语句<br>execute执行语句<br>deallocate prepare用来释放掉预处理的语句</p><pre class=" language-mysql"><code class="language-mysql">-1';set @sql = CONCAT('se','lect * from `1919810931114514`;');prepare stmt from @sql;EXECUTE stmt;#拆分开来如下-1';set @sql = CONCAT('se','lect * from `1919810931114514`;');prepare stmt from @sql;EXECUTE stmt;#</code></pre><h3 id="第4章-MySQL中的运算符"><a href="#第4章-MySQL中的运算符" class="headerlink" title="第4章 MySQL中的运算符"></a>第4章 MySQL中的运算符</h3><p>算术运算符+，-，*，/ div，% mod</p><p>比较运算符=，&lt;&gt;，《》，=&gt;,=&lt;,is null,in ,between,is not null,like通配符匹配,regexp rlike正则表达式等</p><p>当进行数值大小于比较，字符串比较时等，正确则返回1，错误则返回0</p><pre class=" language-mysql"><code class="language-mysql">betweenselect 10 between 10 and 20,9 between 10 and 20;inselect 1 in (1,2,3), 't' in ('t','a','b','l','e'),0 in (1,2);is null，当a的值为null返回1，否则返回0select 0 is null,null is null;is not null;和上面的is null相反select 0 is null,null is null;like通配符匹配a like %123%,当a中含有123时返回1，否则0regexp，rlike，正则表达式不必多说</code></pre><p>逻辑运算符</p><p>not ！逻辑非</p><p>and &amp;&amp; 逻辑与</p><p>or || 逻辑或</p><p>xor 逻辑异或</p><pre><code>xor 对于一个操作数为null返回null，对于两个逻辑真假值想异，则返回结果1，否则返回0.select 1 xor 1,0 xor 0,1 xor 0,0 xor 1,null xor 1;</code></pre><p>位运算符</p><p>对于位运算符，先转换位二进制进行与或非操作之后再返回结果</p><h3 id="第5章-常用函数（重点）"><a href="#第5章-常用函数（重点）" class="headerlink" title="第5章 常用函数（重点）"></a>第5章 常用函数（重点）</h3><p>这里的常用函数，有一些在sql注入时能很好的用上</p><table><thead><tr><th>函数</th><th>功能</th></tr></thead><tbody><tr><td>concat(a,b)</td><td>把a和b拼接在一起</td></tr><tr><td>insert(str,a,b,instr)</td><td>把字符串str的第a的字符到第b个字符替换成instr</td></tr><tr><td>lower(str)</td><td>把所有字符都变成小写</td></tr><tr><td>upper(str)</td><td>把所有字符都变成大写</td></tr><tr><td>left(str,x)</td><td>返回字符串str最左边的x个字符</td></tr><tr><td>right(str,x)</td><td>返回字符串str最右边的x个字符</td></tr><tr><td>lpad(str,n,pad)</td><td>用字符串pad对str从左到右进行填充，直到第n个</td></tr><tr><td>rpad(str,n,pad)</td><td>用字符串pad对str从右到左进行填充，直到第n个</td></tr><tr><td>ltrim(str)</td><td>去掉字符串左侧的字符</td></tr><tr><td>rtrim(str)</td><td>去掉字符串右侧的字符</td></tr><tr><td>repeat(str,x)</td><td>返回str重复x次的结果</td></tr><tr><td>replace(str,a,b)</td><td>用字符串b替换str中所有出现的a</td></tr><tr><td>strcmp(a1,a2)</td><td>比较a1和a2，返回0或1</td></tr><tr><td>trim(str)</td><td>去掉两侧的空格</td></tr><tr><td>substring(str,x,y)</td><td>返回从字符串x位置起y个字符长度的字串</td></tr></tbody></table><p>数值函数</p><table><thead><tr><th>函数</th><th>功能</th></tr></thead><tbody><tr><td>abs(s)</td><td>返回x的绝对值</td></tr><tr><td>ceil(x)</td><td>返回大于x的最小整数值</td></tr><tr><td>floor(x)</td><td>返回大于x的最大整数值</td></tr><tr><td>mod(x,y)</td><td>返回x/y的模</td></tr><tr><td>rand()</td><td>返回0到1的随机数</td></tr><tr><td>round(x,y)</td><td>返回x的四舍五入有y位小数的值</td></tr><tr><td>truncate(x,y)</td><td>返回数字x阶段为y的小数的结果</td></tr></tbody></table><h4 id="其他函数（重点）"><a href="#其他函数（重点）" class="headerlink" title="其他函数（重点）"></a>其他函数（重点）</h4><p>凡是重点，都是sql注入中会用到的</p><table><thead><tr><th>函数</th><th>功能</th></tr></thead><tbody><tr><td>database()</td><td>返回当前数据库</td></tr><tr><td>version()</td><td>返回数据库版本</td></tr><tr><td>user()</td><td>返回当前登录用户名</td></tr><tr><td>inet_aton()</td><td>返回ip地址的数字表示</td></tr><tr><td>inet_nota()</td><td>返回数字代表的ip地址</td></tr><tr><td>password(str)</td><td>返回字符串str的加密版本</td></tr><tr><td>md5()</td><td>返回MD5加密后的str</td></tr></tbody></table><h3 id="第6章-MySQL图形化管理工具使用"><a href="#第6章-MySQL图形化管理工具使用" class="headerlink" title="第6章 MySQL图形化管理工具使用"></a>第6章 MySQL图形化管理工具使用</h3><p>这里我推荐用<a href="http://www.navicat.com.cn/products/navicat-for-mysql">Navicat for MySQL</a>，网上有很多的使用教程和破解版，另一个是phpmyadmin，是用php编写可以通过web形式控制mysql数据库，但是只有在<em>php</em>5.5+版本才能使用，</p><p>通常的配套就是php+mysql+apache+phpMyAdmin，java+oracle+tomcat。具体的使用方法可以自行搜索文章和视频，这里不过多赘述。</p><hr><p>其实从这里开始是开发篇，对于sql注入来说已经意义不大了，但是秉承着开发+安全，ACM+CTF，审计+红队的原则，还是对此进行了解</p><h3 id="第9章-字符集"><a href="#第9章-字符集" class="headerlink" title="第9章 字符集"></a>第9章 字符集</h3><p>先大致总结一下数据的传输方式，首先数据是通过二进制进行传输的，比如我输入的一个数8，可以按照不同的编码方法把他转换为8位01表示的二进制数字，当我这边发送数据后，会走（交换机+）路由器，这个过程是模电，再到光猫（也就是调制解调器），再之后是数电，把01分成高频和低频两种方式代表0和1，并把控好节奏和顺序，在传播过程中信号会衰减所以要中继放大器。</p><p>接下来不废话直接说字符集，通常编码和密码学也有联系</p><p>unicode编码，utf-8，utf-16，ascii，gbk2312，其中gbk2312是汉字编码集，utf-8更多用</p><p>btree索引和hash索引，简单来说索引数据时是一条道走到黑，再去遍历其他的，还是先遍历其他的，再挨个走。这个和网络爬虫其实道理是一样的</p><h3 id="第15章-SQL中的安全问题"><a href="#第15章-SQL中的安全问题" class="headerlink" title="第15章 SQL中的安全问题"></a>第15章 SQL中的安全问题</h3><p>sql注入</p><pre class=" language-mysql"><code class="language-mysql">创建用户insert into 'user' values(1,'ange1','mypass';</code></pre><p>很多语言都有应对方式，比如Java可以绑定变量</p><p>mysql c api：使用mysql_real_escape_string() api调用，</p><ul><li>\x00</li><li>\n</li><li>\r</li><li>\</li><li>‘</li><li>“</li><li>\x1a</li></ul><p>这些字符会被转义，或者mysql_query()</p><p>mysql_query() 仅对 SELECT，SHOW，EXPLAIN 或 DESCRIBE 语句返回一个资源标识符，如果查询执行不正确则返回 FALSE。</p><p>对于其它类型的 SQL 语句，mysql_query() 在执行成功时返回 TRUE，出错时返回 FALSE。</p><p>mysql++：可以使用escape和quote修饰符</p><p>再或者就是自己定义字符，已知的非法字符过滤后也可以通过组合，编码，进制等攻击。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Books </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -79,11 +167,11 @@
     
     
     <entry>
-      <title>Web安全深度刨析</title>
+      <title>《Web安全深度刨析》</title>
       <link href="posts/5adc2790.html"/>
       <url>posts/5adc2790.html</url>
       
-        <content type="html"><![CDATA[<h3 id="第二章-HTTP"><a href="#第二章-HTTP" class="headerlink" title="第二章 HTTP"></a>第二章 HTTP</h3><p><a href="https://www.cnblogs.com/an-wen/p/11180076.html">详细链接</a></p><p>burpsuite：我另一篇文章会细写</p><p><a href="https://www.cnblogs.com/woaixuexi9999/p/9247705.html">fidder</a></p><p>winsock</p><h3 id="第三章-信息探测"><a href="#第三章-信息探测" class="headerlink" title="第三章 信息探测"></a>第三章 信息探测</h3><p><a href="https://blog.csdn.net/xxx0028/article/details/105818546">谷歌语法：找网站</a></p><p><a href="https://blog.csdn.net/weixin_30372371/article/details/94809933">nmap：扫端口</a></p><p><a href="https://blog.csdn.net/weixin_45116657/article/details/101531332">dirbuster：扫目录</a></p><p>dirbuster替换品可以用御剑的几个版本</p><p>指纹扫描，这个有专门的网站可以，不必借助工具</p><h3 id="第四章-漏洞扫描"><a href="#第四章-漏洞扫描" class="headerlink" title="第四章 漏洞扫描"></a>第四章 漏洞扫描</h3><p>burpsuite的攻击面分析</p><p>awvs，我也会单独写一篇文章</p><p><a href="https://blog.csdn.net/qq_38317509/article/details/81347219">appscan</a></p><h3 id="第五章-SQL注入漏洞"><a href="#第五章-SQL注入漏洞" class="headerlink" title="第五章 SQL注入漏洞"></a>第五章 SQL注入漏洞</h3><h3 id="第六章-（文件）上传漏洞"><a href="#第六章-（文件）上传漏洞" class="headerlink" title="第六章 （文件）上传漏洞"></a>第六章 （文件）上传漏洞</h3><h3 id="第七章-XSS跨站脚本漏洞"><a href="#第七章-XSS跨站脚本漏洞" class="headerlink" title="第七章 XSS跨站脚本漏洞"></a>第七章 XSS跨站脚本漏洞</h3><h3 id="第八章-命令执行漏洞"><a href="#第八章-命令执行漏洞" class="headerlink" title="第八章 命令执行漏洞"></a>第八章 命令执行漏洞</h3><h3 id="第九章-文件包含漏洞"><a href="#第九章-文件包含漏洞" class="headerlink" title="第九章 文件包含漏洞"></a>第九章 文件包含漏洞</h3><h3 id="第十章-其他漏洞"><a href="#第十章-其他漏洞" class="headerlink" title="第十章 其他漏洞"></a>第十章 其他漏洞</h3><h3 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h3>]]></content>
+        <content type="html"><![CDATA[<h3 id="书籍简介"><a href="#书籍简介" class="headerlink" title="书籍简介"></a>书籍简介</h3><p><img src="https://z3.ax1x.com/2021/06/03/28A8bQ.png" alt="Web安全深度剖析"></p><p><a href="https://z3.ax1x.com/2021/06/03/28A8bQ.png">更新图书信息或封面</a></p><p>作者: <a href="https://book.douban.com/search/%E5%BC%A0%E7%82%B3%E5%B8%85">张炳帅</a><br>出版社: 电子工业出版社<br>出版年: 2015-4<br>页数: 360<br>定价: 59.00元<br>装帧: 平装<br>丛书: <a href="https://book.douban.com/series/29000">安全技术大系</a><br>ISBN: 9787121255816</p><h3 id="第1章-Web安全简介"><a href="#第1章-Web安全简介" class="headerlink" title="第1章 Web安全简介"></a>第1章 Web安全简介</h3><p>个人理解就是当我们在对公司服务进行攻击时，多半都是通过web打入，进而内网渗透（也可以物理渗透），而web安全就是利用web上的相关漏洞进行利用，从而对网站进行攻击，进而获得权限。</p><h3 id="第2章-深入HTTP请求流程"><a href="#第2章-深入HTTP请求流程" class="headerlink" title="第2章 深入HTTP请求流程"></a>第2章 深入HTTP请求流程</h3><p>了解请求体（request）和响应体的（response）的结构；了解请求方法，通常就是get，post居多，再之后就是head，connect这种，像put和delete这种服务器肯定不会开启的；了解状态码；了解请求体中请求头参数（host，ua，referer，cookie，range，accept）响应头参数（server，set-cookie，location，refresh），实体头（content-type/mitm，content-encoding，content-length，last-modified）；了解http和https的区别；利用burp，wireshark，fidder等抓包工具进行数据包截获分析</p><h3 id="第3章-信息探测"><a href="#第3章-信息探测" class="headerlink" title="第3章 信息探测"></a>第3章 信息探测</h3><p>了解谷歌语法；了解诸神之眼nmap的使用方法，了解漏洞扫描器dirbuster的使用方法；指纹识别，判断对方的cms，进而可以获取类型源码进行白盒测试，漏洞挖掘</p><h3 id="第4章-漏洞扫描"><a href="#第4章-漏洞扫描" class="headerlink" title="第4章 漏洞扫描"></a>第4章 漏洞扫描</h3><p>burpsuite的target模块配合spider可以爬取网页，scanner漏洞扫描器，intruder暴力破解，decoder解码器，repeater比较器；awvs漏洞扫描</p><h3 id="第5章-SQL注入漏洞"><a href="#第5章-SQL注入漏洞" class="headerlink" title="第5章 SQL注入漏洞"></a>第5章 SQL注入漏洞</h3><p>[单独写文章]</p><h3 id="第6章-上传漏洞"><a href="#第6章-上传漏洞" class="headerlink" title="第6章 上传漏洞"></a>第6章 上传漏洞</h3><p>[单独写文章]</p><h3 id="第7章-XSS-跨站脚本漏洞"><a href="#第7章-XSS-跨站脚本漏洞" class="headerlink" title="第7章 XSS 跨站脚本漏洞"></a>第7章 XSS 跨站脚本漏洞</h3><p>[单独写文章]</p><h3 id="第8章-命令执行漏洞"><a href="#第8章-命令执行漏洞" class="headerlink" title="第8章 命令执行漏洞"></a>第8章 命令执行漏洞</h3><p>[单独写文章]</p><h3 id="第9章-文件包含漏洞"><a href="#第9章-文件包含漏洞" class="headerlink" title="第9章 文件包含漏洞"></a>第9章 文件包含漏洞</h3><p>[单独写文章]</p><h3 id="第10章-其他漏洞"><a href="#第10章-其他漏洞" class="headerlink" title="第10章 其他漏洞"></a>第10章 其他漏洞</h3><p>csrf，ssrf，xpath注入，逻辑漏洞这种我也会单独写文章进行总结。</p><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>个人感觉学安全最注重实战，而且仅凭一本书就想搞懂所有漏洞原理和利用方式以及熟练使用不太现实，不过这本书还不错，总之而言就是一些入门的东西。</p>]]></content>
       
       
       <categories>
@@ -279,9 +367,9 @@
     
     
     <entry>
-      <title>pentest.training</title>
-      <link href="posts/adffc940.html"/>
-      <url>posts/adffc940.html</url>
+      <title>pentestit</title>
+      <link href="posts/5d6c53c3.html"/>
+      <url>posts/5d6c53c3.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -304,9 +392,9 @@
     
     
     <entry>
-      <title>pentestit</title>
-      <link href="posts/5d6c53c3.html"/>
-      <url>posts/5d6c53c3.html</url>
+      <title>pentest.training</title>
+      <link href="posts/adffc940.html"/>
+      <url>posts/adffc940.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -556,11 +644,11 @@
     
     
     <entry>
-      <title>Books记录闲谈</title>
+      <title>Lightning的安全随笔记录</title>
       <link href="posts/83d4ee02.html"/>
       <url>posts/83d4ee02.html</url>
       
-        <content type="html"><![CDATA[<h3 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h3><p>Lightning是从21年寒假开始真正意义上开始学习信息安全，总感觉自己的成长速度太慢了，同时期的小伙伴进步太快了，从学习到现在阅读过很多书籍，但是当时本着“文档工程师”的态度，不实操，不练习，包括像计算机网络类方面书籍本身实践性就比较低，所以Lightning决定从今天开始以后读完一本书开始做读书笔记，读书笔记的内容包括但不限于书中内容本身，会结合其他师傅的优秀文章进行修改，争取保证原有知识前提下，收获更多其他知识，另外，Lightning自感安全行业实战大于理论，所以凡是可以实操的地方，Lightning会详细写清细节。</p><h3 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h3><p>接下来Lightning根据自己电子书的分类进行Books类书籍分类：</p><h4 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h4><h4 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h4><h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><h4 id="Pwn"><a href="#Pwn" class="headerlink" title="Pwn"></a>Pwn</h4><h4 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h4><h4 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h4><h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><h4 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h4><h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><h4 id="Go语言"><a href="#Go语言" class="headerlink" title="Go语言"></a>Go语言</h4><h4 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h4><h4 id="CTF类"><a href="#CTF类" class="headerlink" title="CTF类"></a>CTF类</h4><h4 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h4><h4 id="C-1"><a href="#C-1" class="headerlink" title="C"></a>C</h4><h4 id="C-2"><a href="#C-2" class="headerlink" title="C#"></a>C#</h4><h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><h4 id="ACM类，算法"><a href="#ACM类，算法" class="headerlink" title="ACM类，算法"></a>ACM类，算法</h4><h4 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h4><h4 id="信息安全（Crypto）"><a href="#信息安全（Crypto）" class="headerlink" title="信息安全（Crypto）"></a>信息安全（Crypto）</h4><h4 id="物联网安全"><a href="#物联网安全" class="headerlink" title="物联网安全"></a>物联网安全</h4><h4 id="无线安全"><a href="#无线安全" class="headerlink" title="无线安全"></a>无线安全</h4><h4 id="数学一"><a href="#数学一" class="headerlink" title="数学一"></a>数学一</h4><h4 id="渗透"><a href="#渗透" class="headerlink" title="渗透"></a>渗透</h4><h4 id="汽车，硬件安全"><a href="#汽车，硬件安全" class="headerlink" title="汽车，硬件安全"></a>汽车，硬件安全</h4><h4 id="考证"><a href="#考证" class="headerlink" title="考证"></a>考证</h4><h4 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h4><h4 id="权谋书"><a href="#权谋书" class="headerlink" title="权谋书"></a>权谋书</h4><h4 id="技术性杂书"><a href="#技术性杂书" class="headerlink" title="技术性杂书"></a>技术性杂书</h4><h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><p>这里的书籍指的是Lightning自己读完的书籍而并非Books系列更新书籍，先行测试</p><ul><li>《Python编程》</li><li>《黑客攻防技术宝典》</li><li>。。。。。。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h3><p>Lightning是从21年寒假开始真正意义上开始学习信息安全，总感觉自己的成长速度太慢了，同时期的小伙伴进步太快了，从学习到现在阅读过很多书籍，但是当时本着“文档工程师”的态度，不实操，不练习，包括像计算机网络类方面书籍本身实践性就比较低，所以Lightning决定从今天开始以后读完一本书开始做读书笔记，读书笔记的内容包括但不限于书中内容本身，会结合其他师傅的优秀文章进行修改，争取保证原有知识前提下，收获更多其他知识，另外，Lightning自感安全行业实战大于理论，所以凡是可以实操的地方，Lightning会详细写清细节。</p><h3 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h3><p>【待整理】</p><h3 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h3><p>这里的书籍记录时间从2021.6.1开始，以前读过的不算</p><ul><li>Web安全深度刨析</li><li>深入浅出MySQL++数据库开发，优化与管理维护</li><li>​</li></ul>]]></content>
       
       
       <categories>
@@ -686,6 +774,31 @@
       <url>posts/aae8f5fa.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《计算机病毒防范艺术》</title>
+      <link href="posts/lokc987c.html"/>
+      <url>posts/lokc987c.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h3><p><img src="https://z3.ax1x.com/2021/06/05/2NQ3rQ.png" alt="计算机病毒防范艺术"></p><p><a href="https://book.douban.com/subject/1964694/edit">更新图书信息或封面</a></p><p>作者: <a href="https://book.douban.com/search/%E6%96%AF%E6%B3%BD">斯泽</a><br>出版社: 机械工业出版社<br>原作名: The Art of Computer Virus Research and Defense<br>译者: <a href="https://book.douban.com/search/%E6%AE%B5%E6%96%B0%E6%B5%B7">段新海</a><br>出版年: 2007-1<br>页数: 444<br>定价: 49.00元<br>装帧: 平装<br>ISBN: 9787111205562</p><p>这本书豆瓣评分8.8，专业性书籍评分能达到8.5以上的都是不错的，何况这本书还是2007年出版的，地位堪称病毒界教科书，研究内网渗透的话总是要和反汇编，木马，病毒这些沾上。</p>]]></content>
       
       
       <categories>

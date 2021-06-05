@@ -1,0 +1,2045 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="《深入浅出MySQL++数据库开发，优化与管理维护》, batmanfuture 计算机 网络安全 渗透测试">
+    <meta name="description" content="软件工程 | 网络安全">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>《深入浅出MySQL++数据库开发，优化与管理维护》 | Lightning</title>
+    <link rel="icon" type="image/png" href="https://z3.ax1x.com/2021/05/23/gX8y9S.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Lightning" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://z3.ax1x.com/2021/04/27/gCFR1O.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Lightning</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-paper-plane" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>时轴</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tag" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-envelope" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tools" class="waves-effect waves-light">
+      
+      <i class="fas fa-suitcase" style="zoom: 0.6;"></i>
+      
+      <span>Navi</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Windows" class="waves-effect waves-light">
+      
+      <i class="fas fa-desktop" style="zoom: 0.6;"></i>
+      
+      <span>Windows</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-link" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://z3.ax1x.com/2021/04/27/gCFR1O.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Lightning</div>
+        <div class="logo-desc">
+            
+            软件工程 | 网络安全
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-paper-plane" style="position: absolute;left:50px" ></i>
+			      
+		          <span>时轴</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tag" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-envelope"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tools" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-suitcase"></i>
+			
+			Navi
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Windows" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-desktop"></i>
+			
+			Windows
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-link"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://z3.ax1x.com/2021/06/04/2Gd4JA.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">《深入浅出MySQL++数据库开发，优化与管理维护》</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Books/" class="post-category">
+                                Books
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-06-03
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-06-05
+                </div>
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h3><p><img src="https://z3.ax1x.com/2021/06/04/2Gd4JA.png" alt="深入浅出MySQL"></p>
+<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/25817684/edit">更新图书信息或封面</a></p>
+<p>作者: <a target="_blank" rel="noopener" href="https://book.douban.com/search/%E5%94%90%E6%B1%89%E6%98%8E">唐汉明</a> / <a target="_blank" rel="noopener" href="https://book.douban.com/search/%E7%BF%9F%E6%8C%AF%E5%85%B4">翟振兴</a> / <a target="_blank" rel="noopener" href="https://book.douban.com/search/%E5%85%B3%E5%AE%9D%E5%86%9B">关宝军</a> / <a target="_blank" rel="noopener" href="https://book.douban.com/search/%E7%8E%8B%E6%B4%AA%E6%9D%83">王洪权</a><br>出版社: 人民邮电出版社<br>副标题: 数据库开发、优化与管理维护<br>出版年: 2014-1-1<br>页数: 635<br>定价: 99.00元<br>装帧: 平装<br>ISBN: 9787115335494</p>
+<h3 id="第1章-MySQL的安装"><a href="#第1章-MySQL的安装" class="headerlink" title="第1章 MySQL的安装"></a>第1章 MySQL的安装</h3><p>这里书中mysql是到官网下载，但是我个人推荐去下载phpstudy，lamp，wamp这些集成的软件，其中可以很方便的下载安装apache，nginx，php，mysql等。而启动/关闭mysql可以直接在phpstudy中进行启动。</p>
+<pre class=" language-mysql"><code class="language-mysql">mysql -h localhost -u root -p password
+//这里-h后加上链接数据库的地址，因为在本地hosts文件里，lcoalhost和127.0.0.1是对应关系，-r后加上登录的数据库的用户名，-p后加上该用户登录的密码
+</code></pre>
+<h3 id="第2章-SQL基础"><a href="#第2章-SQL基础" class="headerlink" title="第2章 SQL基础"></a>第2章 SQL基础</h3><p>这里推荐可以去菜鸟教程去了解更多。</p>
+<p>分为三类：DDL，DML，DCL</p>
+<p>DDL：数据定义语言，create，drop，alter等</p>
+<p>DML：数据操作语句，用于数据的添加，删除，更新和查询，insert，delete，update，select等</p>
+<p>DCL：数据控制语句，grant，revoke等</p>
+<h4 id="DDL语句"><a href="#DDL语句" class="headerlink" title="DDL语句"></a>DDL语句</h4><p>在登录成功后会显示mysql版本，以及链接的id次数</p>
+<pre class=" language-mysql"><code class="language-mysql">create database test1; //先创建一个叫做test1的数据库
+show databases; //显示所有的数据库
+其中
+imformation_schema是存储了一些数据库对象信息，比如用户表信息，列信息，权限信息，字符集信息，分区信息，我们以后的sql注入也是先练习从这里查询开始
+mysql储存了系统的用户权限信息
+test自动创建的测试数据库，任何用户都可以使用
+
+use test; //选择某数据库
+show tables; //选择上了某数据库后可以show展示列表
+
+drop database test;//删除test这个数据库
+create table tablename(ename varchar(10),hiredate date,sal decimal(10,2),deptno int(2));//创建一个叫tablename的表，表的信息如下
+desc tablename;//显示表的信息
+show create table tablename;//显示创建的表的过程
+drop table tablename;//删除表
+alter table tablename modify enname varchar(20);//修改tablename这个表中ename这个字段的type改成varchar（20）
+alter table tablename add column age int(3);//增加一个字表段
+alter table tablename drop column age;//删除一个表字段
+alter table tablename change age age1 int(4);//修改一个表字段的名字
+alter table tablename add birth date after ename;//add默认情况下是把新的数据加在最后面，也可以xxx after xxx，把新数据加在某某数据的后面或者前面（first）
+alter table tablename rename tablename1;//把tablename这个表的名字改成tablename1
+</code></pre>
+<p><img src="https://z3.ax1x.com/2021/06/04/2Gyu6A.png"></p>
+<p><img src="https://z3.ax1x.com/2021/06/04/2GcPIK.png"></p>
+<p>我们看到，除了创建表的语句外，还可以看到ENGINE=MyISAM DEFAULT CHARSET=utf8，存储引擎和字符集\G是使得记录能按照字段竖向排列</p>
+<h4 id="DML语句"><a href="#DML语句" class="headerlink" title="DML语句"></a>DML语句</h4><pre class=" language-mysql"><code class="language-mysql">insert into tablename(ename,hiredate,sal,deptno) values('lisa','2003-02-01','3000',2);//插入记录
+没写的字段自动设置为null
+select * from tablename;//显示表
+insert into tablename values(5,'dept5'),(6,'dept6');//一次插入两条数据
+update tablename set sal=4000 where ename='lisa';//更新表tablename的字段
+delete from tablename where ename='dony';//删除记录
+select username,password from tablename where id='1';//这里意思是选择这个tablename表，选择username，password这两名中id=1，也就是行等于1的数据
+同样的，where后面可以配合><=and or等符号，例如
+select * from tablename where deptno=1 and sal<3000;
+select * from tablename order by sal;//这里是按照sal的从小到大的顺序进行排列，也可以从大到小，对于sal中相同的数值，再加上别的进行排序也可以
+select * from tablename order by sal,id,deptno desc limit 1,3;//含义是从大到小排序limit显示从第二条开始后的三条记录
+select count(1)/max/min/sum from tablename group by deptno with rollup having count(1);//聚合
+合并两个表
+select * from emp;
+select * from dept;
+select ename,deptname from dept,emp where emp.deptno=dept.deptno;
+右连接和左连接
+select enname,deptname from emp left join dept on emp.deptno=dept.deptno;
+select enname,deptname from emp right join dept on emp.deptno=dept.deptno;
+子查询
+select * from emp where deptno in(select deptno from dept);
+如果子查询数唯一，还可以用=代替in
+select * from emp where deptno deptno = (select deptno from dept limit 1);
+联合查询union，union all，区别是union会把重复的结果去重
+</code></pre>
+<h4 id="DCL语句"><a href="#DCL语句" class="headerlink" title="DCL语句"></a>DCL语句</h4><pre class=" language-mysql"><code class="language-mysql">创建一个数据库用户z1，具有对sakila数据库中所有表的select，insert权限
+grant select,insert on sakila.* to 'z1'@'localhost' identified by '123';
+这里grant是赋予某种权限，sakila.* 代表这个数据库中的所有表 给 z1这个用户，地址是localhost本地，密码是123
+
+对insert权限收回，只保留select权限
+revoke insert on salika.*from 'z1'@'localhost';
+
+? contents
+显示可供查询的分类，对于列出来的分类，可以进一步查看，比如? data types
+</code></pre>
+<p>mysql提供了一个新的数据库，information_schema，用来记录mysql中的元数据信息，元数据是指数据的数据，比如表名，列名，列类型，，索引名</p>
+<p>有一些比较常用的视图</p>
+<pre class=" language-mysql"><code class="language-mysql">schemata 提供了所有数据库的信息，show databases;显示所有数据库
+table
+columns
+statistics 提供索引信息
+</code></pre>
+<h3 id="第3章-MySQL支持的数据类型"><a href="#第3章-MySQL支持的数据类型" class="headerlink" title="第3章 MySQL支持的数据类型"></a>第3章 MySQL支持的数据类型</h3><h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>字节</th>
+<th>最小</th>
+<th>最大</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tinyint</td>
+<td>1</td>
+<td>有符号-128，无符号0</td>
+<td>有符号127，无符号255</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td>2</td>
+<td>-32768，0</td>
+<td>255的n次方</td>
+</tr>
+<tr>
+<td>mediumint</td>
+<td>3</td>
+<td>…</td>
+<td></td>
+</tr>
+<tr>
+<td>int，integer</td>
+<td>4</td>
+<td>…</td>
+<td></td>
+</tr>
+<tr>
+<td>bigint</td>
+<td>5</td>
+<td>…</td>
+<td></td>
+</tr>
+<tr>
+<td>float，double</td>
+<td>4，8</td>
+<td>…</td>
+<td></td>
+</tr>
+<tr>
+<td>dec（m，d），decmal（m，d）</td>
+<td>m+2</td>
+<td>…</td>
+<td></td>
+</tr>
+<tr>
+<td>bit</td>
+<td>1-8</td>
+<td>…</td>
+<td></td>
+</tr>
+</tbody></table>
+<pre class=" language-mysql"><code class="language-mysql">例如
+create table t1(id1 int,id2 int(5)); 
+
+insert into t1 values(1,1);
+
+alter table t1 modify id1 int zerofill;
+
+bin()2进制 hex()16进制
+</code></pre>
+<p>mysql中时间和日期的表示</p>
+<pre class=" language-mysql"><code class="language-mysql">年月日 date
+年月日时分秒 datetime
+时分秒 time
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>日期和时间</th>
+<th>字节</th>
+<th>例如</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>date</td>
+<td>4</td>
+<td>xxxx-xx-xx</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>8</td>
+<td>xxxx-xx-xx xx:xx:xx</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>4</td>
+<td>某个具体的时刻</td>
+</tr>
+<tr>
+<td>time</td>
+<td>3</td>
+<td>xx:xx:xx</td>
+</tr>
+<tr>
+<td>year</td>
+<td>1</td>
+<td>xxxx</td>
+</tr>
+</tbody></table>
+<pre class=" language-mysql"><code class="language-mysql">应用
+create table t1(t time,d date,dt datetime);
+
+用now()函数插入当前日期
+insert into t values(now(),now(),now());
+</code></pre>
+<h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><p>（1）char二号varchar</p>
+<p>两者区别首先是在长度上，varchar可以指定长度，其次char检索数据时会自动删除空格，而varchar会保留空格</p>
+<pre class=" language-mysql"><code class="language-mysql">例如
+create table vc (v varchar(4), c char(4));
+
+insert into vc values('ab   ','ab   ');
+
+select length(v),length(c) from vc;//但是最好后面拼接一个，好观看
+
+select concat(v,'+'),concat(c,'+') from vc;
+显示：ab   +,ab+
+
+</code></pre>
+<p>此外还有binary，varbinary类型，包含二进制字符串，而不包含非二进制字符串，enum枚举类型，范围是所枚举的个数之间</p>
+<p>set类型，重点（在sql注入时当select被过滤时，可以配合一起使用）</p>
+<p>set用于设置变量名和值<br>prepare用于预备一个语句，并赋予名称，以后可以引用该语句<br>execute执行语句<br>deallocate prepare用来释放掉预处理的语句</p>
+<pre class=" language-mysql"><code class="language-mysql">-1';set @sql = CONCAT('se','lect * from `1919810931114514`;');prepare stmt from @sql;EXECUTE stmt;#
+
+拆分开来如下
+-1';
+set @sql = CONCAT('se','lect * from `1919810931114514`;');
+prepare stmt from @sql;
+EXECUTE stmt;
+#
+</code></pre>
+<h3 id="第4章-MySQL中的运算符"><a href="#第4章-MySQL中的运算符" class="headerlink" title="第4章 MySQL中的运算符"></a>第4章 MySQL中的运算符</h3><p>算术运算符+，-，*，/ div，% mod</p>
+<p>比较运算符=，&lt;&gt;，《》，=&gt;,=&lt;,is null,in ,between,is not null,like通配符匹配,regexp rlike正则表达式等</p>
+<p>当进行数值大小于比较，字符串比较时等，正确则返回1，错误则返回0</p>
+<pre class=" language-mysql"><code class="language-mysql">between
+select 10 between 10 and 20,9 between 10 and 20;
+
+in
+select 1 in (1,2,3), 't' in ('t','a','b','l','e'),0 in (1,2);
+
+is null，当a的值为null返回1，否则返回0
+select 0 is null,null is null;
+
+is not null;和上面的is null相反
+select 0 is null,null is null;
+
+like通配符匹配
+a like %123%,当a中含有123时返回1，否则0
+
+regexp，rlike，正则表达式不必多说
+</code></pre>
+<p>逻辑运算符</p>
+<p>not ！逻辑非</p>
+<p>and &amp;&amp; 逻辑与</p>
+<p>or || 逻辑或</p>
+<p>xor 逻辑异或</p>
+<pre><code>xor 对于一个操作数为null返回null，对于两个逻辑真假值想异，则返回结果1，否则返回0.
+select 1 xor 1,0 xor 0,1 xor 0,0 xor 1,null xor 1;
+</code></pre>
+<p>位运算符</p>
+<p>对于位运算符，先转换位二进制进行与或非操作之后再返回结果</p>
+<h3 id="第5章-常用函数（重点）"><a href="#第5章-常用函数（重点）" class="headerlink" title="第5章 常用函数（重点）"></a>第5章 常用函数（重点）</h3><p>这里的常用函数，有一些在sql注入时能很好的用上</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>concat(a,b)</td>
+<td>把a和b拼接在一起</td>
+</tr>
+<tr>
+<td>insert(str,a,b,instr)</td>
+<td>把字符串str的第a的字符到第b个字符替换成instr</td>
+</tr>
+<tr>
+<td>lower(str)</td>
+<td>把所有字符都变成小写</td>
+</tr>
+<tr>
+<td>upper(str)</td>
+<td>把所有字符都变成大写</td>
+</tr>
+<tr>
+<td>left(str,x)</td>
+<td>返回字符串str最左边的x个字符</td>
+</tr>
+<tr>
+<td>right(str,x)</td>
+<td>返回字符串str最右边的x个字符</td>
+</tr>
+<tr>
+<td>lpad(str,n,pad)</td>
+<td>用字符串pad对str从左到右进行填充，直到第n个</td>
+</tr>
+<tr>
+<td>rpad(str,n,pad)</td>
+<td>用字符串pad对str从右到左进行填充，直到第n个</td>
+</tr>
+<tr>
+<td>ltrim(str)</td>
+<td>去掉字符串左侧的字符</td>
+</tr>
+<tr>
+<td>rtrim(str)</td>
+<td>去掉字符串右侧的字符</td>
+</tr>
+<tr>
+<td>repeat(str,x)</td>
+<td>返回str重复x次的结果</td>
+</tr>
+<tr>
+<td>replace(str,a,b)</td>
+<td>用字符串b替换str中所有出现的a</td>
+</tr>
+<tr>
+<td>strcmp(a1,a2)</td>
+<td>比较a1和a2，返回0或1</td>
+</tr>
+<tr>
+<td>trim(str)</td>
+<td>去掉两侧的空格</td>
+</tr>
+<tr>
+<td>substring(str,x,y)</td>
+<td>返回从字符串x位置起y个字符长度的字串</td>
+</tr>
+</tbody></table>
+<p>数值函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>abs(s)</td>
+<td>返回x的绝对值</td>
+</tr>
+<tr>
+<td>ceil(x)</td>
+<td>返回大于x的最小整数值</td>
+</tr>
+<tr>
+<td>floor(x)</td>
+<td>返回大于x的最大整数值</td>
+</tr>
+<tr>
+<td>mod(x,y)</td>
+<td>返回x/y的模</td>
+</tr>
+<tr>
+<td>rand()</td>
+<td>返回0到1的随机数</td>
+</tr>
+<tr>
+<td>round(x,y)</td>
+<td>返回x的四舍五入有y位小数的值</td>
+</tr>
+<tr>
+<td>truncate(x,y)</td>
+<td>返回数字x阶段为y的小数的结果</td>
+</tr>
+</tbody></table>
+<h4 id="其他函数（重点）"><a href="#其他函数（重点）" class="headerlink" title="其他函数（重点）"></a>其他函数（重点）</h4><p>凡是重点，都是sql注入中会用到的</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>database()</td>
+<td>返回当前数据库</td>
+</tr>
+<tr>
+<td>version()</td>
+<td>返回数据库版本</td>
+</tr>
+<tr>
+<td>user()</td>
+<td>返回当前登录用户名</td>
+</tr>
+<tr>
+<td>inet_aton()</td>
+<td>返回ip地址的数字表示</td>
+</tr>
+<tr>
+<td>inet_nota()</td>
+<td>返回数字代表的ip地址</td>
+</tr>
+<tr>
+<td>password(str)</td>
+<td>返回字符串str的加密版本</td>
+</tr>
+<tr>
+<td>md5()</td>
+<td>返回MD5加密后的str</td>
+</tr>
+</tbody></table>
+<h3 id="第6章-MySQL图形化管理工具使用"><a href="#第6章-MySQL图形化管理工具使用" class="headerlink" title="第6章 MySQL图形化管理工具使用"></a>第6章 MySQL图形化管理工具使用</h3><p>这里我推荐用<a target="_blank" rel="noopener" href="http://www.navicat.com.cn/products/navicat-for-mysql">Navicat for MySQL</a>，网上有很多的使用教程和破解版，另一个是phpmyadmin，是用php编写可以通过web形式控制mysql数据库，但是只有在<em>php</em>5.5+版本才能使用，</p>
+<p>通常的配套就是php+mysql+apache+phpMyAdmin，java+oracle+tomcat。具体的使用方法可以自行搜索文章和视频，这里不过多赘述。</p>
+<hr>
+<p>其实从这里开始是开发篇，对于sql注入来说已经意义不大了，但是秉承着开发+安全，ACM+CTF，审计+红队的原则，还是对此进行了解</p>
+<h3 id="第9章-字符集"><a href="#第9章-字符集" class="headerlink" title="第9章 字符集"></a>第9章 字符集</h3><p>先大致总结一下数据的传输方式，首先数据是通过二进制进行传输的，比如我输入的一个数8，可以按照不同的编码方法把他转换为8位01表示的二进制数字，当我这边发送数据后，会走（交换机+）路由器，这个过程是模电，再到光猫（也就是调制解调器），再之后是数电，把01分成高频和低频两种方式代表0和1，并把控好节奏和顺序，在传播过程中信号会衰减所以要中继放大器。</p>
+<p>接下来不废话直接说字符集，通常编码和密码学也有联系</p>
+<p>unicode编码，utf-8，utf-16，ascii，gbk2312，其中gbk2312是汉字编码集，utf-8更多用</p>
+<p>btree索引和hash索引，简单来说索引数据时是一条道走到黑，再去遍历其他的，还是先遍历其他的，再挨个走。这个和网络爬虫其实道理是一样的</p>
+<h3 id="第15章-SQL中的安全问题"><a href="#第15章-SQL中的安全问题" class="headerlink" title="第15章 SQL中的安全问题"></a>第15章 SQL中的安全问题</h3><p>sql注入</p>
+<pre class=" language-mysql"><code class="language-mysql">创建用户
+insert into 'user' values(1,'ange1','mypass';
+</code></pre>
+<p>很多语言都有应对方式，比如Java可以绑定变量</p>
+<p>mysql c api：使用mysql_real_escape_string() api调用，</p>
+<ul>
+<li>\x00</li>
+<li>\n</li>
+<li>\r</li>
+<li>\</li>
+<li>‘</li>
+<li>“</li>
+<li>\x1a</li>
+</ul>
+<p>这些字符会被转义，或者mysql_query()</p>
+<p>mysql_query() 仅对 SELECT，SHOW，EXPLAIN 或 DESCRIBE 语句返回一个资源标识符，如果查询执行不正确则返回 FALSE。</p>
+<p>对于其它类型的 SQL 语句，mysql_query() 在执行成功时返回 TRUE，出错时返回 FALSE。</p>
+<p>mysql++：可以使用escape和quote修饰符</p>
+<p>再或者就是自己定义字符，已知的非法字符过滤后也可以通过组合，编码，进制等攻击。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Lightning</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://batmanfuture.gitee.io/posts/zze8f5fc.html">https://batmanfuture.gitee.io/posts/zze8f5fc.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Lightning</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">您的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://z3.ax1x.com/2021/05/18/gfdY0e.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://z3.ax1x.com/2021/05/18/gfdJmD.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'qmQQNnRvTYsTwozQTLunlfds-gzGzoHsz',
+        appKey: 'bKNX0p2Y5eeDW3ygB4ARu5bH',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '留下你的足迹..'
+    });
+</script>
+
+<!-- 直达评论 -->
+<div id="to_comment" class="comment-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#vcomments" title="直达评论">
+        <i class="fas fa-comments"></i>
+    </a>
+</div>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/bvd6f5fa.html">
+                    <div class="card-image">
+                        
+                        <img src="https://z3.ax1x.com/2021/06/02/2QjoLT.png" class="responsive-img" alt="部分面试问题">
+                        
+                        <span class="card-title">部分面试问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                    其他
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/aae8f6ea.html">
+                    <div class="card-image">
+                        
+                        <img src="https://z3.ax1x.com/2021/06/02/2QjDQP.png" class="responsive-img" alt="技术面试">
+                        
+                        <span class="card-title">技术面试</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                                    其他
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="2166145566"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">Lightning</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">103.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "2";
+                    var startDate = "28";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://gitee.com/batmanfuture/batmanfuture" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:batmanfuture111111@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1601749085" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1601749085" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/ya-bo-la-han-lin-ken-18" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/people/ya-bo-la-han-lin-ken-18" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!--动态线条背景-->
+<script type="text/javascript"
+color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<script src="/js/snow.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
