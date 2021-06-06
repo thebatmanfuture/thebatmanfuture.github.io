@@ -6,7 +6,7 @@
   <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-06-05T13:52:18.660Z</updated>
+  <updated>2021-06-06T07:45:11.085Z</updated>
   <id>https://batmanfuture.gitee.io/</id>
   
   <author>
@@ -17,27 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://batmanfuture.gitee.io/posts/0.html"/>
-    <id>https://batmanfuture.gitee.io/posts/0.html</id>
-    <published>2021-06-05T12:37:41.232Z</published>
-    <updated>2021-06-05T13:52:18.660Z</updated>
+    <title>安恒信息《渗透攻击红队百科全书》</title>
+    <link href="https://batmanfuture.gitee.io/posts/y7e8f5fa.html"/>
+    <id>https://batmanfuture.gitee.io/posts/y7e8f5fa.html</id>
+    <published>2021-06-08T00:54:28.000Z</published>
+    <updated>2021-06-06T07:45:11.085Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;title: 安恒信息《渗透攻击红队百科全书》&lt;br&gt;tags:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;红蓝对抗&lt;br&gt;categories:&lt;/li&gt;
-&lt;li&gt;红蓝对抗&lt;br&gt;img:&lt;/li&gt;
-&lt;li&gt;‘&lt;a</summary>
+    <summary type="html">&lt;h3 id=&quot;书籍介绍&quot;&gt;&lt;a href=&quot;#书籍介绍&quot; class=&quot;headerlink&quot; title=&quot;书籍介绍&quot;&gt;&lt;/a&gt;书籍介绍&lt;/h3&gt;&lt;p&gt;&lt;img</summary>
         
       
     
     
     
+    <category term="Books" scheme="https://batmanfuture.gitee.io/categories/Books/"/>
+    
+    
+    <category term="红蓝对抗" scheme="https://batmanfuture.gitee.io/tags/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97/"/>
     
   </entry>
   
@@ -362,11 +362,11 @@
   </entry>
   
   <entry>
-    <title>pentestit</title>
-    <link href="https://batmanfuture.gitee.io/posts/5d6c53c3.html"/>
-    <id>https://batmanfuture.gitee.io/posts/5d6c53c3.html</id>
+    <title>pentest.training</title>
+    <link href="https://batmanfuture.gitee.io/posts/adffc940.html"/>
+    <id>https://batmanfuture.gitee.io/posts/adffc940.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-06-02T06:25:05.316Z</updated>
+    <updated>2021-06-02T06:25:05.314Z</updated>
     
     
     
@@ -379,11 +379,11 @@
   </entry>
   
   <entry>
-    <title>pentest.training</title>
-    <link href="https://batmanfuture.gitee.io/posts/adffc940.html"/>
-    <id>https://batmanfuture.gitee.io/posts/adffc940.html</id>
+    <title>pentestit</title>
+    <link href="https://batmanfuture.gitee.io/posts/5d6c53c3.html"/>
+    <id>https://batmanfuture.gitee.io/posts/5d6c53c3.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-06-02T06:25:05.314Z</updated>
+    <updated>2021-06-02T06:25:05.316Z</updated>
     
     
     

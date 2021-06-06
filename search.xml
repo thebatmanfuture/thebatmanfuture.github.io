@@ -4,13 +4,25 @@
   
     
     <entry>
-      <title></title>
-      <link href="posts/0.html"/>
-      <url>posts/0.html</url>
+      <title>安恒信息《渗透攻击红队百科全书》</title>
+      <link href="posts/y7e8f5fa.html"/>
+      <url>posts/y7e8f5fa.html</url>
       
-        <content type="html"><![CDATA[<p>title: 安恒信息《渗透攻击红队百科全书》<br>tags:</p><ul><li>红蓝对抗<br>categories:</li><li>红蓝对抗<br>img:</li><li>‘<a href="https://z3.ax1x.com/2021/06/05/2N3ArF.png'">https://z3.ax1x.com/2021/06/05/2N3ArF.png'</a><br>abbrlink: 4597ujn1<br>date: 2021-06-06 09:54:28</li></ul><h3 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h3><p><img src="https://z3.ax1x.com/2021/06/05/2N3ArF.png"></p><p>30万字，上中下三册，集合在一起整理</p><h2 id="第一章-信息收集"><a href="#第一章-信息收集" class="headerlink" title="第一章 信息收集"></a>第一章 信息收集</h2><h3 id="1-1主机发现"><a href="#1-1主机发现" class="headerlink" title="1.1主机发现"></a>1.1主机发现</h3><h4 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h4><h4 id="massscan"><a href="#massscan" class="headerlink" title="massscan"></a>massscan</h4><h4 id="nbtscan"><a href="#nbtscan" class="headerlink" title="nbtscan"></a>nbtscan</h4><h4 id="hping3"><a href="#hping3" class="headerlink" title="hping3"></a>hping3</h4><h3 id="1-2关联信息生成"><a href="#1-2关联信息生成" class="headerlink" title="1.2关联信息生成"></a>1.2关联信息生成</h3><h4 id="pydictor"><a href="#pydictor" class="headerlink" title="pydictor"></a>pydictor</h4><h3 id="1-3漏洞平台"><a href="#1-3漏洞平台" class="headerlink" title="1.3漏洞平台"></a>1.3漏洞平台</h3><h3 id="1-4开源情报信息收集（OSINT）"><a href="#1-4开源情报信息收集（OSINT）" class="headerlink" title="1.4开源情报信息收集（OSINT）"></a>1.4开源情报信息收集（OSINT）</h3><h4 id="搜索引擎语法"><a href="#搜索引擎语法" class="headerlink" title="搜索引擎语法"></a>搜索引擎语法</h4><p>谷歌，百度，必应</p><h3 id="1-5DNS历史解析记录"><a href="#1-5DNS历史解析记录" class="headerlink" title="1.5DNS历史解析记录"></a>1.5DNS历史解析记录</h3><h4 id="github-hacking"><a href="#github-hacking" class="headerlink" title="github hacking"></a>github hacking</h4><table><thead><tr><th>Query</th><th>Example</th></tr></thead><tbody><tr><td>cats stars:&gt;1000</td><td>匹配cats关键字，并且star大于1000的仓库</td></tr><tr><td>cats topics:&gt;5</td><td>匹配cats关键字，并且topic大于5的仓库</td></tr><tr><td>cats size:&lt;10000</td><td>匹配cats关键字，并且文件大于10kb的仓库</td></tr><tr><td>cats stars:&lt;=50</td><td>匹配cats关键字，并且star小于等于50的仓库</td></tr><tr><td>cats stars:10..*</td><td>匹配cats关键字，并且star大于等于10的仓库</td></tr><tr><td>cats stars:..10*</td><td>匹配cats关键字，并且star小于等于10的仓库</td></tr><tr><td>cats stars:10..50</td><td>匹配cats关键字，并且star大于10且小于50的仓库</td></tr></tbody></table><h4 id="搜索代码"><a href="#搜索代码" class="headerlink" title="搜索代码"></a>搜索代码</h4><pre><code>cats pushed:2012-07-05 cats pushed:2016-04-30..2016-07-04cats created:&gt;=2017-04-01and or notcats in:filecats in:pathcats in:path,fileconsole path:app/public language:javascriptuser:USERNAMEorg:''ORGNAMErepo:USERNAME/REPOSITORYsize:&gt;1000filename:config.php language:phpextension:EXTENSION</code></pre>]]></content>
+        <content type="html"><![CDATA[<h3 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h3><p><img src="https://z3.ax1x.com/2021/06/05/2N3ArF.png"></p><p>30万字，上中下三册，集合在一起整理</p><h2 id="第一章-信息收集"><a href="#第一章-信息收集" class="headerlink" title="第一章 信息收集"></a>第一章 信息收集</h2><h3 id="1-1主机发现"><a href="#1-1主机发现" class="headerlink" title="1.1主机发现"></a>1.1主机发现</h3><h4 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h4><h4 id="massscan"><a href="#massscan" class="headerlink" title="massscan"></a>massscan</h4><h4 id="nbtscan"><a href="#nbtscan" class="headerlink" title="nbtscan"></a>nbtscan</h4><h4 id="hping3"><a href="#hping3" class="headerlink" title="hping3"></a>hping3</h4><h3 id="1-2关联信息生成"><a href="#1-2关联信息生成" class="headerlink" title="1.2关联信息生成"></a>1.2关联信息生成</h3><h4 id="pydictor"><a href="#pydictor" class="headerlink" title="pydictor"></a>pydictor</h4><h3 id="1-3漏洞平台"><a href="#1-3漏洞平台" class="headerlink" title="1.3漏洞平台"></a>1.3漏洞平台</h3><h3 id="1-4开源情报信息收集（OSINT）"><a href="#1-4开源情报信息收集（OSINT）" class="headerlink" title="1.4开源情报信息收集（OSINT）"></a>1.4开源情报信息收集（OSINT）</h3><h4 id="搜索引擎语法"><a href="#搜索引擎语法" class="headerlink" title="搜索引擎语法"></a>搜索引擎语法</h4><p>谷歌，百度，必应</p><h3 id="1-5github-hacking"><a href="#1-5github-hacking" class="headerlink" title="1.5github hacking"></a>1.5github hacking</h3><table><thead><tr><th>Query</th><th>Example</th></tr></thead><tbody><tr><td>cats stars:&gt;1000</td><td>匹配cats关键字，并且star大于1000的仓库</td></tr><tr><td>cats topics:&gt;5</td><td>匹配cats关键字，并且topic大于5的仓库</td></tr><tr><td>cats size:&lt;10000</td><td>匹配cats关键字，并且文件大于10kb的仓库</td></tr><tr><td>cats stars:&lt;=50</td><td>匹配cats关键字，并且star小于等于50的仓库</td></tr><tr><td>cats stars:10..*</td><td>匹配cats关键字，并且star大于等于10的仓库</td></tr><tr><td>cats stars:..10*</td><td>匹配cats关键字，并且star小于等于10的仓库</td></tr><tr><td>cats stars:10..50</td><td>匹配cats关键字，并且star大于10且小于50的仓库</td></tr></tbody></table><h4 id="搜索代码"><a href="#搜索代码" class="headerlink" title="搜索代码"></a>搜索代码</h4><pre><code>cats pushed:2012-07-05 cats pushed:2016-04-30..2016-07-04cats created:&gt;=2017-04-01and or notcats in:filecats in:pathcats in:path,fileconsole path:app/public language:javascriptuser:USERNAMEorg:''ORGNAMErepo:USERNAME/REPOSITORYsize:&gt;1000filename:config.php language:phpextension:EXTENSION</code></pre><h3 id="1-6google-hacking"><a href="#1-6google-hacking" class="headerlink" title="1.6google hacking"></a>1.6google hacking</h3><pre class=" language-shell"><code class="language-shell">intitle     包含标题intext        包含内容filetype    文件类型info        基本信息site        指定网站inurl        包含某个URLlink        包含指定链接的网页cache        显示页面的缓存版本numberange    搜索一个数字</code></pre><h3 id="1-7Git-all-secret"><a href="#1-7Git-all-secret" class="headerlink" title="1.7Git-all-secret"></a>1.7Git-all-secret</h3><h3 id="1-9内网渗透之信息收集"><a href="#1-9内网渗透之信息收集" class="headerlink" title="1.9内网渗透之信息收集"></a>1.9内网渗透之信息收集</h3><h4 id="windows（工作组和域）"><a href="#windows（工作组和域）" class="headerlink" title="windows（工作组和域）"></a>windows（工作组和域）</h4><pre class=" language-shell"><code class="language-shell">whoami /user && whoami /priv//检查当前shell权限systeminfo//查看系统信息netstat -ano //网络连接状态信息hostname //机器名wmic OS get Caption,CSDVersion,OSArchitecture,Version//查看当前操作系统wmic /node:localhost /namespace:\root\securitycenter2 path antivirusproduct get displayname /format:list//查看杀毒软件wmic product get name,version//查看安装的应用程序及版本信息quser//查看当前在线用户ipconfig /all//查看网络配置tasklist /v//查看进程信息net config workstation//查看当前登录域cmdkey /l//远程桌面连接历史记录net user//查看本机上的用户账号列表net user administrator//查看本机具体用户的信息net user /domain//显示所在域的用户名单net user 域用户 /domain//获取某个域用户的详细信息net user /domain batma 2019gaokao//修改域用户密码，需要域管理员权限</code></pre><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3>]]></content>
       
       
+      <categories>
+          
+          <category> Books </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 红蓝对抗 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -367,9 +379,9 @@
     
     
     <entry>
-      <title>pentestit</title>
-      <link href="posts/5d6c53c3.html"/>
-      <url>posts/5d6c53c3.html</url>
+      <title>pentest.training</title>
+      <link href="posts/adffc940.html"/>
+      <url>posts/adffc940.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -392,9 +404,9 @@
     
     
     <entry>
-      <title>pentest.training</title>
-      <link href="posts/adffc940.html"/>
-      <url>posts/adffc940.html</url>
+      <title>pentestit</title>
+      <link href="posts/5d6c53c3.html"/>
+      <url>posts/5d6c53c3.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
