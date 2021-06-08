@@ -121,6 +121,17 @@
   
   <li class="hide-on-med-and-down nav-item">
     
+    <a target="_blank" rel="noopener" href="http://batmanfuture.usa3v.net/" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>GitBook</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
     <a href="/tools" class="waves-effect waves-light">
       
       <i class="fas fa-suitcase" style="zoom: 0.6;"></i>
@@ -252,6 +263,17 @@
 			    <i class="fa-fw fas fa-envelope"></i>
 			
 			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a target="_blank" rel="noopener" href="http://batmanfuture.usa3v.net/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			GitBook
 		</a>
           
         </li>
@@ -532,7 +554,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-06-06
+                    2021-06-07
                 </div>
                 
 
@@ -643,10 +665,72 @@ net user administrator//查看本机具体用户的信息
 net user /domain//显示所在域的用户名单
 net user 域用户 /domain//获取某个域用户的详细信息
 net user /domain batma 2019gaokao//修改域用户密码，需要域管理员权限
-
-
+nltest /domain_trusts /all_trusts /v /server:192.168.117.3//返回所有信任192.168.117.3域的所有域
+nltest /dsgetdc:top.pentest.top /server:192.168.117.3//返回域控和其相应的IP地址，top.pentest.top是上步骤结果中的一个域
+net user /do //获取域用户列表
+net localgroup administrators//查看本机管理员
+net localgroup administrators /domain //登陆本机的域管理员
+net localgroup administrators workgroup\aiyou /add //域用户添加到本机
+net view //查看同一域内机器列表
+net view \ip //查看某ip共享
+net view \aiyou //查看aiyou计算机的共享资源列表
+net view /domain //查看内网存在多少域
+net view /domain:xyz //查看xyz域中的机器列表
+net accounts /domain //查询域用户密码过期等信息
 </code></pre>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3>
+<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><pre class=" language-shell"><code class="language-shell">ifconfig    查看网卡配置信息
+netstat -anpt    查看端口状态
+ps -ef    查看进程状态，开启了哪些服务
+cat /root/.bash_history    查看管理员的历史输入命令（获取密码，网站目录，内网资产信息）
+find / -name *.cfg    查找某个文件
+</code></pre>
+<h3 id="1-10后渗透信息收集之wmic命令的一些使用方法"><a href="#1-10后渗透信息收集之wmic命令的一些使用方法" class="headerlink" title="1.10后渗透信息收集之wmic命令的一些使用方法"></a>1.10后渗透信息收集之wmic命令的一些使用方法</h3><p>位置在C:\Windows\System32\wbem中WMIC.exe文件。</p>
+<pre class=" language-shell"><code class="language-shell">wmic /?    查看wmic命令的全局选项
+process /? 进程管理的帮助
+wmic process get /?    属性获取操作帮助
+</code></pre>
+<h3 id="1-11内网横向常见端口"><a href="#1-11内网横向常见端口" class="headerlink" title="1.11内网横向常见端口"></a>1.11内网横向常见端口</h3><p>445</p>
+<p>SMB协议族，文件打印共享服务，共享文件夹，操作为扫描其是否存在（永恒之蓝）MS17-010漏洞，操作为扫描其他是否建立IPC服务（）</p>
+<pre><code>net use \\192.168.1.2空会话
+net use \\192.168.1.2 /user:a\username password    远程本地认证
+net use \\192.168.1.2 /user:test\username password 域test.local远程认证
+</code></pre>
+<p>137，138，139</p>
+<p>netbios端口，137.138是UDP端口，用于内网传输文件，而SMB/netbios服务获取是通过139端口。</p>
+<p>135</p>
+<p>使用DCOM和RPC服务，我们利用这个端口做WMI服务管理工具远程操作。</p>
+<p>53</p>
+<p>DNS服务端口，提供域名解析服务，可以寻找一下DNS域传送漏洞，在内网中可以使用DNS协议进行通信传输。</p>
+<p>389</p>
+<p>用于LADP（轻量级目录访问协议）</p>
+<p>88</p>
+<p>开启kerberos服务，监听KDC的票据请求，在渗透中可以用来进行黄金票据和白银票据的伪造，以横向扩展某些服务。</p>
+<p>5985</p>
+<p>WinRM是WindowsRemoteManagementd（win远程管理）的简称。基于Web服务管理(WS-Management)标准，使用80端口或者443端口。这样一来，我们就可以在对方有设置防火墙的情况下远程管理这台服务器了。</p>
+<h2 id="第二章-打点-进入内网"><a href="#第二章-打点-进入内网" class="headerlink" title="第二章 打点-进入内网"></a>第二章 打点-进入内网</h2><h3 id="2-1外部接入点WIFI"><a href="#2-1外部接入点WIFI" class="headerlink" title="2.1外部接入点WIFI"></a>2.1外部接入点WIFI</h3><p>利用大菠萝，搞中间人攻击。</p>
+<h3 id="2-2应用系统漏洞利用"><a href="#2-2应用系统漏洞利用" class="headerlink" title="2.2应用系统漏洞利用"></a>2.2应用系统漏洞利用</h3><p>nmap</p>
+<pre class=" language-shell"><code class="language-shell">auth 处理身份验证
+broadcast 网络广播
+brute 暴力破解
+default 默认
+discovery 服务发现
+dos 拒绝服务
+exploit 漏洞利用
+external 外部扩展
+fuzzer 模糊测试
+intrusive 扫描可能造成的不良后果
+malware 检测后门
+safe 扫描危害较小
+version 版本识别
+vuln 漏洞检测
+</code></pre>
+<p>通用参数 -vuln</p>
+<p>nmap –script=vuln 192.168.117.130</p>
+<pre class=" language-shell"><code class="language-shell">nmap --script=smb-vuln-ms17-010 192.168.117.130
+</code></pre>
+<p>impacket框架之mssql服务器安全检测</p>
+<p>的</p>
+
                 
             </div>
             <hr/>
@@ -1442,7 +1526,7 @@ net user /domain batma 2019gaokao//修改域用户密码，需要域管理员权
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">103.8k</span>&nbsp;字
+                class="white-color">106.9k</span>&nbsp;字
             
             
             
