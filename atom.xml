@@ -3,11 +3,11 @@
   <title>Lightning</title>
   
   <subtitle>Lightningの博客</subtitle>
-  <link href="https://batmanfuture.gitee.io/atom.xml" rel="self"/>
+  <link href="https://batmanfuture.top/atom.xml" rel="self"/>
   
-  <link href="https://batmanfuture.gitee.io/"/>
-  <updated>2021-06-07T06:14:59.098Z</updated>
-  <id>https://batmanfuture.gitee.io/</id>
+  <link href="https://batmanfuture.top/"/>
+  <updated>2021-06-11T08:01:57.283Z</updated>
+  <id>https://batmanfuture.top/</id>
   
   <author>
     <name>Lightning</name>
@@ -17,9 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>WI-FI大菠萝实战测试</title>
+    <link href="https://batmanfuture.top/posts/kmjongzs.html"/>
+    <id>https://batmanfuture.top/posts/kmjongzs.html</id>
+    <published>2021-06-12T06:45:28.000Z</published>
+    <updated>2021-06-11T08:01:57.283Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="无线安全" scheme="https://batmanfuture.top/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="wifi" scheme="https://batmanfuture.top/tags/wifi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《metasploit渗透测试指南》</title>
+    <link href="https://batmanfuture.top/posts/omjyzs8d.html"/>
+    <id>https://batmanfuture.top/posts/omjyzs8d.html</id>
+    <published>2021-06-10T00:54:28.000Z</published>
+    <updated>2021-06-10T13:47:55.534Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;书籍介绍&quot;&gt;&lt;a href=&quot;#书籍介绍&quot; class=&quot;headerlink&quot; title=&quot;书籍介绍&quot;&gt;&lt;/a&gt;书籍介绍&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://z3.ax1x.com/2021/06/10/22kN0f.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Books" scheme="https://batmanfuture.top/categories/Books/"/>
+    
+    
+    <category term="渗透" scheme="https://batmanfuture.top/tags/%E6%B8%97%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>安恒信息《渗透攻击红队百科全书》</title>
-    <link href="https://batmanfuture.gitee.io/posts/y7e8f5fa.html"/>
-    <id>https://batmanfuture.gitee.io/posts/y7e8f5fa.html</id>
+    <link href="https://batmanfuture.top/posts/y7e8f5fa.html"/>
+    <id>https://batmanfuture.top/posts/y7e8f5fa.html</id>
     <published>2021-06-08T00:54:28.000Z</published>
     <updated>2021-06-07T06:14:59.098Z</updated>
     
@@ -34,17 +84,17 @@
     
     
     
-    <category term="Books" scheme="https://batmanfuture.gitee.io/categories/Books/"/>
+    <category term="Books" scheme="https://batmanfuture.top/categories/Books/"/>
     
     
-    <category term="红蓝对抗" scheme="https://batmanfuture.gitee.io/tags/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97/"/>
+    <category term="红蓝对抗" scheme="https://batmanfuture.top/tags/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97/"/>
     
   </entry>
   
   <entry>
     <title>《黑客大揭秘：近源渗透测试》</title>
-    <link href="https://batmanfuture.gitee.io/posts/aajnbg67.html"/>
-    <id>https://batmanfuture.gitee.io/posts/aajnbg67.html</id>
+    <link href="https://batmanfuture.top/posts/aajnbg67.html"/>
+    <id>https://batmanfuture.top/posts/aajnbg67.html</id>
     <published>2021-06-05T08:01:18.000Z</published>
     <updated>2021-06-05T12:06:48.603Z</updated>
     
@@ -59,17 +109,17 @@
     
     
     
-    <category term="无线安全" scheme="https://batmanfuture.gitee.io/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
+    <category term="无线安全" scheme="https://batmanfuture.top/categories/%E6%97%A0%E7%BA%BF%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="近源渗透" scheme="https://batmanfuture.gitee.io/tags/%E8%BF%91%E6%BA%90%E6%B8%97%E9%80%8F/"/>
+    <category term="近源渗透" scheme="https://batmanfuture.top/tags/%E8%BF%91%E6%BA%90%E6%B8%97%E9%80%8F/"/>
     
   </entry>
   
   <entry>
     <title>《玩转IP看监控》</title>
-    <link href="https://batmanfuture.gitee.io/posts/aaevgx4a.html"/>
-    <id>https://batmanfuture.gitee.io/posts/aaevgx4a.html</id>
+    <link href="https://batmanfuture.top/posts/aaevgx4a.html"/>
+    <id>https://batmanfuture.top/posts/aaevgx4a.html</id>
     <published>2021-06-05T04:52:28.000Z</published>
     <updated>2021-06-05T12:14:11.041Z</updated>
     
@@ -84,17 +134,17 @@
     
     
     
-    <category term="渗透" scheme="https://batmanfuture.gitee.io/categories/%E6%B8%97%E9%80%8F/"/>
+    <category term="渗透" scheme="https://batmanfuture.top/categories/%E6%B8%97%E9%80%8F/"/>
     
     
-    <category term="基础" scheme="https://batmanfuture.gitee.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    <category term="基础" scheme="https://batmanfuture.top/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>部分面试问题</title>
-    <link href="https://batmanfuture.gitee.io/posts/bvd6f5fa.html"/>
-    <id>https://batmanfuture.gitee.io/posts/bvd6f5fa.html</id>
+    <link href="https://batmanfuture.top/posts/bvd6f5fa.html"/>
+    <id>https://batmanfuture.top/posts/bvd6f5fa.html</id>
     <published>2021-06-03T02:54:28.000Z</published>
     <updated>2021-06-03T07:16:19.762Z</updated>
     
@@ -112,17 +162,17 @@
     
     
     
-    <category term="其他" scheme="https://batmanfuture.gitee.io/categories/%E5%85%B6%E4%BB%96/"/>
+    <category term="其他" scheme="https://batmanfuture.top/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-    <category term="面试" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="面试" scheme="https://batmanfuture.top/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>《深入浅出MySQL++数据库开发，优化与管理维护》</title>
-    <link href="https://batmanfuture.gitee.io/posts/zze8f5fc.html"/>
-    <id>https://batmanfuture.gitee.io/posts/zze8f5fc.html</id>
+    <link href="https://batmanfuture.top/posts/zze8f5fc.html"/>
+    <id>https://batmanfuture.top/posts/zze8f5fc.html</id>
     <published>2021-06-03T01:54:28.000Z</published>
     <updated>2021-06-05T07:52:54.627Z</updated>
     
@@ -137,17 +187,17 @@
     
     
     
-    <category term="Books" scheme="https://batmanfuture.gitee.io/categories/Books/"/>
+    <category term="Books" scheme="https://batmanfuture.top/categories/Books/"/>
     
     
-    <category term="数据库" scheme="https://batmanfuture.gitee.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <category term="数据库" scheme="https://batmanfuture.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>技术面试</title>
-    <link href="https://batmanfuture.gitee.io/posts/aae8f6ea.html"/>
-    <id>https://batmanfuture.gitee.io/posts/aae8f6ea.html</id>
+    <link href="https://batmanfuture.top/posts/aae8f6ea.html"/>
+    <id>https://batmanfuture.top/posts/aae8f6ea.html</id>
     <published>2021-06-03T01:54:28.000Z</published>
     <updated>2021-06-03T07:18:22.231Z</updated>
     
@@ -165,17 +215,17 @@
     
     
     
-    <category term="其他" scheme="https://batmanfuture.gitee.io/categories/%E5%85%B6%E4%BB%96/"/>
+    <category term="其他" scheme="https://batmanfuture.top/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-    <category term="面试" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="面试" scheme="https://batmanfuture.top/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>HR面试</title>
-    <link href="https://batmanfuture.gitee.io/posts/iju8f5fa.html"/>
-    <id>https://batmanfuture.gitee.io/posts/iju8f5fa.html</id>
+    <link href="https://batmanfuture.top/posts/iju8f5fa.html"/>
+    <id>https://batmanfuture.top/posts/iju8f5fa.html</id>
     <published>2021-06-03T00:54:28.000Z</published>
     <updated>2021-06-03T07:15:34.056Z</updated>
     
@@ -192,17 +242,17 @@
     
     
     
-    <category term="其他" scheme="https://batmanfuture.gitee.io/categories/%E5%85%B6%E4%BB%96/"/>
+    <category term="其他" scheme="https://batmanfuture.top/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-    <category term="面试" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    <category term="面试" scheme="https://batmanfuture.top/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>《Web安全深度刨析》</title>
-    <link href="https://batmanfuture.gitee.io/posts/5adc2790.html"/>
-    <id>https://batmanfuture.gitee.io/posts/5adc2790.html</id>
+    <link href="https://batmanfuture.top/posts/5adc2790.html"/>
+    <id>https://batmanfuture.top/posts/5adc2790.html</id>
     <published>2021-06-02T02:54:28.000Z</published>
     <updated>2021-06-03T13:42:05.811Z</updated>
     
@@ -217,17 +267,17 @@
     
     
     
-    <category term="Books" scheme="https://batmanfuture.gitee.io/categories/Books/"/>
+    <category term="Books" scheme="https://batmanfuture.top/categories/Books/"/>
     
     
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/tags/Web%E5%AE%89%E5%85%A8/"/>
+    <category term="Web安全" scheme="https://batmanfuture.top/tags/Web%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
     <title>安全维基</title>
-    <link href="https://batmanfuture.gitee.io/posts/aae8f9fa.html"/>
-    <id>https://batmanfuture.gitee.io/posts/aae8f9fa.html</id>
+    <link href="https://batmanfuture.top/posts/aae8f9fa.html"/>
+    <id>https://batmanfuture.top/posts/aae8f9fa.html</id>
     <published>2021-06-02T00:54:28.000Z</published>
     <updated>2021-06-03T07:23:23.060Z</updated>
     
@@ -244,85 +294,85 @@
     
     
     
-    <category term="红蓝对抗" scheme="https://batmanfuture.gitee.io/categories/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97/"/>
+    <category term="红蓝对抗" scheme="https://batmanfuture.top/categories/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97/"/>
     
     
-    <category term="红蓝对抗" scheme="https://batmanfuture.gitee.io/tags/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97/"/>
+    <category term="红蓝对抗" scheme="https://batmanfuture.top/tags/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97/"/>
     
   </entry>
   
   <entry>
     <title>hackinglab</title>
-    <link href="https://batmanfuture.gitee.io/posts/8ce83680.html"/>
-    <id>https://batmanfuture.gitee.io/posts/8ce83680.html</id>
+    <link href="https://batmanfuture.top/posts/8ce83680.html"/>
+    <id>https://batmanfuture.top/posts/8ce83680.html</id>
     <published>2021-05-30T00:54:28.000Z</published>
     <updated>2021-06-02T06:25:05.234Z</updated>
     
     
     
     
-    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    <category term="CTF" scheme="https://batmanfuture.top/categories/CTF/"/>
     
     
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    <category term="靶场" scheme="https://batmanfuture.top/tags/%E9%9D%B6%E5%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>xctf</title>
-    <link href="https://batmanfuture.gitee.io/posts/2adc5a89.html"/>
-    <id>https://batmanfuture.gitee.io/posts/2adc5a89.html</id>
+    <link href="https://batmanfuture.top/posts/2adc5a89.html"/>
+    <id>https://batmanfuture.top/posts/2adc5a89.html</id>
     <published>2021-05-30T00:54:28.000Z</published>
     <updated>2021-06-02T06:25:05.338Z</updated>
     
     
     
     
-    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    <category term="CTF" scheme="https://batmanfuture.top/categories/CTF/"/>
     
     
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    <category term="靶场" scheme="https://batmanfuture.top/tags/%E9%9D%B6%E5%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>掌控安全封神台</title>
-    <link href="https://batmanfuture.gitee.io/posts/ab0303b6.html"/>
-    <id>https://batmanfuture.gitee.io/posts/ab0303b6.html</id>
+    <link href="https://batmanfuture.top/posts/ab0303b6.html"/>
+    <id>https://batmanfuture.top/posts/ab0303b6.html</id>
     <published>2021-05-30T00:54:28.000Z</published>
     <updated>2021-06-02T06:25:05.345Z</updated>
     
     
     
     
-    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    <category term="CTF" scheme="https://batmanfuture.top/categories/CTF/"/>
     
     
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    <category term="靶场" scheme="https://batmanfuture.top/tags/%E9%9D%B6%E5%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>RedTiger&#39;s Hackit</title>
-    <link href="https://batmanfuture.gitee.io/posts/26471c14.html"/>
-    <id>https://batmanfuture.gitee.io/posts/26471c14.html</id>
+    <link href="https://batmanfuture.top/posts/26471c14.html"/>
+    <id>https://batmanfuture.top/posts/26471c14.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
     <updated>2021-06-02T06:25:05.217Z</updated>
     
     
     
     
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    <category term="Web安全" scheme="https://batmanfuture.top/categories/Web%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    <category term="靶场" scheme="https://batmanfuture.top/tags/%E9%9D%B6%E5%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>ctfshow</title>
-    <link href="https://batmanfuture.gitee.io/posts/b2b94221.html"/>
-    <id>https://batmanfuture.gitee.io/posts/b2b94221.html</id>
+    <link href="https://batmanfuture.top/posts/b2b94221.html"/>
+    <id>https://batmanfuture.top/posts/b2b94221.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
     <updated>2021-06-02T06:25:05.225Z</updated>
     
@@ -337,112 +387,78 @@
     
     
     
-    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    <category term="CTF" scheme="https://batmanfuture.top/categories/CTF/"/>
     
     
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    <category term="靶场" scheme="https://batmanfuture.top/tags/%E9%9D%B6%E5%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>hack the box</title>
-    <link href="https://batmanfuture.gitee.io/posts/23c9e819.html"/>
-    <id>https://batmanfuture.gitee.io/posts/23c9e819.html</id>
+    <link href="https://batmanfuture.top/posts/23c9e819.html"/>
+    <id>https://batmanfuture.top/posts/23c9e819.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
     <updated>2021-06-02T06:25:05.230Z</updated>
     
     
     
     
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    <category term="Web安全" scheme="https://batmanfuture.top/categories/Web%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    <category term="靶场" scheme="https://batmanfuture.top/tags/%E9%9D%B6%E5%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>pentest.training</title>
-    <link href="https://batmanfuture.gitee.io/posts/adffc940.html"/>
-    <id>https://batmanfuture.gitee.io/posts/adffc940.html</id>
+    <link href="https://batmanfuture.top/posts/adffc940.html"/>
+    <id>https://batmanfuture.top/posts/adffc940.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
     <updated>2021-06-02T06:25:05.314Z</updated>
     
     
     
     
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    <category term="Web安全" scheme="https://batmanfuture.top/categories/Web%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    <category term="靶场" scheme="https://batmanfuture.top/tags/%E9%9D%B6%E5%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>pentestit</title>
-    <link href="https://batmanfuture.gitee.io/posts/5d6c53c3.html"/>
-    <id>https://batmanfuture.gitee.io/posts/5d6c53c3.html</id>
+    <link href="https://batmanfuture.top/posts/5d6c53c3.html"/>
+    <id>https://batmanfuture.top/posts/5d6c53c3.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
     <updated>2021-06-02T06:25:05.316Z</updated>
     
     
     
     
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
+    <category term="Web安全" scheme="https://batmanfuture.top/categories/Web%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vulnhub</title>
-    <link href="https://batmanfuture.gitee.io/posts/7930ab3e.html"/>
-    <id>https://batmanfuture.gitee.io/posts/7930ab3e.html</id>
-    <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-06-02T06:25:05.322Z</updated>
-    
-    
-    
-    
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    <category term="靶场" scheme="https://batmanfuture.top/tags/%E9%9D%B6%E5%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>wargames</title>
-    <link href="https://batmanfuture.gitee.io/posts/919d7057.html"/>
-    <id>https://batmanfuture.gitee.io/posts/919d7057.html</id>
+    <link href="https://batmanfuture.top/posts/919d7057.html"/>
+    <id>https://batmanfuture.top/posts/919d7057.html</id>
     <published>2021-05-28T00:54:28.000Z</published>
     <updated>2021-06-02T06:25:05.326Z</updated>
     
     
     
     
-    <category term="CTF" scheme="https://batmanfuture.gitee.io/categories/CTF/"/>
+    <category term="CTF" scheme="https://batmanfuture.top/categories/CTF/"/>
     
     
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>websec</title>
-    <link href="https://batmanfuture.gitee.io/posts/fd9e2266.html"/>
-    <id>https://batmanfuture.gitee.io/posts/fd9e2266.html</id>
-    <published>2021-05-28T00:54:28.000Z</published>
-    <updated>2021-06-02T06:25:05.329Z</updated>
-    
-    
-    
-    
-    <category term="Web安全" scheme="https://batmanfuture.gitee.io/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="靶场" scheme="https://batmanfuture.gitee.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    <category term="靶场" scheme="https://batmanfuture.top/tags/%E9%9D%B6%E5%9C%BA/"/>
     
   </entry>
   

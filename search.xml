@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>WI-FI大菠萝实战测试</title>
+      <link href="posts/kmjongzs.html"/>
+      <url>posts/kmjongzs.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>模电数电编程语言linux示波器</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 无线安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> wifi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《metasploit渗透测试指南》</title>
+      <link href="posts/omjyzs8d.html"/>
+      <url>posts/omjyzs8d.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="书籍介绍"><a href="#书籍介绍" class="headerlink" title="书籍介绍"></a>书籍介绍</h3><p><img src="https://z3.ax1x.com/2021/06/10/22kN0f.png" alt="Metasploit渗透测试指南"></p><p><a href="https://book.douban.com/subject/10433737/edit">更新图书信息或封面</a></p><p>作者: <a href="https://book.douban.com/search/David%20Kennedy%20Jim%20O%27Gorman%20Devon%20Kearns%20Mati%20Aharoni">(美)David Kennedy Jim O’Gorman Devon Kearns Mati Aharoni</a><br>出版社: 电子工业出版社<br>原作名: Metasploit The Penetration Tester’s Guide<br>译者: <a href="https://book.douban.com/search/%E8%AF%B8%E8%91%9B%E5%BB%BA%E4%BC%9F">诸葛建伟</a> / <a href="https://book.douban.com/search/%E7%8E%8B%E7%8F%A9">王珩</a> / <a href="https://book.douban.com/search/%E5%AD%99%E6%9D%BE%E6%9F%8F">孙松柏</a><br>出版年: 2012-1<br>页数: 312<br>定价: 59.00元<br>装帧: 平装<br>ISBN: 9787121154874</p><h3 id="第1章-渗透测试技术基础"><a href="#第1章-渗透测试技术基础" class="headerlink" title="第1章 渗透测试技术基础"></a>第1章 渗透测试技术基础</h3><h4 id="1-1-PTES中的渗透测试阶段"><a href="#1-1-PTES中的渗透测试阶段" class="headerlink" title="1.1 PTES中的渗透测试阶段"></a>1.1 PTES中的渗透测试阶段</h4><p>前期交互阶段<br>情报搜集阶段<br>威胁建模阶段<br>漏洞分析阶段<br>渗透攻击阶段<br>后渗透攻击阶段<br>报告阶段</p><h4 id="1-2-渗透测试类型"><a href="#1-2-渗透测试类型" class="headerlink" title="1.2 渗透测试类型"></a>1.2 渗透测试类型</h4><p>白盒测试<br>黑盒测试<br>灰盒测试</p><h3 id="第2-章-Metasploit-基础"><a href="#第2-章-Metasploit-基础" class="headerlink" title="第2 章 Metasploit 基础"></a>第2 章 Metasploit 基础</h3><p>MSF（Metasploit Frame渗透测试框架软件）</p><p>Exp（exploit利用漏洞进行攻击）</p><p>Payload（攻击载荷，攻击成功后期望执行的代码）</p><p>shellcode（一组机器指令）</p><p>Module（模块，软件代码组件）</p><p>Listener（监听器，用来回连，比如对方数据通过http通道到本地，本地通过dns通道显示在meta上面）</p><pre class=" language-shell"><code class="language-shell">msfconsole msf终端help connect 查看帮助</code></pre><pre><code>104.244.46.57:80</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Books </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 渗透 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>安恒信息《渗透攻击红队百科全书》</title>
       <link href="posts/y7e8f5fa.html"/>
       <url>posts/y7e8f5fa.html</url>
@@ -429,16 +479,16 @@
     
     
     <entry>
-      <title>vulnhub</title>
-      <link href="posts/7930ab3e.html"/>
-      <url>posts/7930ab3e.html</url>
+      <title>wargames</title>
+      <link href="posts/919d7057.html"/>
+      <url>posts/919d7057.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> Web安全 </category>
+          <category> CTF </category>
           
       </categories>
       
@@ -454,16 +504,16 @@
     
     
     <entry>
-      <title>wargames</title>
-      <link href="posts/919d7057.html"/>
-      <url>posts/919d7057.html</url>
+      <title>vulnhub</title>
+      <link href="posts/7930ab3e.html"/>
+      <url>posts/7930ab3e.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
       <categories>
           
-          <category> CTF </category>
+          <category> Web安全 </category>
           
       </categories>
       
