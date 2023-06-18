@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php混淆器与解混淆器尝试-webshell逆向">
+<meta property="og:url" content="http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/index.html">
+<meta property="og:site_name" content="塔菲">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-28T10:40:47.000Z">
+<meta property="article:modified_time" content="2023-05-28T11:55:32.410Z">
+<meta property="article:author" content="塔菲">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>php混淆器与解混淆器尝试-webshell逆向</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/05/31/python%E5%AE%9E%E7%8E%B0%E8%8E%B7%E5%8F%96%E5%85%8D%E8%B4%B9%E7%9A%84chatgpt/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/05/28/github-5-5k-star%E7%9A%84django%E9%A1%B9%E7%9B%AE%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&text=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&is_video=false&description=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=php混淆器与解混淆器尝试-webshell逆向&body=Check out this article: http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&name=php混淆器与解混淆器尝试-webshell逆向&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&t=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        php混淆器与解混淆器尝试-webshell逆向
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">塔菲</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-05-28T10:40:47.000Z" class="dt-published" itemprop="datePublished">2023-05-28</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="ef16b142c92a844f613391186c6fd268537289cc077e835a2ca88c312def2cc7">3cd2b1087b643699604328052d908007d399207cfb5b67a1a44bf2eda2884fe187993aed8826c76ff484663094808ba5a13f4bbbefbee539935e59cca55ed5ce44b4d5d0899bd4fd82405c68663f5267b4fd5f9d3878009174b16ac8a8e63e65a3429a6157df08f58dd2f694d0d40d0e895b6c07687f914386966d2a6bb41ec1bbd7a44e8d1a67f131bbdd5ea09f298760402be158b83481bf6fceaebd5cd9376e4876a03c2ea9a93b36b1b42a2f1be23eae26c0d826c834b5b79aa12a2e8ba1b1da3d464d4277abb5f454ae537c46ab5683e5212c06ca0b269fbc587e8250e1aa037c654f9f29bb37bcf7859f8fe4f23ca0a0302c3a1456b77b7c076838f089c16c17ce75793d7368d7d30796d912feb0970707768e290cc00e810bf51a7ce1514955b8a44b5831806c496efe57ed9ace62829af162be788594c76ca4e8d57a126060841e915e073c77aa93820f0a03fa53f9f9f24c92dae8ddf0a9eda2e204d48c6175ac78b94c19ff6f23481bf53f0e9fec88fb8dc52416c56283bccc9f6ff4dc742ece48c07769a62d14e426b60acfd6b1bb58d8a36d266e1629ebfb54cf3049c094b0abb87e975ccb06c4723d04ea2803e6683aaae38255ccba69c79ab0a90e79cf36d62d44d855120aeb7886348b07ea218bd8e9ca9b448ab3802ff22c3bef7d45b785866340748f140b3ebb79a5ca7d19b515adb785ce5f1b3f31609ab49b6c50347b748d370fda2194fdeb44e7dee9821fb89708fd7dcdb851a3257fec817b26c7d71d94e4a33cb38386045d41b35f50436c635bf2c88e49b2a6697af82dc610059a83dc1802c4016be863f018a4c70a5b4d3ed9d482175f7c692e7dfbabb9502251ed0d0c1422a96d7b95b1c990328253c564b308d0271d4b25aca87be48ba5d7c5575a3ad0d4fc92f73483e7873b2d6407ec69726a47a042f2e5634866710f6b07a5ee7ceffbf3cd55d4b302b508666d324242b756ff62216d5fad69d44fef7f05bfbaeae8c4fdfb485e1d9c365f0653788f04535a100d93446b76ff817397bb1d01b820e77898f649b5fd8dff8a4ca4b0c64f2b888b2db6a8a5ea5bf7a0ee94e24a770649ca36aaf010eefa30011e20660b126eae47f1ed8049ac3c6a4a7468dd3a2e95aa65a50f5ae6491e91e26cd10d16f3b0e47f4fdc678598500d10606fc96eac36f42e58f1ca8ef55eb04bb0cf9794d8acfb93779ca97b6b8e30188099241aa7b4f298f55b9325fb8ecd65ba774024fe2c0c52d3f0dc19b7d5aacd73242e5645e4e7b6d8a732b3e366b1fa23a01269c958177134e650f7a2584e470a1518527405cccec255263e499247160961de167f011ffbb438bd8afe3ae73a9a20f22df1945169ad655e34c67dec5594ce95b67fb9a545900bff79efa392c68aa960695dae72df624f6e6f4d5297d17770e7cd45d25ba0dfcd37564c8cb7e1b87f0aacceb4fa233dc11a5c4af9a4ba24bec7bd4106562722daccff7d45dcb263455a9683e73546e54820a6bb0637b7c62287236c5b17eccd08aaa6bba50cae75f438a8c93b815f50d21bcbe7d0b6281985043f4cb65889ab73d9de04414fdd3402af38066a3c2ea22e1be8d73e1fc61ed45d07b757791db1085d18253b499945c530cc75aef6f1b57bd55fa133257ca9b2800259cca82efcb546b8491d98ecdf58d5ab5f0ea774dd67f79b58cba3782e7d8071679a2973dd8d2469462adacfbbe87a9fb7c31f1e80a6caf7b5810b372ce870306636036b0bcbcf6e412bec8d4354023197f0e30c51a4b0179486cf7b55fcb53f4083ea9e7db01394688f53c6ce5883d7cc3ee65f38dcc9e0851d0084e3afb85199482aa2bf38a58f64964680cf4e32466d39f554ee59f91e379cc4ece16186e64e0ad3ecbbb1a65b5c185a36029a3362473237e3524482edf2ac72764ba1bd81eb1cdcf11e378be6bf7e34655bd31d3c0a2538458bf858c08fcdb55ffda85dffcc749d9b5616ce5d2d8776f8cbba52ab54ceb64d5cf85658729d2d26d84aa9f78dfb525ab62f1b1e472b80e20750ac173356f5d7c31939afbfa7c9e2f9730a429e0ee3b0b3d8bbdcff7c5811cb195fa23867d70ce29fc6813bb39e67bd9c3b2f02d40baf9f9c6871f7eddd8e6d50e5049d93124ff43b662f1593e14b2b382ea6eb9e6764b2f48ac81560060d56770cc2654ce0ec2989c6fe27a2b4bb138bec4e208c8d8913b807260da578acc95a25c0172290b9ac02f594c5e524d9884e9be76e0f8d32500b2828337d62a3a4445268fdf836d71b6fe9c2ae37b95e55fe9804326a4d43f6dc19def665df80b2485a9754abf41406dab6b35899c310c1d3adda180d888b9089873e4e83d58bb593ac2252cac7518b878caf721bab3a88108466e67979bfd4ad09b16bdedb1d421e67c55f28670445048ddd0e1220b434c1794f573f75dba3e027e6a17f1c8131a39a667fffc4f2f447c30ce647a4792fe337b9e3d43bc0b3cf5a117d5f9c19abd0f82b5830454be5de4f569641e287d909f91a82ed0b798e1bd82326b57b7038cd17d8c85f35ea0e971e10143b6925879de344e5e38b0a98459dbca6f83baef86a616a7cb8728525c26fc5e4e159737ee067dcdd1d653e1942305910d583f3f1c27d1a0be0a3b67524e17dec724ef0c967877c5aed905971f5e394641ab4241faa3491a9f216eff5bea693446775fe7e1307e9253313ae86711a4de031e31f7074a124d413726222c493bf0bc855527da5eb66758c344c9f052446a52383c32c7cb1dfae813da592ee61eacee41656c3dbf1940717c75daa5f864976804400b967be3b5cac6246e038537978c9568d20c04a200708adbef68c3e36200f6ef1a14b2af259b0ad56cd36d4cebc2e55f5cf3510348c61d0ae6a66eb1678ff316f0a7266aff7e78f985ccaccd20321425f4b4fef7f6186c1d3b1b513002b1ef40a0974995362b9c485c433d9b0bd3d96316816fff9c86db8a70985f1e4cacfaf90749a18c9fea1a4cb30637cfaf0600a6c7d8ac3d642d7253204e65aa73ba03ebb607cd013ad8caa979e842b4c785c27e7a37ffdff122203861d5a9e29eb5cda0bf6787f2bb1f702bd51e439ee1ad2ff738d72f95386333db11a1f3c65835208c99622ccb67af59050c1bb53cbffad86ea848491131e78f7108070c48347cdfd70dacf24da1b144437221f5b1c4780c1f8aadcda4349c2f8b2ce8924f674c781c4e2273ae7f59b94d9ca9854600c3dba707b1018d275ba5d1f05dc8346a9ed437b63543137ec9046ba7613c7c81c42863f3c82701ff7d49f24da482ec39eb297b49375d5705fcc1350bd80403a9d1739905201ca47fac5a57f0506c2071414f7477bdfb42df7901059c2b40aa43f6b741d1b2baeffcb722987ebf536d594ae95d615dcfd88874a9e5cf5bd4e945828a82c57a6d8a2909829ad8853ab7f99ee748635958e92668ba4263a2c5735cc9ecf41c2ab3d7b5b5871c585ef5b621be38fe094ae583a395ad6d73108e888230d67bb751379ea5ae74b12220bab80bb4775e7a50e1a97acbac0ed0269099efe9d88804cd0ab9131313c48b3a96bec44cad92458a8ec62eed45ea4c32f6dd52937798e331b12314556fd2bf14708b7b47a98bdfe55fccf3bfdc3769744c17efa2da85519c4d67eaf5aa1e4990cf4f9759cc0ce4e09e6d9dcc91429456f45b5b0a436139141924498f68d2364746d1c506fff2915b0d0ce2689c45b0a3f602b7f09a72f812500ad5922342101476be6d6435a33a9f383a0912ff66bf3dc2e7cb98205e9bb557673ccd1d25b357bff0e5d5ecd4630e18f5c5a56d8a6cb050d35966e866850ec441d3719e511e5cde30710725acec671d82fba0a93ee6a1e985041e974d26ac6a566c701d52d0ae4e707b94ab2db87d9937ac0cf4652cfd12c57370dc7be17f124b22a20776a3e482154074689620ecbe5d2b599267bd4de431e0e7d93d67348fceea1e3c8d81597464dbc2f1bd8124c62f24b3a813311b300d0a3eb70fbed13f757f1dd05614ec58f67e45a3b257237caa1c4290fe870a5bd5472c61ae9b802bb812ce2d5b954aceb4e27f1142fb0db76a42bf2274a78260756225dded7bf447fd3d7bd93eaa4544921257cedcd175743bfa27e7531692860c710dac64fa14c7f2851fdcf2fe31392fa600795763382fe464a2f543812e944a27d3bd406628b54ec5c3c28f1b3785e8353f916108ebec957e37e822c8e1ab60bc51596d8c093c2f2405418df5a11904ba16078cb0a35e3e2ec7affdefb8bca377cd29ee39f7c595f0fa0d0d17e60155b6041b93d6dd34ddaf13e46d85bf3ae905a021d232e882c3bf98c03d36c1dccffc708d2c2aaaf99df8726a8b512e0267c9dcc5fb5c6dc1477c956454074384e762ee7b58e96a2384efe97a67047e76b9a0b97767f7ecd74cafc4e2831d836a7c5b05b455140bcbf75f9bef8a4a54caa1a5a6a104457a07db7a4284bc70cb4675f6eee9cc9d2657cbab19585b9a3b2edb28a7cbdf36d0272636e3b11a81a505d4bd9c1ad057c7a24e6819a2af8969bacb546920d283434beb3e9fca4f3e291bdb7658c922a7949ffb6689852ebb5a5ce833d51a86cb4345666496250d5a3e8202d251886fb99d662a9d433755ed9ba5b288ea6a77286afbc721da3608d010679d551107a7e7d33f68c7793b267e3836db2a5984fc4b03963ee01d5faa9abac50214fdbddad85c19f9f1b10a44b603419139d99ba8fdf01129efdc05228defeb14729</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&text=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&is_video=false&description=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=php混淆器与解混淆器尝试-webshell逆向&body=Check out this article: http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&title=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&name=php混淆器与解混淆器尝试-webshell逆向&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/05/28/php%E6%B7%B7%E6%B7%86%E5%99%A8%E4%B8%8E%E8%A7%A3%E6%B7%B7%E6%B7%86%E5%99%A8%E5%B0%9D%E8%AF%95-webshell%E9%80%86%E5%90%91/&t=php混淆器与解混淆器尝试-webshell逆向"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    塔菲
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

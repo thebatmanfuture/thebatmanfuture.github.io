@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="北京中科睿智科技有限公司  上次留的坑昨天下午想起来就弄了下 利用上次遗留的webshell：http:&#x2F;&#x2F;ds.hbust.edu.cn:8087&#x2F;upload&#x2F;download&#x2F;16722875174716661.php  1copy D:\phpstudy_pro\WWW\xnfz2022-06-13.zip D:\phpstudy_pro\WWW\xnfz\public\upload\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于tp5框架的教育行业小站的代码审计">
+<meta property="og:url" content="http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/index.html">
+<meta property="og:site_name" content="塔菲">
+<meta property="og:description" content="北京中科睿智科技有限公司  上次留的坑昨天下午想起来就弄了下 利用上次遗留的webshell：http:&#x2F;&#x2F;ds.hbust.edu.cn:8087&#x2F;upload&#x2F;download&#x2F;16722875174716661.php  1copy D:\phpstudy_pro\WWW\xnfz2022-06-13.zip D:\phpstudy_pro\WWW\xnfz\public\upload\">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/27/d1b1e52a-7a00-4280-82e1-eb1157205936-sO1TYy7V.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/27/26e8a6a5-950d-44a9-aa89-22e5ff033bbe-o7f4FSNi.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/bbc83865-ff47-4ee5-84c7-b6d64415eda4-T0XwrL1d.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/bd03907f-a085-45a4-acf8-e9dd4cf3f5cb-LQSxeAmf.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/b92abc0f-bbb8-4691-9939-09c445cef56d-0YGb4247.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/930c5d6e-326a-4356-bf6f-a6553ada926f-LKkZfBPG.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/9af1a6c1-231e-4117-a29f-0e9611ad4a96-dzaR6uiW.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/fcb86121-f8db-4c06-977c-4acb96751868-rTSRctMi.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/f74b7d27-e6e6-496d-a578-528001fa5ae4-eV508Sib.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/04fd36db-24ce-4f57-b8ca-3170584743da-erlt1nNw.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/8df0d9c9-68c5-48c1-88d6-00eecb9b5a93-y02tb6TL.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/c2bcee58-43e7-4ea4-94b6-6397d2c15c8b-swAMbu5b.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/47439a2d-6a2e-4ae9-9ad2-f4553a39bdad-u9e60OMa.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/0d333b07-d38d-4a4c-a184-d018adf0b9bc-LZ8Vr4lD.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/0bec9fcc-3f55-4d1a-a234-2ae566f98d79-1Ge4DYTC.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/7594ddce-cce9-4677-b706-37c4c317d9cd-BdH8d7is.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/1ee23d5a-e0d9-439c-8c33-1916a6dffcd4-AeL0iBTc.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/195b6980-6244-4f48-9bda-346cb0c80f68-ZFeTJ4VP.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/b80bf335-e0ef-439a-bf21-de9cd42ab7ee-BaXFgRQR.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/e1c0f615-17bd-4d4c-8e2f-52ddb8ca31f7-LDIq3pLv.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/fff5bf71-ebac-407e-a277-ca7ccf0a0705-cjK8gFyT.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/20ac7dbc-3877-4410-bef2-c9c6ec60650d-0I3p1VH2.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/b89df646-7679-4bf7-8687-1418c05b11c7-G5QqixeS.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/23f58393-c51c-45a1-96da-a105b4d41b78-WMiYWy5S.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/0cf64e36-eb62-4a48-bf28-c116c961e08f-TpYf9VqZ.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/8f886094-0489-48d0-9522-159f8b333810-K3bDPW9r.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/a9d2c0d2-a4fb-4803-98f6-504e8e62c089-VMgsswq9.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/9bd1aa36-a202-4253-b502-989fa1ad3c29-uO5XNxDd.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/f121c381-e9ac-4168-9f1f-512b9fba59b4-pjJw2cdo.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/409adfd4-b472-457f-a99e-f109218b2993-CafPxnS4.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/27e6975a-954f-4f02-a378-bdf63842d04a-Rk6OGe1G.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/231fe038-94ed-4e36-a2ae-4bc6884bcc26-NFWhwnaj.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/3a6b606d-cf19-49ec-8ea3-2c41c9fe4950-oak1XiPn.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/e1f87154-038d-47eb-9efa-90d65f207949-2DwAg1nI.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/9c20e3cd-8307-4e68-b0fd-06b4144ae781-zASoTfJc.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/110eaf7c-c2f6-4159-a243-31491355cae7-p7xZFiNa.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/615f6fb6-baf3-455f-b036-a9b1c2f5a9d0-jAHyDFr6.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/ae803ad3-7966-4072-960d-af540af671fb-RBbsjFjm.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/653a3c0f-ea2f-4283-9c82-18e7596dcf46-gizxgBXa.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/49cc777d-ccff-4b22-826b-aea948a9dd4e-awDnvNVW.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/49dbefa7-1632-42bd-8f28-15c4e93745df-sy1ztUG1.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/72e81b82-66ba-4974-896a-f8aea8a98634-ysCVMuK3.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/67567a4d-ca9b-4045-b3e6-166e1677e0b7-c6mY4KcH.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/bd3179b4-9312-476f-af44-7c7b972b0a9d-qJDqxhzh.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/196ce49c-06d7-4205-8fcd-e8f0e887d671-knXA2fN8.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/2d3208d5-7c8f-4fe1-841f-ba3a89461a13-5X5IKvw3.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/2cab6876-3d06-4d53-bade-92c926b4427f-ZPlFdmwS.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/5e353975-eb0c-4aa8-983b-4bacac0115ed-Frr7pYh2.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/07a20351-832e-44e7-a62f-07e84d4e2044-9RSVSZGg.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/770000e0-1ac7-4590-80c9-d2e6344b636f-NtJ54mCu.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/1bb0beb0-7006-4166-ab93-d67aa189fb9e-t6inE08r.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/603ac321-2906-40d3-ac70-2164cf7be169-PRPDvAnC.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/320e0200-47f5-460a-ace3-68400ee52b81-M9QS8hc7.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/1da6c9ef-ecb9-47ce-a841-ed0264d0a3df-05cw5qQg.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/599435d3-a490-49e1-bad3-0d0dee97fe5a-6cvMRVmm.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/8cf3aad0-1490-4c6e-8928-30763bab2aa7-9H8jbUpe.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/47da6215-6a9f-410e-a47e-1d927e7fff18-zk74YFqJ.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/54d491c9-3887-4954-b158-94c51135f044-Zz8oHXGB.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/4cd40bb3-0ba4-45fb-bb12-17150f34c8cf-X76lb9SJ.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/321ee44f-f692-4fb9-8430-2641b7354a83-K3yGkHhJ.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/fabc65ac-ef6a-4a89-9e52-a3e4e13bfb52-m999SlAT.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/4166c4c9-aa2a-4086-b202-45c89e78761e-3aeUc12J.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/ec69f73a-63ea-43b3-8a12-23cb6da8915c-spFpOQhy.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/10f71bbc-802d-46f6-8e25-daad69755685-O3x8q9aX.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/916a7ffd-1b14-4874-bdf2-05f09ca03027-IuLf3ze7.png">
+<meta property="og:image" content="https://src.sjtu.edu.cn/media/images/2023/02/11/59b3ebbb-09d0-4418-9ead-96ddd2c5f009-jwFM1Wp5.png">
+<meta property="article:published_time" content="2023-04-15T13:18:26.000Z">
+<meta property="article:modified_time" content="2023-06-06T01:22:57.433Z">
+<meta property="article:author" content="塔菲">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://src.sjtu.edu.cn/media/images/2023/02/27/d1b1e52a-7a00-4280-82e1-eb1157205936-sO1TYy7V.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>基于tp5框架的教育行业小站的代码审计</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/04/18/%E5%AE%A1%E8%AE%A1%E4%B8%AD%E6%AF%94%E8%BE%83%E5%86%B7%E9%97%A8%E7%9A%84%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/04/15/%E6%9F%90%E5%A5%97java%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&text=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&is_video=false&description=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=基于tp5框架的教育行业小站的代码审计&body=Check out this article: http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&name=基于tp5框架的教育行业小站的代码审计&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&t=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%97%E4%BA%AC%E4%B8%AD%E7%A7%91%E7%9D%BF%E6%99%BA%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"><span class="toc-number">1.</span> <span class="toc-text">北京中科睿智科技有限公司</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        基于tp5框架的教育行业小站的代码审计
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">塔菲</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-04-15T13:18:26.000Z" class="dt-published" itemprop="datePublished">2023-04-15</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h3 id="北京中科睿智科技有限公司"><a href="#北京中科睿智科技有限公司" class="headerlink" title="北京中科睿智科技有限公司"></a>北京中科睿智科技有限公司</h3><p><img src="https://src.sjtu.edu.cn/media/images/2023/02/27/d1b1e52a-7a00-4280-82e1-eb1157205936-sO1TYy7V.png"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/27/26e8a6a5-950d-44a9-aa89-22e5ff033bbe-o7f4FSNi.png" alt="null"></p>
+<p>上次留的坑昨天下午想起来就弄了下</p>
+<p>利用上次遗留的webshell：<a target="_blank" rel="noopener" href="http://ds.hbust.edu.cn:8087/upload/download/16722875174716661.php">http://ds.hbust.edu.cn:8087/upload/download/16722875174716661.php</a></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/bbc83865-ff47-4ee5-84c7-b6d64415eda4-T0XwrL1d.png" alt="null"></p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy D:\phpstudy_pro\WWW\xnfz2022-06-13.zip D:\phpstudy_pro\WWW\xnfz\public\upload\</span><br></pre></td></tr></table></figure>
+
+<p>在shell中执行，将备份文件放在web目录上下载速度比用冰蝎上下要快很多，必须是\符号，不能是/符号</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/bd03907f-a085-45a4-acf8-e9dd4cf3f5cb-LQSxeAmf.png" alt="null"></p>
+<p><a target="_blank" rel="noopener" href="http://ds.hbust.edu.cn:8087/upload/xnfz2022-06-13.zip">http://ds.hbust.edu.cn:8087/upload/xnfz2022-06-13.zip</a></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/b92abc0f-bbb8-4691-9939-09c445cef56d-0YGb4247.png" alt="null"></p>
+<p>解压，标准的tp5框架，导入到phpstorm，数据库导入到navicat（随意无所谓…我只是看看字段）</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/930c5d6e-326a-4356-bf6f-a6553ada926f-LKkZfBPG.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/9af1a6c1-231e-4117-a29f-0e9611ad4a96-dzaR6uiW.png" alt="null">.</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">project  应用部署目录</span><br><span class="line">├─application           应用目录（可设置）</span><br><span class="line">│  ├─common             公共模块目录（可更改）</span><br><span class="line">│  ├─index              模块目录(可更改)</span><br><span class="line">│  │  ├─config.php      模块配置文件</span><br><span class="line">│  │  ├─common.php      模块函数文件</span><br><span class="line">│  │  ├─controller      控制器目录</span><br><span class="line">│  │  ├─model           模型目录</span><br><span class="line">│  │  ├─view            视图目录</span><br><span class="line">│  │  └─ ...            更多类库目录</span><br><span class="line">│  ├─command.php        命令行工具配置文件</span><br><span class="line">│  ├─common.php         应用公共（函数）文件</span><br><span class="line">│  ├─config.php         应用（公共）配置文件</span><br><span class="line">│  ├─database.php       数据库配置文件</span><br><span class="line">│  ├─tags.php           应用行为扩展定义文件</span><br><span class="line">│  └─route.php          路由配置文件</span><br><span class="line">├─extend                扩展类库目录（可定义）</span><br><span class="line">├─public                WEB 部署目录（对外访问目录）</span><br><span class="line">│  ├─static             静态资源存放目录(css,js,image)</span><br><span class="line">│  ├─index.php          应用入口文件</span><br><span class="line">│  ├─router.php         快速测试文件</span><br><span class="line">│  └─.htaccess          用于 apache 的重写</span><br><span class="line">├─runtime               应用的运行时目录（可写，可设置）</span><br><span class="line">├─vendor                第三方类库目录（Composer）</span><br><span class="line">├─thinkphp              框架系统目录</span><br><span class="line">│  ├─lang               语言包目录</span><br><span class="line">│  ├─library            框架核心类库目录</span><br><span class="line">│  │  ├─think           Think 类库包目录</span><br><span class="line">│  │  └─traits          系统 Traits 目录</span><br><span class="line">│  ├─tpl                系统模板目录</span><br><span class="line">│  ├─.htaccess          用于 apache 的重写</span><br><span class="line">│  ├─.travis.yml        CI 定义文件</span><br><span class="line">│  ├─base.php           基础定义文件</span><br><span class="line">│  ├─composer.json      composer 定义文件</span><br><span class="line">│  ├─console.php        控制台入口文件</span><br><span class="line">│  ├─convention.php     惯例配置文件</span><br><span class="line">│  ├─helper.php         助手函数文件（可选）</span><br><span class="line">│  ├─LICENSE.txt        授权说明文件</span><br><span class="line">│  ├─phpunit.xml        单元测试配置文件</span><br><span class="line">│  ├─README.md          README 文件</span><br><span class="line">│  └─start.php          框架引导文件</span><br><span class="line">├─build.php             自动生成定义文件（参考）</span><br><span class="line">├─composer.json         composer 定义文件</span><br><span class="line">├─LICENSE.txt           授权说明文件</span><br><span class="line">├─README.md             README 文件</span><br><span class="line">├─think                 命令行入口文件</span><br></pre></td></tr></table></figure>
+
+<p>接下来挑几个重点说…</p>
+<p>application是应用目录，下设多层目录（Index，extra，Admin）</p>
+<p>config.php是配置相关的，比如是否开启调试等</p>
+<p>database.php是数据库配置文件，通常如果存在一个任意文件读取/下载漏洞并支持跨目录，就可以读这个文件获得数据库连接账号密码，连入后再通过日志写入等方式getshell等…</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/fcb86121-f8db-4c06-977c-4acb96751868-rTSRctMi.png" alt="null"></p>
+<p>这里的数据库编码应当和web传输端保持utf-8，防止宽字节注入</p>
+<p>表前缀就是数据库表前面那个东西，后面就统一去掉前面那个写了</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/f74b7d27-e6e6-496d-a578-528001fa5ae4-eV508Sib.png" alt="null"></p>
+<p>然后有admin，index，extra三个目录，首先看index</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/04fd36db-24ce-4f57-b8ca-3170584743da-erlt1nNw.png" alt="null"></p>
+<p>标准的MVC：模型，视图，控制器</p>
+<p>controller当然能执行SQL操作，但是为了规范这里model通常是用来放SQL操作的集合体</p>
+<p>view的和controller的关系比如：我要写一个任意文件上传漏洞的demo代码</p>
+<p>需要写三个东西：</p>
+<p>1）模板输出</p>
+<p>\app\controller\Store.php</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;br /&gt; </span><br></pre></td></tr></table></figure>
+
+<p>3）\app\controller\Upload.php</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public function index()</span><br><span class="line">&#123;</span><br><span class="line">    $file = Request::file(&amp;#039;image&amp;#039;);</span><br><span class="line">//编写规则</span><br><span class="line">    $validate = Validate::rule([</span><br><span class="line">        &amp;#039;image&amp;#039; =&amp;gt;  &amp;#039;fileExt:jpg,html,png,php&amp;#039;</span><br><span class="line"></span><br><span class="line">    ]);</span><br><span class="line">    $result = $validate-&amp;gt;check([</span><br><span class="line">        &amp;#039;image&amp;#039; =&amp;gt;  $file</span><br><span class="line">    ]);</span><br><span class="line"></span><br><span class="line">    if ($result) &#123;</span><br><span class="line"></span><br><span class="line">        $info = Filesystem::putfile(&amp;#039;topic&amp;#039;, $file);</span><br><span class="line">        return json($info);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        dump($validate-&amp;gt;getError());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/8df0d9c9-68c5-48c1-88d6-00eecb9b5a93-y02tb6TL.png" alt="null"></p>
+<p>如图</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/c2bcee58-43e7-4ea4-94b6-6397d2c15c8b-swAMbu5b.png" alt="null"></p>
+<p>上传到的文件在\config\filesystem.php中配置，可以放在public目录下供外界访问</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/47439a2d-6a2e-4ae9-9ad2-f4553a39bdad-u9e60OMa.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/0d333b07-d38d-4a4c-a184-d018adf0b9bc-LZ8Vr4lD.png" alt="null"></p>
+<p>。</p>
+<p>回归主题，例站：<a target="_blank" rel="noopener" href="http://mrc.zfwweb.com/%EF%BC%8Chttp://my.hbust.com.cn:8087">http://mrc.zfwweb.com/，http://my.hbust.com.cn:8087</a></p>
+<p>index目录-Login控制器</p>
+<p>1）SQL注入</p>
+<p>注册功能</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/0bec9fcc-3f55-4d1a-a234-2ae566f98d79-1Ge4DYTC.png" alt="null"></p>
+<p>注册这里，提交请求包<img src="https://src.sjtu.edu.cn/media/images/2023/02/11/7594ddce-cce9-4677-b706-37c4c317d9cd-BdH8d7is.png" alt="null"></p>
+<p>定位到regDo方法</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/1ee23d5a-e0d9-439c-8c33-1916a6dffcd4-AeL0iBTc.png" alt="null"></p>
+<p>这里传入的pass经过来两次md5加密后再传给他，查看数据库</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/195b6980-6244-4f48-9bda-346cb0c80f68-ZFeTJ4VP.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/b80bf335-e0ef-439a-bf21-de9cd42ab7ee-BaXFgRQR.png" alt="null"></p>
+<p>然后调用了UserModel模型下的getUserName方法</p>
+<p>这楼里对我们传入的user:batmanfuture</p>
+<p>执行了一个where链式查询操作，此处存在SQL注入</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/e1c0f615-17bd-4d4c-8e2f-52ddb8ca31f7-LDIq3pLv.png" alt="null"></p>
+<p>这里判断如果查到了存在该用户，则返回500，提示”已存在，注册失败“</p>
+<p>否则调用insertUser方法，allowField插入数据</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/fff5bf71-ebac-407e-a277-ca7ccf0a0705-cjK8gFyT.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/20ac7dbc-3877-4410-bef2-c9c6ec60650d-0I3p1VH2.png" alt="null"></p>
+<p>修复方案</p>
+<p>预处理</p>
+<p>登陆功能</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/b89df646-7679-4bf7-8687-1418c05b11c7-G5QqixeS.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/23f58393-c51c-45a1-96da-a105b4d41b78-WMiYWy5S.png" alt="null"></p>
+<p>找到loginDo方法</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/0cf64e36-eb62-4a48-bf28-c116c961e08f-TpYf9VqZ.png" alt="null"></p>
+<p>这里调用该方法后判断当前ip是否在xf_errlogin表的errip中段中，如果在则显示”用户已被锁定”</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/8f886094-0489-48d0-9522-159f8b333810-K3bDPW9r.png" alt="null"></p>
+<p>这里login控制器除了注册和登录外还有一个忘记密码方法</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/a9d2c0d2-a4fb-4803-98f6-504e8e62c089-VMgsswq9.png" alt="null"></p>
+<p>找到forgetpage.html</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/9bd1aa36-a202-4253-b502-989fa1ad3c29-uO5XNxDd.png" alt="null"></p>
+<p><a target="_blank" rel="noopener" href="http://my.hbust.com.cn:8087/index/login/forgetpage">http://my.hbust.com.cn:8087/index/login/forgetpage</a></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/f121c381-e9ac-4168-9f1f-512b9fba59b4-pjJw2cdo.png" alt="null"></p>
+<p>随便输入，抓包</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/409adfd4-b472-457f-a99e-f109218b2993-CafPxnS4.png" alt="null"></p>
+<p>又提交到loginDo方法了？猜测是这个功能没写完…</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/27e6975a-954f-4f02-a378-bdf63842d04a-Rk6OGe1G.png" alt="null"></p>
+<p>然后我们普通学生注册成功后就登录进去了</p>
+<p>在index控制器下发现了这个，这个虽然没有return返回什么，但是要求构造post请求参数name，可能后面有用（其实就是通过这个name变量打存储XSS到管理员的日志里了…）</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/231fe038-94ed-4e36-a2ae-4bc6884bcc26-NFWhwnaj.png" alt="null"></p>
+<p>我们构造下请求</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/index/index/download</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>my.hbust.com.cn:8087</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>*/*</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate</span><br><span class="line"><span class="attribute">Referer</span><span class="punctuation">: </span>http://my.hbust.com.cn:8087/index/login/forgetpage</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>application/x-www-form-urlencoded; charset=UTF-8</span><br><span class="line"><span class="attribute">X-Requested-With</span><span class="punctuation">: </span>XMLHttpRequest</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>26</span><br><span class="line"><span class="attribute">Origin</span><span class="punctuation">: </span>http://my.hbust.com.cn:8087</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br><span class="line"><span class="attribute">Cookie</span><span class="punctuation">: </span>PHPSESSID=a4r1p120uamgnmegej4iol6shk; user=a4r1p120uamgnmegej4iol6shk</span><br><span class="line"><span class="attribute">sec-ch-ua-platform</span><span class="punctuation">: </span>&amp;quot;Windows&amp;quot;</span><br><span class="line"><span class="attribute">sec-ch-ua</span><span class="punctuation">: </span>&amp;quot;Google Chrome&amp;quot;;v=&amp;quot;101&amp;quot;, &amp;quot;Chromium&amp;quot;;v=&amp;quot;101&amp;quot;, &amp;quot;Not=A?Brand&amp;quot;;v=&amp;quot;24&amp;quot;</span><br><span class="line"><span class="attribute">sec-ch-ua-mobile</span><span class="punctuation">: </span>?0</span><br><span class="line"></span><br><span class="line"><span class="language-delphi"><span class="keyword">name</span>=alert(&amp;<span class="string">#039</span>;edusrc&amp;<span class="string">#039</span>;)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/3a6b606d-cf19-49ec-8ea3-2c41c9fe4950-oak1XiPn.png" alt="null"></p>
+<p>成功</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/e1f87154-038d-47eb-9efa-90d65f207949-2DwAg1nI.png" alt="null"></p>
+<p>这里有个修改密码的功能</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/9c20e3cd-8307-4e68-b0fd-06b4144ae781-zASoTfJc.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/110eaf7c-c2f6-4159-a243-31491355cae7-p7xZFiNa.png" alt="null"></p>
+<p>定位到/index/index/saveUser方法</p>
+<p>这里实例化的UserModel其实是admin目录下的那个，而不是同级目录下的那个（开头有调用到），可以通过下面的getUser方法判断出</p>
+<p>2）SQL注入 * 2</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/615f6fb6-baf3-455f-b036-a9b1c2f5a9d0-jAHyDFr6.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/ae803ad3-7966-4072-960d-af540af671fb-RBbsjFjm.png" alt="null"></p>
+<p>这里对id查找，故存在SQL注入</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/index/index/saveUser</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>xxx</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>*/*</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>application/x-www-form-urlencoded; charset=UTF-8</span><br><span class="line"><span class="attribute">X-Requested-With</span><span class="punctuation">: </span>XMLHttpRequest</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>43</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br><span class="line"></span><br><span class="line"><span class="language-pgsql">id=<span class="number">1</span>&amp;#<span class="number">039</span>;<span class="keyword">and</span><span class="comment">/**/</span>extractvalue(<span class="number">1</span>,concat(<span class="type">char</span>(<span class="number">126</span>),<span class="keyword">database</span>()))<span class="keyword">and</span>&amp;#<span class="number">039</span>;&amp;<span class="keyword">user</span>=<span class="keyword">admin</span>&amp;<span class="type">name</span>=<span class="keyword">admin</span>&amp;pass=<span class="number">2019</span>gaokao</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/653a3c0f-ea2f-4283-9c82-18e7596dcf46-gizxgBXa.png" alt="img"></p>
+<p>3）越权</p>
+<p>然后再调用saveUser方法</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/49cc777d-ccff-4b22-826b-aea948a9dd4e-awDnvNVW.png" alt="null"></p>
+<p>这里allowField进行数据更新，其更新内容</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/49dbefa7-1632-42bd-8f28-15c4e93745df-sy1ztUG1.png" alt="null"></p>
+<p>以id作为主健，可以通过修改id来修改其他用户的用户名，密码等内容</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/72e81b82-66ba-4974-896a-f8aea8a98634-ysCVMuK3.png" alt="null"></p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/index/index/saveUser</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>localhost</span><br><span class="line"><span class="attribute">User-Agent</span><span class="punctuation">: </span>Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36</span><br><span class="line"><span class="attribute">Accept</span><span class="punctuation">: </span>*/*</span><br><span class="line"><span class="attribute">Accept-Language</span><span class="punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"><span class="attribute">Accept-Encoding</span><span class="punctuation">: </span>gzip, deflate</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>application/x-www-form-urlencoded; charset=UTF-8</span><br><span class="line"><span class="attribute">X-Requested-With</span><span class="punctuation">: </span>XMLHttpRequest</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>42</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>close</span><br><span class="line"></span><br><span class="line"><span class="language-dts"><span class="attr">id</span><span class="operator">=</span><span class="number">1</span><span class="variable">&amp;user</span>=admin<span class="variable">&amp;name</span>=admin<span class="variable">&amp;pass</span>=<span class="number">2019</span>gaokao<span class="variable">&amp;status</span>=<span class="number">9</span></span></span><br></pre></td></tr></table></figure>
+
+<p>（这里id=1就是管理员，另外管理员的status=9，也就是你可以修改普通学生用户变成管理员权限）</p>
+<p>另外common.php这里</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/67567a4d-ca9b-4045-b3e6-166e1677e0b7-c6mY4KcH.png" alt="null"></p>
+<p>的get_onlineip方法，HTTP_X_FORWARDED_FOR是客户端的XFF可以伪造，如果他是在最下面，那么可以打反射XSS</p>
+<p>再之后就是这个log方法</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/bd3179b4-9312-476f-af44-7c7b972b0a9d-qJDqxhzh.png" alt="null"></p>
+<p>这个log方法，将我们的某个用户user执行的某个操作content存起来了，就造成了存储XSS。</p>
+<p>管理员登陆后</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/196ce49c-06d7-4205-8fcd-e8f0e887d671-knXA2fN8.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/2d3208d5-7c8f-4fe1-841f-ba3a89461a13-5X5IKvw3.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/2cab6876-3d06-4d53-bade-92c926b4427f-ZPlFdmwS.png" alt="null"></p>
+<p>这里我们传入了limit和page参数</p>
+<p>定位到record方法</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/5e353975-eb0c-4aa8-983b-4bacac0115ed-Frr7pYh2.png" alt="null"></p>
+<p>调用getlist方法</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/07a20351-832e-44e7-a62f-07e84d4e2044-9RSVSZGg.png" alt="null"></p>
+<p>如果对tp5框架很熟的话应该知道page和order是不存在注入的（可以去跟…这俩都被预处理还是参数绑定了）</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/770000e0-1ac7-4590-80c9-d2e6344b636f-NtJ54mCu.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/1bb0beb0-7006-4166-ab93-d67aa189fb9e-t6inE08r.png" alt="null"></p>
+<p>存在存储XSS</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/603ac321-2906-40d3-ac70-2164cf7be169-PRPDvAnC.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/320e0200-47f5-460a-ace3-68400ee52b81-M9QS8hc7.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/1da6c9ef-ecb9-47ce-a841-ed0264d0a3df-05cw5qQg.png" alt="null"></p>
+<p>找到getNavById方法</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/599435d3-a490-49e1-bad3-0d0dee97fe5a-6cvMRVmm.png" alt="null"></p>
+<p>注入 + 1</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/8cf3aad0-1490-4c6e-8928-30763bab2aa7-9H8jbUpe.png" alt="img"></p>
+<p>另外就是我们之前的download方法post传入name参数</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/47da6215-6a9f-410e-a47e-1d927e7fff18-zk74YFqJ.png" alt="null"></p>
+<p>在系统日志这里发现即使我们执行越权篡改密码那里，也是统一显示为123456</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/54d491c9-3887-4954-b158-94c51135f044-Zz8oHXGB.png" alt="null"></p>
+<p>重新执行，刷新一下</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/4cd40bb3-0ba4-45fb-bb12-17150f34c8cf-X76lb9SJ.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/321ee44f-f692-4fb9-8430-2641b7354a83-K3yGkHhJ.png" alt="null"></p>
+<p>无需登录直接打到管理员后台</p>
+<p>另外就是文件上传漏洞</p>
+<p>一共存在五处文件上传，其中两处存在漏洞，一处返回路径，一处不返回路径</p>
+<p>不存在 * 1</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/fabc65ac-ef6a-4a89-9e52-a3e4e13bfb52-m999SlAT.png" alt="null"></p>
+<p>先防止00截断，再严格限制</p>
+<p>不存在 * 2和 * 3同理</p>
+<p>存在-有路径</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/4166c4c9-aa2a-4086-b202-45c89e78761e-3aeUc12J.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/ec69f73a-63ea-43b3-8a12-23cb6da8915c-spFpOQhy.png" alt="null"></p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/10f71bbc-802d-46f6-8e25-daad69755685-O3x8q9aX.png" alt="null"></p>
+<p>就是防了一下00截断，然后直接返回路径</p>
+<p>存在-无路径</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/916a7ffd-1b14-4874-bdf2-05f09ca03027-IuLf3ze7.png" alt="null"></p>
+<p>这里直接是先将文件上传后再判断是否是mp4。。。</p>
+<p>如果不是则不返回路径</p>
+<p><img src="https://src.sjtu.edu.cn/media/images/2023/02/11/59b3ebbb-09d0-4418-9ead-96ddd2c5f009-jwFM1Wp5.png" alt="null"></p>
+<p>文件名也有其命名规则。</p>
+<p>=====</p>
+<p>综上，该站是小站点，拿shell的组合拳就是</p>
+<p>任意用户创建 + 有cookie的（学生用户即可）后台文件上传getshell</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%97%E4%BA%AC%E4%B8%AD%E7%A7%91%E7%9D%BF%E6%99%BA%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8"><span class="toc-number">1.</span> <span class="toc-text">北京中科睿智科技有限公司</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&text=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&is_video=false&description=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=基于tp5框架的教育行业小站的代码审计&body=Check out this article: http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&name=基于tp5框架的教育行业小站的代码审计&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8Etp5%E6%A1%86%E6%9E%B6%E7%9A%84%E6%95%99%E8%82%B2%E8%A1%8C%E4%B8%9A%E5%B0%8F%E7%AB%99%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&t=基于tp5框架的教育行业小站的代码审计"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    塔菲
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

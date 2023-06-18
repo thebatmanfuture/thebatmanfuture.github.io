@@ -1,0 +1,9 @@
+.article-entry img.small-image {
+  max-width: 50%;
+  height: auto;
+}
+.article-entry {
+  max-width: 800px; /* 设置文章内容最大宽度 */
+  margin: 0 auto; /* 将文章内容水平居中 */
+  text-align: justify; /* 将文章内容两端对齐 */
+}

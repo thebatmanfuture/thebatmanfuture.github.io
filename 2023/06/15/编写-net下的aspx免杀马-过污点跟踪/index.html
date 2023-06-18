@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编写.net下的aspx免杀马&#x3D;过污点跟踪">
+<meta property="og:url" content="http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/index.html">
+<meta property="og:site_name" content="塔菲">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-15T13:05:01.000Z">
+<meta property="article:modified_time" content="2023-06-17T13:46:04.186Z">
+<meta property="article:author" content="塔菲">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>编写.net下的aspx免杀马=过污点跟踪</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/06/02/%E8%87%AA%E5%8A%A8%E5%8C%96%E8%8E%B7%E5%8F%96%E7%9F%AD%E4%BF%A1%E7%94%B5%E8%AF%9D%E8%BD%B0%E7%82%B8%E5%B7%A5%E5%85%B7%E7%BC%96%E5%86%99-%E6%89%93%E5%87%BB%E6%8A%A5%E5%A4%8D/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&text=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&is_video=false&description=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=编写.net下的aspx免杀马=过污点跟踪&body=Check out this article: http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&name=编写.net下的aspx免杀马=过污点跟踪&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&t=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        编写.net下的aspx免杀马=过污点跟踪
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">塔菲</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-15T13:05:01.000Z" class="dt-published" itemprop="datePublished">2023-06-15</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="2431d5f6db93faf175c340e3bbedf01be4bc10a75ae911c91f36f2fa2582c3a5">3cd2b1087b643699604328052d9080075b11c090372b8735701653e0c797dd58089a176d5e32eedc7626055d4dd7d4a7eb7e583051abe76575c83105a248de88c1c05f55a861ae9b263395cfe236a39737540fe70448b92e51f9cad9c2466c837ba4c78532f1ef6b8c2213aad0b8184043e085cf81e62e7714d4081e2052090d7a8c8af3630abfb6995c1bc0346527d36679897353f1be51887040ab7df6d9654f19c538e935188368f19a3f77ecdaa5b36e1b0a1cf691876254da39b09d9f8d4851cfa087931776b9847d0592931ebc9e5e226843f769bbabdb4f1b7bc681ade25c8e10413ecafd029b10d8af4075ed8fd41113bb11c0e515d1ac79c4569831654721e46dd32e62a75197e5382f939c460b590b47febd07d81a93d49690c362a9808e6d36663e9ed2c61aea981ed66ce1c40603269ec4be9b875891b200bac79e88767e02f912f5112de2432634bd3a524bdc9a5f6df66b7c4a4bd53e084accc09ecbe7469ece8be078e4dc802d790cac7fe25e7c78bdd0408b13ced30c2894024bfbfdf6982cfe45aac2fbb74c2a3fa39b056a57b71554e38f6d76bb34f38e490baeb5a2bd0720f8fa4730e928f7892ac862975fdeef7b1b7a20d79bbffae3ad1b1fcbd9d0774d58fc7c749db455f0228f706f544738c216bc9ff94c7f7190a640dc4dedb582585733b87ece4dcad2a8f5946fb082dea79375cbe9683a04ac4792d6bf4e37099a84fe04b0921d49e771baf9ab21b1dc6469541d217c450c7a2e7adac7fb352a32d7be8ed3a061d9c955e3432c12d2e9dce6f5fe73d82e8fd6f39f95a697bddd8409cc611a85a84adbb7cde2fa94fc5fef76d634e8527abb49a131e73bac66284a29efbef4987697914bec87766013a11d8d59b8f1c80f898ee6017d726fc4a98b4b3c7a2457f60776568ccf84a398f59c14fc6423eb5a244521e19d8359471c7222f7ee79370f3eb94e6916a5dffdf3cca305345936471a94a0eb62b8e1d4645079a37382e393fbd2ad31a543d7c739465ea00d3a9dd102630470667ff4c9a0b019d2fcff171d4330f71e2a2232afe94debe5e2318e4e5bc6aa08671a6c2782f2ea80f88d5dfae2bbcd1b44526abf669228c9499fe70f29dd5006467758faf360c865c9533b51368df38495f5d9717a94dcae1acff7202954f8d56a89591fc223435af1f5f69f0c23a3b5482093318057e5ea2d1521c4232a607e34033fc920d710b5f106c943bb92de9a88c5144b3948ea4862737dac2be6730cbd1001eb0951aec59839de47e6233ba15fffa84236bbb0b2fa37c718125c266aefc5b6793494746e1251d6e9fb877799a3eb8d1431ab795f5d7caee35320079f9018afd9ce39e8cb6c050fa3153db6311c347927f04ede47bda271e77a7f0f1e6e3f3911bd6528f892d0058805d408c917828694c9d2dc77a57798952163c90a788f716d3a446afeb88b8680f0a64f2707541611e3ad7243607aae019015c97d37742df709032968d636a352852db25f0fdfdb634441737f16fec4285f0e2bc6b1f161ca8f5582eaf855c0f630036d678e448f20091b6011952b60a20c448b0fb1d297f7db1b91da8dc9aa1dd7e069d9aa77e0d9425fcebe57fa7c4eec91f84ce17bfc0f5e1d53dd56db44ecc334c5113f1660a21d5043442c614bdeea5627f4da1285385fcc7c7760d9546c6f00c145b19bc960ad0a351d325c4ce0f18990b6ea99833255c07ac5af9e8e6e58d79027125f2aaa4ae73030b90a3ff86476aaf69275a1f41b3b32463e9bdb1dcb10a34a5866d35c6da0f829460392a893ec09677ca21b5d914a6efb03bd5f1d4e0c06485a9c3fee3cde949008021caffa21df3a3030f85f9b3e24d1ba565adff35daf7bba13638ca7fb492a1ac10abdbc1565be0047ef83517a9da438413c1fec161dffd6c72acc4ea9035b7b75d47149fef4fbb6ef7f1061f18ce5e52404308edac60920e361d9faa678623438bc27c033540ea252dff86463138d64e994d95a50830f8f0edd64512c55c3ba4a87da3d72c7985dcabd40012731a8fbb4c9e5d7df5b9753cf3a4c4e6bffbd3baa04a0843b770002f39a0471cb852ce58b929f3dd33a2c5a418a127031660cb5b0a56d17fc8c93a718f09513496351125b75d27ca7a2ef94890a0b14411e32a99b721965b49122d31f87a9a6925d100052d2b392cb20f0aab404a228919306eb7e80b9d3343f1ef33501eb3c60cc8590ce4ddde016adfe703ab390afa0f4a18e65e34eef10baf2c1c59ef1045ad99d95568d7108a51e46f2e5b7f9abbeaaf0ccc91a5fcb1d4d182d204541d0be47b86352e5bbc762c95012ac7b5e2bfeec7904f306bdb3a3f5a37de675dbc635d6cf654c8f40ef25fe6522b4232bd83f31d3d07207ab3fdcb5f4ffd70f7e54321ead78f1d472cc527ae7af8d49383496c01283316032efd6bd9f5a5db45e6f76fc459c52dd08a4962eed31d4a3e66eba9ee6866ddd53bacf4f50d3c7b26a0cb17815ab997883f79c90176d861de51ca077dbd085a7c0a137e1bec1b32557fbbe73aee12310ab0ef436d737c24d720fb3fa11611f1e266bca3c5e4a65e397ae904dda4339c3134801c87f87a33ebd439246f80e77969a2cf0468faee9efccb77cca9b404ba83c9030c5425e0ce29efdcec530c5ea588fb6728340fe4119a9456d9c5aa03d961cd3f8521cd3cb572694624707d465f1143b5ddd16dd344c3156cfeeb1209892bb7ac1b1857f458dae9089a2028f9c1e081b9024192994167c104b2b70aa2a9ee6709ba776af6054d8d9cc2c33c2d4540bade477dfa53ec912ce9acce2c802f2a5682db61fd4022871e216993c499eb9f006d9e4a7289304dda626c8ad45c45a74cd9ac8a6245f9541d1ce49e9d66681fc77a6f447ec1cf69888d75d83bda1165c233442ff8080b953dd1d386bd3dd7b46cf8758ebf5eac4014f501840fcf3f857980e0dfe5670a875686ede4a9d620484e40d935d350f0b0639bcd1f90e2e1cc2a517b724b0a25630b7eb9ea1929b9f346d4d856edb028f0767cb8253713dc061fc2643844fab31e956e77d33c07f0b02c2dceac923e052ae70b92acef8a89680211ab11d66f79848c3809e5d153e44ee7f74c24f1cbc4f2b3cb9cbc8b0e1110522744b68e82cca09911c3ba5ffca2282603a880fb4c2b2b514527553e7d6ded1176013540a052f7c619974202f631d6a8ad6fd2281bd7b3dfd515aebeb520861fe0757fcdc105fb8ef818d8a7475f13065e82db47e6fe0bd0ff934efc93eb732bf465b474a95467382cae6dcdb7c5e2df3a5d080274b8b988a4ca3e992cff523b737b5e6f6ec079d0c74f1f6af202a9a814c9dccfd2b54c18d327009e269e025d819c2bee77e6224ff61418d25d77c826f270e827c44e19ef4374712f0621ac9c926950f21b489e688f0a96527fd5aeb36ad241622f489f0483dfcf5c6ca4ce679a05c46db8333374a7e592165642f3b65a90515978abe7b26e581a1574981bc622a6f638c35ebd49ab6f3272a794a25a0d3860039236d811a49598089070d3f94e68164c0d6beb4b4275c0b20b7b70897e9ff50a3a36b4db3ddddfa73bb84311ec09f7f32a5febfb20c07334019add26c93c7c91a8695a8e59aad0defedd63c03cfe8f3b7ee4a25dabf86a926a7f83cf091631f777b0c9a10637b2dfe9c9185392d8b8e732d6a81e85dceab9c2174b33c1a26b867884b24de37ada09eac5e6e958cc4f825f7c686836423f9f61b5a8130f57c474a23a63f2f48ec9db9e598e3be6a4ed0071bf546a93d5c037f29010b1377ef0177cca093ced140e0cb9f0e8bbc2ba56114090ae9d79b4a75a83232c1f097fffb77089f282354e64c8dd7df5733ba45499535ea908b0c9c3b70cef4fa453ece179cb67a95682e5ceefafae3b33a7ebc6e5806e5c4382518aa63ddf4cd85827d89156f740d118522ce6d2a3aa027db433362809759b546cce920fc47de1b2578798d1cf914611855bb78ba7e3aa95f49a085ca96a2c28377d56d9b95f0858b3ac4c4fd3578079ae4f3b4484efbd3aee1dae43f0c260156de49dfd777ac6bf3ae8659ca03e6242889da34056fe654872fc3ad208010acf668febcda6fe5109386ab242e31a3da6d599593fb3118cfdf9b9dd33c7a0afc9a6378ea6dda30e1607b48aa6df452ae1ef23c22a56105efdce41b27661fa7e2e8c805f989f0903daab0a6cacac3c6c5ac68680ce6cb9520522bcafe76015c04db53d73d44895a26a8c1b3a9a5f30d19adc791eb046db12ca21157c22f36afa0b1698df83a8d215bc0f090ce15b888b45cbdb418b0ffa359f033b6ac9663005fa8e3a76ed27cc69a14e43723f03d53b28e890ed57e85c9107aab492f7e8c1c88114170e80cffffcc58f04daef1d27a53ed5ebf061ae890230e9f64efa769362f6eab86d59d202cc638cd8f88c31562b5e0a8556f9740b5e898ba0944aa07743282318415b2558e869d4e78dc55c4a52172dabe4abff94f8e4cadb7aaeb95c37276d2ea03b647cd847a9baaa02ac3637cc90e89a012453cb3a8c49a6a43856a82a0478b3ba96ec4d092ada73cef4dc692a79bdfa7e6467dbc1ac84a06e81e47b362e889fb36ec2c1900559c88b0ae07b5411600fe84cbc21c9f2ea9f3a51b8b39ce8aca4d05f3705e1863584eef288ead4d7e3dc49d692f5ff851b7b2dc212ef7ee386159456b596deea94c037b785a0d29ef60f5d5e5eec90420a0d20fc6b3967581dabc3040802366997695a3313e45ca67b3390577afa5e6cdc677048cf2291a9a5aadcc6e67cef22a70b33637ef4901e56d5f6c7060d51f9959652bdc3cf8587381543ff08c26fa02d5905f778f2f0cda95158b4507cb0083845f6fcd329b848f0dfc9e582cdd343cc3964e87d2ea86c2f910524736f1b2dfe843c9293cb344805c1680311e06d5480fe6549074715b4af7473e75ec7a6d2ed9232425972268676e4ba4adda0fc37afdd9213ce64b6db55e5b88b4791d184720493c4550774c8b14ab6a97403940799c6c6c2329af58e2877e6a2c398bb89e13a371e471367f5bb06c5fa95d6d88d472b11cc833283eb6993658891f65ca5b2d45744a4c773aa9d9d9256f46b767</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&text=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&is_video=false&description=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=编写.net下的aspx免杀马=过污点跟踪&body=Check out this article: http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&title=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&name=编写.net下的aspx免杀马=过污点跟踪&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/06/15/%E7%BC%96%E5%86%99-net%E4%B8%8B%E7%9A%84aspx%E5%85%8D%E6%9D%80%E9%A9%AC-%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA/&t=编写.net下的aspx免杀马=过污点跟踪"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    塔菲
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

