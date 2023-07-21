@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="流程. 解释器流程1）代码 例如，当我输入pi语言代码 12345func add(x, y)&amp;#123;	return x + y&amp;#125;sum &#x3D; add(1, 2)print(sum)   2）词法分析器lexer 经过词法分析之后得到解析后的列表，例如中文分词： 1我爱我的家乡。  生成单词序列如下：  3）语法分析器 第二步生成一系列的符号列表，token列表，再经过语法分析器将to">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 实现一个解释器">
+<meta property="og:url" content="http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/index.html">
+<meta property="og:site_name" content="塔菲">
+<meta property="og:description" content="流程. 解释器流程1）代码 例如，当我输入pi语言代码 12345func add(x, y)&amp;#123;	return x + y&amp;#125;sum &#x3D; add(1, 2)print(sum)   2）词法分析器lexer 经过词法分析之后得到解析后的列表，例如中文分词： 1我爱我的家乡。  生成单词序列如下：  3）语法分析器 第二步生成一系列的符号列表，token列表，再经过语法分析器将to">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/133332/20/34191/6341/64aa669cF1d4a7686/d411eb5f69f34cf2.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/162905/4/35402/2556/64aa6720F3f43117d/41d471433f636227.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/216968/8/34165/23413/64aa6db4F06c4c73e/4b8cd2932d31732f.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/146815/39/36846/72065/64aa6d63F153fcec9/a97c62c84161504d.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/216968/8/34165/23413/64aa6db4F06c4c73e/4b8cd2932d31732f.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/135221/19/36272/9120/64aa71b2Fd5ec63c8/b56e016490674f05.jpg">
+<meta property="article:published_time" content="2023-07-09T07:40:54.000Z">
+<meta property="article:modified_time" content="2023-07-09T09:15:52.590Z">
+<meta property="article:author" content="塔菲">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/133332/20/34191/6341/64aa669cF1d4a7686/d411eb5f69f34cf2.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>C++ 实现一个解释器</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/06/27/%E5%85%8D%E6%9D%80%E5%B7%A5%E5%85%B7%E7%94%9F%E6%88%90%E7%BB%95%E8%BF%87%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA-NET%E7%AF%87/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&text=C++ 实现一个解释器"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&is_video=false&description=C++ 实现一个解释器"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++ 实现一个解释器&body=Check out this article: http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&name=C++ 实现一个解释器&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&t=C++ 实现一个解释器"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E5%99%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">解释器流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E8%AF%8D%E5%8E%9F%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">分词原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E8%AF%8D%E6%9F%A5%E7%9C%8B%E5%B7%A5%E5%85%B7"><span class="toc-number">3.2.</span> <span class="toc-text">分词查看工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="toc-number">3.3.</span> <span class="toc-text">符号类型定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%AE%9A%E4%B9%89"><span class="toc-number">3.4.</span> <span class="toc-text">符号类定义</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">词法分析器实现</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        C++ 实现一个解释器
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">塔菲</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-07-09T07:40:54.000Z" class="dt-published" itemprop="datePublished">2023-07-09</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><p>.</p>
+<h4 id="解释器流程"><a href="#解释器流程" class="headerlink" title="解释器流程"></a>解释器流程</h4><p>1）代码</p>
+<p>例如，当我输入pi语言代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func add(x, y)&#123;</span><br><span class="line">	return x + y</span><br><span class="line">&#125;</span><br><span class="line">sum = add(1, 2)</span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/133332/20/34191/6341/64aa669cF1d4a7686/d411eb5f69f34cf2.jpg" alt="image.png"></p>
+<p>2）词法分析器<code>lexer</code></p>
+<p>经过词法分析之后得到解析后的列表，例如中文分词：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我爱我的家乡。</span><br></pre></td></tr></table></figure>
+
+<p>生成单词序列如下：</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/162905/4/35402/2556/64aa6720F3f43117d/41d471433f636227.jpg" alt="image.png"></p>
+<p>3）语法分析器</p>
+<p>第二步生成一系列的符号列表，token列表，再经过语法分析器将token转化成 <code>AST</code>（抽象语法树）</p>
+<p>4）求值</p>
+<p>对<code>AST</code>从头到尾进行执行</p>
+<h4 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h4><h5 id="分词原理"><a href="#分词原理" class="headerlink" title="分词原理"></a>分词原理</h5><p>例如<code>print(&quot;hello world&quot;)</code></p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>print</td>
+<td>(</td>
+<td>“hello world”</td>
+<td>)</td>
+<td>eof</td>
+</tr>
+</tbody></table>
+<p>eof：end of file（文件结束符）。</p>
+<h5 id="分词查看工具"><a href="#分词查看工具" class="headerlink" title="分词查看工具"></a>分词查看工具</h5><p>项目携带工具：<code>token_json.cpp</code>和<a target="_blank" rel="noopener" href="https://jsoncrack.com/editor">https://jsoncrack.com/editor</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;lexer/lexer.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> pi::lexer;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Lexer * lexer = <span class="keyword">new</span> <span class="built_in">Lexer</span>(<span class="string">&quot;./../test.pi&quot;</span>);</span><br><span class="line">    Json tokens;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Token token = lexer-&gt;<span class="built_in">next_token</span>();</span><br><span class="line">        tokens.<span class="built_in">append</span>(token.<span class="built_in">json</span>());</span><br><span class="line">        <span class="keyword">if</span>(token.<span class="built_in">type</span>() == Token::TOKEN_EOF)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Json json;</span><br><span class="line">    json[<span class="string">&quot;toekns&quot;</span>] = tokens;</span><br><span class="line">    <span class="function">ofstream <span class="title">ofs</span><span class="params">(<span class="string">&quot;./../token_json.json&quot;</span>)</span></span>;</span><br><span class="line">    </span><br><span class="line">    ofs &lt;&lt; json.<span class="built_in">str</span>();</span><br><span class="line">    ofs.<span class="built_in">close</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>如下，将代码生成了如下token</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/216968/8/34165/23413/64aa6db4F06c4c73e/4b8cd2932d31732f.jpg" alt="image.png"></p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/146815/39/36846/72065/64aa6d63F153fcec9/a97c62c84161504d.jpg" alt="image.png"></p>
+<p>.</p>
+<h5 id="符号类型定义"><a href="#符号类型定义" class="headerlink" title="符号类型定义"></a>符号类型定义</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Type</span></span><br><span class="line">&#123;</span><br><span class="line">    TOKEN_ILLEGAL = <span class="number">0</span>,          <span class="comment">// illegal</span></span><br><span class="line">    TOKEN_EOF,                  <span class="comment">// eof</span></span><br><span class="line">    TOKEN_IDENTIFIER,           <span class="comment">// identifier</span></span><br><span class="line">    TOKEN_INTEGER,              <span class="comment">// integer</span></span><br><span class="line">    TOKEN_FLOAT,                <span class="comment">// float</span></span><br><span class="line">    TOKEN_STRING,               <span class="comment">// string</span></span><br><span class="line">    TOKEN_ASSIGN,               <span class="comment">// =</span></span><br><span class="line">    TOKEN_PLUS,                 <span class="comment">// +</span></span><br><span class="line">    TOKEN_PLUS_ASSIGN,          <span class="comment">// +=</span></span><br><span class="line">    TOKEN_PLUS_PLUS,            <span class="comment">// ++</span></span><br><span class="line">    TOKEN_MINUS,                <span class="comment">// -</span></span><br><span class="line">    TOKEN_MINUS_ASSIGN,         <span class="comment">// -=</span></span><br><span class="line">    TOKEN_MINUS_MINUS,          <span class="comment">// --</span></span><br><span class="line">    TOKEN_ASTERISK,             <span class="comment">// *</span></span><br><span class="line">    TOKEN_ASTERISK_ASSIGN,      <span class="comment">// *=</span></span><br><span class="line">    TOKEN_SLASH,                <span class="comment">// /</span></span><br><span class="line">    TOKEN_SLASH_ASSIGN,         <span class="comment">// /=</span></span><br><span class="line">    TOKEN_MODULO,               <span class="comment">// %</span></span><br><span class="line">    TOKEN_MODULO_ASSIGN,        <span class="comment">// %=</span></span><br><span class="line">    TOKEN_ASTERISK_ASTERISK,    <span class="comment">// **</span></span><br><span class="line">    TOKEN_LT,                   <span class="comment">// &lt;</span></span><br><span class="line">    TOKEN_GT,                   <span class="comment">// &gt;</span></span><br><span class="line">    TOKEN_LE,                   <span class="comment">// &lt;=</span></span><br><span class="line">    TOKEN_GE,                   <span class="comment">// &gt;=</span></span><br><span class="line">    TOKEN_EQ,                   <span class="comment">// ==</span></span><br><span class="line">    TOKEN_NE,                   <span class="comment">// !=</span></span><br><span class="line">    TOKEN_AND,                  <span class="comment">// &amp;&amp;</span></span><br><span class="line">    TOKEN_OR,                   <span class="comment">// ||</span></span><br><span class="line">    TOKEN_NOT,                  <span class="comment">// !</span></span><br><span class="line">    TOKEN_COMMA,                <span class="comment">// ,</span></span><br><span class="line">    TOKEN_SEMICOLON,            <span class="comment">// ;</span></span><br><span class="line">    TOKEN_COLON,                <span class="comment">// :</span></span><br><span class="line">    TOKEN_LPAREN,               <span class="comment">// (</span></span><br><span class="line">    TOKEN_RPAREN,               <span class="comment">// )</span></span><br><span class="line">    TOKEN_LBRACKET,             <span class="comment">// [</span></span><br><span class="line">    TOKEN_RBRACKET,             <span class="comment">// ]</span></span><br><span class="line">    TOKEN_LBRACE,               <span class="comment">// &#123;</span></span><br><span class="line">    TOKEN_RBRACE,               <span class="comment">// &#125;</span></span><br><span class="line">    TOKEN_DOT,                  <span class="comment">// .</span></span><br><span class="line">    TOKEN_TILDE,                <span class="comment">// ~</span></span><br><span class="line">    TOKEN_AT,                   <span class="comment">// @</span></span><br><span class="line">    TOKEN_FUNCTION,             <span class="comment">// func</span></span><br><span class="line">    TOKEN_NULL,                 <span class="comment">// null</span></span><br><span class="line">    TOKEN_TRUE,                 <span class="comment">// true</span></span><br><span class="line">    TOKEN_FALSE,                <span class="comment">// false</span></span><br><span class="line">    TOKEN_IF,                   <span class="comment">// if</span></span><br><span class="line">    TOKEN_ELSE,                 <span class="comment">// else</span></span><br><span class="line">    TOKEN_RETURN,               <span class="comment">// return</span></span><br><span class="line">    TOKEN_BREAK,                <span class="comment">// break</span></span><br><span class="line">    TOKEN_CONTINUE,             <span class="comment">// continue</span></span><br><span class="line">    TOKEN_WHILE,                <span class="comment">// while</span></span><br><span class="line">    TOKEN_FOR,                  <span class="comment">// for</span></span><br><span class="line">    TOKEN_IN,                   <span class="comment">// in</span></span><br><span class="line">    TOKEN_QUESTION,             <span class="comment">// ?</span></span><br><span class="line">    TOKEN_BIT_AND,              <span class="comment">// &amp;</span></span><br><span class="line">    TOKEN_BIT_OR,               <span class="comment">// |</span></span><br><span class="line">    TOKEN_BIT_XOR,              <span class="comment">// ^</span></span><br><span class="line">    TOKEN_BIT_AND_ASSIGN,       <span class="comment">// &amp;=</span></span><br><span class="line">    TOKEN_BIT_OR_ASSIGN,        <span class="comment">// |=</span></span><br><span class="line">    TOKEN_BIT_XOR_ASSIGN,       <span class="comment">// ^=</span></span><br><span class="line">    TOKEN_BIT_RIGHT_SHIFT,      <span class="comment">// &gt;&gt;</span></span><br><span class="line">    TOKEN_BIT_LEFT_SHIFT,       <span class="comment">// &lt;&lt;</span></span><br><span class="line">    TOKEN_SWITCH,               <span class="comment">// switch</span></span><br><span class="line">    TOKEN_CASE,                 <span class="comment">// case</span></span><br><span class="line">    TOKEN_DEFAULT,              <span class="comment">// default</span></span><br><span class="line">    TOKEN_CLASS,                <span class="comment">// class</span></span><br><span class="line">    TOKEN_THIS,                 <span class="comment">// this</span></span><br><span class="line">    TOKEN_SUPER,                <span class="comment">// super</span></span><br><span class="line">    TOKEN_FROM,                 <span class="comment">// from</span></span><br><span class="line">    TOKEN_IMPORT,               <span class="comment">// import</span></span><br><span class="line">    TOKEN_AS,                   <span class="comment">// as</span></span><br><span class="line">    TOKEN_ASYNC,                <span class="comment">// async</span></span><br><span class="line">    TOKEN_DEFER                 <span class="comment">// defer</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="符号类定义"><a href="#符号类定义" class="headerlink" title="符号类定义"></a>符号类定义</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 符号类型：type</span><br><span class="line">2. 符号字面量：literal</span><br><span class="line">3. 所在行号：line</span><br><span class="line">4. 所在列号：column</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/216968/8/34165/23413/64aa6db4F06c4c73e/4b8cd2932d31732f.jpg" alt="image.png"></p>
+<p>Token 类定义</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Token</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Token</span>();</span><br><span class="line">    <span class="built_in">Token</span>(Type type, <span class="type">const</span> string &amp; literal, <span class="type">int</span> line, <span class="type">int</span> column);</span><br><span class="line">    ~<span class="built_in">Token</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function">Type <span class="title">type</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">    <span class="function">string <span class="title">name</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">    <span class="function">string <span class="title">literal</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">line</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">column</span><span class="params">()</span> <span class="type">const</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Type m_type;</span><br><span class="line">    string m_literal;</span><br><span class="line">    <span class="type">int</span> m_line;</span><br><span class="line">    <span class="type">int</span> m_column;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/135221/19/36272/9120/64aa71b2Fd5ec63c8/b56e016490674f05.jpg" alt="image.png"></p>
+<p>标识符分为两类：</p>
+<ol>
+<li>内建函数：print、type、len、int、float、str、exit 等</li>
+<li>用户定义：变量、类名、函数名等等</li>
+</ol>
+<h4 id="词法分析器实现"><a href="#词法分析器实现" class="headerlink" title="词法分析器实现"></a>词法分析器实现</h4><p>Lexer类</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Lexer</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Lexer</span>();</span><br><span class="line">    <span class="built_in">Lexer</span>(<span class="type">const</span> string &amp; file);</span><br><span class="line">    ~<span class="built_in">Lexer</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function">Token <span class="title">next_token</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function">Token <span class="title">new_token</span><span class="params">(Token::Type type, <span class="type">const</span> string &amp; literal)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">read_char</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">char</span> <span class="title">peek_char</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">unread_char</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">is_digit</span><span class="params">(<span class="type">char</span> ch)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">is_letter</span><span class="params">(<span class="type">char</span> ch)</span></span>;</span><br><span class="line">    <span class="function">string <span class="title">read_identifier</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">string <span class="title">read_single_quote_string</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">string <span class="title">read_double_quote_string</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">string <span class="title">read_number</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">skip_white_space</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">skip_single_line_comment</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">skip_multi_line_comment</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    string      m_file;</span><br><span class="line">    string      m_input;</span><br><span class="line">    <span class="type">char</span>        m_ch;</span><br><span class="line">    <span class="type">int</span>         m_pos;</span><br><span class="line">    <span class="type">int</span>         m_next_pos;</span><br><span class="line">    <span class="type">int</span>         m_line;</span><br><span class="line">    <span class="type">int</span>         m_column;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Lexer 成员变量：</p>
+<p>m_file：代码文件路径</p>
+<p>m_input：从代码文件读取出来的字符串内容</p>
+<p>m_ch：当前位置的一个字符</p>
+<p>m_pos：当前位置</p>
+<p>m_next_pos：下一个位置</p>
+<p>m_line：当前一个字符所在文件里的行号</p>
+<p>m_column：当前一个字符所在文件的列号</p>
+<p>文件：hello.pi</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>m_input 内容如下</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>p</td>
+<td>r</td>
+<td>i</td>
+<td>n</td>
+<td>t</td>
+<td>(</td>
+<td>“</td>
+<td>h</td>
+<td>e</td>
+<td>l</td>
+<td>l</td>
+<td>o</td>
+<td>“</td>
+<td>)</td>
+<td>;</td>
+</tr>
+</tbody></table>
+<p>当 m_pos 等于 0 时，当前的字符是 ‘p’，下一个位置 m_next_pos 是 1</p>
+<p>Lexer 构造函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Lexer::<span class="built_in">Lexer</span>(<span class="type">const</span> string &amp; file)</span><br><span class="line">&#123;</span><br><span class="line">    m_file = file;</span><br><span class="line">    m_ch = <span class="number">0</span>;</span><br><span class="line">    m_pos = <span class="number">0</span>;</span><br><span class="line">    m_next_pos = <span class="number">0</span>;</span><br><span class="line">    m_line = <span class="number">1</span>;</span><br><span class="line">    m_column = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">ifstream <span class="title">ifs</span><span class="params">(file)</span></span>;</span><br><span class="line">    <span class="keyword">if</span> (!ifs.<span class="built_in">good</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;file not found: &quot;</span> &lt;&lt; file &lt;&lt; std::endl;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ostringstream oss;</span><br><span class="line">    oss &lt;&lt; ifs.<span class="built_in">rdbuf</span>();</span><br><span class="line">    m_input = oss.<span class="built_in">str</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Lexer 构造函数主要做两个事情：</p>
+<ul>
+<li>初始化全部成员变量</li>
+<li>读取代码文件的内容，存放到 m_input 成员变量里</li>
+</ul>
+<p>初始化全部成员变量：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">m_file = file;</span><br><span class="line">m_ch = <span class="number">0</span>;</span><br><span class="line">m_pos = <span class="number">0</span>;</span><br><span class="line">m_next_pos = <span class="number">0</span>;</span><br><span class="line">m_line = <span class="number">1</span>;</span><br><span class="line">m_column = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>读取代码文件的内容，存放到 m_input 成员变量里：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ifstream <span class="title">ifs</span><span class="params">(file)</span></span>;</span><br><span class="line"><span class="keyword">if</span> (!ifs.<span class="built_in">good</span>())</span><br><span class="line">&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;file not found: &quot;</span> &lt;&lt; file &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line">ostringstream oss;</span><br><span class="line">oss &lt;&lt; ifs.<span class="built_in">rdbuf</span>();</span><br><span class="line">m_input = oss.<span class="built_in">str</span>();</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E5%99%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">解释器流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E8%AF%8D%E5%8E%9F%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">分词原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E8%AF%8D%E6%9F%A5%E7%9C%8B%E5%B7%A5%E5%85%B7"><span class="toc-number">3.2.</span> <span class="toc-text">分词查看工具</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="toc-number">3.3.</span> <span class="toc-text">符号类型定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%AE%9A%E4%B9%89"><span class="toc-number">3.4.</span> <span class="toc-text">符号类定义</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">词法分析器实现</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&text=C++ 实现一个解释器"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&is_video=false&description=C++ 实现一个解释器"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++ 实现一个解释器&body=Check out this article: http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&title=C++ 实现一个解释器"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&name=C++ 实现一个解释器&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/&t=C++ 实现一个解释器"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    塔菲
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

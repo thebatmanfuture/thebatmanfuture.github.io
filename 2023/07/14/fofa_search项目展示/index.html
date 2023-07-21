@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content=". 基于java8在fofa_viewer v1.1.12上二开 fofa_viewer v1.1.12展示  fofa_search by 塔菲 相比于fofa_viewer增加了如下功能： 1）打开项目 这里指打开一个txt文件，读取其中每一行作为fofa查询语法，由此可以实现批量查询  2）保存项目 将下面打开的标签页的查询语法都保存成一个txt文件  3）导出全部 fofa_viewer只">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fofa_search项目展示">
+<meta property="og:url" content="http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/index.html">
+<meta property="og:site_name" content="塔菲">
+<meta property="og:description" content=". 基于java8在fofa_viewer v1.1.12上二开 fofa_viewer v1.1.12展示  fofa_search by 塔菲 相比于fofa_viewer增加了如下功能： 1）打开项目 这里指打开一个txt文件，读取其中每一行作为fofa查询语法，由此可以实现批量查询  2）保存项目 将下面打开的标签页的查询语法都保存成一个txt文件  3）导出全部 fofa_viewer只">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/127676/32/39817/53951/64b73e35Ff94edda0/02583410cf75e318.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/212198/4/35469/47561/64b73e8aF1cab810f/8d6604f7a2924303.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/142333/30/37056/56720/64b73ebdFf37afa79/c849b53102dd34d9.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/178831/3/35232/56698/64b73ef5F8350379d/6973d0ebc4bbbfda.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/102765/20/30749/55015/64b73f4aFedf1d069/048c420509e29c09.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/160143/31/35441/30990/64b74042Fc336de04/74ca9d33079cf984.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/174069/3/27670/56007/64b740e9F3812028b/809d49cc62a2fc7e.jpg">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/99919/15/33610/16151/64b7410fF4b2ddb0a/226014eebbe98b07.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/106050/34/42434/55987/64b74180F0f293daf/4b188b4fd4612665.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/219709/27/34288/73887/64b741d4F2d1f28cc/ea17d5e65924ff7e.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/176802/37/35399/43351/64b74220Fe75a43f0/46eb1426386bccc7.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/197397/37/37860/32610/64b74241F6bc2a4b9/03f02162deba65a8.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/213452/5/33830/27892/64b742f3F4807171e/b1580580b56711bd.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/145496/24/36918/11678/64b7434dF64ee9fc8/922a734dce325e94.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/101016/13/41265/57055/64b743e9F1aa91a59/38961b44edb39080.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/223351/8/31335/56777/64b74460Fe390650a/001366fa6c2e0b87.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/157257/17/35738/55965/64b744cdFf830c176/3f1b2fe22e319710.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/121461/28/34384/41809/64b74589F88c11dfc/cb4fd8fae53c84d6.jpg">
+<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/96914/38/42042/52098/64b7456eF6b53030e/03fb75ae7439c3a8.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/219382/17/35051/7817/64b74608Fe8626818/3f5672946565c5f8.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/133219/30/38507/54152/64ba665bF0020f17d/a489b3da99035e0a.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/104866/38/25742/41458/64b74921Fb5bd0c16/f978eb6a09ff9306.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/195521/3/34070/14600/64b7497cFb1fe9a5c/517b2fe2cb69b77d.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/115617/19/36757/60085/64b74a15Ffeb59264/047b3e389367cc6f.jpg">
+<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/98442/6/33399/31065/64b74a7dFf7fcdd54/e2a14a887fdab598.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/184152/12/35107/98857/64b74df8F68dcfd4e/a642724438abc4c0.jpg">
+<meta property="article:published_time" content="2023-07-14T08:33:56.000Z">
+<meta property="article:modified_time" content="2023-07-21T11:05:02.061Z">
+<meta property="article:author" content="塔菲">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/127676/32/39817/53951/64b73e35Ff94edda0/02583410cf75e318.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>fofa_search项目展示</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/07/15/%E5%BC%80%E5%8F%91%E5%B2%97%E9%9D%A2%E8%AF%95%E9%A2%98/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/07/09/C-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E8%A7%A3%E9%87%8A%E5%99%A8/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&text=fofa_search项目展示"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&is_video=false&description=fofa_search项目展示"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=fofa_search项目展示&body=Check out this article: http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&name=fofa_search项目展示&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&t=fofa_search项目展示"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#fofa-search-by-%E5%A1%94%E8%8F%B2"><span class="toc-number">1.</span> <span class="toc-text">fofa_search by 塔菲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96tips"><span class="toc-number">2.</span> <span class="toc-text">其他tips</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        fofa_search项目展示
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">塔菲</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-07-14T08:33:56.000Z" class="dt-published" itemprop="datePublished">2023-07-14</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>.</p>
+<p>基于java8在fofa_viewer v1.1.12上二开</p>
+<p>fofa_viewer v1.1.12展示</p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/127676/32/39817/53951/64b73e35Ff94edda0/02583410cf75e318.jpg" alt="image.png"></p>
+<h4 id="fofa-search-by-塔菲"><a href="#fofa-search-by-塔菲" class="headerlink" title="fofa_search by 塔菲"></a>fofa_search by 塔菲</h4><p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/212198/4/35469/47561/64b73e8aF1cab810f/8d6604f7a2924303.jpg" alt="image.png"></p>
+<p>相比于fofa_viewer增加了如下功能：</p>
+<p>1）打开项目</p>
+<p>这里指打开一个txt文件，读取其中每一行作为fofa查询语法，由此可以实现批量查询</p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/142333/30/37056/56720/64b73ebdFf37afa79/c849b53102dd34d9.jpg" alt="image.png"></p>
+<p>2）保存项目</p>
+<p>将下面打开的标签页的查询语法都保存成一个txt文件</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/178831/3/35232/56698/64b73ef5F8350379d/6973d0ebc4bbbfda.jpg" alt="image.png"></p>
+<p>3）导出全部</p>
+<p>fofa_viewer只能导出当前一个标签页的数据，还是以CSV格式，每次获取hosts数据都要打开，很麻烦，所有我这里的功能是打开所有全部的标签页都全部导出到一个txt文件，内容去重</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/102765/20/30749/55015/64b73f4aFedf1d069/048c420509e29c09.jpg" alt="image.png"></p>
+<p>导出到当前项目下的txt中，文件名命名是年月日时分秒</p>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/160143/31/35441/30990/64b74042Fc336de04/74ca9d33079cf984.jpg" alt="image.png"></p>
+<p>4）AWVS格式导出</p>
+<p>很多人用AWVS漏洞扫描，需要导入xxx.csv文件，由此，我增加此功能，实现导入</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/174069/3/27670/56007/64b740e9F3812028b/809d49cc62a2fc7e.jpg" alt="image.png"></p>
+<p>内容是400一分，因为AWVS不能一次导入大于500条URL</p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/99919/15/33610/16151/64b7410fF4b2ddb0a/226014eebbe98b07.jpg" alt="image.png"></p>
+<p>.</p>
+<p>5）URL存活</p>
+<p>导出大量URL之后必须进行存活判断，点击导入文件判断存活，</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/106050/34/42434/55987/64b74180F0f293daf/4b188b4fd4612665.jpg" alt="image.png"></p>
+<p>存活则生成新的txt文件，以展示当前百分比判断项目的进度</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/219709/27/34288/73887/64b741d4F2d1f28cc/ea17d5e65924ff7e.jpg" alt="image.png"></p>
+<p>6）组合语法</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/176802/37/35399/43351/64b74220Fe75a43f0/46eb1426386bccc7.jpg" alt="image.png"></p>
+<p>该功能是导入基础语法，和组合语法，配合上其他选项，生成新的内容，例如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">基础语法：<span class="number">1.</span>txt</span><br><span class="line">    host=<span class="string">&quot;edu.cn&quot;</span></span><br><span class="line">    host=<span class="string">&quot;nefu.cn&quot;</span></span><br><span class="line">组合语法：<span class="number">2.</span>txt</span><br><span class="line">    body=<span class="string">&quot;register&quot;</span></span><br><span class="line">    body=<span class="string">&quot;login&quot;</span></span><br><span class="line">生成<span class="number">3.</span>txt</span><br><span class="line">host=<span class="string">&quot;edu.cn&quot;</span> &amp;&amp; body=<span class="string">&quot;register&quot;</span></span><br><span class="line">host=<span class="string">&quot;edu.cn&quot;</span> &amp;&amp; body=<span class="string">&quot;login&quot;</span></span><br><span class="line">host=<span class="string">&quot;nefu.cn&quot;</span> &amp;&amp; body=<span class="string">&quot;register&quot;</span></span><br><span class="line">host=<span class="string">&quot;nefu.cn&quot;</span> &amp;&amp; body=<span class="string">&quot;login&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/197397/37/37860/32610/64b74241F6bc2a4b9/03f02162deba65a8.jpg" alt="image.png"></p>
+<p>.</p>
+<p>7）提取检测率</p>
+<p>这里首先输入初始语法，输入之后会进行查询，得到size的大小（即该语法实际有多少数据），再导入组合语法生成内容，即利用组合语法功能生成的txt大全，导入之后会检测txt文件的行数，两者进行百分比计算，得出覆盖率，如图</p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/213452/5/33830/27892/64b742f3F4807171e/b1580580b56711bd.jpg" alt="image.png"></p>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/145496/24/36918/11678/64b7434dF64ee9fc8/922a734dce325e94.jpg" alt="fa586eaac81df156792d946e4f33f0f.png"></p>
+<p>8）AWVS格式转换</p>
+<p>这里如果之前通过”导出全部”功能得到了是txt功能，但是你又想将这些txt再转换成AWVS需要导入的csv</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/101016/13/41265/57055/64b743e9F1aa91a59/38961b44edb39080.jpg" alt="image.png"></p>
+<p>9）组合语法切分</p>
+<p>如果你通过组合语法功能得到了很多语法，大约3000多行，但是你一次性导入在fofa_search中可能程序会崩溃，或者其他情况之类的，这时候你导入组合语法切分后，会100行，100行的切分</p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/223351/8/31335/56777/64b74460Fe390650a/001366fa6c2e0b87.jpg" alt="image.png"></p>
+<p>如下</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/157257/17/35738/55965/64b744cdFf830c176/3f1b2fe22e319710.jpg" alt="image.png"></p>
+<p>如果你想合并其中的某几部分，只需要将这些文件复制到一个文件夹下，在cmd执行</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">copy</span> *.txt hhhhhhhhhhhh.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<p>10）长度限制超过数据保留</p>
+<p>在query方法中</p>
+<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/121461/28/34384/41809/64b74589F88c11dfc/cb4fd8fae53c84d6.jpg" alt="image.png"></p>
+<p>如下，maxSize &gt; client.max就是实际存在的数据和我当前会员最多能导出的数量（10000条）</p>
+<p>即如果超过能导出的限制，则会将超过的语法追加写入到一个文件</p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/96914/38/42042/52098/64b7456eF6b53030e/03fb75ae7439c3a8.jpg" alt="image.png"></p>
+<p>如下</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/219382/17/35051/7817/64b74608Fe8626818/3f5672946565c5f8.jpg" alt="image.png"></p>
+<p>当我们第一次通过组合语法进行查询之后，肯定在新的组合语法里面也有超过的语句，那么我们将这些超过最大限制的语句作为第二次组合语法的基础语法，再次生成新的语法，进行查询</p>
+<p>由此，直到没有超过1万条的内容，然后我们可以进行之前的步骤进行覆盖率检测，看看成功率是多少，来判断以后是否增加组合语法内容</p>
+<p>11）组合语法切分</p>
+<p>12）URL去重</p>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/133219/30/38507/54152/64ba665bF0020f17d/a489b3da99035e0a.jpg" alt="image.png"></p>
+<h4 id="其他tips"><a href="#其他tips" class="headerlink" title="其他tips"></a>其他tips</h4><p>1）必须将jar设置成以UTF8格式启动</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/104866/38/25742/41458/64b74921Fb5bd0c16/f978eb6a09ff9306.jpg" alt="image.png"></p>
+<p>只有这样，你导入时中文才不会像如下乱码，所以运行时直接点击start.bat即可</p>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/195521/3/34070/14600/64b7497cFb1fe9a5c/517b2fe2cb69b77d.jpg" alt="image.png"></p>
+<p>2）新版会员api限制</p>
+<p>现在新版的fofa会员不仅没有永久的，而且即使是api也是一个月固定不能超过50万，这显然是不利于我们的组合语法功能，所以推荐使用原来有永久会员的号</p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/115617/19/36757/60085/64b74a15Ffeb59264/047b3e389367cc6f.jpg" alt="image.png"></p>
+<p>如下</p>
+<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/98442/6/33399/31065/64b74a7dFf7fcdd54/e2a14a887fdab598.jpg" alt="image.png"></p>
+<p>.</p>
+<p>3）最好是100条语法一次导入，我这里导入了几千条现在点击”导出全部”已经卡住了</p>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/184152/12/35107/98857/64b74df8F68dcfd4e/a642724438abc4c0.jpg" alt="image.png"></p>
+<p>.</p>
+<p>有什么想新加的功能可以邮箱回复我：<a href="mailto:&#98;&#x61;&#x74;&#109;&#97;&#x6e;&#102;&#117;&#116;&#117;&#x72;&#x65;&#x31;&#49;&#x31;&#49;&#x31;&#49;&#64;&#x31;&#x36;&#51;&#x2e;&#99;&#111;&#x6d;">&#98;&#x61;&#x74;&#109;&#97;&#x6e;&#102;&#117;&#116;&#117;&#x72;&#x65;&#x31;&#49;&#x31;&#49;&#x31;&#49;&#64;&#x31;&#x36;&#51;&#x2e;&#99;&#111;&#x6d;</a></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#fofa-search-by-%E5%A1%94%E8%8F%B2"><span class="toc-number">1.</span> <span class="toc-text">fofa_search by 塔菲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96tips"><span class="toc-number">2.</span> <span class="toc-text">其他tips</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&text=fofa_search项目展示"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&is_video=false&description=fofa_search项目展示"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=fofa_search项目展示&body=Check out this article: http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&title=fofa_search项目展示"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&name=fofa_search项目展示&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/07/14/fofa_search%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/&t=fofa_search项目展示"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    塔菲
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
