@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="冰蝎4.0.6源码刨析">
+<meta property="og:url" content="http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/index.html">
+<meta property="og:site_name" content="塔菲">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-05T01:50:54.000Z">
+<meta property="article:modified_time" content="2023-08-05T04:56:41.969Z">
+<meta property="article:author" content="塔菲">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>冰蝎4.0.6源码刨析</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/08/08/Dotnet%E4%B8%8B%E7%9A%84%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%80%BB%E7%BB%93/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/08/04/Net%E9%80%9A%E8%BF%87webshell%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%96%B9%E5%BC%8F/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&text=冰蝎4.0.6源码刨析"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&is_video=false&description=冰蝎4.0.6源码刨析"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=冰蝎4.0.6源码刨析&body=Check out this article: http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&name=冰蝎4.0.6源码刨析&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&t=冰蝎4.0.6源码刨析"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        冰蝎4.0.6源码刨析
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">塔菲</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-08-05T01:50:54.000Z" class="dt-published" itemprop="datePublished">2023-08-05</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="72e134401c6ef0fd3c35f9b3ee96a8772d75c4ce5cab0cf8163979c521a119e8">3cd2b1087b643699604328052d908007d399207cfb5b67a1a44bf2eda2884fe169556cffc859a3bf5472dcf391466595b199e7e0102ce4b6395698fe1a2ffe2072094950eb893d1e3f20ed86ce15b3f6f08d8c916f32a28b93c83fc85b11c8773d10ae2423cf22a180c54c08629f63a6ef37f084783522b5954ad063d86d7431958eeb990aeee38222019ce06fec63886dbcb6c80e8090405678d39c148c53d16c89c9f3a455ab200bd39e5b66fda2b0d06d2f5161097cc791cbcbd399da055592445002228d8d136766ca5c4c6d5a9a2a17999872da9eed30c455c44d842d310ecd216e7df185a0fd669945acadcffd6ee8f8b37fbda6f952d817081b770fa9acbc585caf0f2dc302b1cfb176bf4ee5cee4ed420e94689257d8f2ed7a869b443992d40e8636af90ced006f3e07ca16b79ab20bc8052d0b64b148f05acf08b57a5c6dd758caf84ccf4f21d22878855d2fc41444805b0d68b148a435b389917676fdb4629480cf444f63f3fceee8cbe80af699c5affca8f181ef57f86665420e177d749fe0748eb56b8f8f3889aba2991f0badd0d8ddbc097f34a1a59078c5ad71fce56556c0169ca32b16f96bcb51667c65b678d5b959a6d99b3a6772d2ad56ce12c9656943cdb94fc7def9cb15ac5c24e4a6b53d788388fffed91fd1e0110dbffec85b464ba5c1cb38376ab0d8a0425a35281fe9ca0009f7bb5f3febb08c7cc2e84a2b269cdc009c05d652e474d29983daf85b81fd01b97e67a05373ef319a34de91ba97fa3539a5b5cb9165bf62db20193530dd873552f6ae3a3b8bb9764894f2bcb04beae4852de599342549cc891c641054170d2c3f816bb2c3e208319634f1a9aa226856f11333ebdc53120819d0ac22b2731c30e3ede33f62790d06dd3521c0907b8cde0c119d4a109ad27e567360857a334578f1ccee201dd27714461e986db8b2eeab2d140b2df02a5499af70dd9d67cc74f5d17885abb9178df37dd334fed2f51405542d011bd35b618633921a6afd1134d00ce815fa6667b1c7131d712308a14d0262aa6d35772784669367c9648da2c210b5b605f845fa517e47127961902d8e93273487129f5718dec7aabb7b444c8ef3fd2b48f59a182b4417c474358ed044f2c913fb52c721e35f06716860ce3573c1938a5722bffbb1e53e1e22cd7fdaf4949e79e896b936a0444d6bd7486b52bdfcc4dd8d3f839b8546553abdcc2da942c56027e6b0dbcb6a831ad84161382f90f28d64a4e615bdcd4368b67f0fe1e2a79d7b0481557125a6a78d2d224814ca276bedd1ce204a7454411bc056b84dd40f32f2443f8c563a186bd6bf3dc527d9e243ec1c41ac35d65c1690c3b94c1b1c854fbabfb7bbd895fae6710c8f92678cef7f514eec4b899853170600125424841036a510060218f306749b59bbde630be00bb0e78de586c23e215015968e2733769f2e4974338b49ba891eb3d16f94c1a80a735c634579d674f628dc01ad03f22b2e41bf24fe42148a651cf799cc4561396977938ab82f618143b96e497b88359b3e1f60aee1e8801db22466e9e83c4b2b871d2863241056d952c412e7fb7f20e71c9b02c414c1cb14d285b25a20b616b32ba5db99bd59b4be539d60152bdb501356a0758e4a23df58b298de5f5de9094aebadc5b7846c6fe2726415b1204412783d4d7b277274ac1fc7d06</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&text=冰蝎4.0.6源码刨析"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&is_video=false&description=冰蝎4.0.6源码刨析"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=冰蝎4.0.6源码刨析&body=Check out this article: http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&title=冰蝎4.0.6源码刨析"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&name=冰蝎4.0.6源码刨析&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/08/05/%E5%86%B0%E8%9D%8E4-0-6%E6%BA%90%E7%A0%81%E5%88%A8%E6%9E%90/&t=冰蝎4.0.6源码刨析"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    塔菲
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
