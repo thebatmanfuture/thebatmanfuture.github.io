@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用JAR工具开发编写模板">
+<meta property="og:url" content="http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="塔菲">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-01T10:50:36.000Z">
+<meta property="article:modified_time" content="2023-10-01T14:11:20.463Z">
+<meta property="article:author" content="塔菲">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>常用JAR工具开发编写模板</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/10/03/taffy-webshell-antikill-tools/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/09/03/dotnet%E5%86%85%E5%AD%98%E9%A9%AC%E5%88%86%E6%9E%90%E4%BB%A5%E5%8F%8A%E5%BE%AA%E7%8E%AF%E6%B3%A8%E5%85%A5%E5%86%85%E5%AD%98%E9%A9%AC%E5%B7%A5%E5%85%B7%E7%BC%96%E5%86%99/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&text=常用JAR工具开发编写模板"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&is_video=false&description=常用JAR工具开发编写模板"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=常用JAR工具开发编写模板&body=Check out this article: http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&name=常用JAR工具开发编写模板&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&t=常用JAR工具开发编写模板"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        常用JAR工具开发编写模板
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">塔菲</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-10-01T10:50:36.000Z" class="dt-published" itemprop="datePublished">2023-10-01</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="f81817b6a5ac7a7b306472370e2d760947e10b6e8be597710f56fdfa98ca17f7">88c28714162f3f9cd17c9efb9121f5ba8daab89f721dad4ee85f0b48e479285bfddf891c85fc584ea42a6be5828e2f1916e22e2df024c3fa56091847e8f8faaeec3f6d944cbf67c875995eb50bd1e877f0936953580d6208cbe7493307616f197cafd82688f5811072e0e2741cb2bfc340baf32c38002a5707cf24a205e91c1730bf43d3a942ebda9258590dcc0b4f02e1a8f59eb5a8f12b90eabf55c88717b80e22be550bafbd5fc8d93b91fe5706c8896aa97bbb8ba9fc135f365a4ff09e373d05b15588e1e6526268a6cc02bbe82bb2847b407a622e1c6196268c0106eea1d972a450575d350c4f9f06861216b4ae5ede626c7429398bb864eb6850a010712dca60da3487243967ed964462f0377c9a862b69e425d57789402c3b29b0f3d860cbe2b0c88b42d078a3b139a9fd3faf5ce4a5b4e01c98daa8ffcb5a25b1dfa89a88e603da6411caf6044dc3526702ad415a217eb239d0a29d1270d196e40186d4f78ddbdd605cc97a9e17ab1e9a313c86aeff065e511bd4609c7233987f3e4c18ca4c958eaa2d7742b46206af70e4cdaf2c8c5ba879d682b8419d0ed8625fb1a5c4261f05987b1bb4622f59be538452270fd2fc0aaaa5a8ed7cae27a7a0801210a61a679349df10346cf53cdd76d6ecf5ccf66bd49eb51ed7023d8131218f19656a629b331cb5b5033ef477d30dc9b8be212e1d4cca5b8556c0b2249fcdc3ac9a52bdb6adc941fced064d3835812235cd8c649bd50531ef5a1b31e6489000a0e861a9b35090ff2468fdd08277c1f12530bf2a4abab28137e606bdf8094496b9b7a41d0b75f3623f51229c2b43b0f050b0b80563e35a3f50dc47e242eca4dcb6589614d7a3c8db3eae00ada0654d714a067486e8e6b6a67a25e5359b6f6480547b6a6d5fc49beae8d3ca728dea83f641b76f25142f0b2dd83611d7e26a4634c3507a49f1d6927a38ecc1efd1b97c7824e3770b7f047bf26d203411322396612ad1a289c8654f72a8af18f38034cc3eb371d653e1ebf2ec5bfcaa80c539ed731257a13f710d64e18ff9b537180d0e2467f548565019a6ea989641c2a35861bfd3724ed629ec112fa169b9cd78e9dec62e55c504343f06356f072ecfb54dc9a5522a12838b8bc483c152ee30179b984961b74f92086ebb484d9c1a8ef41b76d82d18c32d3871ba073d193731cd15c08e4fb41b249722ba482386759d5cf0634666282451e8915e0466cad7360c4864e4d427402666cb0cbd0280f0ddb72de6a5f16490352d74e2e885a7fd405842b9ac5589e29cee3e56cdae353f6cba8ab57a35bef4283f01120fc3d4d884b2c86da4650d8e6299be84fe94eedf4d92bf0b547917d8fc36f299a75f36b6dd90afc5549bfc6b4d63d750f6c6d230187cd5d22edb2c0040f3180172ca67b937ff1513cda6291621d7b8b52da45c80a6d7e41a56e897289402a044e334ae24b7d6cf62599b54080072b1a48f674b574324395f4538b5ca7aa289e9a5c35bd86cc50949a5ced449eec24877482aa64948f5414ecb6c6f608352c9c63ac70b088a3b933d0d21adb0c4efd7d70e24e873e49fe11eb21e0264b3a7f6d0558a6c01477ffbe7d12f00e2e590781033729dc5af38477d17453d422874b8a8bf9bb66641dd8a59e0ba73ae33f2f3385dfd915eebb6912933ed7f0e98cebb81ecc80ea0a29129fbb9682c7033ad410b3deffc5ba82b9d1fb646951c51a860d72d82da86687b2f5d931d163d2dd8d08358a17d65ef637288e3a8774def8ba91b27f8dd3c356044de83afbef9ff2bb5abba215c50c796ff368998b4a38ebe514f456edff9e0bd774ccd4a92c878b5f5f5d648d471ab3a4f37ba2265a688ad7d76a17e0328e83118e8bfd437deac890fe281bb80078fd240de220e69ee6a46a8928f90c44bca7f520e55026544c5f4ee371191b8f6950813108a7849cf079188b9b704d1899531c548f9286fcff34829cb9cc9335d199802c3479cba88c10a58e6910fdc0022ffa4e9f52cf5f59c1dfa3fb531bacf039853abe1123c600c5170a0b492caf8cac5edd3d967bfdb7db7aabcd02878651d310736802376140a4ad593b0d42f5b9b3b3ddf89f54ecfa00938cbd37667f2b3d2cca4a17c4953eb050f16b7897f5e0fc98ddc2391000646e4ebf919749b4ab7b3fa2865661670414fea9b8c0e4ee1d1c7219f39cb572349d7ecd9206ab2fb5d3e3a6d8a7c50f5eb8a8be236ddad33074648a6164965f0c125eccca65ac4531c20493ffaea3f0cb574664c84d2480fd3ad8479021f3d775bc01bdedd4b0d1c2c31abbfddc388f1aee9e12ba08c2489dd29032838926f7a6ffdfd593bac0383586903e204829251a1d00cfb47d3e971fa87b5adaea2050887af17a305e7086cfd2fad07fbc7ff21dba1bfe5113531f21fcff0837b5c996137455685729fa68ff09e856fc79bff4e15885b533cd61bbcce84fb8f013242ab9ebb342ba83284dd6fd70168ca2797b50f299f788f9170284d52751ac572f70dd0b8a5e78cb019a9bfc5a079c43cf2079effc8444a04b4afe4f0ab0377220f674a81a61b761424611c277abf9024e50529f79f0f5e5c5b888e050a3050171300c6934991a9b2a24ca4794fb73373cbf811c859ff7a47b5227d1a502bb7d5011a77f26611f3264b947c1f7e94cbb6c28e3faa30ca671968fe751a2e944572defd1ccd7d4b5767264970491d818fc0da71f7fdcba2afa27e3232faaf6889180e5bbe44273a4e7f6254b7ce443ed455ef6523a4137736977b9cbca6646fc34963665ed2b6cc53a49b8efe916addeaf957eacf01e6ba172963416d0420b0d8c22577d6596aa44501356c4fb86e06e23c5c2b407f10af1b10f8507150d43dc8ac876a2e185bea82d21c22266d47810973cf99f36d1d6225968fb430fa46f2605ef8980cd8ad852c0ee49e97e55443694dbbcaa2c87053d7df1a5287876f8821174e3f25345de8b14e2f681bdcc3ed323e8782e5d3d8c25d71d8f91c4ee5b29b684d3a03b142d8096a89277a43be1af4df87d27fff9ae7fc479b47373cbdd1f9c7a4de7118efd5a8e991a29f3c04328ac61baa916d1d5b1c258bce6b24f243d32b2c35f2d96d85bea0fb8573672e5f7216474cbff9ddb80ebec8925493ec15a49b61e8f7cae738ca295dd32d62349512c5b9843dab9358e1756577ca2ce2e55365ac665aedb148eff7c9c20ea7a4be0768e125d7aadfd56c1e604690474eebaf4857777cb23e5c09d604193f3a940703e0f80ac5edd47d972b5a45f1bfa31ac0b1e32da522bc8ec45cb2861e0c30b5c79efe530ebcb8425a273eae7424264a211f0d2b8552fabc74497b9f8b277f09d574491d759ca03ce4c251cc59bf1de34fed690e0a3a67b1628757fd608cdf0065985ade3441535e49c60a5a949650b7a7e89e0d7c09d8296514b41b02c0bfa8136d1ab6f0cb5445e349465cd0ae457ab03a27eadbd9a6e2dc6400efb2f0a1d4b3e642a9c64a5aed2b5438474afb77b9a4e0367f268e2f7b0f77afcd7457502d8ec0ce052ea214c25d225bea69e7fbab98608fe4225fcd8f1bcf8cc7cc292f749e9aa32420cdb573d2cc80ee31221ad13176d3317ca3a2438976b9999fb40ce9ef9d1f3e7608a1086ae89d09f218ab542768ff2fad89eb40f566c432704fb37b05c55dde8fdea6303be355659066423a22f7dc81f87c6a4349a947635f220502544b668e6be93f57ca8386bb7c8b4944a7fa38e0dcc76d6bfdc1bced2ace2b6365728b637f3befbf1d2b5b3d3f60181d4673874573045375d96456406a9ddaf3e567c05d99040cf1818cfb850fa93400dbfff5f593489a777fed30637e3a8b5b92056e71996adc63f7f39a6ac95da863d87f625215b03dcb0fa69d656489f633daba0ff5646b3387ed0ea1dc87e56289a12b79883229efcf44cfccc3196078d3618403b3dbe3739c52803f3dfedb5d5ceac30d14ec1932c05d3bb40dbfcf0c8de367777790c4eadff391529a6f201d234b94b928ec82d51c50c8ee8c9382f7fd4d1aad38dceeeb00b44ea8c78d4398757ec03c4146abf90749be4732c1c3055dcc78e1f964338e45555ffcdf06c5aef7456e1e30fafc403d2af8eadd01a47cbaf900e209793ddc1e7184180623f5eda5ebc41f69ecbecfb1f8c8cb8f7542dcc2962c17b03bf06e511b2594d3e869575abdf52c3c1b2e8f45b821565ac35e11c6f747df6b8deb2c49e005f57f47e1a11c29c1f979a384181b5168b3eb475d01050387f5add2f7dc20374c54077ca84eadc9567eabd4f52d12a9750d9b5c42a90be1eb6b082565903734ee759e3d1d3cca00e65a51788d8503bfb44264c6819499e343200ee5c0031e306b2942bc05818edbbe3497e937b8821ff69ad6b2a15b9625642a8c186a788a2fb6987d9b943efb7184c42f2125b41233947a110b1a8011ebdc6e1f0b2b618ae0800a3687479cdaa30585cbbe0dc29a4dbd29a7178d05f8c4df6458cc4a41d5e3f650894b02124e1b04169c8d25c5d070937ddc3e611f1639f0c6a358dd452d022c264c14ae0bdebe8f35ef659775fb5f3bef5bffd48766715947d0f9063f7b2d8de95afb5c85ca6f07e8ae93aeafc4d2558fd868e6cf124bad8de365ce5dc2816d26d441d53904aa9ed24c790c35f16b1def17e4509b9da348b05c7df49de3635fe3d109a1d2ae373c56783a8ba6f7dd553b80bf439b35886d66dbb27a2d6c8129a609e9f4ee5361b52e9a2855f2043d734cef4fc6fe5e4b0821cb21135e213316741bf1871b868be5effe19b157aae35d10ca36fb9cc68a27daff44b137a46b2058507c3ac6fc1ef468b76404e106ec34d40b47787724b59cb4291ea7fedbe626eeb1ac6f29f22b2984608bcabab47e0c5052646d35820aea13385335a14408c5bac10808c74a543cbbcbd8e95e6b6928755018ae9cfcb669c874f79b6460ac7d293c0e034edc35383ad2252963ae296eb006158f1cd48753bf1cb4fd6054245c00a7d1317fb76ffdd6a7a3c2a2adeb52ff92899926f0a3b38c306a36e6912eb03c6423478b4c2e55f7c0b20d23c875af2a39f55990f27b35d24a951547d14922971e392545e58dce715090bc75236e6eea40856eafd739cf103b2f9c82f4cb77db0e8c24ef03a63ed5274e68abb431466ab5ddec29ecf5062d361a534612bb933633479c0daed1e7b13d6b8b4ce13998cef2f6f46322a8c5b096132ffd50be3e2a15453ad688b9007c28953ef9ee50b90a73473fa909275bd920592173a20731723264ddc1ec9099a897509a39f2e9030ef7792fb2a34474d70be180900ff823230ad01df1f4192b061ce7622e7a0cd20b956ecf15f1e76cac1bb05d87a113b4c3b22746a6d43697f8b2387c10c7771fb1cd911c615563c6e23393fab761bcc85e37854227a239fcb0051c8b682b5f63f0f905a8c928cfae328182bd7191a1b946947022e27af9fbe3aaca3e7df771c88077971ebe8da81e6e2839e82001ea730189caa553347af3b14ad78ce5adf751b4d24a4f824941c4a4798ab5154d2dc953cdb23e75520f5125fc8953f364a82ee909494244eaba0a1b9eeb3e1b6c7976e3e20eb00c378adbae63859223a7477030c7b90ec4d103dd3f98253c4e4679b2ff4fa2eb838e271d4cb20e5751678d06d67cf39a8d9611adff21c7cbd572c8a6370d07cd6863a5ad7dfb6a9244e8370f1f32aa363d5af83a82811e0752887b8abe3b53e9b80ef6a2cc28e2b80e9f92e097f81b1be95034bd8f942ad521501251e636667a226fc5ca97c72f5b240dd43656bdaf2d3d315338c31553ad0afdbe24a229f0fee9850b22cbbd9f1f2d2b2b003418c8d80e25b87666a1dc9dcbae66d4d66c8ffa319a4507869350e419421693de8284e65ea49ea0ec9623672b90f487768843704af8a9a944029ccbbdbb53c86b6ba84934148d3bc68321ad0ecf696d06a1eec94c83c251f229caf66c532873d6fbaf4fefe64fda905166e04c1d4cfbcb27920b26a34512bff8aa4b4a123b501049d4b004c5b4f0967de1641bc4dc1664ce5c3cdc663710b8751d67583e844bf3a5e54b85f6835b8e2f93ace91d2ac0d9f0a2944dc4ef9d4af504c05ddfb1762ed1e3a36a816f9f15cf20923837a29d5ac79190ab861efcc684462af450a29c0e1c8ca9aef2420c5829385ded0021dd77b350cceff07c1d8f4bcbe9fb4e1f91776be5844b1b2df7425335a054f0c4507cfe5b93bcede15fe7756345f5e73873024c0b13c3daa15ca59e1d864d62907a164a70ff14a3bfd796495a4c1ff5ca59dbec79d911904e100841d040b3a261707d359f3571affe9b808e0eb6c6ac0071e8d8054fdb95c60b11d7c74b6cb989be4b089b07a444dfaa2ce75a4c1f151105ccb140b399ed60c987f45c4bc15501a6d2914e538f7aff3d268d367547fd428d5ea08306726551b0746d690e9911169c7082ed2037632ce6cc7df10e6fcfad3151ba2313e55c0a4134dc60c63aed7598095f451f976cc7348aed219081c1a73e90fb1872a24226cf266dc0f9647bb6f2569c6d7aa92b2a9b4b1eff67f2211e4aee88da55094de93bb656bac835cb1815c24c0a945518f04194f3c2606a3a7f509327300df794962ddaa5c566aeaf42016f6a2956a8233dac1c443e247301b3d3d80e0260c3dd57335c3cfbd22f2ed6de404096a4f2037a33e7a6347070449e8a3f174f4673a49abfe160caa7363f79597255a45a54794ae3809dba23a96176998c73867df86a1529d344f46f7314a394b1014c9c9e84919e62cda4e08c39473c03aab512865d8e906e6b9bc6f067a01620e5ea7b6b32a508e52ea1efcc2df742a690d050186501fa20034c2434047a773ada699378a9e8c27b194cbc706d3f9ae89d06790de85e04c531487d7cc204394748b0311859b20364dcb97df5f03982d7dfe9c40701843e00899c002cf506f41195eb6963a7660bd660c237e57f6d8a5b0a2c22adcf5a1e699d373457c42b1affcfaca0d085e3ee560c65318eda876d31780e66ffa86d674e23a56c27623c5a0c1e7598e154af8a5eb5e61bd8e47316001ecee1aba2751cecc588e6f33fe173bd18a78d2076b1a6cb0543a4a036e0cf58dbf46285d41612354d860e9598b826d4f64d96297cc5db7a151ba37806ebc8b3120960c1308c7293ce8b080ffe9d34b78bcdb5dc989944f2ccf2bfa7409ef1e6faf2d5d48a8ca783368adc6c049de86d08e7a64696d6e2d236e79cef8e03b89df9c16427020f6b7be7046d752c4e6e27f40ef68fdfcb5a5ee3bf0e7318049a738f68fe22b1f03ddfbf45e6a1563883a0f9ac90847092db4cb9c7c70883b440cd6577d2e173ff4f0c17aeacc473bf45de301801a68ac057f72f16571ccaed3b520e814daef03c16748c568eb36989d943152a4c734bb36dc1dcf58dfec2cf37d3f2f5f2e310bbabe72e89a9b36dc984832ef7f78274e0ae4258016bb74a27bd64e9bd928e3198d7a689262f826e56a0cee18c929b70d82fb137691fc3de918583e8af8e09af0244ffd0f132e331b928080387acd4f84eb60de0207844a5e0b0b58445aaa1846995ec6c0297c16faebd8cbc2bef7dd05fdfcba6fd862853d19978e6f08805ae7a8c160efcd0a80dd57fc1b650c8c72eaf4eff7c5fefe0613d284d027fae670ecbc99d50e61d3782f1d0c0fbbb0d301ec4519432da10e8c44b9974f70edc365c0e9bdd971e2aa070126597b4bf90b95aa86f79249999fb7106943963200f9fcb2d5b0e4a6d9e1e6a8a3b2a0b50bfe5ab24470b35354556cc1e66bdce57101c1bdf7d4d593ea975b442c34d87d51c8faf9123cfcc17b63e9f0f3cef85e8eb6a0f82c494b6ca8079f33a76ee961fa956cbfeccc32c23c7d97a6d081bd34e4674a6b5c902280c114fee268da8fe7e6622ce0f981bdc2b4db503025d159feb55ff55dfbc32145cadcdcc09111f242a2d23720be75f6e702b8798f4a2bfe9c820a41b629e8d1f08003f38c12af76b5862aa143c795b6ecbfd842b202796662628b79131a83237e553a65176a6eaae10c67a535f2c6980124744c6eb3ed6cbde482ecff484baca01d8b76628ee8c4838bcb5178689451df0c5458e8a855d83f846007bbbfc595fae13d4a2d47bd1706dbede44be5459fa74c250f92a9f7e8fe4ebd4ce056ee41f3dd83ea56a4893399f4b07b5fb63462ea8861ab2379ba43c1f199f8d9dd4d880f737c55dde8e4f0ad88fa6ca98b46f97ecc9d3666b93dec3ed5f444d9dc50a9d8d915096ce597ced2c388a8365369f8f673443a840cc82eecdfe0dc995cb54fe89a44bc8e0aa36be2678ce28428099f2c410e93a6ff5f6447a5c4e95cf6382da3df8a5b0dad68819e0a2c3d6dfd1aaef8057bb238a086953e02bd7cbb059110d240e7b66cf311f48fbb3814da841b058cac0e5c64fafabbc0747eb86f553380ca78fc143617754917c484c160638fc0eaad2075964e0467526b611f3741737e804e270e0fac02917afe9e96615005a7f35c0d29d842d872002fcf59ddda879ea779a70d5043313688cc35c8a913b7a4430860abd8a32d53a1947de3f89469806d90f6f9d189b07dc2b3ee0da7c273735c52b26a418ee330e16cbe0b1f06a3c8797ec541bc51e30527e2c08b5c0b34a0a7ec8d3f3178d14ef25e4e8bb565b68643b8e9d099a3d5be7821252e7dd18bcdd336f044a9c3d0773663b885cec370f55ea47498dc86604218179279b07ece0eaedd27c2561a2343fe4e332e40042d8682ff5347ef34e27c3dd95f3cce50b630091bbf5232756f14915bb6ab4d6227145b4b5bcdcfc6ead9abe186062ed1e695cb798c04d8f90e94245d30550282979fef0d71e62bb32192e30f6e97185d766baadd4196419f63b14a442d7246b3badda759204e6dec65c2afd84fa7b7ff2a9f14f13c368ac6ce92eaf9c90a626e2d66695c6255f7ec92a59baee12aa09df23d6ab7f2fa66eb5168340046e0371577d9a6db9483582041427c6bad617a582a8ff1373a8776cc0d1fcf2068dd84f062851056520966204ce311b2373ffdbb0ec6c87cc2ddea5316386f640544ee5d57ae0fc0f4ca7d86f8988728ac490912a3e687241177020f5766b85cf191f283dd2d6b9d65d27a308948401fd9d18ce59ac8788add78f7438902e0bbcab069686a31fcadbf4a222b4ab4e0858f04d5b3b3b8b1d7bcc90bcedb6a48f4dbeae85bde6905ffff4296f04d1f2abd9032b561fd711115d6217c095e5f80e054facda81f135bf32915580307bc3e958999fb26a48e9918ca6d8e46c5bc3050f3d451b46294b2023a16d0891684dc11ecdd443b5e67b06cf39dabed8715cbc213ff98f2667a7b2c632f4a999ecd453ad002bc7c0317c8ae1fffcd9ed77e5feab5a7b8fc6d3376690bb7d2540e405d64049c701d5cd45620b5b3a1ab9acd3ff19a6179b72714d0b381ac8563696f336e23ba91a08948c6db66dff9de658101fce054e41b23476128c6f7166fc5e32056392fda333088aa6253b7f48003886aec71b22aae714a419cbb8832ab89828b2a31f553fda3c4d49d7da272811eca6b405b33f7a92be4188c074ac838077f74f7e1fafc7ba33e0b4e674ff069e43a435e3d222ac4d8898087ac733c569fa2e98ca51d3aef0e371e68e6573be404a0371b06c8301504df8cffc78cbe985b969973b63b11c0e5a7390a41a9a55495d143a0d678e765e1009da1246eed8f63444f3b382cfa1a6c885473c5b80e17960b3eef7e543d063ea4ad8dd48f31acfff033363823852e41edf0b9d922bd0e942ba6989077918cd5f1dc7c312bd55036838389bdc3a659d9f59046193f319fe1ac894499cc63aabfcf5ebf9c12cc3da8d4ec87b4bcfce6602b87f06f74ea9431658e22c2e391e070b632df8482ede68c97d4908fc264f67c6dc76477e8a1f43d9daf69244d4d3d63df3a73b3b1019f5b42561ce01996bd166c5cf861b59717ec885355f7b3173bf09b75dc459e03f490fd8a1873e717043a2e5ca8819265af5817870d6981f54b0a34b2c52f9552acb309d97eddab9bc69b72246b54932dfdb7c88b4f4e1bed6153dde40e2931e31881e5b0c965bf1f4ebcf6c4f829d887fc6ad36d4f247f3fb2df34752c82f258bccd1f5f90356f9fe2dd355ec5a8f5ccf844ab55bff1857abd423d6e6a0e6a2105e310054916c59cc0e85d9c99729846f8eeac8bd7b54fbcc46</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&text=常用JAR工具开发编写模板"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&is_video=false&description=常用JAR工具开发编写模板"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=常用JAR工具开发编写模板&body=Check out this article: http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&title=常用JAR工具开发编写模板"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&name=常用JAR工具开发编写模板&description=Here&#39;s something encrypted, password is required to continue reading."><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2023/10/01/%E5%B8%B8%E7%94%A8JAR%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91%E7%BC%96%E5%86%99%E6%A8%A1%E6%9D%BF%E4%BB%A5%E5%8F%8A%E5%90%8E%E7%BB%AD%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D/&t=常用JAR工具开发编写模板"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021-2023
+    塔菲
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
