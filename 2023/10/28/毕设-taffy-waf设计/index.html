@@ -6,17 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content=". taffy_waf开发语言：目前考虑采用golang的框架，或者python的django框架，以双击start.bat启动项目，在web页面呈现实时的防御状态 可以设计拦截级别（高，中，低） 功能12检测分为多种，一种是流量上直接黑白名单，比如对SQL注入拦截select，database()之类另一种是污点跟踪，例如请求包传入的是username&#x3D;1，那么我就跟踪这个变量所经过的所有内容，">
+    <meta name="description" content=". Nginx基于Lua实现waf防护实现waf功能：nginx利用第三方扩展模块实现nginx扩展功能 具体方法：  nginx结合openresty实现调用lua_module    nginx结合Lua编译器直接应用lua_module  入侵检测防御系统有如下模块： taffy_waf开发语言：目前考虑采用golang的框架，或者python的django框架，以双击start.bat启动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="毕设_taffy_waf设计">
 <meta property="og:url" content="http://example.com/2023/10/28/%E6%AF%95%E8%AE%BE-taffy-waf%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="塔菲">
-<meta property="og:description" content=". taffy_waf开发语言：目前考虑采用golang的框架，或者python的django框架，以双击start.bat启动项目，在web页面呈现实时的防御状态 可以设计拦截级别（高，中，低） 功能12检测分为多种，一种是流量上直接黑白名单，比如对SQL注入拦截select，database()之类另一种是污点跟踪，例如请求包传入的是username&#x3D;1，那么我就跟踪这个变量所经过的所有内容，">
+<meta property="og:description" content=". Nginx基于Lua实现waf防护实现waf功能：nginx利用第三方扩展模块实现nginx扩展功能 具体方法：  nginx结合openresty实现调用lua_module    nginx结合Lua编译器直接应用lua_module  入侵检测防御系统有如下模块： taffy_waf开发语言：目前考虑采用golang的框架，或者python的django框架，以双击start.bat启动">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/228317/10/1042/8871/653cfcbeF63b1508e/adb070c8a04f80db.jpg">
 <meta property="article:published_time" content="2023-10-28T07:20:37.000Z">
-<meta property="article:modified_time" content="2023-10-28T09:28:27.783Z">
+<meta property="article:modified_time" content="2023-10-31T05:02:08.464Z">
 <meta property="article:author" content="塔菲">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/228317/10/1042/8871/653cfcbeF63b1508e/adb070c8a04f80db.jpg">
     
     
       
@@ -81,6 +83,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" aria-label="Previous post" href="/2023/11/05/%E5%AF%B9SDL%E7%9A%84%E5%88%9D%E6%AD%A5%E7%90%86%E8%A7%A3/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" aria-label="Next post" href="/2023/10/28/%E7%A5%9E%E5%99%A8-%E7%A7%81%E7%94%A8/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
@@ -110,7 +114,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#taffy-waf"><span class="toc-number">1.</span> <span class="toc-text">taffy_waf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">2.</span> <span class="toc-text">功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95-%E8%BE%93%E5%85%A5"><span class="toc-number">2.1.</span> <span class="toc-text">黑名单-输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95-%E8%BE%93%E5%87%BA"><span class="toc-number">2.2.</span> <span class="toc-text">黑名单-输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA"><span class="toc-number">2.3.</span> <span class="toc-text">污点跟踪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B"><span class="toc-number">2.4.</span> <span class="toc-text">流量监测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%B6%E6%84%8F%E5%90%8E%E9%97%A8%E6%A3%80%E6%B5%8B%EF%BC%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E5%B7%A8%E5%A4%A7%EF%BC%89"><span class="toc-number">2.5.</span> <span class="toc-text">恶意后门检测（工作量巨大）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">2.6.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%88%B6"><span class="toc-number">3.</span> <span class="toc-text">反制</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E5%9F%BA%E4%BA%8ELua%E5%AE%9E%E7%8E%B0waf%E9%98%B2%E6%8A%A4"><span class="toc-number">1.</span> <span class="toc-text">Nginx基于Lua实现waf防护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E9%98%B2%E5%BE%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.</span> <span class="toc-text">入侵检测防御系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#taffy-waf"><span class="toc-number">3.</span> <span class="toc-text">taffy_waf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">4.</span> <span class="toc-text">功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95-%E8%BE%93%E5%85%A5"><span class="toc-number">4.1.</span> <span class="toc-text">黑名单-输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95-%E8%BE%93%E5%87%BA"><span class="toc-number">4.2.</span> <span class="toc-text">黑名单-输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA"><span class="toc-number">4.3.</span> <span class="toc-text">污点跟踪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B"><span class="toc-number">4.4.</span> <span class="toc-text">流量监测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%B6%E6%84%8F%E5%90%8E%E9%97%A8%E6%A3%80%E6%B5%8B%EF%BC%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E5%B7%A8%E5%A4%A7%EF%BC%89"><span class="toc-number">4.5.</span> <span class="toc-text">恶意后门检测（工作量巨大）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">4.6.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%88%B6"><span class="toc-number">5.</span> <span class="toc-text">反制</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -150,6 +154,16 @@
 
   <div class="content e-content" itemprop="articleBody">
     <p>.</p>
+<h3 id="Nginx基于Lua实现waf防护"><a href="#Nginx基于Lua实现waf防护" class="headerlink" title="Nginx基于Lua实现waf防护"></a>Nginx基于Lua实现waf防护</h3><p>实现waf功能：nginx利用第三方扩展模块实现nginx扩展功能</p>
+<p>具体方法：</p>
+<ol>
+<li>nginx结合openresty实现调用lua_module</li>
+</ol>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/228317/10/1042/8871/653cfcbeF63b1508e/adb070c8a04f80db.jpg" alt="image.png"></p>
+<ol start="2">
+<li>nginx结合Lua编译器直接应用lua_module</li>
+</ol>
+<h3 id="入侵检测防御系统"><a href="#入侵检测防御系统" class="headerlink" title="入侵检测防御系统"></a>入侵检测防御系统</h3><p>有如下模块：</p>
 <h3 id="taffy-waf"><a href="#taffy-waf" class="headerlink" title="taffy_waf"></a>taffy_waf</h3><p>开发语言：目前考虑采用golang的框架，或者python的django框架，以双击start.bat启动项目，在web页面呈现实时的防御状态</p>
 <p>可以设计拦截级别（高，中，低）</p>
 <h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">检测分为多种，一种是流量上直接黑白名单，比如对SQL注入拦截select，database()之类</span><br><span class="line">另一种是污点跟踪，例如请求包传入的是username=1，那么我就跟踪这个变量所经过的所有内容，判断是否可能造成漏洞，再就是针对webshell查杀，也采用污点跟踪+机器学习的方法，完善查杀</span><br></pre></td></tr></table></figure>
@@ -251,7 +265,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#taffy-waf"><span class="toc-number">1.</span> <span class="toc-text">taffy_waf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">2.</span> <span class="toc-text">功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95-%E8%BE%93%E5%85%A5"><span class="toc-number">2.1.</span> <span class="toc-text">黑名单-输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95-%E8%BE%93%E5%87%BA"><span class="toc-number">2.2.</span> <span class="toc-text">黑名单-输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA"><span class="toc-number">2.3.</span> <span class="toc-text">污点跟踪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B"><span class="toc-number">2.4.</span> <span class="toc-text">流量监测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%B6%E6%84%8F%E5%90%8E%E9%97%A8%E6%A3%80%E6%B5%8B%EF%BC%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E5%B7%A8%E5%A4%A7%EF%BC%89"><span class="toc-number">2.5.</span> <span class="toc-text">恶意后门检测（工作量巨大）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">2.6.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%88%B6"><span class="toc-number">3.</span> <span class="toc-text">反制</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx%E5%9F%BA%E4%BA%8ELua%E5%AE%9E%E7%8E%B0waf%E9%98%B2%E6%8A%A4"><span class="toc-number">1.</span> <span class="toc-text">Nginx基于Lua实现waf防护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E9%98%B2%E5%BE%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.</span> <span class="toc-text">入侵检测防御系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#taffy-waf"><span class="toc-number">3.</span> <span class="toc-text">taffy_waf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">4.</span> <span class="toc-text">功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95-%E8%BE%93%E5%85%A5"><span class="toc-number">4.1.</span> <span class="toc-text">黑名单-输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%91%E5%90%8D%E5%8D%95-%E8%BE%93%E5%87%BA"><span class="toc-number">4.2.</span> <span class="toc-text">黑名单-输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%A1%E7%82%B9%E8%B7%9F%E8%B8%AA"><span class="toc-number">4.3.</span> <span class="toc-text">污点跟踪</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E7%9B%91%E6%B5%8B"><span class="toc-number">4.4.</span> <span class="toc-text">流量监测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%B6%E6%84%8F%E5%90%8E%E9%97%A8%E6%A3%80%E6%B5%8B%EF%BC%88%E5%B7%A5%E4%BD%9C%E9%87%8F%E5%B7%A8%E5%A4%A7%EF%BC%89"><span class="toc-number">4.5.</span> <span class="toc-text">恶意后门检测（工作量巨大）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">4.6.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%88%B6"><span class="toc-number">5.</span> <span class="toc-text">反制</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
