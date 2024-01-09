@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content=". 这是我之前的采用命令行写的    这是我用javafx集成开发的  php模块   dotnet模块  这里dotnet支持多种后缀格式  默认提供的AES_RAW和AES_BASE64两种哥斯拉的混淆方式  加载方式各有两种：类库加载和动态编译  .net目前已经支持aspx，asmx，ashx，其他冷门后缀正在编写，如下是示例： php  免杀性  这里阿里云和微步在线是有污点跟踪的  阿">
+    <meta name="description" content=". 前言这是我之前的采用命令行写的    这是我用javafx集成开发的 GUI PHP模块  dotnet模块 这里针对哥斯拉的aspx，asmx，ashx都有适配，针对冷门的soap，svc，cshtml，xamlx，ascx等均有样本马混淆   这里dotnet支持多种后缀格式  默认提供的AES_RAW和AES_BASE64两种哥斯拉的混淆方式  加载方式各有两种：类库加载和动态编译  免">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webshell免杀工具">
 <meta property="og:url" content="http://example.com/2023/05/15/webshell%E5%85%8D%E6%9D%80%E5%B7%A5%E5%85%B7%E6%88%90%E6%9E%9C%E5%B1%95%E7%A4%BA/index.html">
 <meta property="og:site_name" content="塔菲">
-<meta property="og:description" content=". 这是我之前的采用命令行写的    这是我用javafx集成开发的  php模块   dotnet模块  这里dotnet支持多种后缀格式  默认提供的AES_RAW和AES_BASE64两种哥斯拉的混淆方式  加载方式各有两种：类库加载和动态编译  .net目前已经支持aspx，asmx，ashx，其他冷门后缀正在编写，如下是示例： php  免杀性  这里阿里云和微步在线是有污点跟踪的  阿">
+<meta property="og:description" content=". 前言这是我之前的采用命令行写的    这是我用javafx集成开发的 GUI PHP模块  dotnet模块 这里针对哥斯拉的aspx，asmx，ashx都有适配，针对冷门的soap，svc，cshtml，xamlx，ascx等均有样本马混淆   这里dotnet支持多种后缀格式  默认提供的AES_RAW和AES_BASE64两种哥斯拉的混淆方式  加载方式各有两种：类库加载和动态编译  免">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdnjson.com/images/2023/05/15/image7693a9277c6c2345.png">
 <meta property="og:image" content="https://cdnjson.com/images/2023/05/15/image5caaa46655e50fd4.png">
@@ -19,21 +19,18 @@
 <meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/183067/16/40866/47265/652cd340Faa8d5cf9/09cb66174b6ad692.jpg">
 <meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/179534/9/39188/30991/652cd35bF4dee37b1/50266484d71c3fe1.jpg">
 <meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/185743/3/40838/30868/652cd712F04947adc/cd1bd4456bc8ec91.jpg">
-<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/192810/19/40350/39513/652cd37cF16188d4e/115ee9c0b123c560.jpg">
+<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/247753/25/2526/34770/659cf6b7Ff400bf30/f8916af2ade4b7a4.jpg">
 <meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/221526/32/37651/8736/652cd3a4Fde185ecf/51f702fa50027506.jpg">
 <meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/52565/29/19717/17226/652cd3d2Fc0389ac7/440c2c9847b64791.jpg">
 <meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/80957/10/26796/19497/652cd3f5F9b555df4/96598cb3d874e631.jpg">
-<meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/188589/39/38465/149782/652cd493F45c6d93f/59eafb6726b6d4d7.jpg">
 <meta property="og:image" content="https://cdnjson.com/images/2023/05/15/image.png">
 <meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/6471/3/20851/49055/64d22c34F62c681bf/0612e0e1d97b389e.jpg">
 <meta property="og:image" content="https://s1.ax1x.com/2023/04/22/p9Vs94f.png">
 <meta property="og:image" content="https://s1.ax1x.com/2023/04/22/p9Vsi8S.png">
 <meta property="og:image" content="https://s1.ax1x.com/2023/04/22/p9VLY1e.png">
 <meta property="og:image" content="https://cdnjson.com/images/2023/05/15/image4948bb7f2d26d076.png">
-<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/227553/38/231/38193/652cd4d8F6a08c96f/f8d432a067a84d65.jpg">
-<meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/104058/4/28397/40674/652cd4e2F4ce1047d/fbd25b95f69af755.jpg">
-<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/176511/3/40812/172379/652cd50dF9ced5652/13968128b763c323.jpg">
-<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/107378/21/38729/123344/652cd521Ff229b58e/61667339b8b35a56.jpg">
+<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/230382/23/12018/34417/659cf6f7F64e51465/f53f1bf50d7cce50.jpg">
+<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/234915/13/12211/28809/659cf71cF54e95701/925f33ebd186e88f.jpg">
 <meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/225853/4/338/24585/652cd73eF1441db5c/eb76c07f42c89ba9.jpg">
 <meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/195000/40/35924/43576/64d22c6aF7cdbe703/0b62292a42ee3abc.jpg">
 <meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/147004/9/39125/35188/64d22c82Fe520d5f5/a756f49124643752.jpg">
@@ -41,19 +38,12 @@
 <meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/178717/29/36005/23270/64d22cc7F9f3098de/9fcc2ec48e5d8f01.jpg">
 <meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/151368/20/37065/65019/64d22cdcFf2f23063/b4bd0b0089293515.jpg">
 <meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/215894/13/36435/81478/64d22cffFf9a1abb5/84cb7e3e41f71413.jpg">
-<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/178825/29/40304/45965/652cd562Ffc12d0e9/1dffb220353b39be.jpg">
-<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/166098/1/39240/28641/652cd571F25ec485b/9f9a984632c51e6c.jpg">
-<meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/222679/16/27751/157431/652cd68aF3d20b198/404e2751681a565c.jpg">
-<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/183282/23/40341/98184/652cd6acFf0b167c9/5189bd2cbc9cec9e.jpg">
-<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/222317/9/29391/23014/652cd76aF7d202836/baadf261d110d644.jpg">
-<meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/186846/24/39555/46731/652cd98bFa1e658d3/4ae295e9f5bcd453.jpg">
-<meta property="og:image" content="https://img11.360buyimg.com/ddimg/jfs/t1/132766/5/38609/30415/652cd996F1930ecf4/47f6974133dc4c00.jpg">
 <meta property="og:image" content="https://img13.360buyimg.com/ddimg/jfs/t1/111457/5/39808/36659/652cd9baFbfc3e2aa/c2a1f7aa67625f69.jpg">
 <meta property="og:image" content="https://img14.360buyimg.com/ddimg/jfs/t1/188215/31/39037/16629/652cd9cbF68d6ba5a/93a0742b1a133112.jpg">
 <meta property="og:image" content="https://img12.360buyimg.com/ddimg/jfs/t1/221063/27/35690/54600/652cd9d3Feede24d1/5fc4363388d4f895.jpg">
 <meta property="og:image" content="https://img10.360buyimg.com/ddimg/jfs/t1/67085/37/26279/27963/652cda0cFceb7509f/01eed9a76c695dbc.jpg">
 <meta property="article:published_time" content="2023-05-15T05:17:22.000Z">
-<meta property="article:modified_time" content="2023-10-16T06:37:06.236Z">
+<meta property="article:modified_time" content="2024-01-09T07:36:04.011Z">
 <meta property="article:author" content="塔菲">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdnjson.com/images/2023/05/15/image7693a9277c6c2345.png">
@@ -152,7 +142,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#ASHX"><span class="toc-number">1.</span> <span class="toc-text">ASHX</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GUI"><span class="toc-number">2.</span> <span class="toc-text">GUI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP%E6%A8%A1%E5%9D%97"><span class="toc-number">3.</span> <span class="toc-text">PHP模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dotnet%E6%A8%A1%E5%9D%97"><span class="toc-number">4.</span> <span class="toc-text">dotnet模块</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -192,26 +182,24 @@
 
   <div class="content e-content" itemprop="articleBody">
     <p>.</p>
-<p>这是我之前的采用命令行写的</p>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>这是我之前的采用命令行写的</p>
 <p><img src="https://cdnjson.com/images/2023/05/15/image7693a9277c6c2345.png" alt="image7693a9277c6c2345.png"></p>
 <p><img src="https://cdnjson.com/images/2023/05/15/image5caaa46655e50fd4.png" alt="image5caaa46655e50fd4.png"></p>
 <p><img src="https://cdnjson.com/images/2023/05/15/imagebe89a67dee320b71.png" alt="imagebe89a67dee320b71.png"></p>
 <p>这是我用javafx集成开发的</p>
-<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/183067/16/40866/47265/652cd340Faa8d5cf9/09cb66174b6ad692.jpg" alt="image.png"></p>
-<p>php模块</p>
-<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/179534/9/39188/30991/652cd35bF4dee37b1/50266484d71c3fe1.jpg" alt="image.png"></p>
+<h4 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h4><p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/183067/16/40866/47265/652cd340Faa8d5cf9/09cb66174b6ad692.jpg" alt="image.png"></p>
+<h4 id="PHP模块"><a href="#PHP模块" class="headerlink" title="PHP模块"></a>PHP模块</h4><p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/179534/9/39188/30991/652cd35bF4dee37b1/50266484d71c3fe1.jpg" alt="image.png"></p>
 <p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/185743/3/40838/30868/652cd712F04947adc/cd1bd4456bc8ec91.jpg" alt="ff32fe08889cbabbc2d612d9cb493fb.png"></p>
-<p>dotnet模块</p>
-<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/192810/19/40350/39513/652cd37cF16188d4e/115ee9c0b123c560.jpg" alt="image.png"></p>
+<h4 id="dotnet模块"><a href="#dotnet模块" class="headerlink" title="dotnet模块"></a>dotnet模块</h4><blockquote>
+<p>这里针对哥斯拉的aspx，asmx，ashx都有适配，针对冷门的soap，svc，cshtml，xamlx，ascx等均有样本马混淆</p>
+</blockquote>
+<p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/247753/25/2526/34770/659cf6b7Ff400bf30/f8916af2ade4b7a4.jpg" alt="image.png"></p>
 <p>这里dotnet支持多种后缀格式</p>
 <p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/221526/32/37651/8736/652cd3a4Fde185ecf/51f702fa50027506.jpg" alt="image.png"></p>
 <p>默认提供的AES_RAW和AES_BASE64两种哥斯拉的混淆方式</p>
 <p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/52565/29/19717/17226/652cd3d2Fc0389ac7/440c2c9847b64791.jpg" alt="image.png"></p>
 <p>加载方式各有两种：类库加载和动态编译</p>
 <p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/80957/10/26796/19497/652cd3f5F9b555df4/96598cb3d874e631.jpg" alt="image.png"></p>
-<p>.net目前已经支持aspx，asmx，ashx，其他冷门后缀正在编写，如下是示例：</p>
-<p>php</p>
-<p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/188589/39/38465/149782/652cd493F45c6d93f/59eafb6726b6d4d7.jpg" alt="image.png"></p>
 <p>免杀性</p>
 <blockquote>
 <p>这里阿里云和微步在线是有污点跟踪的</p>
@@ -229,10 +217,8 @@
 <p>D盾</p>
 <p><img src="https://cdnjson.com/images/2023/05/15/image4948bb7f2d26d076.png" alt="image4948bb7f2d26d076.png"></p>
 <p>dotNet</p>
-<p>aspx_aes_raw_类库加载</p>
-<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/227553/38/231/38193/652cd4d8F6a08c96f/f8d432a067a84d65.jpg" alt="image.png"><br><img src="https://img13.360buyimg.com/ddimg/jfs/t1/104058/4/28397/40674/652cd4e2F4ce1047d/fbd25b95f69af755.jpg" alt="image.png"></p>
-<p>代码</p>
-<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/176511/3/40812/172379/652cd50dF9ced5652/13968128b763c323.jpg" alt="image.png"><br><img src="https://img12.360buyimg.com/ddimg/jfs/t1/107378/21/38729/123344/652cd521Ff229b58e/61667339b8b35a56.jpg" alt="image.png"></p>
+<p>aspx_aes_raw 第一种混淆方式</p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/230382/23/12018/34417/659cf6f7F64e51465/f53f1bf50d7cce50.jpg" alt="image.png"><br><img src="https://img12.360buyimg.com/ddimg/jfs/t1/234915/13/12211/28809/659cf71cF54e95701/925f33ebd186e88f.jpg" alt="image.png"></p>
 <p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/225853/4/338/24585/652cd73eF1441db5c/eb76c07f42c89ba9.jpg" alt="e49eaf2da74c837fb8d57185b549f1e.png"></p>
 <p>百度</p>
 <p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/195000/40/35924/43576/64d22c6aF7cdbe703/0b62292a42ee3abc.jpg"></p>
@@ -246,17 +232,10 @@
 <p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/151368/20/37065/65019/64d22cdcFf2f23063/b4bd0b0089293515.jpg" alt="B.png"></p>
 <p>微步在线</p>
 <p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/215894/13/36435/81478/64d22cffFf9a1abb5/84cb7e3e41f71413.jpg"></p>
-<p>.</p>
-<p>动态加载</p>
-<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/178825/29/40304/45965/652cd562Ffc12d0e9/1dffb220353b39be.jpg" alt="image.png"><br><img src="https://img14.360buyimg.com/ddimg/jfs/t1/166098/1/39240/28641/652cd571F25ec485b/9f9a984632c51e6c.jpg" alt="image.png"></p>
-<p>代码</p>
-<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/222679/16/27751/157431/652cd68aF3d20b198/404e2751681a565c.jpg" alt="image.png"></p>
-<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/183282/23/40341/98184/652cd6acFf0b167c9/5189bd2cbc9cec9e.jpg" alt="image.png"></p>
-<p>动态编译</p>
-<p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/222317/9/29391/23014/652cd76aF7d202836/baadf261d110d644.jpg" alt="2f7e7b8fa7b5c4087f8411355b60ef4.png"></p>
-<h4 id="ASHX"><a href="#ASHX" class="headerlink" title="ASHX"></a>ASHX</h4><p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/186846/24/39555/46731/652cd98bFa1e658d3/4ae295e9f5bcd453.jpg" alt="image.png"><br><img src="https://img11.360buyimg.com/ddimg/jfs/t1/132766/5/38609/30415/652cd996F1930ecf4/47f6974133dc4c00.jpg" alt="image.png"></p>
+<p>示范</p>
 <p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/111457/5/39808/36659/652cd9baFbfc3e2aa/c2a1f7aa67625f69.jpg" alt="image.png"><br><img src="https://img14.360buyimg.com/ddimg/jfs/t1/188215/31/39037/16629/652cd9cbF68d6ba5a/93a0742b1a133112.jpg" alt="image.png"><br><img src="https://img12.360buyimg.com/ddimg/jfs/t1/221063/27/35690/54600/652cd9d3Feede24d1/5fc4363388d4f895.jpg" alt="image.png"></p>
 <p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/67085/37/26279/27963/652cda0cFceb7509f/01eed9a76c695dbc.jpg" alt="image.png"></p>
+<p>。</p>
 <p>.</p>
 
   </div>
@@ -283,7 +262,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#ASHX"><span class="toc-number">1.</span> <span class="toc-text">ASHX</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GUI"><span class="toc-number">2.</span> <span class="toc-text">GUI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP%E6%A8%A1%E5%9D%97"><span class="toc-number">3.</span> <span class="toc-text">PHP模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dotnet%E6%A8%A1%E5%9D%97"><span class="toc-number">4.</span> <span class="toc-text">dotnet模块</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -319,7 +298,7 @@
     Copyright &copy;
     
     
-    2021-2023
+    2021-2024
     塔菲
   </div>
   <div class="footer-right">
